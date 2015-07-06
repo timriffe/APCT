@@ -3,17 +3,29 @@
 %	PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	Praelegomena								%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	- Make sure that you use utf8-encoding for all your .tex-files!!! (TeXnicCenter since version 2.0)
+%%	- TeXnicCenter update: MPIDR intranet > Hard- & Sortfware > Software > Script and text editors > TeXnicCenter
+
+\documentclass[20pt]{beamer}
+
+\usepackage[ngerman,english]{babel}
+\usepackage{tikz}
+\usepackage[normalem]{ulem}
+\geometry{paperwidth=10in, paperheight=7.5in}
+
 \usepackage[utf8]{inputenc}
-\usetheme{Berkeley}
-\usecolortheme{dove}
 
-\usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-\usepackage{amsmath}
-\DeclareGraphicsExtensions{.pdf,.png}
+\usepackage[mpidr]{./mpidr/beamerthemeMPIDR}
+
+%%	the institute's logo
+\renewcommand{\mylogo}{\includegraphics[width=4.7in]{mpidr_logo_colour_en}}
 
 
+%%	should be the very last package to be loaded
+\usepackage{hyperref}
 
 
 %----------------------------------------------------------------------------------------
@@ -21,10 +33,7 @@
 %----------------------------------------------------------------------------------------
 
 \title[APCTDL]{A unified model of demographic time}
-\author[Riffe]
-{
-Tim Riffe
-}
+\subtitle{Tim Riffe, Lab of Population Health}
 
 \begin{document}
 % remove figure headers

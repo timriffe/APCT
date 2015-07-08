@@ -6,6 +6,7 @@
 \usepackage{titling}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{placeins}
 \bibpunct{(}{)}{,}{a}{}{;} 
 \newcommand{\subtitle}[1]{%
   \posttitle{%
@@ -52,25 +53,24 @@ utility of this model by demonstrating a case where heterogeneity with respect
 to unaccounted-for time dimensions has caused serious misunderstandings in the
 scientific literature and in public policy.
 
-\section*{Four planes}
+\section*{Intersecting planes}
 
-There are at least two ways to think about the model presented here: Either we
-situate the model in a ternary 3d space, similar to the tetrahedral simplex, or
-we stay in the more familar euclidean 3d space. Since the latter is more
-generally intuitive, we opt to describe the intersection of four planes passing
-through euclidean space. We begin with the Lexis diagram, and then build out
-from there. Two of these four planes motivate the present model, and the other
-two are artifacts, with potential demographic meaning.
+The  model can be introduced in terms of four planes intersecting in
+Euclidean 3d space. Two of the planes motivate the model, and the other two
+are in this case artifactual, although they may have demographic meaning. The
+first plane is the widely used APC plane. This plane omits remaining years of
+life (T). 
 
 \subsection*{APC}
 The Lexis diagram has long been used in demography to relate chronological age
 (A) with birth cohorts (C) and calendar years (P). Since the so-called Lexis
-diagram could have been named for others, and since we'll be comparing
-with other temporal configurations, let us refer to it as the APC diagram. When
-a value (data) is structured by APC coordinates, we refer to it as an APC
-surface.
+diagram could have been named for others
+\citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
+temporal configurations, let us refer to it as the APC diagram, as seen in
+Figure~\ref{APCright}
+When a value (data) is structured by APC coordinates, we refer to it as an APC surface.
 
-\begin{figure}[ht!]
+\begin{figure}[b!]
     \centering
     % figure made in R/LexisStandard.R
     \includegraphics[scale=.7]{Figures/LabPres/APC2.pdf}
@@ -78,13 +78,50 @@ surface.
     \label{APCright}
 \end{figure} 
 
+The APC diagram in Figure~\ref{APCright} represents years lived on the y axis,
+calendar years on the x axis, and birth cohorts as the right-ascending
+diagonals. This is the most common of several possible configurations
+of the APC dimensions. Individual lifelines are aligned in the cohort direction,
+starting with birth (filled circle) at chronological age zero, and death ()
+
 Any APC surface can be interpreted along each of these
 three dimensions of temporal structure. Such interpretation is a descriptive
 task, and it does not succumb to problems of overidentification. Variation along
-these three dimensions can not be parsimonsiously separated into effects of A,
-P, and C. This is the so-called APC problem, and it is not the concern of the
+these three dimensions can not be parsimonsiously separated into the three
+effects of A, P, and C. This is the so-called APC problem, and it is not the concern of the
 present work. 
 
+It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
+birth cohort dimension, as represented in Figure~\ref{APCright}, is relatively
+longer than either the age or years axes. If a right angle and unity aspect
+ratio is forced between any two of the APC dimensions, the third dimension is always be
+stretched by $\sqrt{2}$. Another long-standing, but less common variant, is to
+represent
+
+\FloatBarrier
+
+\subsection*{TPD}
+
+Thanatological age (T), period (P) and death cohort (D) form a coordinate system
+best imagined as the opposite of APC. One may take the same lifelines from
+Figure~\ref{APCright} and realign them in descending fashion to create the
+diagram in Figure~\ref{TPDright}
+
+\begin{figure}[b!]
+    \centering
+    % figure made in R/LexisStandard.R
+    \includegraphics[scale=.7]{Figures/LabPres/TPD2.pdf}
+    \caption{Lifelines in the TPD diagram}
+    \label{TPDright}
+\end{figure} 
+
+\subsection*{ATL}
+The second plane is ATL, a valid coordinate system for
+processes that vary over the lifecourse, but not over time (P). Since the
+lifecourse belongs to the cohort perspective, it is best to think of the ATL
+plane as belonging to some particular birth cohort. Alternatively, an ATL
+triangle may be taken as a cross-section along through the period dimension, a
+sort of synthetic ATL plane.
 
 
 
@@ -130,7 +167,6 @@ parallelograms are all congruent shapes known as regular trigonal trapezohedra
 (RTT). The orientation
 of a given RTT uniquely defines the Lexis shape in question. Similar constructs
 exist in the other time dimensions, and these will also be described. 
-
 
 
 \bibliographystyle{plainnat}

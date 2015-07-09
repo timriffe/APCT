@@ -1,7 +1,13 @@
+%% 
+%%	This is file 'beamer_sample.tex'
+%%	according to an MPIDR's PowerPoint template (?)
+%%	
+%%	by Eric Naujoks
+%%
+%%	Problems, bugs and comments to 
+%%	naujoks@demogr.mpg.de
+%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%	Praelegomena								%%
@@ -12,6 +18,7 @@
 \documentclass[20pt]{beamer}
 
 \usepackage[ngerman,english]{babel}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage[normalem]{ulem}
 \geometry{paperwidth=10in, paperheight=7.5in}
@@ -20,6 +27,14 @@
 
 \usepackage[mpidr]{./mpidr/beamerthemeMPIDR}
 
+
+%% Declaring title and author
+\title{A model of lifetimes}
+\subtitle{Tim Riffe\\ Lab of Population Health}		%% subtitle means author in
+% this file...
+% :/
+
+
 %%	the institute's logo
 \renewcommand{\mylogo}{\includegraphics[width=4.7in]{mpidr_logo_colour_en}}
 
@@ -27,62 +42,64 @@
 %%	should be the very last package to be loaded
 \usepackage{hyperref}
 
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-\title[APCTDL]{A unified model of demographic time}
-\subtitle{Tim Riffe, Lab of Population Health}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	Beginning of the document		%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-% remove figure headers
-\setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
-% ------------------------------------------
-% title page for now. see about logos
-%\begin{frame}
-%\titlepage % Print the title page as the first slide
-%\end{frame}
-\begin{frame}[plain]
-
-\vspace{3em}
-\LARGE A unified model of demographic time\\
-\vspace{3 mm}
-\normalsize Tim Riffe
+%%	titlepage - fixed frame:
+%%	========================
+\begin{frame}
+	\titlepage
 \end{frame}
 
-% go by sections
+
+%%	TOC:
+%%	====
+\begin{frame}{Table of Contents}
+  \begin{description}
+    \item<1->{\textbf{APC}} we know this very well.
+    \item<2->{\textbf{TPD}} like APC, but aligned to death.
+    \item<3->{\textbf{ATL}} variation over the lifespan, but not in calendar
+    time.
+    \item<4->{\textbf{APCTDL}} everything in one redundant 3d relationship.
+  \end{description}
+\end{frame}
 
 
+%%	section 1:
+%%	APC
 \section{APC}
 \begin{frame}
-\frametitle{An old friend}
+\frametitle{APC, an old friend}
 \begin{figure}[b]
     \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/APC1.pdf}
+    \includegraphics[scale=.9]{Figures/LabPres/APC1.pdf}
     \caption{An APC diagram}
 \end{figure} 
 \end{frame}
 
 \begin{frame}
-\frametitle{An old friend}
+\frametitle{APC, an old friend}
 \begin{figure}[b]
     \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/APC2.pdf}
+    \includegraphics[scale=.9]{Figures/LabPres/APC2.pdf}
     \caption{Lifelines in the APC diagram}
 \end{figure} 
 \end{frame}
 
+
+%%	section 2:
+%%	TPD
 \section{TPD}
 \begin{frame}
 \frametitle{The inverse relationship}
 \begin{figure}[b]
     \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/TPD1.pdf}
+    \includegraphics[scale=.9]{Figures/LabPres/TPD1.pdf}
     \caption{A TPD diagram}
 \end{figure} 
 \end{frame}
@@ -92,14 +109,24 @@
 \begin{figure}[b]
     \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/TPD2.pdf}
+    \includegraphics[scale=.9]{Figures/LabPres/TPD2.pdf}
     \caption{Lifelines in the TPD diagram}
 \end{figure} 
 \end{frame}
 
-\section{TPD}
+\section{ATL}
 
+\section{APCTDL}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%	End of the document					%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
+
+
+
+
+
+
 
 
 

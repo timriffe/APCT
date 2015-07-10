@@ -13,11 +13,18 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 }
 getwd()
 
+# clean the folder
+folder <- file.path("Figures","LabPres","AnimateLifeLines")
+remove.these <- list.files(folder)
+unlink(file.path(folder,remove.these))
 
+
+# generate animation
 N         <- 12
 maxL      <- 100
 steps     <- 1
 
+set.seed(1)
 lifespans <- runif(N) * maxL
 
 y         <- 1:N
@@ -25,7 +32,7 @@ xl        <- rep(0,N)
 xr        <- lifespans
 
 gap       <- maxL - lifespans
-moves     <- 0:maxL
+moves     <- seq(0,maxL,by=steps)
 
 XL <- outer(xl,moves,"+")
 XR <- outer(xr,moves,"+")

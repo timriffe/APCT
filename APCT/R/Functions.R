@@ -14,25 +14,37 @@
 #' @param years vector of years, e.g. \code{1900:2010}. These are x values.
 #' @param N. age interval. Default of 5.
 #' @param Chrono logical. Default \code{TRUE}. Birth cohorts? If \code{FALSE} it assumes we have a TPD diagram and gives death cohorts.
+#' @param equilateral logical. Default \code{FALSE}. Do we want 60 degree or 90/45 degree angles?
 #' @param ... optional arguments passed to \code{segments()}
 #' 
 #' @export
 #' 
 
-LexRefN <- function(ages, years, N = 5, Chrono = TRUE, ...){
+LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 	# vertical
-	segments(years[years %% N == 0],
-			min(ages),
-			years[years %% N == 0],
-			max(ages),
-			...
+	#par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
+	#plot(NULL, xlim = c(1820,2060), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
+	#LexRefN(0:100, 1900:2000, col = "#A5A5A5", N = 20, xpd=TRUE)
+	# ages<-0:100; years <- 1900:2000; col = "#A5A5A5"; N = 20; equilateral <- TRUE; Chrono = TRUE
+	# Chrono = FALSE
+	minA      <- min(ages)
+	maxA      <- max(ages)
+	yearshift <- ifelse(equilateral, .5, 0) * ifelse(chrono, 1, -1)
+	agemult   <- ifelse(equilateral, sqrt(3) / 2, 1)
 	
+	
+	segments(years[years %% N == 0] - minA * yearshift,
+			min(ages) * agemult,
+			years[years %% N == 0] - maxA * yearshift,
+			max(ages) * agemult,
+			...
 	)
+	
 	# horizontal lines
-	segments(min(years),
-			ages[ages %% N == 0],
-			max(years),
-			ages[ages %% N == 0],
+	segments(min(years) - ages[ages %% N == 0] * yearshift,
+			ages[ages %% N == 0] * agemult,
+			max(years) - ages[ages %% N == 0] * yearshift,
+			ages[ages %% N == 0] * agemult,
 			...
 	)
 	# diag cohort references, bit more tricky:
@@ -59,10 +71,20 @@ LexRefN <- function(ages, years, N = 5, Chrono = TRUE, ...){
 	yt <- yt[yt >= min(ages)]
 	
 	# draw cohort refs:
-	if (Chrono){
-		segments(xl, yb, xr, yt, ...)
+	if (chrono){
+		segments(xl - yb * yearshift, 
+				yb * agemult, 
+				xr - yt * yearshift, 
+				yt * agemult, 
+				...
+				)
 	} else {
-		segments(rev(xr), yb, rev(xl), yt, ...)
+		segments(rev(xr)- yb * yearshift, 
+				yb * agemult, 
+				rev(xl)- yt * yearshift, 
+				yt * agemult,
+				...
+				)
 	}
 	
 }

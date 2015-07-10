@@ -20,6 +20,7 @@
 \usepackage[ngerman,english]{babel}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{animate} 
 \usepackage[normalem]{ulem}
 \geometry{paperwidth=10in, paperheight=7.5in}
 
@@ -58,10 +59,10 @@
 %%	====
 \begin{frame}{Table of Contents}
   \begin{description}
-    \item<1->{\textbf{APC}} we know this very well.
-    \item<2->{\textbf{TPD}} like APC, but aligned to death.
-    \item<3->{\textbf{ATL}} variation over the lifespan, but not in calendar
-    time.
+    \item<1->{\textbf{APC}:} well-known. Aligned to time of birth.
+    \item<2->{\textbf{TPD}:} like APC, but aligned to death.
+    \item<3->{\textbf{ATL}:} shows variation over the lifespan, but not in
+    calendar time. Can also refer to a single period or cohort.
     \item<4->{\textbf{APCTDL}} everything in one redundant 3d relationship.
   \end{description}
 \end{frame}
@@ -70,13 +71,58 @@
 %%	section 1:
 %%	APC
 \section{APC}
+% typical APC setup
 \begin{frame}
 \frametitle{APC, an old friend}
 \begin{figure}[b]
     \centering
-    % figure made in R/LexisStandard.R
+       % figure made in R/APClab.R
     \includegraphics[scale=.9]{Figures/LabPres/APC1.pdf}
-    \caption{An APC diagram}
+    %\caption{An APC diagram}
+\end{figure} 
+\end{frame}
+
+% observed, with lifelines
+\begin{frame}
+\frametitle{APC, an old friend}
+\begin{figure}[b]
+    \centering
+      % figure made in R/APClab.R
+    \includegraphics[scale=.9]{Figures/LabPres/APC2.pdf}
+    %\caption{Lifelines in the APC diagram}
+\end{figure} 
+\end{frame}
+
+% past, observed,
+\begin{frame}
+\frametitle{APC, an old friend}
+\begin{figure}[b]
+    \centering
+       % figure made in R/APClab.R
+    \includegraphics[scale=.9]{Figures/LabPres/APC3.pdf}
+   %\caption{Lifelines in the APC diagram, past}
+\end{figure} 
+\end{frame}
+
+% past, observed, future
+\begin{frame}
+\frametitle{APC, an old friend}
+\begin{figure}[b]
+    \centering
+       % figure made in R/APClab.R
+    \includegraphics[scale=.9]{Figures/LabPres/APC4.pdf}
+   % \caption{Lifelines in the APC diagram, past and future}
+\end{figure} 
+\end{frame}
+
+% Equilateral Lexis (Zeuner, Perozzo, Ryder)
+\begin{frame}
+\frametitle{APC, an old friend}
+\begin{figure}[b]
+    \centering
+    % figure made in R/APClab.R
+    \includegraphics[scale=.9]{Figures/LabPres/APC5.pdf}
+    %\caption{Lifelines in the equilateral APC diagram}
 \end{figure} 
 \end{frame}
 
@@ -84,33 +130,53 @@
 \frametitle{APC, an old friend}
 \begin{figure}[b]
     \centering
-    % figure made in R/LexisStandard.R
-    \includegraphics[scale=.9]{Figures/LabPres/APC2.pdf}
-    \caption{Lifelines in the APC diagram}
+    \includegraphics[scale=.5]{Figures/LabPres/Perozzo1000px_cropped_adj.png}
+    %\caption{Lifelines in the equilateral APC diagram}
 \end{figure} 
 \end{frame}
-
-
 %%	section 2:
 %%	TPD
 \section{TPD}
-\begin{frame}
-\frametitle{The inverse relationship}
-\begin{figure}[b]
-    \centering
+%\begin{frame}
+%\frametitle{The inverse relationship}
+%\begin{figure}[b]
+%    \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.9]{Figures/LabPres/TPD1.pdf}
-    \caption{A TPD diagram}
+%    \includegraphics[scale=.9]{Figures/LabPres/TPD1.pdf}
+%    \caption{A TPD diagram}
+%\end{figure} 
+%\end{frame}
+\begin{frame} 
+\frametitle{realign lifelines}
+\begin{figure}
+    \centering
+  \animategraphics[height=5in]{24}{Figures/LabPres/AnimateLifeLines/frame_}{1}{91}
 \end{figure} 
-\end{frame}
+\end{frame} 
+
+\begin{frame} 
+\frametitle{realign lifelines}
+\begin{figure}
+    \centering
+  \animategraphics[height=5in]{24}{Figures/LabPres/AnimateLifeLines/frame_}{1}{91}
+\end{figure} 
+\end{frame} 
+
+\begin{frame} 
+\frametitle{realign lifelines}
+\begin{figure}
+    \centering
+  \animategraphics[height=5in]{24}{Figures/LabPres/AnimateLifeLines/frame_}{1}{91}
+\end{figure} 
+\end{frame} 
 
 \begin{frame}
-\frametitle{The inverse relationship}
+\frametitle{TPD, the inverse relationship}
 \begin{figure}[b]
     \centering
     % figure made in R/LexisStandard.R
     \includegraphics[scale=.9]{Figures/LabPres/TPD2.pdf}
-    \caption{Lifelines in the TPD diagram}
+    %\caption{Lifelines in the TPD diagram}
 \end{figure} 
 \end{frame}
 

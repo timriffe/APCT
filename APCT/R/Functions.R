@@ -2,7 +2,10 @@
 # Author: tim
 ###############################################################################
 
-
+if (!"HMDHFDplus" %in% rownames(installed.packages())){
+	devtools::install_github("timriffe/TR1/TR1/HMDHFDplus")
+}
+require(HMDHFDplus)
 
 
 #'
@@ -90,3 +93,49 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 }
 
 
+#'
+#' @title ATLRefN Overlays an ATL grid onto an already-open plot
+#' 
+#' @description This is an optional overlay function for ATL diagrams
+#' 
+#' @param ages vector of ages, e.g. \code{0:110}. These are translated to both thanatological and chronological ages, and the diagram is assumed to be regular.
+#' @param N. age interval. Default of 5.
+#' @param equilateral logical. Default \code{FALSE}. Do we want 60 degree or 90/45 degree angles?
+#' @param ... optional arguments passed to \code{segments()}
+#' 
+#' @export
+#' 
+
+ATLRefN <- function(ages, N = 5, equilateral = FALSE, ...){
+	
+	minA      <- min(ages)
+	maxA      <- max(ages)
+	Th <- C   <- sort(unique(ages[as.integer(ages) %% N == 0]))
+	
+	if (equilateral){
+		# left-leaning
+		segments(C,rep(minA, length(C)) * sqrt(3)/2 ,C*.5, Th * sqrt(3)/2, ...)
+		
+		# right-leaning
+		segments(C,rep(minA, length(C)) * sqrt(3)/2, C + rev(Th)*.5,rev(Th) * sqrt(3)/2, ...)
+		
+		# horizontals.
+		segments(C - .5 * Th, Th * sqrt(3) / 2, rev(C) + .5 * Th, Th * sqrt(3) / 2, ...)
+
+	} else {
+		# verticals
+		xv  <- rev(C)
+		y1v <- rep(minA,length(C))
+		y2v <- Th
+		segments(xv,y1v,xv,y2v, ...)
+		
+		# horizontals
+		x1h <- rep(minA, length(Th))
+		x2h <- rev(C)
+		yh  <- Th
+		segments(x1h,yh,x2h,yh, ...)
+		
+		# diagonals
+		segments(rep(minA,length(Th)),Th,C,rep(minA,length(C)), ...)
+	}
+}

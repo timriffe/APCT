@@ -93,6 +93,12 @@ for (iz in inc){
 	}
 }
 
+
+# =========================================
+# Add ATL semitransparent triangle for 1900 birth cohort:
+rgl.triangles(x=c(1900,2000,1900),y=c(0,100,0),z=c(0,0,100),col="#00FF1130")
+
+# =========================================
 # no apply proper aspect ratio to the whole thing
 decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 

@@ -98,5 +98,5 @@ decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box =
 
 # and now we have a basic unlabeled wireframe
 
-
+writeWebGL(dir="RGL1")
 

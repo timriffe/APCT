@@ -6,9 +6,11 @@
 
 library(rgl)
 #
+#clear3d()
 
-#
-plot3d(x1,y1,z1,box=FALSE,aspect=TRUE,axes=FALSE,type ='n',xlab="",ylab="",zlab="")
+rgl.close()
+# graphics.off()
+plot3d(x1,y1,z1,box=FALSE,aspect=c(3,1,1),axes=FALSE,type ='n',xlab="",ylab="",zlab="")
 #decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=TRUE,box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 
 # cohort diagonals?
@@ -51,21 +53,50 @@ y2 <- c(seq(0,90,by=10),rep(100,21))
 
 zl <- 11#
 
-# TODO: y2 appears to be problematic. Ought to depend on z, of course.
+
 for (z in 0:(zl-1)){
+	y2[y2 > 100-z*10] <- 100-z*10
 	for (i in 1:(length(x1)-z)){
 		#y22 <- y2-10*z
 		#y22 <- ifelse(sign(y22) < 0, 0, y22)
-		segments3d(c(x1[i],x2[i]),c(y1[i],100-z*10),c(10*z,10*z),col=3)
+		segments3d(c(x1[i],x2[i]),c(y1[i],y2[i]),c(10*z,10*z),col=3)
 	}
 }
 
+# =====================================
+# vertical (z) struts:
+
+# this needs to increment by 10 for each y
+x1 <- seq(1800,2000,by=10)
+x2 <- x1
+
+zl <- 10
+for (z in zl:0){
+	for (y in 0:10){
+		for (x in x1){
+			#y22 <- y2-10*z
+			#y22 <- ifelse(sign(y22) < 0, 0, y22)
+			segments3d(c(x+y*10,x+y*10),c(y*10,y*10),c(0,max(10*z - 10*y,0)),col=4)
+		}
+	}
+}
+
+# =======================================
+# now the cohort lifelines :-)
+# cohort diagonals?
+x1 <- seq(1800,2000,by=10)
+
+inc <- seq(10,100,by=10)
+for (iz in inc){
+	for (i in 1:length(x1)){
+		segments3d(c(x1[i],x2[i]+iz),c(0,iz),c(iz,0),col=5)
+	}
+}
 
 # no apply proper aspect ratio to the whole thing
-decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=TRUE,box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
+decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 
-# plan, take snapshots with different dimensions highlighted, 
-# add plane at some point for baseline APC, and ATL slice
+# and now we have a basic unlabeled wireframe
 
 
 

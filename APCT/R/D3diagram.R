@@ -8,7 +8,7 @@ library(rgl)
 #
 #clear3d()
 
-rgl.close()
+#rgl.close()
 # graphics.off()
 plot3d(x1,y1,z1,box=FALSE,aspect=c(3,1,1),axes=FALSE,type ='n',xlab="",ylab="",zlab="")
 #decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=TRUE,box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")

@@ -25,6 +25,8 @@ LexRefN(0:100, 1900:2000, col = "#A5A5A5", N = 20, chrono = FALSE, xpd=TRUE)
 #
 text(1900,seq(0,100,by=20),seq(0,100,by=20),pos=2,xpd=TRUE)
 text(seq(1900,2000,by=20),0,seq(1900,2000,by=20),pos=1,xpd=TRUE)
+text(1950,-10,"Period",xpd=TRUE,pos=1)
+text(1885,70,"Thano age",xpd=TRUE,pos=2,srt=90)
 dev.off()
 
 # TPD 2  right angle, with life lines
@@ -46,6 +48,9 @@ points(c(1920,1930,1970,1997,1990,2045),
 		c(0,0,0,0,0,0), pch=13,cex=1.3,col="blue",lwd=2,xpd=TRUE)
 rect(1820,0,1900,100,border=NA,col="#00000020")
 rect(2000,0,2060,100,border=NA,col="#00000020")
+text(1950,-10,"Period",xpd=TRUE,pos=1)
+text(1805,70,"Thano age",xpd=TRUE,pos=2,srt=90)
+text(1925,35,"Death cohort",srt=-45,col="blue")
 dev.off()
 
 # TPD 3 equilateral
@@ -70,7 +75,9 @@ points(xb + yb * .5,
 points(xd, yd, pch=13,cex=1.3,col="blue",lwd=2)
 polygon(c(1820,1820+50,1900+50,1900),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020")
 polygon(c(2000,2000+50,2060+50,2060),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020", xpd=TRUE)
+text(1950,-10,"Period",xpd=TRUE,pos=1)
+text(1805+35,70*sqrt(3)/2,"Thano age",xpd=TRUE,pos=2,srt=60)
+text(1925+35/2,35*sqrt(3)/2,"Death cohort",srt=-60,col="blue")
 dev.off()
-
 
 

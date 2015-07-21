@@ -19,6 +19,9 @@ plot3d(x1, y1, z1,
 		xlab = "",
 		ylab = "",
 		zlab = "")
+par3d(family="sans",FOV=10)
+bg3d("white")
+par3d(mouseMode=c("trackball","none",  "zoom",  "pull" ))
 #decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 
 

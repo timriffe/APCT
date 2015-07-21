@@ -230,5 +230,5 @@ decorate3d(xlim = c(1800, 2100), ylim = c(0, 100), zlim = c(0, 100),
 # and now we have a wireframe
 # can save to WebGL, for viewing in browser.
 # just set a working directory if needed.
-writeWebGL(dir = "RGL1")
+#writeWebGL(dir = "RGL1")
 

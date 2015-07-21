@@ -22,6 +22,7 @@ plot3d(x1, y1, z1,
 par3d(family="sans",FOV=10)
 bg3d("white")
 par3d(mouseMode=c("trackball","none",  "zoom",  "pull" ))
+par3d(skipRedraw=TRUE)
 #decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 
 
@@ -149,22 +150,22 @@ rgl.linestrips(
 		color = "magenta",
 		alpha = .7)
 # label
-text3d(2030, 130, 0, text = "1900 cohort ATL", col = "black", cex = 1.1, alpha = 1) 
+text3d(2030, 130, 0, text = "1900 cohort ATL", col = "black", family="sans", cex = 1.1, alpha = 1) 
 # Add ATL semitransparent triangle for 1900 period
 # (green)
 rgl.triangles(
 		x = c(1920, 1920, 1920),
 		y = c(0, 120, 0), 
 		z = c(0, 0, 120), col = "green", alpha = .3)
-text3d(1920, 125, 0, text = "1920 period ATL", col = "black", cex = .9, alpha = 1) 
+text3d(1920, 125, 0, text = "1920 period ATL", col = "black", family="sans", cex = .9, alpha = 1) 
 
 # =========================================
 # add labelling:
 
 # period
 x <- seq(1800, 2100, by = 10)
-texts3d(x ,rep(0, length(x)), rep(0, length(x)), texts = x, col = "black", adj = c(0, 1), cex = .7, alpha = 1) 
-text3d(1950, -10, -10, text = "Year", col = "black", cex = .9, alpha = 1) 
+texts3d(x ,rep(0, length(x)), rep(0, length(x)), texts = x, col = "black", adj = c(0, 1), family="sans", cex = .7, alpha = 1) 
+text3d(1950, -10, -10, text = "Year", col = "black", family="sans", cex = .9, alpha = 1) 
 # (green) depth lines
 x1 <- x2 <- seq(2000, 2100, by = 10)
 y1 <- 0; y2 <- seq(0, 100, by = 10)
@@ -179,8 +180,8 @@ for (i in 1:11){
 
 # =========================================
 # thano age (needs no guidelines, can just follow an edge)
-text3d(1785, -5, 50, text = "thano age", col = "black", cex = 1.1, alpha = 1) 
-texts3d(1797, rep(0, 11), seq(0, 100, by = 10), texts = seq(0, 100, by = 10), col = "black", cex = .7, alpha = 1) 
+text3d(1785, -5, 50, text = "thano age", col = "black", family="sans", cex = 1.1, alpha = 1) 
+texts3d(1797, rep(0, 11), seq(0, 100, by = 10), texts = seq(0, 100, by = 10), col = "black", family="sans", cex = .7, alpha = 1) 
 
 # =========================================
 # chrono age 
@@ -195,8 +196,8 @@ for (i in 1:11){
 			color = "red",
 			alpha = 1)
 }
-texts3d(1797, seq(0, 100, by = 10), rep(0, 11), texts = seq(0, 100, by = 10), col = "black", cex = .7, alpha = 1) 
-text3d(1790, 50, 0, text = "chrono age", col = "black", cex = 1.1, alpha = 1) 
+texts3d(1797, seq(0, 100, by = 10), rep(0, 11), texts = seq(0, 100, by = 10), col = "black", family="sans", cex = .7, alpha = 1) 
+text3d(1790, 50, 0, text = "chrono age", col = "black", family="sans", cex = 1.1, alpha = 1) 
 
 # ====================================
 # add planes for start and end of observation (1900, 2000), indicating past and future
@@ -211,13 +212,14 @@ rgl.quads(
 		z = c(-10, -10, 110, 110), 
 		col = gray(.5),
 		alpha = .1 )
-text3d(1900, 117, 117, text = "start of obs. 1900", col = "black", cex = .9, alpha = 1) 
-text3d(2000, 117, 117, text = "end of obs. 2000", col = "black", cex = .9, alpha = 1) 
+text3d(1900, 117, 117, text = "start of obs. 1900", col = "black", family="sans", cex = .9, alpha = 1) 
+text3d(2000, 117, 117, text = "end of obs. 2000", col = "black", family="sans", cex = .9, alpha = 1) 
 # title
-text3d(1950, 0, 150, text = "Tim Riffe (2015) A unified model of demographic time", col = "black", cex = 1.2, alpha = 1) 
+text3d(1950, 0, 150, text = "Tim Riffe (2015) A unified model of demographic time", col = "black", family="sans", cex = 1.2, alpha = 1) 
 
 # =========================================
 # now apply proper aspect ratio to the whole thing
+par3d(skipRedraw=FALSE)
 x <- diff(par3d("bbox")[1:2])
 y <- diff(par3d("bbox")[3:4])
 z <- diff(par3d("bbox")[5:6])

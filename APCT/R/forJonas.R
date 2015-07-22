@@ -1,6 +1,20 @@
 
 # Author: TR
 ###############################################################################
+# this script uses the HMDresults object to search for common patterns to the various defined measures.
+if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
+	# if I'm on the laptop
+	setwd("/home/tim/git/APCT/APCT")
+} else {
+	if (system("hostname",intern=TRUE) == "PC-403478"){
+		# on MPIDR PC
+		setwd("U://git//APCT//APCT")
+	} else {
+		# in that case I'm on Berkeley system, and other people in the dept can run this too
+		setwd(paste0("/data/commons/",system("whoami",intern=TRUE),"/git/APCT/APCT"))
+	}
+}
+getwd()
 
 # load the loess model, which was fit with the following call:
 # i.e., 5-year cohorts by remaining years by chrono age
@@ -13,7 +27,7 @@
 #		control = loess.control(trace.hat="approximate")
 #)
 #
-mod <- local(get(load("gross_mot.Rdata")))
+mod <- local(get(load("Data/gross_mot.Rdata")))
 
 print(object.size(mod), units="Mb")
 
@@ -39,7 +53,7 @@ newdata        <- expand.grid(ta = t.age+.5, ca = c.age+.5, Coh5 = Coh5)
 # Surf is actually an array
 Surf           <- predict(mod, newdata)
 
-dimnames(Surf) <- list(floor(t.age),floor(c.age), .Coh5)
+dimnames(Surf) <- list(floor(t.age),floor(c.age), Coh5)
 
 # HRS wave endpoints
 LeftYear  <- 1992
@@ -51,13 +65,24 @@ for (i in 1:dim(Surf)[3]){
 	#maxt  <- tamax[as.character(Coh5[i])]
 	#keept <- as.integer(rownames(Surf)) <= maxt
 	A     <- Surf[,,i]
-	MaxL <- RightYear - .Coh5[i] - 1
+	MaxL <- RightYear - Coh5[i] - 1
 	A[ col(A) - 1 + 70 + row(A) - 1 > MaxL] <- NA
 # possibly need to trim lower left corner too: dimnames(A)
-	MinL <- LeftYear - (.Coh5[i] + 5)
+	MinL <- LeftYear - (Coh5[i] + 5)
 	A[col(A) + 70 - 1 < MinL] <- NA
 	#A[!keept, ] <- NA 
 	Surf[,,i] <- A
 }
 
+Surf[Surf<0] <- 0
+matplot(Surf[,,2], type = 'l',col=gray(.5))
+image(Surf[,,5])
+range(Surf,na.rm=TRUE)
+
+par(mfrow=c(1,5))
+for (i in 1:5){
+	image(as.integer(colnames(Surf)),
+			as.integer(rownames(Surf)),
+			t(Surf[,,i]),zlim=range(Surf,na.rm=TRUE))
+}
 

@@ -1,53 +1,147 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass[onehalfspacing]{article}
-\usepackage{authblk}
-\usepackage{setspace}
-\usepackage{titling}
-\usepackage{graphicx}
-\usepackage{natbib}
+%\documentclass[12pt,oneside,a4paper,doublespacing]{article} % for submission
+\documentclass[11pt,oneside]{article} % for sharing
+
+
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{caption}
 \usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{setspace}
+%\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{xcolor,colortbl}
+\usepackage{chngpage}
+%\usepackage[active,tightpage]{preview}
+\usepackage{natbib}
 \bibpunct{(}{)}{,}{a}{}{;} 
-\newcommand{\subtitle}[1]{%
-  \posttitle{%
-    \par\end{center}
-    \begin{center}\large#1\end{center}
-    \vskip0.5em}%
+\usepackage{url}
+\usepackage{nth}
+\usepackage{authblk}
+%\usepackage{pdfsync}
+
+\renewcommand{\listtablename}{List of Appendix Tables}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% working on this need to concatenate file name based on sex and variable name
+%\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
+
+\newcommand\ackn[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
 }
+
+\defcitealias{HMD}{HMD}
+
 
 \begin{document}
 
-\author{Tim Riffe \\ University of California, Berkeley}
-
 \title{A unified model of demographic time}
-\subtitle{Paper proposal for the
-``Changing patterns of mortality and morbidity: age-, time-, cause- and
-cohort-perspectives'' workshop to be held in Prague, 16-18 September, 2015.}
+
+\author[1]{Tim Riffe\thanks{triffe@demog.berkeley.edu}}
+\author[2]{Jonas Sch{\"o}ley}
+\author[2]{Francisco Villavicencio}
+\affil[1]{Max Planck Institute for Demographic Research}
+\affil[2]{University of Southern Denmark}
+
+%\author{[Authors]}
+
 
 \maketitle
 
-The Lexis diagram relates the age (chronological age), period, and birth cohort
-(APC) dimensions of demographic time, but it does not account for remaining years of
-life (thanatological age), and its related time indices. The thanatological
-counterpart to APC is an identity between thanatological age,
-period, and death cohort (TPD). Other identities also exist. For instance,
-within a birth cohort (C), chronological age (A), thanatological age (T),
-ultimate completed lifespan (L), period (P), and
-death cohort (D) are other temporal indices that together redundantly define the
-coordinates of a plane (the ATL plane, where P and D are determined by setting
-the birth cohort).
-The relationship between any two or three of these temporal indices are
-intuitive, but the simultaneous relationship between all six indices is likely
-confusing.
-These six dimensions have to my knowledge never been considered jointly. The only subset thereof that has received serious treatment is the APC
-framework. Many valid temporal relationships have been neglected outright.
+\begin{abstract}
+We describe a three-dimensional model that relates six different aspects of
+lifespans and time. The six aspects of demographic time considered are
+chronological age, thanatological age, lifespan, year of birth, year of death,
+and period. Two versions of the model are described: a relatively intuitive
+extension of the right-angled Lexis diagram, and an isotropic extension based on
+the regular tetrahedron. \ackn{The work reported in this manuscript was begun by
+the first author while at the Department of Demography at the University of
+California, Berkeley, and was supported by the U.S.
+National Institute On Aging of the National Institutes of Health under award
+numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
 
-In this paper I first state the relationships between all six dimensions of
+\end{abstract}
+
+
+The so-called Lexis diagram relates the chronological age (A), period (P), and
+birth cohort (C) indices of demographic time, APC, but it does not account
+for remaining years of life (thanatological age), and other related time
+indices.
+The thanatological counterpart to APC is an identity between thanatological age (T), period (P), and death cohort (D), TPD. A third identity exists between
+chronological age (A), thanatological age (T), and lifespan (L), ATL, and a
+fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
+Each of these four tripartite identities may be sufficiently described by any
+two of its consituent indices, making the third index redundant. Each of these
+four identities also lacks a major dimension of time. The ATL identity lacks
+calendar time, the CDL identity is ageless, APC lacks years left, and TPD lacks years lived. 
+
+To my knowledge, the only tripartite identity that has received serious
+treatment at this point in time is the APC identity. Different aspects of the
+APC identity have been discussed since at least 1868
+\citep{knapp1868ermittlung}, and discussion remains lively at the time of this
+writing. Here it is our objective to relate the six major indices of time to a
+geometric identity, in much the same spirit as the work on APC done
+between the late 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age}
+for an overview of that literature.} 
+
+Each of the four tripartite identities may be thought of as a
+two-dimensional plane fully defined by any two of its three constituent time
+indices.
+In this case, we may imagine the third ``lacking'' dimension as spatial for the sake of conceptualization.
+Having a third dimension implies a multitude of parallel planes for the given identity, each plane
+belonging to a unique value of the third time dimension. Any of the
+identities can be extended in this way to fill a space. A space derived by
+extending any of the tripartite identies into its lacking dimension implies each of the
+other tripartite identities, making a total of six time indices. In essence, the
+four tripartite identities may be thought of as parallel to the four faces of a
+tetrahedron. In this case, the four ``lacking'' dimensions may be assigned to
+the four vertices of the tetrahedron, and the six demographic time indices match
+to the six edges of the tetrahedron. It is this three-dimensional construct that
+unifies the six indices of demographic time, and which I decribe in this
+paper.
+
+we have mentioned six different aspects of demographic time. Other combinations
+of three of these are possible, but they automatically imply the above-mentioned
+three-dimensionalization. In imagining this three-dimensional relationship,
+it may help to first consider its extension. Some indices are limited
+by our maximum length of life, $\omega$, while others are boundless. A, T, and L are clearly in the range $[0,\omega]$. P, C, and D are bounded only by the inception and extinction of our species, but may be
+thought of as boundless for practicality, or by our earliest and most recent
+observations for even more practicality. As an abstraction, however, the
+dimension of calendar time in this model is infinite. Of the four identities,
+only one lacks an unbounded dimension, the ATL. Adding the absent dimension to
+ATL therefore makes it boundless. In this way, we may imagine a prism-like
+construct, where A, T, and L, compose the faces of a triangular
+cross-section of said prism, which extends infinitely ``through'' the triangle.
+We can think of the ATL triangle passing through time, extending the population
+forward to infinity. In this case, the ATL triangle may take either the period
+or cohort perspectives, and this will be explained later. 
+
+There are also
+numerous ways that this three dimensional construct can be proportioned, of
+which I present two in this paper. The first stems from the respect given to right angles in the most
+common representation of the Lexis diagram. For this reason, it will likely be
+the most intuitive rendition of the model, and it will be presented first. The
+second version presented is isotropic with respect to time units in each of the
+six temporal indices. In this case, the four tripartite identities are based on
+equilateral triangles between their three constituent indices, and the four
+planes are joined together such that each is parallel to a face from the regular
+tetrahedron, a construct known in geometry as an octahedral-tetrahedral
+honeycomb.
+
+In this paper we first state the relationships between all six dimensions of
 demographic time. The APC, TDL, and ATL planes are introduced as degenerate
 cases of the unified model. The case of the ATLC cross-sectional plane is
 introduced, followed by the full three-dimensional unified model, the APCTDL
 model.
-Finally, I demonstrate the use of this coordinate system for the case of
+Finally, we demonstrate the use of this coordinate system for the case of
 end-of-life trajectories of some characteristics of morbidity. I explain the
 utility of this model by demonstrating a case where heterogeneity with respect
 to unaccounted-for time dimensions has caused serious misunderstandings in the

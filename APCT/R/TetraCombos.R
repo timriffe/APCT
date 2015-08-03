@@ -1,8 +1,20 @@
 
 ###############################################################################
-
 # what are the combis of the 6 perspectives that give 3d?
 
+if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
+	# if I'm on the laptop
+	setwd("/home/tim/git/APCT/APCT")
+} else {
+	if (system("hostname",intern=TRUE) == "PC-403478"){
+		# on MPIDR PC
+		setwd("U://git//APCT//APCT")
+	} else {
+		# in that case I'm on Berkeley system, and other people in the dept can run this too
+		setwd(paste0("/data/commons/",system("whoami",intern=TRUE),"/git/APCT/APCT"))
+	}
+}
+getwd()
 persps <- c("A","P","C","T","D","L")
 COMBS <- combn(persps,3)
 COMBS[,1]
@@ -31,18 +43,24 @@ COMBS <- COMBS[,colSums(is.na(COMBS))==0]
 
 as.data.frame(t(COMBS))
 
+library(plotrix)
 
-pdf("")
+pdf("Figures/TetraHedronVerticesEdges.pdf")
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2))
-segments(0,0,.5,sqrt(3)/6)
-segments(1,0,.5,sqrt(3)/6)
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6)
-text(.5,0,"P",col = "blue",cex=2)
-text(.75,sqrt(3)/4,"A",col = "blue",cex=2)
-text(.25,sqrt(3)/4,"C",col = "blue",cex=2)
-text(.75,sqrt(3)/12,"T",col = "blue",cex=2)
-text(.25,sqrt(3)/12,"D",col = "blue",cex=2)
-text(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2)
+polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)
+boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)
+boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)
+boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)
+boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)
+boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)
+text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)
+text(1,0,"2",col = "red",cex=2,font=2,pos=4)
+text(0,0,"3",col = "red",cex=2,font=2,pos=2)
+boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)
+dev.off()
 
 

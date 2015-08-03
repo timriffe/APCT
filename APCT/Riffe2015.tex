@@ -84,7 +84,7 @@ indices.
 The thanatological counterpart to APC is an identity between thanatological age (T), period (P), and death cohort (D), TPD. A third identity exists between
 chronological age (A), thanatological age (T), and lifespan (L), ATL, and a
 fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
-Each of these four tripartite identities may be sufficiently described by any
+Each of these four triad identities may be sufficiently described by any
 two of its consituent indices, making the third index redundant. Each of these
 four identities also lacks a major dimension of time. The ATL identity lacks
 calendar time, the CDL identity is ageless, APC lacks years left, and TPD lacks years lived. 
@@ -93,11 +93,11 @@ To our knowledge, the only tripartite identity that has received serious
 treatment at the time of this writing is the APC identity. Different aspects of
 the APC identity have been discussed since at least 1868
 \citep{knapp1868ermittlung}, and discussion remains lively today. Here it is our
-objective to relate the six major indices of time to a geometric identity, in much the same spirit as the work on APC done
-between the late 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age}
+objective to relate the six major indices of time in a geometric identity, in
+much the same spirit as the work on APC done between the late 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age}
 for an overview of that literature.} 
 
-Each of the four tripartite identities may be thought of as a
+Each of the four above-mentioned triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
 indices.
 In this case, we may imagine the third ``lacking'' dimension as providing
@@ -105,9 +105,9 @@ depth, for the sake of a mental image.
 Having a third dimension implies a multitude of parallel planes for the given identity, each plane
 belonging to a unique value of the third time dimension. Any of the
 identities can be extended in this way to fill a space. A space derived by
-extending any of the tripartite identies into its lacking dimension implies each of the
-other tripartite identities, making a total of six time indices. In essence, the
-four tripartite identities may be thought of as parallel to the four faces of a
+extending any of the triad identies into its lacking dimension implies each of the
+other triad identities, making a total of six time indices. In essence, the
+four triad identities may be thought of as parallel to the four faces of a
 tetrahedron. In this case, the four ``lacking'' dimensions may be assigned to
 the four vertices of the tetrahedron, and the six demographic time indices match
 to the six edges of the tetrahedron. This three-dimensional construct
@@ -116,23 +116,23 @@ unifies the six indices of demographic time, and is the subject of this paper.
 Let us first more rigorously define the previously-mentioned tetrahedron.
 Luckily, the edges and vertices of a tetrahedron are easily rendered in a
 two-dimensional graph, as seen in Figure~\ref{fig:tet}, with vertices labeled
-in red and the six time indices labeled as blue edges.
-The reader may also imagine this graph as a transparent 3d object, in which case the four faces
-become aparent. There are two intuitive ways to imagine the graph as 3d, either
-the vertex \vt{4} is on top, and we gaze from a bird's-eye-view, or the
+in red and the six time indices labeled as blue edges.\footnote{The same graph
+could be composed in four basic ways, depending on which vertex is in the
+middle. These are given in an appendix.} The reader may also imagine this graph
+as a transparent 3d object, in which case the four faces become aparent. There are two intuitive ways to imagine the graph as 3d, either the vertex \vt{4} is on top, and we gaze from a bird's-eye-view, or the
 vertex \vt{4} is in the back, behind the other three vertices. Assume we
 gaze from the top, for the sake of a consistent description. 
 
 The edges \eg{APC} at the base define the much-studied APC plane. If the only
-information we have is chronological age, period, and cohort (or just two of
-these), then we have no access to the vertex \eg{4}. Each of the faces of the
+information we have is chronological age, period, and birth cohort (or just two
+of these), then we have no access to the vertex \vt{4}. Each of the faces of the
 tetrahedron have this quality. The South face \eg{TDP} has no access to \vt{1}.
 The Northeast face, \eg{ATL} has no connection to \vt{3}, and the Northwest face
-\eg{CDL} lacks a connection to \vt{2}. There are twenty ways to choose three
-time indices from our total of six, and the four faces of the tetrahedron are
-the only four of these that will not yield the full 3d space and imply the other
-three. The sixteen other combinations of three indices will recreate the full
-tetradhedron.
+\eg{CDL} lacks a connection to \vt{2}. The triads that make up the faces of
+the tetrahedron are stuck in ``flatland''. However, there are twenty ways to
+choose three time indices from our total of six, and the four above-name triads
+are the only four of these that will not yield the full 3d space and imply the other three. The sixteen other combinations of three indices will recreate the full
+tetradhedron (hexad identity).
 
 \begin{figure}[h!]
 \centering
@@ -142,48 +142,83 @@ indices.}
 \includegraphics[scale=1]{Figures/TetraHedronVerticesEdges.pdf}
 \end{figure}
 
-For example, say we are sitting at vertex \vt{1}, and we therefore have
+For example, say we are at vertex \vt{1}, and we therefore have
 information on year of birth \eg{C}, completed lifespan \eg{L}, and
-chronological age \eg{A}. Clearly, \eg{A} and \eg{C} imply \eg{P}. \eg{A} and
-\eg{L} imply \eg{T}. Finally, \eg{C} and \eg{L} imply \eg{D}, and we have the
-full complement of indices. Each vertex has this property, as is easily seen or
-verified. However, there are twelve other sets of three that also have this
-property. A simple algorithm to produce a listing of these goes as follows:
+chronological age \eg{A}. Clearly, \eg{A} and \eg{C} imply \eg{P} ($C+A=P$).
+\eg{A} and \eg{L} imply \eg{T} ($L-A=T$). Finally, \eg{C} and \eg{L} imply
+\eg{D} ($C+L=D$), and we have the full hexad
+identity. Each vertex has this property, as is easily verified. However,
+there are twelve other sets of three that also have this property. A simple algorithm to produce a listing of these sets of three (with
+redundancy) goes as follows:
 \begin{enumerate}
   \item Start at a vertex, \vt{$V^i$}
   \item Select two of the three edges that touch \vt{$V^i$}.
   \item The third ``eliminated'' edge, \eg{$E^-$}, links to some other vertex,
   \vt{$V^-$}.
   \item Two other edges also join to \vt{$V^-$}.
-  \item Select the one that is clockwise adjacent to \eg{$E^-$}.
-  \item This complete the trio, and defines the full space.
+  \item Either of these vertices will complete the trio in place of \eg{$E^-$}.
   \item Repeat from (1) by eliminating in turn each of the other two edges
   touching \vt{$V^i$}.
-  \item Repeat for each of the other vertices.
+  \item Repeat for each of the other four vertices.
 \end{enumerate}
 This algorithm will produce an exhaustive set of all combinations of three
-indices that imply the full 3d space. If we follow the vertices in order
-numbered in Figure~\ref{fig:tet}, and eliminate edges alphabetically, we get the
-following set of twelve ``less-obvious'' fully-informed triple indices:
+indices that imply the full 3d space, but it will produce each ``hidden'' set
+twice, for 24 total. A complete and non-redundant set of such triads, including the original
+indices, is given in Table~\ref{tab:set3}. Using intuitive logic, it can be
+verified that each of these triads implies the full hexad identity.
 
+\begin{table}[h]
+\centering
+\caption{All sets of three indices that imply the full six indices.}
+\label{tab:set3}
+\begin{tabular}{llll}
+\hline
+\eg{ACD} & \eg{ACL} & \eg{ACT} & \eg{ADL}\\
+\eg{ADP} & \eg{ADT} & \eg{ALP} & \eg{APT}\\
+\eg{CDP} & \eg{CDT} & \eg{CLP} & \eg{CLT}\\
+\eg{CPT} & \eg{DLP} & \eg{DLT} & \eg{LPT}
+\end{tabular}
+\end{table}
 
+This relationship is comparable to the reducibility characteristic of triad
+identities. For the APC identity, the list of dyads that give full
+information is easier to derive: \eg{AC}, \eg{AP}, \eg{PC}. The triads in
+Table~\ref{tab:set3} give analogous information for the APCTDL identity.
+It may be further stated that no dyad of indices can give the hexad identity,
+and any quad (or greater) of indices will yield the hexad identity. Further,
+each index can be said to have an opposite index, with which it shares no
+information, and which is therefore maximally complimentary. These pairs are
+\eg{A-D}, \eg{L-P}, and \eg{C-T}.
 
-
-We have mentioned six different aspects of demographic time. Other combinations
-of three of these are possible, but they automatically imply the above-mentioned
-three-dimensionalization. In imagining this three-dimensional relationship,
-it may help to first consider its extension. Some indices are limited
-by our maximum length of life, $\omega$, while others are boundless. A, T, and L are clearly in the range $[0,\omega]$. P, C, and D are bounded only by the inception and extinction of our species, but may be
-thought of as boundless for practicality, or by our earliest and most recent
-observations for even more practicality. As an abstraction, however, the
-dimension of calendar time in this model is infinite. Of the four identities,
-only one lacks an unbounded dimension, the ATL. Adding the absent dimension to
-ATL therefore makes it boundless. In this way, we may imagine a prism-like
-construct, where A, T, and L, compose the faces of a triangular
-cross-section of said prism, which extends infinitely ``through'' the triangle.
-We can think of the ATL triangle passing through time, extending the population
-forward to infinity. In this case, the ATL triangle may take either the period
-or cohort perspectives, and this will be explained later. 
+We have said that the four triad identities are parallel to the faces of the the
+above-described tetrahedron. In imagining this three-dimensional
+relationship, we are no longer confined to the extent of the tetrahedron, but
+instead each of its edges extends a certain distance in either direction.
+It may therefore help to first consider the extension of each axis (or index).
+Some indices have a lower bound of zero and an upper bound set by the maximum
+length of life, $\omega$, while others are boundless. \eg{A}, \eg{T}, and \eg{L}
+are clearly in the range $[0,\omega]$.\footnote{It's best to imagine some number like 122.45 years, for $\omega$, rather than infinity. This is the longevity record at the time of this writing. Jeanne L. Calment would have had
+$T=122.45$ at birth, $A = 122.45$ at death, and $L=122.45$ for her entire life.}
+\eg{P}, \eg{C}, and \eg{D} are bounded only by the inception and extinction of
+our species, but may be thought of as boundless for practicality, or benchmarked
+to our earliest and most recent observations for even more
+practicality.\footnote{We explain the choice of the word ``benchmarked''. Say
+we have a data series that runs from 1751 to 2011, and an upper age
+interval of $110+$. Then we could say that \eg{P} is in the range $[1751,2011]$,
+but by another reading, \eg{P} must range from at least as early as the earliest
+\eg{C} and until at least as late as the latest \eg{D}. Someone dying at 110 in 1751
+had a \eg{C} of 1640, and an infant born in 2011 that is destined to live to 110
+will die in 2121. In this case a \eg{P} that \textit{contains} the observed
+population will extend well before and after the observed data series, even
+moreso if we take into account that $\omega > 110$.} As an abstraction,
+however, the dimension of calendar time in this model is infinite. Of the four
+triad identities, only one lacks an unbounded dimension, the \eg{ATL}. Adding
+the absent dimension to \eg{ATL} therefore makes it boundless. In this way, we
+may imagine a prism-like construct, where \eg{A}, \eg{T}, and \eg{L}, compose
+the faces of a triangular cross-section of said prism, which extends infinitely ``through'' the triangle.
+We can think of the \eg{ATL} triangle passing through time, extending the population
+forward to infinity. In this case, the \eg{ATL} triangle may take either the period
+or cohort perspective, and this will be explained later. 
 
 There are also
 numerous ways that this three dimensional construct can be proportioned, of
@@ -322,7 +357,54 @@ parallelograms are all congruent shapes known as regular trigonal trapezohedra
 (RTT). The orientation
 of a given RTT uniquely defines the Lexis shape in question. Similar constructs
 exist in the other time dimensions, and these will also be described. 
+\FloatBarrier
 
+\begin{appendices}
+\section{Variants of tetrahedron graph}
+The graph depicted in Figure~\ref{fig:tet} could be drawn with any of the
+four vertices in the middle of the triangle (as well as other inversions
+and rotations).
+These would all serve equally well to present the same aspects of the model, and
+we have no insight as to whether one of these renditions is more or less
+intuitive. Figure~\ref{fig:app:tet} provides for perspectives on the
+tetrahedron, for the case that this aids in understanding. The reader may make a
+paper tetrahedron, with labeled edges and vertices to be convinced that
+these are identical graphs.
+\begin{figure*}
+        \centering
+        \caption{Some variants of the graph of the APCTDL tetrahedron.} 
+         \label{fig:app:tet}
+        \begin{subfigure}[b]{0.475\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Figures/Tetra1.pdf}
+           \caption{\small Vertex \vt{1} in middle. \eg{APC} Northwest.}
+            \label{fig:tet1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.475\textwidth}  
+            \centering 
+            \includegraphics[width=\textwidth]{Figures/Tetra2.pdf}
+           \caption{\small Vertex \vt{2} in middle. \eg{APC} Northeast.}
+            \label{fig:tet2}
+        \end{subfigure}
+        \vskip\baselineskip
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Figures/Tetra3.pdf}
+           \caption{\small Vertex \vt{3} in middle. \eg{APC} Northwest.}
+            \label{fig:tet3}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{0.475\textwidth}   
+            \centering 
+            \includegraphics[width=\textwidth]{Figures/Tetra4.pdf}
+            \caption{\small Vertex \vt{4} in middle, as in
+            Figure~\ref{fig:tet}. \eg{APC} base.}
+            \label{fig:tet2}
+        \end{subfigure}
+    \end{figure*}
+\end{appendices}
+\FloatBarrier
 
 \bibliographystyle{plainnat}
   \bibliography{references} 

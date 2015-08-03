@@ -45,7 +45,8 @@ as.data.frame(t(COMBS))
 
 library(plotrix)
 
-pdf("Figures/TetraHedronVerticesEdges.pdf")
+pdf("Figures/TetraHedronVerticesEdges.pdf", height=4,width=5.5)
+par(mai=c(.3,.3,.3,.3))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
 polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
 segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))

@@ -22,6 +22,7 @@
 \usepackage{url}
 \usepackage{nth}
 \usepackage{authblk}
+\usepackage{color}
 %\usepackage{pdfsync}
 
 \renewcommand{\listtablename}{List of Appendix Tables}
@@ -37,7 +38,12 @@
   \addtocounter{footnote}{-1}%
   \endgroup
 }
-
+\newcommand\vt[1]{%
+ \textcolor{red}{\textbf{#1}\hspace{-.3em}}
+}
+\newcommand\eg[1]{%
+ \textcolor{blue}{\textbf{#1}\hspace{-.3em}}
+}
 \defcitealias{HMD}{HMD}
 
 
@@ -83,19 +89,19 @@ two of its consituent indices, making the third index redundant. Each of these
 four identities also lacks a major dimension of time. The ATL identity lacks
 calendar time, the CDL identity is ageless, APC lacks years left, and TPD lacks years lived. 
 
-To my knowledge, the only tripartite identity that has received serious
-treatment at this point in time is the APC identity. Different aspects of the
-APC identity have been discussed since at least 1868
-\citep{knapp1868ermittlung}, and discussion remains lively at the time of this
-writing. Here it is our objective to relate the six major indices of time to a
-geometric identity, in much the same spirit as the work on APC done
+To our knowledge, the only tripartite identity that has received serious
+treatment at the time of this writing is the APC identity. Different aspects of
+the APC identity have been discussed since at least 1868
+\citep{knapp1868ermittlung}, and discussion remains lively today. Here it is our
+objective to relate the six major indices of time to a geometric identity, in much the same spirit as the work on APC done
 between the late 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age}
 for an overview of that literature.} 
 
 Each of the four tripartite identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
 indices.
-In this case, we may imagine the third ``lacking'' dimension as spatial for the sake of conceptualization.
+In this case, we may imagine the third ``lacking'' dimension as providing
+depth, for the sake of a mental image.
 Having a third dimension implies a multitude of parallel planes for the given identity, each plane
 belonging to a unique value of the third time dimension. Any of the
 identities can be extended in this way to fill a space. A space derived by
@@ -104,11 +110,66 @@ other tripartite identities, making a total of six time indices. In essence, the
 four tripartite identities may be thought of as parallel to the four faces of a
 tetrahedron. In this case, the four ``lacking'' dimensions may be assigned to
 the four vertices of the tetrahedron, and the six demographic time indices match
-to the six edges of the tetrahedron. It is this three-dimensional construct that
-unifies the six indices of demographic time, and which I decribe in this
-paper.
+to the six edges of the tetrahedron. This three-dimensional construct
+unifies the six indices of demographic time, and is the subject of this paper.
 
-we have mentioned six different aspects of demographic time. Other combinations
+Let us first more rigorously define the previously-mentioned tetrahedron.
+Luckily, the edges and vertices of a tetrahedron are easily rendered in a
+two-dimensional graph, as seen in Figure~\ref{fig:tet}, with vertices labeled
+in red and the six time indices labeled as blue edges.
+The reader may also imagine this graph as a transparent 3d object, in which case the four faces
+become aparent. There are two intuitive ways to imagine the graph as 3d, either
+the vertex \vt{4} is on top, and we gaze from a bird's-eye-view, or the
+vertex \vt{4} is in the back, behind the other three vertices. Assume we
+gaze from the top, for the sake of a consistent description. 
+
+The edges \eg{APC} at the base define the much-studied APC plane. If the only
+information we have is chronological age, period, and cohort (or just two of
+these), then we have no access to the vertex \eg{4}. Each of the faces of the
+tetrahedron have this quality. The South face \eg{TDP} has no access to \vt{1}.
+The Northeast face, \eg{ATL} has no connection to \vt{3}, and the Northwest face
+\eg{CDL} lacks a connection to \vt{2}. There are twenty ways to choose three
+time indices from our total of six, and the four faces of the tetrahedron are
+the only four of these that will not yield the full 3d space and imply the other
+three. The sixteen other combinations of three indices will recreate the full
+tetradhedron.
+
+\begin{figure}[h!]
+\centering
+\caption{Graph of tetrahedron, with edges labeled by the six demographic time
+indices.}
+\label{fig:tet}
+\includegraphics[scale=1]{Figures/TetraHedronVerticesEdges.pdf}
+\end{figure}
+
+For example, say we are sitting at vertex \vt{1}, and we therefore have
+information on year of birth \eg{C}, completed lifespan \eg{L}, and
+chronological age \eg{A}. Clearly, \eg{A} and \eg{C} imply \eg{P}. \eg{A} and
+\eg{L} imply \eg{T}. Finally, \eg{C} and \eg{L} imply \eg{D}, and we have the
+full complement of indices. Each vertex has this property, as is easily seen or
+verified. However, there are twelve other sets of three that also have this
+property. A simple algorithm to produce a listing of these goes as follows:
+\begin{enumerate}
+  \item Start at a vertex, \vt{$V^i$}
+  \item Select two of the three edges that touch \vt{$V^i$}.
+  \item The third ``eliminated'' edge, \eg{$E^-$}, links to some other vertex,
+  \vt{$V^-$}.
+  \item Two other edges also join to \vt{$V^-$}.
+  \item Select the one that is clockwise adjacent to \eg{$E^-$}.
+  \item This complete the trio, and defines the full space.
+  \item Repeat from (1) by eliminating in turn each of the other two edges
+  touching \vt{$V^i$}.
+  \item Repeat for each of the other vertices.
+\end{enumerate}
+This algorithm will produce an exhaustive set of all combinations of three
+indices that imply the full 3d space. If we follow the vertices in order
+numbered in Figure~\ref{fig:tet}, and eliminate edges alphabetically, we get the
+following set of twelve ``less-obvious'' fully-informed triple indices:
+
+
+
+
+We have mentioned six different aspects of demographic time. Other combinations
 of three of these are possible, but they automatically imply the above-mentioned
 three-dimensionalization. In imagining this three-dimensional relationship,
 it may help to first consider its extension. Some indices are limited

@@ -126,7 +126,7 @@ gaze from the top, for the sake of a consistent description.
 The edges \eg{APC} at the base define the much-studied APC plane. If the only
 information we have is chronological age, period, and birth cohort (or just two
 of these), then we have no access to the vertex \vt{4}. Each of the faces of the
-tetrahedron have this quality. The South face \eg{TDP} has no access to \vt{1}.
+tetrahedron has this quality. The South face \eg{TDP} has no access to \vt{1}.
 The Northeast face, \eg{ATL} has no connection to \vt{3}, and the Northwest face
 \eg{CDL} lacks a connection to \vt{2}. The triads that make up the faces of
 the tetrahedron are stuck in ``flatland''. However, there are twenty ways to
@@ -148,24 +148,18 @@ chronological age \eg{A}. Clearly, \eg{A} and \eg{C} imply \eg{P} ($C+A=P$).
 \eg{A} and \eg{L} imply \eg{T} ($L-A=T$). Finally, \eg{C} and \eg{L} imply
 \eg{D} ($C+L=D$), and we have the full hexad
 identity. Each vertex has this property, as is easily verified. However,
-there are twelve other sets of three that also have this property. A simple algorithm to produce a listing of these sets of three (with
-redundancy) goes as follows:
-\begin{enumerate}
-  \item Start at a vertex, \vt{$V^i$}
-  \item Select two of the three edges that touch \vt{$V^i$}.
-  \item The third ``eliminated'' edge, \eg{$E^-$}, links to some other vertex,
-  \vt{$V^-$}.
-  \item Two other edges also join to \vt{$V^-$}.
-  \item Either of these vertices will complete the trio in place of \eg{$E^-$}.
-  \item Repeat from (1) by eliminating in turn each of the other two edges
-  touching \vt{$V^i$}.
-  \item Repeat for each of the other four vertices.
-\end{enumerate}
-This algorithm will produce an exhaustive set of all combinations of three
-indices that imply the full 3d space, but it will produce each ``hidden'' set
-twice, for 24 total. A complete and non-redundant set of such triads, including the original
-indices, is given in Table~\ref{tab:set3}. Using intuitive logic, it can be
-verified that each of these triads implies the full hexad identity.
+there are twelve other sets of three that also have this property. To locate
+these ``hidden'' triads, note that each index can be said to have an opposite
+index, with which it shares no information. These pairs are
+\eg{A-D}, \eg{L-P}, and \eg{C-T}, and can be found in Figure~\ref{fig:tet} as
+the three sets of perpendicular edges. Each of these pairs can be completed into
+a `fully-informed'' triad by the addition of any of the other four indices
+(thereby connecting the edges). Doing so for each of the opposite pairs will
+yield the remaining twelve hidden complete triads.
+
+Table~\ref{tab:set3} gives the full set of sixteen index-triads that are
+fully-informed. It can be verified that each of these
+triads implies the full hexad identity.
 
 \begin{table}[h]
 \centering
@@ -185,10 +179,7 @@ identities. For the APC identity, the list of dyads that give full
 information is easier to derive: \eg{AC}, \eg{AP}, \eg{PC}. The triads in
 Table~\ref{tab:set3} give analogous information for the APCTDL identity.
 It may be further stated that no dyad of indices can give the hexad identity,
-and any quad (or greater) of indices will yield the hexad identity. Further,
-each index can be said to have an opposite index, with which it shares no
-information, and which is therefore maximally complimentary. These pairs are
-\eg{A-D}, \eg{L-P}, and \eg{C-T}.
+and any quad (or greater) of indices will yield the hexad identity. 
 
 We have said that the four triad identities are parallel to the faces of the the
 above-described tetrahedron. In imagining this three-dimensional

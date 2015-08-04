@@ -22,7 +22,8 @@
 \usepackage{url}
 \usepackage{nth}
 \usepackage{authblk}
-\usepackage{color}
+%\usepackage{color}
+%\usepackage{fontspec}
 %\usepackage{pdfsync}
 
 \renewcommand{\listtablename}{List of Appendix Tables}
@@ -32,18 +33,28 @@
 % working on this need to concatenate file name based on sex and variable name
 %\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% setting color to letters affects spacing. Here's a hack I found here:
+% http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
+%\DeclareRobustCommand{\spacedallcaps}[1]{\MakeUppercase{\textsc{#1}}} % all
+% caps with better spacing
+
+%\colorlet{RED}{red}
+%\colorlet{BLUE}{b}
+\colorlet{rd}{red}
+\colorlet{bl}{blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \newcommand\ackn[1]{%
   \begingroup
   \renewcommand\thefootnote{}\footnote{#1}%
   \addtocounter{footnote}{-1}%
   \endgroup
 }
-\newcommand\vt[1]{%
- \textcolor{red}{\textbf{#1}\hspace{-.3em}}
-}
-\newcommand\eg[1]{%
- \textcolor{blue}{\textbf{#1}\hspace{-.3em}}
-}
+\newcommand\vt[1]{\textcolor{rd}{#1}}
+\newcommand\eg[1]{\textcolor{bl}{#1}}
 \defcitealias{HMD}{HMD}
 
 
@@ -77,17 +88,18 @@ numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility 
 \end{abstract}
 
 
-The so-called Lexis diagram relates the chronological age (A), period (P), and
-birth cohort (C) indices of demographic time, APC, but it does not account
+The so-called Lexis diagram relates the chronological age (\eg{A}), period (\eg{P}),
+and birth cohort (\eg{C}) indices of demographic time, APC, but it does not account
 for remaining years of life (thanatological age), and other related time
 indices.
-The thanatological counterpart to APC is an identity between thanatological age (T), period (P), and death cohort (D), TPD. A third identity exists between
-chronological age (A), thanatological age (T), and lifespan (L), ATL, and a
-fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
+The thanatological counterpart to APC is an identity between thanatological age (\eg{T}), period (\eg{P}), and death cohort (\eg{D}), TPD. A third identity exists between
+chronological age (\eg{A}), thanatological age (\eg{T}), and lifespan (\eg{L}), ATL, and a
+fourth between year of birth (\eg{C}), year of death (\eg{D}) and lifespan (\eg{L}), CDL.
 Each of these four triad identities may be sufficiently described by any
 two of its consituent indices, making the third index redundant. Each of these
 four identities also lacks a major dimension of time. The ATL identity lacks
-calendar time, the CDL identity is ageless, APC lacks years left, and TPD lacks years lived. 
+calendar time, the CDL identity is ageless, APC lacks an endpoint in time, and
+TPD lacks a starting point in time.
 
 To our knowledge, the only tripartite identity that has received serious
 treatment at the time of this writing is the APC identity. Different aspects of
@@ -157,10 +169,6 @@ a `fully-informed'' triad by the addition of any of the other four indices
 (thereby connecting the edges). Doing so for each of the opposite pairs will
 yield the remaining twelve hidden complete triads.
 
-Table~\ref{tab:set3} gives the full set of sixteen index-triads that are
-fully-informed. It can be verified that each of these
-triads implies the full hexad identity.
-
 \begin{table}[h]
 \centering
 \caption{All sets of three indices that imply the full six indices.}
@@ -174,12 +182,16 @@ triads implies the full hexad identity.
 \end{tabular}
 \end{table}
 
-This relationship is comparable to the reducibility characteristic of triad
-identities. For the APC identity, the list of dyads that give full
-information is easier to derive: \eg{AC}, \eg{AP}, \eg{PC}. The triads in
-Table~\ref{tab:set3} give analogous information for the APCTDL identity.
+Table~\ref{tab:set3} gives the full set of sixteen index-triads that are
+fully-informed. It can be verified that each of these
+triads implies the full hexad identity. This property is comparable to the
+reducibility characteristic of triad identities. For example, for the APC
+identity, the list of dyads that give full information is shorter:
+\eg{AC}, \eg{AP}, \eg{PC}. The triads in Table~\ref{tab:set3} give analogous information for the APCTDL identity.
 It may be further stated that no dyad of indices can give the hexad identity,
-and any quad (or greater) of indices will yield the hexad identity. 
+and any quad (or greater) of indices will yield the hexad identity. Any index
+complemented by any different index other than its opposite will imply one of
+the triad identities.
 
 We have said that the four triad identities are parallel to the faces of the the
 above-described tetrahedron. In imagining this three-dimensional

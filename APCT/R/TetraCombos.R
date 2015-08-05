@@ -139,11 +139,59 @@ dev.off()
 
 
 
+#########################################
+# make planes parallel to the edges?
+# doesn't look so good in 2d. No parallax,
+# then it covers up the depth, no?
+
+par(mai=c(.3,.3,.3,.3),bg="lightcyan")
+plot(NULL, xlim = c(-1,2),ylim=c(-1,2), asp=1,axes=FALSE, xlab="",ylab="")
+abline(v=seq(-1,2,by=.5),col=gray(.8))
+ai <- seq(-10*sqrt(3)/3,10*sqrt(3)/3,by=sqrt(3)/3)
+for(a in ai){
+	abline(a=a,b=2*sqrt(3)/2,col=gray(.8))
+}
+ai <- seq(-10*sqrt(3)/2,10*sqrt(3)/2,by=sqrt(3)/3)
+for(a in ai){
+	abline(a=a,b=2*sqrt(3)/6,col=gray(.8))
+}
+polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5),col="#FFFFFF50")
+segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+
+
+###############
+par(mai=c(.3,.3,.3,.3))
+plot(NULL, xlim = c(-1,2),ylim=c(-1,2), asp=1,axes=FALSE, xlab="",ylab="")
+polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+abline(v=seq(-1,2,by=.5),col=gray(.8))
+ai <- seq(-10*sqrt(3)/3,10*sqrt(3)/3,by=sqrt(3)/3)
+for(a in ai){
+	abline(a=a,b=-2*sqrt(3)/2,col=gray(.8))
+}
+ai <- seq(-10*sqrt(3)/2,10*sqrt(3)/2,by=sqrt(3)/3)
+for(a in ai){
+	abline(a=a,b=-2*sqrt(3)/6,col=gray(.8))
+}
 
 
 
-
-
+#boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
+#text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE) 
+#
+#
 
 
 

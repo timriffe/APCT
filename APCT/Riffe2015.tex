@@ -56,6 +56,8 @@
 \newcommand\eg[1]{\textcolor{bl}{#1}}
 
 \newcommand\tg[1]{\includegraphics[scale=.5]{Figures/triadtable/triad#1.pdf}}
+\newcommand\tgh[1]{\raisebox{-.25\height}{\includegraphics[scale=.3]{Figures/triadtable/triad#1.pdf}}}
+
 \defcitealias{HMD}{HMD}
 
 
@@ -71,7 +73,6 @@
 
 %\author{[Authors]}
 
-
 \maketitle
 
 \begin{abstract}
@@ -85,9 +86,7 @@ the first author while at the Department of Demography at the University of
 California, Berkeley, and was supported by the U.S.
 National Institute On Aging of the National Institutes of Health under award
 numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
-
 \end{abstract}
-
 
 The so-called Lexis diagram relates the chronological age (\eg{A}), period (\eg{P}),
 and birth cohort (\eg{C}) indices of demographic time, \eg{APC}, but it does not account
@@ -189,7 +188,6 @@ yield the remaining twelve triads.
 given the previous orientation of the tetrahedron.}
 \label{tab:set3}
 \begin{tabular}{cccc}
-\hline
 \eg{ACD} & \eg{ACL} & \eg{ACT} & \eg{ADL}\\
 \tg{ACD} & \tg{ACL} & \tg{ACT} & \tg{ADL}\\
 \eg{ADP} & \eg{ADT} & \eg{ALP} & \eg{APT}\\
@@ -211,7 +209,6 @@ therefore say that each of the triad identities is incomplete.
 \caption{The four triad identities on the tetrahedron (same orientation)}
 \label{tab:triadids}
 \begin{tabular}{cccc}
-\hline
 \eg{APC} & \eg{TPD} & \eg{ATL} & \eg{CDL}\\
 \tg{APC} & \tg{TPD} & \tg{ATL} & \tg{CDL}
 \end{tabular}
@@ -277,16 +274,21 @@ honeycomb.
 
 The \eg{APC}, \eg{TPD}, \eg{ATL}, and \eg{CDL} planes can be conceived of as
 \textit{compressions} of this 3d space, or as cross-sections of the 3d space. To
-be compress the space in this sense is to ignore the missing dimension,
+compress the space in this sense is to ignore the missing dimension,
 whereas a cross-section sets a given triad identity against a particular
 position of the missing dimension. \eg{APC} has typically been treated as a
-compression. 
+compression. A compressed \eg{TPD} diagram has thus far only appeared in
+\citet{pancho2015} as an aid in explaining a mathematical proof.
+A cross-sectional \eg{ATL} diagram and surfaces have thus far only appeared in
+\citet{riffe2015ttd}, selected for the 1915-1919 birth cohort, ergo
+belonging to the 3d space.
 
-
-\subsection*{APC}
-The Lexis diagram has long been used in demography to relate chronological age
-(A) with birth cohorts (C) and calendar years (P). Since the so-called Lexis
-diagram could have been named for others
+\subsection*{\eg{APC} \tgh{APC}}
+The Lexis diagram has long been used in demography, both as a conceptual tool
+for structuring data and observations, as inspiration for work on
+statistical identification, and as the coordinate basis of contemporary
+Lexis-surfaces.
+Since the so-called Lexis diagram could have been named for others
 \citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
 temporal configurations, let us refer to it as the APC diagram, as seen in
 Figure~\ref{APCright}
@@ -295,7 +297,7 @@ When a value (data) is structured by APC coordinates, we refer to it as an APC s
 \begin{figure}[b!]
     \centering
     % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/APC2.pdf}
+    \includegraphics[scale=.7]{Figures/LabPres/APC4.pdf}
     \caption{Lifelines in the APC diagram}
     \label{APCright}
 \end{figure} 
@@ -322,7 +324,7 @@ represent
 
 \FloatBarrier
 
-\subsection*{TPD}
+\subsection*{\eg{TPD} \tgh{TPD}}
 
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the opposite of APC. One may take the same lifelines from
@@ -337,7 +339,7 @@ diagram in Figure~\ref{TPDright}
     \label{TPDright}
 \end{figure} 
 
-\subsection*{ATL}
+\subsection*{\eg{ATL} \tgh{ATL}}
 The second plane is ATL, a valid coordinate system for
 processes that vary over the lifecourse, but not over time (P). Since the
 lifecourse belongs to the cohort perspective, it is best to think of the ATL
@@ -345,7 +347,7 @@ plane as belonging to some particular birth cohort. Alternatively, an ATL
 triangle may be taken as a cross-section along through the period dimension, a
 sort of synthetic ATL plane.
 
-
+\subsection*{\eg{CDL} \tgh{CDL}}
 
 \section*{APCT}
 I propose a geometric

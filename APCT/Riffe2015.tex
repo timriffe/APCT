@@ -75,8 +75,8 @@
 \maketitle
 
 \begin{abstract}
-We describe a three-dimensional model that relates six different aspects of
-lifespans and time. The six aspects of demographic time considered are
+We describe a three-dimensional model that relates six different measures of
+lifespans and time. The six measures of demographic time considered are
 chronological age, thanatological age, lifespan, year of birth, year of death,
 and period. Two versions of the model are described: a relatively intuitive
 extension of the right-angled Lexis diagram, and an isotropic extension based on
@@ -87,66 +87,142 @@ National Institute On Aging of the National Institutes of Health under award
 numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
 \end{abstract}
 
-The so-called Lexis diagram relates the chronological age (\eg{A}), period (\eg{P}),
-and birth cohort (\eg{C}) indices of demographic time, \eg{APC}, but it does not account
+The so-called Lexis diagram relates the chronological age (A), period (P),
+and birth cohort (C) indices of demographic time, APC, but it does not account
 for remaining years of life (thanatological age), and other related time
 indices.
-The thanatological counterpart to \eg{APC} is an identity between thanatological
-age (\eg{T}), period (\eg{P}), and death cohort (\eg{D}), \eg{TPD}. A third
-identity exists between chronological age (\eg{A}), thanatological age (\eg{T}), and lifespan (\eg{L}), \eg{ATL}, and a fourth between year of birth (\eg{C}), year of death (\eg{D}) and lifespan (\eg{L}), \eg{CDL}.
+The thanatological counterpart to APC is an identity between thanatological
+age (T), period (P), and death cohort (D), TPD. A third
+identity exists between chronological age (A), thanatological age (T), and lifespan (L), ATL, and a fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
 Each of these four triad identities may be sufficiently described by any
 two of its consituent indices, making the third index redundant. Each of these
-four identities also lacks a major dimension of time. The \eg{ATL} identity
-lacks calendar time, the \eg{CDL} identity is ageless, \eg{APC} lacks an endpoint in time,
-and \eg{TPD} lacks a starting point in time. We refer to these four identities
+four identities also lacks a major dimension of time. The ATL identity
+lacks calendar time, the CDL identity is ageless, APC lacks an endpoint in time,
+and TPD lacks a starting point in time. We refer to these four identities
 as triad identities.
 
 To our knowledge, the only triad identity that has received serious
-treatment at the time of this writing is the \eg{APC} identity. Different
-aspects of the \eg{APC} identity have been discussed since at least 1868
+treatment at the time of this writing is the APC identity. Different
+aspects of the APC identity have been discussed since at least 1868
 \citep{knapp1868ermittlung}, and discussion remains lively today. Here it is our
 objective to relate the six major indices of time in a geometric identity, in
-much the same spirit as the work on \eg{APC} relationships done between the late
+much the same spirit as the work on APC relationships done between the late
 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age} for an overview of that literature.} 
 
-\subsection*{Definitions}
-Some terms used throughout this paper ought first be defined.
+This paper provides a bottom-up description of the model, building from familar
+components to the full relationship. We begin by defining some terms used
+throughout the manuscript. We then explore the dyadic relationships, followed by
+the four triad identities, and finally the hexad identity. At the price of some
+redundancy, we give a systematic topological overview of the
+different elements of demographic time. 
+
+\section*{Definitions}
+\subsection{Technical terminology}
+We attempt to adhere to a rigorous terminology in this paper. The following list
+describes some of the more important terms we use.
 \begin{description}
 \item[Time measures] are any of the six demographic perspectives discussed that
 can be used to index time. 
+\item[Lexis measures] are the three time measures contained in the Lexis
+diagram:
+chronological age, period, and birth cohort.
+\item[Non-Lexis measures] are the three time measures not contained in the Lexis
+diagram: thanatological age, death cohort, and completed lifespan.
 \item[Dyads, triads, and hexads] are any set of two, three, or six unique time
 measures, respectively.
 \item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
-\item[A temporal space] is any $(x,y,z)$-mapping of a triad of time measures.
+\item[A temporal space] is any $(x,y,z)$-mapping of a triad of time
+measures.
 \item[Given measures] are any specified set of time measures.
 \item[Derived measures] are any unspecified time measures that are implied by or
-derived from a specified set. 
+derived from a given set. 
 \item[An informative] set is a set of given measures that entails at
 least one derived measure.
 \item[An uniformative] set is a set of given measures that does not entail any
 derived measures.
-\item[A triad identity] is a triad for which 
-\item[]
-\item[A hexad identity] is a set consisting of three given and three derived
-measures
+\item[A triad identity] is a triad that is the union of an informative dyad and
+its one derived time measure.
+\item[A hexad identity] is the union of an informative triad and its three
+derived time measures.
 \end{description}
+Using this terminology, for example, we say that the Lexis measures constitute a
+triad identity between chronological age, period, and birth cohort. Each dyad
+combination of elements in this identity is informative, and can be mapped to a
+Lexis plane, the Lexis diagram. If we know that Mindel turned 50 on the 2\nth{1}
+of May, 1963, then we also also can derive that she was born on the 2\nth{1} of
+May, 1913. Any two pieces of information in this case will give the third, which
+means that any dyad from this set is informative. Three other such triad
+identities are also to found within the six measures of time we discuss.
+\FloatBarrier
 
+\subsection*{Time measures}
+This model description is conceived in absolute, linear, Newtonian time, and we
+do not consider situating the model in any other perspective or model of time
+itself.
+This model is scalable to any time unit, but we decribe it in terms of years,
+the dominant human time scale. We therefore speak of calendar time,
+imagining the modern Gregorian calendar, though this is not necessary. The six
+measures of time we consider are defined in Table~\ref{tab:sixdefs}, both in the
+demographic sense we describe, as well as in a more general event history
+interpretation.
 
-\subsection*{Six elements of time}
-This handles each of the six elements, one at a time, in isolation. A brief
-section, possibly with a table.
+\begin{table}
+\centering
+\caption{Definitions of the six time measures.}
+\label{tab:sixdefs}
+\begin{tabular}{lcll}
+\hline 
+\textbf{Time measure} & \textbf{Short} & \textbf{Demographic def.} &
+\textbf{Event history def.}\\
+\hline 
+chronological age & A & Time since birth & Time since study entry \\
+period & P & calendar time & calendar time \\
+birth cohort & C & calendar time of birth & calendar time of study entry \\
+thanatological age & T & time until death & time until event \\
+death cohort & D & calendar time of death & calendar time of event \\
+lifespan & L & duration of life & duration of exposure \\
+\end{tabular}
+\end{table}
 
-\subsection*{The dyads}
+The concepts of thanatological age and death cohorts are likely less familar to
+readers than the other measures we consider. Thanatological age is sometimes
+referred to in the literature as remaining years of life, or time to death
+(TTD), but we prefer thanatological age, and to think of the concept of age in
+general as marking a position on a lifeline. Chronological age and
+thanatological age are in this way complementary. Thanatological age is
+different from the notion of prospective age, used by
+\citet{sanderson2007new}, since prospective age is a relative term that reflects
+a comparison of expectancies. Prospective age scales chronological age by
+comparing mortality schedules, but it is neither an expectancy nor a statement
+of remaining years of life.
+
+Cohorts in general associate individuals that share a characteristic. In
+demography the grouping characteristic is often a combination of place and time, such as
+the cohorts of young demographers passing through a particular graduate program.
+In this instance already, we accomodate the notion of a cohort for both the
+start and endpoints of the program, but we say e.g., ``the class of 2015''
+instead of the ``graduating cohort of 2015'', in contrast to ``cohort 37'', the
+\nth{37} class of entering students since the start of the program.
+These concepts are analagous to the ideas of birth and death cohorts we use here, though we do not often refer to the
+deaths of a given year as a death cohort. In the time preceding
+death, the members of a given death cohort have much in common, despite
+heterogeneity with respect to time of birth. If reader accepts this premise,
+then the abstract construct of a death cohort is also potentially meaningful in
+the way that
+
+\FloatBarrier
+
+\section*{Informative and uninformative dyads}
 This subsection contains Jonas' table of 2d relationships, each with a right and
 isotropic rendition. Describe graphing conventions, and walk through one line
 from the table. Another box in each row of the table could give an accessible
 example of deriving the third element from the dyad. Find 15 deceased
 demographers' names and birth and death dates and use them in the examples.
 
-\subsection*{Planes resulting from dyads}
+\section*{The triad identities}
 
 
-\subsection*{\eg{APC} \tgh{APC}}
+\subsection*{APC \tgh{APC}}
 The Lexis diagram has long been used in demography, both as a conceptual tool
 for structuring data and observations, as inspiration for work on
 statistical identification, and as the coordinate basis of contemporary
@@ -161,7 +237,7 @@ their coordinate bases.
 
 \begin{figure} 
 \centering
-    \caption{With with \eg{A}\eg{P} unity aspect ratio.} 
+    \caption{With with AP unity aspect ratio.} 
     \label{fig:APCrt} 
     \includegraphics[scale=.7]{Figures/LabPres/APC4.pdf}
 \end{figure}
@@ -195,7 +271,7 @@ represent
 
 \FloatBarrier
 
-\subsection*{\eg{TPD} \tgh{TPD}}
+\subsection*{TPD \tgh{TPD}}
 
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the opposite of APC. One may take the same lifelines from
@@ -210,7 +286,7 @@ diagram in Figure~\ref{TPDright}
     \label{TPDright}
 \end{figure} 
 
-\subsection*{\eg{ATL} \tgh{ATL}}
+\subsection*{ATL \tgh{ATL}}
 The second plane is ATL, a valid coordinate system for
 processes that vary over the lifecourse, but not over time (P). Since the
 lifecourse belongs to the cohort perspective, it is best to think of the ATL
@@ -218,7 +294,7 @@ plane as belonging to some particular birth cohort. Alternatively, an ATL
 triangle may be taken as a cross-section along through the period dimension, a
 sort of synthetic ATL plane.
 
-\subsection*{\eg{CDL} \tgh{CDL}}
+\subsection*{CDL \tgh{CDL}}
 
 
 \subsection*{A tetrahedron relates the six time indices.}
@@ -257,23 +333,23 @@ indices.}
 \end{figure}
 
 \subsection*{Information criteria to derive the tetrahedron.}
-The edges \eg{APC} at the base define the much-studied \eg{APC} plane. If the only
+The edges APC at the base define the much-studied APC plane. If the only
 information we have is chronological age, period, and birth cohort (or just two
 of these), then we have no access to the vertex \vt{4}. Each of the faces of the
 tetrahedron has this quality. The South face \eg{TDP} has no access to \vt{1}.
-The Northeast face, \eg{ATL} has no connection to \vt{3}, and the Northwest face
-\eg{CDL} lacks a connection to \vt{2}. The triads that make up the faces of
+The Northeast face, ATL has no connection to \vt{3}, and the Northwest face
+CDL lacks a connection to \vt{2}. The triads that make up the faces of
 the tetrahedron are stuck in ``flatland''. However, there are twenty ways in
 total to choose three time indices from our total of six, and the four
 above-named triads are the only four of these that will not yield the full 3d
 space and imply the other three. The sixteen other combinations of three indices will recreate the full tetradhedron (hexad identity).
 
 For example, say we are at vertex \vt{1}, and we therefore have
-information on year of birth \eg{C}, completed lifespan \eg{L}, and
-chronological age \eg{A} (see Figure~\ref{fig:tet4vert1}). Clearly, \eg{A} and
-\eg{C} imply \eg{P} ($\eg{C}+\eg{A}=\eg{P}$).
-\eg{A} and \eg{L} imply \eg{T} ($\eg{L}-\eg{A}=\eg{T}$). Finally, \eg{C} and
-\eg{L} imply \eg{D} ($\eg{C}+\eg{L}=\eg{D}$), and we have the full hexad
+information on year of birth C, completed lifespan L, and
+chronological age A (see Figure~\ref{fig:tet4vert1}). Clearly, A and
+C imply P ($C+A=P$).
+A and L imply T ($L-A=T$). Finally, C and
+L imply D ($C+L=D$), and we have the full hexad
 identity. In the tetrahedron graph, we have three edges that connect to the
 four vertices. This is the essential property of a fully informed triad.
 
@@ -287,7 +363,7 @@ four vertices. This is the essential property of a fully informed triad.
 However, there are twelve other sets of three that also have this property. To locate
 these ``hidden'' triads, first note that each index has an
 opposite index, with which it shares no information. These pairs are
-\eg{A-D}, \eg{L-P}, and \eg{C-T}, and can be found in Figure~\ref{fig:tet} as
+A-D, L-P, and C-T, and can be found in Figure~\ref{fig:tet} as
 the three sets of perpendicular edges. Each of these pairs can be completed into
 a `fully-informed'' triad by the addition of any of the other four indices
 (thereby connecting the edges). Doing so for each of the opposite pairs will
@@ -299,13 +375,13 @@ yield the remaining twelve triads.
 given the previous orientation of the tetrahedron.}
 \label{tab:set3}
 \begin{tabular}{cccc}
-\eg{ACD} & \eg{ACL} & \eg{ACT} & \eg{ADL}\\
-\tg{ACD} & \tg{ACL} & \tg{ACT} & \tg{ADL}\\
-\eg{ADP} & \eg{ADT} & \eg{ALP} & \eg{APT}\\
+ACD & ACL & ACT & ADL\\
+\tg{ACD} & ACL & ACT & \tg{ADL}\\
+ADP & ADT & ALP & APT\\
 \tg{ADP} & \tg{ADT} & \tg{ALP} & \tg{APT}\\
-\eg{CDP} & \eg{CDT} & \eg{CLP} & \eg{CLT}\\
+CDP & CDT & CLP & CLT\\
 \tg{CDP} & \tg{CDT} & \tg{CLP} & \tg{CLT}\\
-\eg{CPT} & \eg{DLP} & \eg{DLT} & \eg{LPT}\\
+CPT & DLP & DLT & LPT\\
 \tg{CPT} & \tg{DLP} & \tg{DLT} & \tg{LPT}
 \end{tabular}
 \end{table}
@@ -320,7 +396,7 @@ therefore say that each of the triad identities is incomplete.
 \caption{The four triad identities on the tetrahedron (same orientation)}
 \label{tab:triadids}
 \begin{tabular}{cccc}
-\eg{APC} & \eg{TPD} & \eg{ATL} & \eg{CDL}\\
+APC & TPD & ATL & CDL\\
 \tg{APC} & \tg{TPD} & \tg{ATL} & \tg{CDL}
 \end{tabular}
 \end{table}
@@ -328,7 +404,7 @@ therefore say that each of the triad identities is incomplete.
 Table~\ref{tab:set3} gives the full set of sixteen index-triads that are
 complete in this sense. It can be verified that each of these
 triads implies the full hexad identity. This property is comparable to the
-reducibility characteristic of triad identities. For example, for the \eg{APC}
+reducibility characteristic of triad identities. For example, for the APC
 identity, the list of dyads that give full information is shorter:
 \eg{AC}, \eg{AP}, \eg{PC}. The triads in Table~\ref{tab:set3} give analogous
 information for the \eg{APCTDL} identity.
@@ -345,28 +421,28 @@ we have used thus far for orientation. Instead each of its edges extends a
 certain distance in either direction.
 It may therefore help to first consider the extension of each axis (or index).
 Some indices have a lower bound of zero and an upper bound set by the maximum
-length of life, $\omega$, while others are boundless. \eg{A}, \eg{T}, and \eg{L}
+length of life, $\omega$, while others are boundless. A, T, and L
 are clearly in the range $[0,\omega]$.\footnote{It's best to imagine some number like 122.45 years, for $\omega$, rather than infinity. This is the longevity record at the time of this writing. Jeanne L. Calment would have had
-$\eg{T}=122.45$ at birth, $\eg{A} = 122.45$ at death, and $\eg{L}=122.45$ for
-her entire life.} \eg{P}, \eg{C}, and \eg{D} are bounded only by the inception and extinction of
+$T=122.45$ at birth, $A = 122.45$ at death, and $L=122.45$ for
+her entire life.} P, C, and D are bounded only by the inception and extinction of
 our species, but may be thought of as boundless for practicality, or benchmarked
 to our earliest and most recent observations for even more
 practicality.\footnote{We explain the choice of the word ``benchmarked''. Say
 we have a data series that runs from 1751 to 2011, and an upper age
-interval of $110+$. Then we could say that \eg{P} is in the range $[1751,2011]$,
-but by another reading, \eg{P} must range from at least as early as the earliest
-\eg{C} and until at least as late as the latest \eg{D}. Someone dying at 110 in 1751
-had a \eg{C} of 1640, and an infant born in 2011 that is destined to live to 110
-will die in 2121. In this case a \eg{P} that \textit{contains} the observed
+interval of $110+$. Then we could say that P is in the range $[1751,2011]$,
+but by another reading, P must range from at least as early as the earliest
+C and until at least as late as the latest D. Someone dying at 110 in 1751
+had a C of 1640, and an infant born in 2011 that is destined to live to 110
+will die in 2121. In this case a P that \textit{contains} the observed
 population will extend well before and after the observed data series, even
 moreso if we take into account that $\omega > 110$.} As an abstraction,
 however, the dimension of calendar time in this model is infinite. Of the four
-triad identities, only one lacks an unbounded dimension, the \eg{ATL}. Adding
-the absent dimension to \eg{ATL} therefore makes its 3d extension boundless. In
-this way, we may imagine a prism-like construct, where \eg{A}, \eg{T}, and \eg{L}, compose
+triad identities, only one lacks an unbounded dimension, the ATL. Adding
+the absent dimension to ATL therefore makes its 3d extension boundless. In
+this way, we may imagine a prism-like construct, where A, T, and L, compose
 the faces of a triangular cross-section of said prism, which extends infinitely ``through'' the triangle.
-We can think of the \eg{ATL} triangle passing through time, extending the population
-forward to infinity. In this case, the \eg{ATL} triangle may take either the period
+We can think of the ATL triangle passing through time, extending the population
+forward to infinity. In this case, the ATL triangle may take either the period
 or cohort perspective, and this will be explained later. 
 
 There are also
@@ -383,24 +459,24 @@ honeycomb.
 
 \section*{Intersecting planes}
 
-The \eg{APC}, \eg{TPD}, \eg{ATL}, and \eg{CDL} planes can be conceived of as
+The APC, TPD, ATL, and CDL planes can be conceived of as
 \textit{compressions} of this 3d space, or as cross-sections of the 3d space. To
 compress the space in this sense is to ignore the missing dimension,
 whereas a cross-section sets a given triad identity against a particular
-position of the absent dimension. \eg{APC} has thus far always been treated as a
+position of the absent dimension. APC has thus far always been treated as a
 compression, and myriad such uses and examples are familiar to demographers.
-A compressed \eg{TPD} diagram has thus far only appeared in \citet{pancho2015}
+A compressed TPD diagram has thus far only appeared in \citet{pancho2015}
 as an aid in explaining a mathematical proof, and a cross-sectional one has
 never appeared.
-Cross-sectional \eg{ATL} diagram and surfaces have thus far only appeared in
-\citet{riffe2015ttd}. This \eg{ATL} usage was selected for the 1915-1919 birth
+Cross-sectional ATL diagram and surfaces have thus far only appeared in
+\citet{riffe2015ttd}. This ATL usage was selected for the 1915-1919 birth
 cohort, and therefore belongs to the 3d
 space,
 \raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
 We have been unable to located an example in the literature of a compressed
-\eg{ATL} diagram, but it seems likely one will have arisen in the field of
+ATL diagram, but it seems likely one will have arisen in the field of
 biology, albeit with no relation to the present discourse. We suppose
-that \eg{CDL} diagrams of any kind are yet-unknown.
+that CDL diagrams of any kind are yet-unknown.
 
 
 \section*{APCT}
@@ -465,21 +541,21 @@ these are identical graphs.
         \begin{subfigure}[b]{0.475\textwidth}
             \centering
             \includegraphics[width=\textwidth]{Figures/Tetra1.pdf}
-           \caption{\small Vertex \vt{1} in middle. \eg{APC} Northwest.}
+           \caption{\small Vertex \vt{1} in middle. APC Northwest.}
             \label{fig:tet1}
         \end{subfigure}
         \hfill
         \begin{subfigure}[b]{0.475\textwidth}  
             \centering 
             \includegraphics[width=\textwidth]{Figures/Tetra2.pdf}
-           \caption{\small Vertex \vt{2} in middle. \eg{APC} Northeast.}
+           \caption{\small Vertex \vt{2} in middle. APC Northeast.}
             \label{fig:tet2}
         \end{subfigure}
         \vskip\baselineskip
         \begin{subfigure}[b]{0.475\textwidth}   
             \centering 
             \includegraphics[width=\textwidth]{Figures/Tetra3.pdf}
-           \caption{\small Vertex \vt{3} in middle. \eg{APC} Northwest.}
+           \caption{\small Vertex \vt{3} in middle. APC Northwest.}
             \label{fig:tet3}
         \end{subfigure}
         \quad
@@ -487,7 +563,7 @@ these are identical graphs.
             \centering 
             \includegraphics[width=\textwidth]{Figures/Tetra4.pdf}
             \caption{\small Vertex \vt{4} in middle, as in
-            Figure~\ref{fig:tet}. \eg{APC} base.}
+            Figure~\ref{fig:tet}. APC base.}
             \label{fig:tet4}
         \end{subfigure}
     \end{figure*}

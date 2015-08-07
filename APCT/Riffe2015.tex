@@ -1,8 +1,7 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
 %\documentclass[12pt,oneside,a4paper,doublespacing]{article} % for submission
-\documentclass[11pt,oneside]{article} % for sharing
-
+\documentclass[11pt,oneside,a4paper]{article} % for sharing
 
 \usepackage{appendix}
 \usepackage{amsmath}
@@ -110,6 +109,118 @@ objective to relate the six major indices of time in a geometric identity, in
 much the same spirit as the work on \eg{APC} relationships done between the late
 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age} for an overview of that literature.} 
 
+\subsection*{Definitions}
+Some terms used throughout this paper ought first be defined.
+\begin{description}
+\item[Time measures] are any of the six demographic perspectives discussed that
+can be used to index time. 
+\item[Dyads, triads, and hexads] are any set of two, three, or six unique time
+measures, respectively.
+\item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
+\item[A temporal space] is any $(x,y,z)$-mapping of a triad of time measures.
+\item[Given measures] are any specified set of time measures.
+\item[Derived measures] are any unspecified time measures that are implied by or
+derived from a specified set. 
+\item[An informative] set is a set of given measures that entails at
+least one derived measure.
+\item[An uniformative] set is a set of given measures that does not entail any
+derived measures.
+\item[A triad identity] is a triad for which 
+\item[]
+\item[A hexad identity] is a set consisting of three given and three derived
+measures
+\end{description}
+
+
+\subsection*{Six elements of time}
+This handles each of the six elements, one at a time, in isolation. A brief
+section, possibly with a table.
+
+\subsection*{The dyads}
+This subsection contains Jonas' table of 2d relationships, each with a right and
+isotropic rendition. Describe graphing conventions, and walk through one line
+from the table. Another box in each row of the table could give an accessible
+example of deriving the third element from the dyad. Find 15 deceased
+demographers' names and birth and death dates and use them in the examples.
+
+\subsection*{Planes resulting from dyads}
+
+
+\subsection*{\eg{APC} \tgh{APC}}
+The Lexis diagram has long been used in demography, both as a conceptual tool
+for structuring data and observations, as inspiration for work on
+statistical identification, and as the coordinate basis of contemporary
+Lexis-surfaces.
+Since the so-called Lexis diagram could have been named for others
+\citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
+temporal configurations, let us refer to it as the APC diagram, as seen in
+Figure~\ref{APCright}
+When a value (data) is structured by APC coordinates, we refer to it as an APC
+surface. This paper will contain no such visualizations, but we may juxtapose
+their coordinate bases.
+
+\begin{figure} 
+\centering
+    \caption{With with \eg{A}\eg{P} unity aspect ratio.} 
+    \label{fig:APCrt} 
+    \includegraphics[scale=.7]{Figures/LabPres/APC4.pdf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{With triad unity aspect ratio.} 
+    \label{fig:APCeq} 
+    \includegraphics[scale=.7]{Figures/LabPres/APC5.pdf}
+\end{figure}
+
+The APC diagram in Figure~\ref{APCright} represents years lived on the y axis,
+calendar years on the x axis, and birth cohorts as the right-ascending
+diagonals. This is the most common of several possible configurations
+of the APC dimensions. Individual lifelines are aligned in the cohort direction,
+starting with birth (filled circle) at chronological age zero, and death ()
+
+Any APC surface can be interpreted along each of these
+three dimensions of temporal structure. Such interpretation is a descriptive
+task, and it does not succumb to problems of overidentification. Variation along
+these three dimensions can not be parsimonsiously separated into the three
+effects of A, P, and C. This is the so-called APC problem, and it is not the concern of the
+present work. 
+
+It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
+birth cohort dimension, as represented in Figure~\ref{APCright}, is relatively
+longer than either the age or years axes. If a right angle and unity aspect
+ratio is forced between any two of the APC dimensions, the third dimension is always be
+stretched by $\sqrt{2}$. Another long-standing, but less common variant, is to
+represent
+
+\FloatBarrier
+
+\subsection*{\eg{TPD} \tgh{TPD}}
+
+Thanatological age (T), period (P) and death cohort (D) form a coordinate system
+best imagined as the opposite of APC. One may take the same lifelines from
+Figure~\ref{APCright} and realign them in descending fashion to create the
+diagram in Figure~\ref{TPDright}
+
+\begin{figure}[b!]
+    \centering
+    % figure made in R/LexisStandard.R
+    \includegraphics[scale=.7]{Figures/LabPres/TPD2.pdf}
+    \caption{Lifelines in the TPD diagram}
+    \label{TPDright}
+\end{figure} 
+
+\subsection*{\eg{ATL} \tgh{ATL}}
+The second plane is ATL, a valid coordinate system for
+processes that vary over the lifecourse, but not over time (P). Since the
+lifecourse belongs to the cohort perspective, it is best to think of the ATL
+plane as belonging to some particular birth cohort. Alternatively, an ATL
+triangle may be taken as a cross-section along through the period dimension, a
+sort of synthetic ATL plane.
+
+\subsection*{\eg{CDL} \tgh{CDL}}
+
+
 \subsection*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
@@ -159,8 +270,8 @@ space and imply the other three. The sixteen other combinations of three indices
 
 For example, say we are at vertex \vt{1}, and we therefore have
 information on year of birth \eg{C}, completed lifespan \eg{L}, and
-chronological age \eg{A}. Clearly, \eg{A} and \eg{C} imply \eg{P}
-($\eg{C}+\eg{A}=\eg{P}$).
+chronological age \eg{A} (see Figure~\ref{fig:tet4vert1}). Clearly, \eg{A} and
+\eg{C} imply \eg{P} ($\eg{C}+\eg{A}=\eg{P}$).
 \eg{A} and \eg{L} imply \eg{T} ($\eg{L}-\eg{A}=\eg{T}$). Finally, \eg{C} and
 \eg{L} imply \eg{D} ($\eg{C}+\eg{L}=\eg{D}$), and we have the full hexad
 identity. In the tetrahedron graph, we have three edges that connect to the
@@ -169,7 +280,7 @@ four vertices. This is the essential property of a fully informed triad.
 \begin{figure}[h!]
 \centering
 \caption{Graph of tetrahedron, edges eminating from vertice \vt{1} highlighted.}
-\label{figtet4vert1}
+\label{fig:tet4vert1}
 \includegraphics[scale=1]{Figures/tet4vert1.pdf}
 \end{figure}
 \noindent It is easily verified that each vertex has this property.
@@ -276,78 +387,21 @@ The \eg{APC}, \eg{TPD}, \eg{ATL}, and \eg{CDL} planes can be conceived of as
 \textit{compressions} of this 3d space, or as cross-sections of the 3d space. To
 compress the space in this sense is to ignore the missing dimension,
 whereas a cross-section sets a given triad identity against a particular
-position of the missing dimension. \eg{APC} has typically been treated as a
-compression, and myriad such examples are familiar to demographers.
-A compressed \eg{TPD} diagram has thus far only appeared in \citet{pancho2015} as an aid in explaining a mathematical proof.
-A cross-sectional \eg{ATL} diagram and surfaces have thus far only appeared in
+position of the absent dimension. \eg{APC} has thus far always been treated as a
+compression, and myriad such uses and examples are familiar to demographers.
+A compressed \eg{TPD} diagram has thus far only appeared in \citet{pancho2015}
+as an aid in explaining a mathematical proof, and a cross-sectional one has
+never appeared.
+Cross-sectional \eg{ATL} diagram and surfaces have thus far only appeared in
 \citet{riffe2015ttd}. This \eg{ATL} usage was selected for the 1915-1919 birth
-cohort, and therefore belongs to the 3d space.
+cohort, and therefore belongs to the 3d
+space,
+\raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
+We have been unable to located an example in the literature of a compressed
+\eg{ATL} diagram, but it seems likely one will have arisen in the field of
+biology, albeit with no relation to the present discourse. We suppose
+that \eg{CDL} diagrams of any kind are yet-unknown.
 
-\subsection*{\eg{APC} \tgh{APC}}
-The Lexis diagram has long been used in demography, both as a conceptual tool
-for structuring data and observations, as inspiration for work on
-statistical identification, and as the coordinate basis of contemporary
-Lexis-surfaces.
-Since the so-called Lexis diagram could have been named for others
-\citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
-temporal configurations, let us refer to it as the APC diagram, as seen in
-Figure~\ref{APCright}
-When a value (data) is structured by APC coordinates, we refer to it as an APC surface.
-
-\begin{figure}[b!]
-    \centering
-    % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/APC4.pdf}
-    \caption{Lifelines in the APC diagram}
-    \label{APCright}
-\end{figure} 
-
-The APC diagram in Figure~\ref{APCright} represents years lived on the y axis,
-calendar years on the x axis, and birth cohorts as the right-ascending
-diagonals. This is the most common of several possible configurations
-of the APC dimensions. Individual lifelines are aligned in the cohort direction,
-starting with birth (filled circle) at chronological age zero, and death ()
-
-Any APC surface can be interpreted along each of these
-three dimensions of temporal structure. Such interpretation is a descriptive
-task, and it does not succumb to problems of overidentification. Variation along
-these three dimensions can not be parsimonsiously separated into the three
-effects of A, P, and C. This is the so-called APC problem, and it is not the concern of the
-present work. 
-
-It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
-birth cohort dimension, as represented in Figure~\ref{APCright}, is relatively
-longer than either the age or years axes. If a right angle and unity aspect
-ratio is forced between any two of the APC dimensions, the third dimension is always be
-stretched by $\sqrt{2}$. Another long-standing, but less common variant, is to
-represent
-
-\FloatBarrier
-
-\subsection*{\eg{TPD} \tgh{TPD}}
-
-Thanatological age (T), period (P) and death cohort (D) form a coordinate system
-best imagined as the opposite of APC. One may take the same lifelines from
-Figure~\ref{APCright} and realign them in descending fashion to create the
-diagram in Figure~\ref{TPDright}
-
-\begin{figure}[b!]
-    \centering
-    % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/TPD2.pdf}
-    \caption{Lifelines in the TPD diagram}
-    \label{TPDright}
-\end{figure} 
-
-\subsection*{\eg{ATL} \tgh{ATL}}
-The second plane is ATL, a valid coordinate system for
-processes that vary over the lifecourse, but not over time (P). Since the
-lifecourse belongs to the cohort perspective, it is best to think of the ATL
-plane as belonging to some particular birth cohort. Alternatively, an ATL
-triangle may be taken as a cross-section along through the period dimension, a
-sort of synthetic ATL plane.
-
-\subsection*{\eg{CDL} \tgh{CDL}}
 
 \section*{APCT}
 I propose a geometric

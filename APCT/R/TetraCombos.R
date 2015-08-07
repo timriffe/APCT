@@ -17,6 +17,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 getwd()
 persps <- c("A","P","C","T","D","L")
 COMBS <- combn(persps,3)
+
 COMBS[,1]
 redundant <- rep(FALSE, 20)
 for (i in 2:20){
@@ -177,7 +178,12 @@ for (comb in 1:nrow(planes)){
 	tet4drawcombo(triad)
 	dev.off()
 }
-
+pdf(paste0("Figures/triadtable/","ATLC.pdf"), height=1.1,width=1.2)
+#dev.new(height=1,width=1.1)
+par(mai=c(0,0,0,0),yaxs="i",xaxs="i")
+plot(NULL, xlim = c(-.1,1.1),ylim=c(-.1,.9), asp=1,axes=FALSE, xlab="",ylab="")
+tet4drawcombo(c("A","T","L","C"))
+dev.off()
 
 
 # Figure 2

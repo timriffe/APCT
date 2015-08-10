@@ -8,7 +8,10 @@
 \usepackage{caption}
 \usepackage{placeins}
 \usepackage{graphicx}
+
 \usepackage{subcaption}
+%\usepackage{subfig}
+
 \usepackage{longtable}
 \usepackage{setspace}
 %\usepackage{tikz}
@@ -21,6 +24,8 @@
 \usepackage{url}
 \usepackage{nth}
 \usepackage{authblk}
+\usepackage[most]{tcolorbox}
+%\usepackage{hyperref}
 %\usepackage{color}
 %\usepackage{fontspec}
 %\usepackage{pdfsync}
@@ -123,11 +128,6 @@ describes some of the more important terms we use.
 \begin{description}
 \item[Time measures] are any of the six demographic perspectives discussed that
 can be used to index time. 
-\item[Lexis measures] are the three time measures contained in the Lexis
-diagram:
-chronological age, period, and birth cohort.
-\item[Non-Lexis measures] are the three time measures not contained in the Lexis
-diagram: thanatological age, death cohort, and completed lifespan.
 \item[Dyads, triads, and hexads] are any set of two, three, or six unique time
 measures, respectively.
 \item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
@@ -145,8 +145,8 @@ its one derived time measure.
 \item[A hexad identity] is the union of an informative triad and its three
 derived time measures.
 \end{description}
-Using this terminology, for example, we say that the Lexis measures constitute a
-triad identity between chronological age, period, and birth cohort. Each dyad
+Using this terminology, for example, we say that the ``Lexis'' measures
+constitute a triad identity between chronological age, period, and birth cohort. Each dyad
 combination of elements in this identity is informative, and can be mapped to a
 Lexis plane, the Lexis diagram. If we know that Mindel turned 50 on the 2\nth{1}
 of May, 1963, then we also also can derive that she was born on the 2\nth{1} of
@@ -184,6 +184,7 @@ lifespan & L & duration of life & duration of exposure \\
 \end{tabular}
 \end{table}
 
+
 The concepts of thanatological age and death cohorts are likely less familar to
 readers than the other measures we consider. Thanatological age is sometimes
 referred to in the literature as remaining years of life, or time to death
@@ -216,122 +217,178 @@ Much of the work of demography is directed at the study of lifespan. Lifespan is
 synonymous both with longevity, chronological age at death, and thanatological
 age at birth. One's ultimate completed lifespan is constant throughout life,
 though we have no knowledge of it until death: It is assigned retrospectively.
-Demographers have more often used lifespan or age-at-death as a measure of mortality, or similar, than as a measure on which to compare individuals. Treating lifespan,
-death cohorts, and thanatological age as structuring variables therefore opens
-the door to new classes of comparisons, models of understanding, and discovery,
+Demographers have more often used lifespan or age-at-death as a measure of mortality, or similar, than as a measure on which to compare individuals. 
+
+Treating lifespan,
+death cohorts, and thanatological age as temporal structuring variables
+therefore opens the door to new classes of comparisons, models of understanding, and discovery,
 akin to those unlocked by breaking down demographic phenomena by chronological age,
-period, and birth cohort.
-The following sections will, in this sense, provide an exhaustive classification
-of the ways in which these six measures of time can be juxtaposed to such ends.
+period, and birth cohort. The following sections will, in this sense, provide an
+exhaustive classification of the ways in which these six measures of time can be juxtaposed to such ends.
 We begin with the dyadic comparisons.
 
 \FloatBarrier
 
 \section*{Informative and uninformative dyads}
-This subsection contains Jonas' table of 2d relationships, each with a right and
-isotropic rendition. Describe graphing conventions, and walk through one line
+\begin{tcolorbox}[breakable, enhanced]
+Note to Pancho and Jonas:
+This section will contain Jonas' table of all 15 dyadic relationships, each with
+a right and isotropic rendition. Describe graphing conventions, and walk through one line
 from the table. Another box in each row of the table could give an accessible
 example of deriving the third element from the dyad. Find 15 deceased
 demographers' names and birth and death dates and use them in the examples.
+We'll use the first names, birth and death dates of demographers.
+Some suggestions to include those in Table~\ref{names}. You can get more
+inspiration from \protect\url{http://www-personal.umich.edu/~eklanche/digdemog/index.html}
+Maybe an idea would be to allow for a ``broken'' table, with the textual passage
+between rows, similar to using intertext in math environment?
+\end{tcolorbox}
+
+ \begin{table}
+\centering
+\caption{Pick and choose (first) names from here for in-text references and
+examples of derived measures (and uninformative measures). This table won't be in the final
+text. These dates came from laborious web
+detectivry. } 
+\label{names}
+
+\small{
+\begin{tabular}{lllllllll}
+Sex	&First	&Last	&BD	&BM	&BY	&DD	&DM	&DY\\
+f	&Margaret	&Merrell	&3	&Dec.	&1900	&21	&Dec.	&1995\\
+f	&Helen	&Abbey	&1	&Sep.	&1915	&4	&March	&2001\\
+f	&Irene	&Taeuber	&25	&Dec.	&1906	&24	&Feb.	&1974\\
+f	&\`{A}ngels	&Torrents		&\_&	\_&1940	&24	&June	&2004\\
+m	&Pascal	&Whelpton	&22	&Feb.	&1893	&\_&	\_	&1964\\
+f	&Mindel	&Sheps	&20	&May	&1913	&15	&Jan.	&1973\\
+f	&Harriet	&Presser	& \_&	\_	&1936	&1	&May	&2012
+\end{tabular}
+}
+\end{table}
+
 
 \section*{The triad identities}
-Visualizations of data structured by any dyad of time measures from one of
-the triad identities mapped onto a temporal plane are inherently richer
-than juxtapositions of uninformative dyads because in triads patterns can be
-sought from three perspectives rather than only two. There is no reason not to
-explore all possible dyadic juxtapositions, but the triad identities have more
-apparent meaning, even in the absence of data. In the present section, we therefore lay out the four primary diagrams that belong to the four triad identities. For the case of
-each identity, there is a fundamental question of how to map the constituent
-coordinates to cartesian space. 
+Visualizations of data structured by any dyad of time measures mapped onto a
+temporal plane from one of the triad identities are inherently richer in
+information than juxtapositions of uninformative dyads. There is no reason not
+to explore all possible dyadic juxtapositions, but the triad identities have more
+apparent meaning, even in the absence of data, due to the underlying
+relationship between measures. In the present section, we therefore lay out the
+four primary diagrams that belong to the triad identities. This paper contains
+no such data visualizations, but it serves as a basis for designing some. Here
+we describe the underlying temporal planes of the triad identities.
 
-Typically one equates time units within a
-specified dyad, and maps one element directly to $x$ and the second element
+For the case of each identity,
+there is a fundamental question of how to map the constituent coordinates to a
+cartesian temporal plane. Typically one forces parity between time units within
+a specified dyad, and maps one element directly to $x$ and the second element
 directly to $y$, resulting in a 90$^\circ$ angle between the $x$ axis and $y$
-axis. The derived measure is then \textit{accidentally} present in a 45$^\circ$
-ascending or descending angle, depending on the dyad and orientation. Another
-possible mapping is to take the complete triad and translate to an
-$(x,y)$ coordinate as a function of all three measures so as to create
-60$^\circ$ angles between the three measures. This second mapping is primarily
-done in order to ensure that the spatial mapping is in equal units for the
+axis. In this case the convention is to force a unity aspect ratio
+between the $x$ and $y$ axes, such that the derived measure is then
+\textit{accidentally} present in a 45$^\circ$ ascending or descending angle,
+depending on the dyad and axis orientation. Another possible mapping is to take
+the complete triad and translate to an $(x,y)$ coordinate so as to create
+60$^\circ$ angles between the three measures. This second mapping is primarily done in order to ensure that the spatial mapping is in equal units for the
 three measures, and we therefore refer to it as the isotropic mapping.
 The isotropic mapping comparable to using a ternary coordinate system, which we
 do not discuss.
 
 \FloatBarrier
-\subsection*{APC \tgh{APC}}
-The Lexis diagram has long been used in demography, both as a conceptual tool
-for structuring data and observations, as inspiration for work on
-statistical identification, and as the coordinate basis of contemporary
+\subsection*{APC}%\tgh{APC}}
+The so-called Lexis diagram has long been used in demography as a conceptual
+tool for structuring data, observations, and rate estimation, as inspiration for work
+on statistical identification, and as the coordinate basis of contemporary
 Lexis-surfaces.
-Since the so-called Lexis diagram could have been named for others
+Since the Lexis diagram could have been named for others
 \citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
 temporal configurations, let us refer to it as the APC diagram, as seen in
-Figure~\ref{fig:APCrt}
-When a value (data) is structured by APC coordinates, we refer to it as an APC
-surface. This paper will contain no such data visualizations, but we may
-juxtapose their coordinate bases.
+Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
 
 \begin{figure} 
+\caption{An APC diagram in two projections.}
+\label{fig:APC}
 \centering
-    \caption{With with AP unity aspect ratio.} 
-    \label{fig:APCrt} 
-    \includegraphics[scale=.6]{Figures/LabPres/APC4.pdf}
+\begin{subfigure}{1.1\textwidth}
+\caption{Right angles}
+\vspace{-6em}
+\label{fig:APCrt}
+\includegraphics[scale=0.6]{Figures/APCrt.pdf}
+\end{subfigure}
+\\\vspace{-2em}
+\begin{subfigure}{1.1\textwidth}
+\caption{All 60$^\circ$ angles}
+\vspace{-6em}
+\label{fig:APCeq}
+\includegraphics[scale=0.6]{Figures/APCeq.pdf}
+\end{subfigure}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \caption{With triad unity aspect ratio.} 
-    \label{fig:APCeq} 
-    \includegraphics[scale=.6]{Figures/LabPres/APC5.pdf}
-\end{figure}
-
-The APC diagram in Figure~\ref{APCrt} represents years lived on the y axis,
+The APC diagram in Figure~\ref{fig:APCrt} represents years lived on the y axis,
 calendar years on the x axis, and birth cohorts as the right-ascending
 diagonals. This is the most common of several possible configurations
-of the APC dimensions. Individual lifelines are aligned in the cohort direction,
-starting with birth (filled circle) at chronological age zero, and death ()
-
-Any APC surface can be interpreted along each of these
-three dimensions of temporal structure. Such interpretation is a descriptive
-task, and it does not succumb to problems of overidentification. Variation along
-these three dimensions can not be parsimonsiously separated into the three
-effects of A, P, and C. This is the so-called APC problem, and it is not the concern of the
-present work. 
+of the APC dimensions. Individual lifelines are aligned in the birth cohort
+direction, starting with birth (filled circle) at chronological age zero, and death
+(circled x). Any APC surface can be interpreted along each of these
+three dimensions of temporal structure. 
 
 It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
-birth cohort dimension, as represented in Figure~\ref{APCrt}, is relatively
+birth cohort dimension, as represented in Figure~\ref{fig:APCrt}, is relatively
 longer than either the age or years axes. If a right angle and unity aspect
 ratio is forced between any two of the APC dimensions, the third dimension is always be
-stretched by $\sqrt{2}$. Another long-standing, but less common variant, is to
-represent 
+stretched by $\sqrt{2}$, or 41\% longer. Another long-standing, but less
+common variant, is to treat the derived direction ( in this case birth cohorts)
+as a redundant third axis, and forcing parity between the units of A, P, and C, as in
+Figure~\ref{fig:APCeq}. We refer to the second variety as the isotropic APC
+diagram, or an equilateral APC diagram. The primary justification for isotropic
+temporal planes comes from a data visualization perspective, where it is
+supposed that the viewer's ability to compare slopes is hindered if the axes are
+not on the same scale. This property will be explored more in a future paper.
+
 
 \FloatBarrier
 
-\subsection*{TPD \tgh{TPD}}
-
+\subsection*{TPD}%\tgh{TPD}}
+(section in progress, will contain 2 figures, like APC)
+*add TPD reference to Villavicencio/Riffe paper under review
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
-best imagined as the opposite of APC. One may take the same lifelines from
-Figure~\ref{APCright} and realign them in descending fashion to create the
-diagram in Figure~\ref{TPDright}
+best imagined as the inverse of APC. One may take the same lifelines from
+Figure~\ref{fig:APC} and realign them in descending fashion to create the
+diagram in Figure~\ref{fig:TPD}.
 
-\begin{figure}[b!]
-    \centering
-    % figure made in R/LexisStandard.R
-    \includegraphics[scale=.7]{Figures/LabPres/TPD2.pdf}
-    \caption{Lifelines in the TPD diagram}
-    \label{TPDright}
+\begin{figure} 
+\caption{A TPD diagram in two projections.}
+\label{fig:TPD}
+\centering
+\begin{subfigure}{1.1\textwidth}
+\caption{Right angles}
+\vspace{-6em}
+\label{fig:TPDrt}
+\includegraphics[scale=0.6]{Figures/TPDrt.pdf}
+\end{subfigure}
+\\\vspace{-2em}
+\begin{subfigure}{1.1\textwidth}
+\caption{All 60$^\circ$ angles}
+\vspace{-6em}
+\label{fig:TPDeq}
+\includegraphics[scale=0.6]{Figures/TPDeq.pdf}
+\end{subfigure}
 \end{figure} 
 
-\subsection*{ATL \tgh{ATL}}
-The second plane is ATL, a valid coordinate system for
-processes that vary over the lifecourse, but not over time (P). Since the
+\FloatBarrier
+\subsection*{ATL}%\tgh{ATL}}
+(section in progress, will contain 2 figures, like APC)
+*add reference to Riffe, Chung, Spijker, MacInnes (although that ATL was a
+cross-section and not a compression) 
+The second plane is ATL, a valid coordinate
+system for processes that vary over the lifecourse, but not over time (P). Since the
 lifecourse belongs to the cohort perspective, it is best to think of the ATL
 plane as belonging to some particular birth cohort. Alternatively, an ATL
 triangle may be taken as a cross-section along through the period dimension, a
 sort of synthetic ATL plane.
 
-\subsection*{CDL \tgh{CDL}}
-
+\subsection*{CDL}%\tgh{CDL}}
+(section in progress, will contain 2 figures, like APC)
+* I've not thought much about this one, but it completes the tetrahedron :-P
 
 \subsection*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
@@ -412,7 +469,7 @@ given the previous orientation of the tetrahedron.}
 \label{tab:set3}
 \begin{tabular}{cccc}
 ACD & ACL & ACT & ADL\\
-\tg{ACD} & ACL & ACT & \tg{ADL}\\
+\tg{ACD} & \tg{ACL} & \tg{ACT} & \tg{ADL}\\
 ADP & ADT & ALP & APT\\
 \tg{ADP} & \tg{ADT} & \tg{ALP} & \tg{APT}\\
 CDP & CDT & CLP & CLT\\
@@ -421,7 +478,9 @@ CPT & DLP & DLT & LPT\\
 \tg{CPT} & \tg{DLP} & \tg{DLT} & \tg{LPT}
 \end{tabular}
 \end{table}
-\FloatBarrier
+
+
+
 A like-organized table for the four triad identities simply highlights each of
 the four faces of the tetrahedron, as seen in Table~\ref{tab:triadids}. When
 graphed in this way, the vertex lacking a connection becomes clearer. We
@@ -516,12 +575,19 @@ that CDL diagrams of any kind are yet-unknown.
 
 
 \section*{APCT}
-I propose a geometric
-identity that unifies all such temporal notions into a single (simple) spatial
-relationship that serves as an omnibus conceptual aid to demographers, much as
-the Lexis diagram does for APC relationships. The full result is a three
-dimensional space that can be disected by any of four different planes,
-each of which is parallel to the faces of a regular tetrahedron (see
+*section ignored for the present: plan for a table with different distilled 3d
+views of the contruct, probably vector snapshots of an RGL model. Probably each
+will be centered on a single tetrahedron, with sides labeled, and one face of
+it (triad identity) will be highlighted and extended, and given depth). Each
+face will be seen from 2 angles, and also for the right and isotropic
+projections. use lighting, etc, to give depth. Need to work hard on this, but no
+rush.
+
+*Again, the following stuff is from the original proposal and will be completely
+superceded, though tidbits still hold.
+
+ We
+propose a geometric identity that unifies all such temporal notions into a single (simple) spatial relationship that serves as an omnibus conceptual aid to demographers, much as the Lexis diagram does for APC relationships. The full result is a three dimensional space that can be disected by any of four different planes, each of which is parallel to the faces of a regular tetrahedron (see
 Figure~\ref{fig:APCT} for a first mock-up of the model).
 Each dissecting plane relates three indices of demographic time in proportion to one
 another (1:1:1 ternary aspect ratio). The complete space can be described in
@@ -543,7 +609,7 @@ time.\footnotemark}
 \footnotetext{This and other figures to be replaced with vector graphics, although
 	I may bring this model to the presentation, since it helps explain concepts.}
 
-A property of the geometry that I propose is that
+A property of the geometry that we propose is that
 the time units in every direction (with respect to each index) are proportional. The Lexis
 diagram based on right angles and $45^\circ$ birth cohort lines does not have
 this property, whereas Lexis diagrams and surfaces based on equilateral

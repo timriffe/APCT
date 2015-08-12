@@ -94,8 +94,8 @@ California, Berkeley, and was supported by the U.S.
 National Institute On Aging of the National Institutes of Health under award
 numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
 \end{abstract}
-
-The \sout{so-called} \textbf{well-known?} Lexis diagram relates the chronological age (A), period (P),
+%\sout{so-called} \textbf{well-known?} 
+The Lexis diagram relates the chronological age (A), period (P),
 and birth cohort (C) indices of demographic time, APC, but it does not account
 for remaining years of life (thanatological age), and other related time
 indices.
@@ -416,8 +416,8 @@ two-dimensional graph, as seen in Figure~\ref{fig:tet}, with vertices labeled
 in red and the six time indices labeled as blue edges.\footnote{The same graph
 could be composed in four basic ways, depending on which vertex is in the
 middle. These are given in an appendix.} The reader may also imagine this graph
-as a transparent 3d object, in which case the four faces become aparent. There are two intuitive ways to imagine the graph as 3d, either the vertex \vt{4} is on top, and we gaze from a bird's-eye-view, or the
-vertex \vt{4} is in the back, behind the other three vertices. Assume we
+as a transparent 3d object, in which case the four faces become aparent. There are two intuitive ways to imagine the graph as 3d, either the vertex 4 is on top, and we gaze from a bird's-eye-view, or the
+vertex 4 is in the back, behind the other three vertices. Assume we
 gaze from the top, for the sake of description. 
 
 \begin{figure}[h!]
@@ -431,48 +431,70 @@ indices.}
 \subsection*{Information criteria to derive the tetrahedron.}
 The edges APC at the base define the much-studied APC plane. If the only
 information we have is chronological age, period, and birth cohort (or just two
-of these), then we have no access to the vertex \vt{4}. Each of the faces of the
-tetrahedron has this quality. The South face TDP has no access to \vt{1}.
-The Northeast face, ATL has no connection to \vt{3}, and the Northwest face
-CDL lacks a connection to \vt{2}. The triads that make up the faces of
-the tetrahedron are stuck in ``flatland''. However, there are \sout{twenty} $\binom{6}{3}=20$ ways \sout{in
-total} to choose three time indices \sout{from our total}\textbf{out} of six, and the four
-above-named triads are the only \sout{four of these}\textbf{ones} that will not yield the full 3d
+of these), then we have no access to the vertex 4. Each of the faces of the
+tetrahedron has this quality. The South face TDP has no access to 1.
+The Northeast face, ATL has no connection to 3, and the Northwest face
+CDL lacks a connection to 2. The triads that make up the faces of
+the tetrahedron are stuck in ``flatland''. However, there are $\binom{6}{3}=20$ ways to choose three time indices out of six, and the four
+above-named triads are the only ones that will not yield the full 3d
 space and imply the other three. The sixteen other combinations of three indices will recreate the full tetradhedron (hexad identity).
-\bigskip
 
-BEGIN NEW PANCHO (I suggest to replace the following paragraph, or at least to introduce this geometrical perspective somewhere in the text)
-\smallskip
 
-\sout{For example, say we are at vertex \vt{1}, and we therefore have
-information on year of birth C, completed lifespan L, and
-chronological age A (see Figure~\ref{fig:tet4vert1}). Clearly, A and
-C imply P ($C+A=P$).
-A and L imply T ($L-A=T$). Finally, C and
-L imply D ($C+L=D$), and we have the full hexad
-identity. In the tetrahedron graph, we have three edges that connect to the
-four vertices. This is the essential property of a fully informed triad.
-It is easily verified that each vertex has this property.
-However, there are twelve other sets of three that also have this property. To locate
-these ``hidden'' triads, first note that each index has an
-opposite index, with which it shares no information. These pairs are
-A-D, L-P, and C-T, and can be found in Figure~\ref{fig:tet} as
-the three sets of perpendicular edges. Each of these pairs can be completed into
-a `fully-informed'' triad by the addition of any of the other four indices
-(thereby connecting the edges). Doing so for each of the opposite pairs will
-yield the remaining twelve triads.}
+% PV: I suggest to replace the following paragraph, or at least to introduce
+% this geometrical perspective somewhere in the text
 
-A geometrical analogy seems pertinent at this point. Any pair of intersecting edges of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$ that determine a 2-dimensional plane in a 3-dimensional space.\footnote{Technically, a 2d plane in a 3d space is determined by two vectors of different direction and a point, but the inclusion of a point is not necessary for the intuitive analogy that we aim to present here.} Therefore, any third vector $\vec{w}$ of that plane could be expressed as a linear combination of $\vec{u}$ and $\vec{v}$ ($\vec{w}=\alpha\vec{u}+\beta\vec{v}$), which is usually referred as saying that $\vec{w}$ would be linearly dependent on $\vec{u}$ and $\vec{v}$. A similar property can be derived from the information contained in the tetrahedron: say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$ is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1} !!THE FIGURE SHOULD BE MODIFIED). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. It can be easily verified that any pair of intersecting edges have the same propriety: the third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
+%   TR: OK, I've commented it out. The removed paragraph sounds more like advice
+%       on how to manually find all 20-16-12 triads without too much mental
+%       labor. Maybe worth an appendix?
+% TR: the vector description is probably more rigorous, so let's go with it.
+%     We'll put some effort later into making it understandable for avg
+%     demographers.
 
-From a geometrical perspective, once a 2d-plane is defined, an additional vector may be sufficient to cover the whole 3d-space. Nonetheless, this third vector needs to be linearly independent of any pair of vectors of that 2d plane---that is, it cannot be expressed as a linear combination of any two vectors on that plane. Again, an analogous propriety can be observed in the tetrahedron: say we only have information about the indices of the $APC$ plain. $A$, $C$ and $P$ are not sufficient to determine neither the thanatological age $T$, nor the death cohort $D$, nor the lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane.
+%\sout{For example, say we are at vertex \vt{1}, and we therefore have
+%information on year of birth C, completed lifespan L, and
+%chronological age A (see Figure~\ref{fig:tet4vert1}). Clearly, A and
+%C imply P ($C+A=P$).
+%A and L imply T ($L-A=T$). Finally, C and
+%L imply D ($C+L=D$), and we have the full hexad
+%identity. In the tetrahedron graph, we have three edges that connect to the
+%four vertices. This is the essential property of a fully informed triad.
+%It is easily verified that each vertex has this property.
+%However, there are twelve other sets of three that also have this property. To
+% locate these ``hidden'' triads, first note that each index has an
+%opposite index, with which it shares no information. These pairs are
+%A-D, L-P, and C-T, and can be found in Figure~\ref{fig:tet} as
+%the three sets of perpendicular edges. Each of these pairs can be completed
+% into a `fully-informed'' triad by the addition of any of the other four indices
+%(thereby connecting the edges). Doing so for each of the opposite pairs will
+%yield the remaining twelve triads.}
 
-However, if two indices of the $APC$ plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of these three ``independent'' indices $T$, $D$ or $L$ would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age $T$ in addtion to $C$ and $P$, then $A=P-C$, $D=P+T$ and $L=T+A=T+P-C$. Hence, as with vectors in a 3d space, any triad of indices that are independent of each other---that is, none of them can be expressed as the sum or the subtraction of the other two---generates a full hexad identity or, using an analogous terminology, covers the whole ``space'' of demographic indices presented in this paper. Graphically, this is equivalent to chose any combination of three indices that do not belong to the same face of the tetrahedron in Fig.~\ref{fig:tet}.
+A geometrical analogy is pertinent at this point. Any pair of intersecting edges
+of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$
+that determine a 2-dimensional plane in a 3-dimensional
+space.\footnote{Technically, a 2d plane in a 3d space is determined by two
+vectors of different direction and a point, but the inclusion of a point is not
+necessary for the intuitive analogy that we describe here.} Therefore, any third
+vector $\vec{w}$ of that plane could be expressed as a linear combination of
+$\vec{u}$ and $\vec{v}$ ($\vec{w}=\alpha\vec{u}+\beta\vec{v}$), which is usually
+referred as saying that $\vec{w}$ would be linearly dependent on $\vec{u}$ and $\vec{v}$. A similar property can be derived from the information contained in the tetrahedron: Say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$ is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1}). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. It can be easily verified that any pair of intersecting edges have the same propriety: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
 
-\smallskip
+From a geometrical perspective, once a 2d-plane is defined, an additional vector may be sufficient to cover the whole 3d-space. Nonetheless, this third vector needs to be linearly independent of any pair of vectors of that 2d plane---that is, it cannot be expressed as a linear combination of any two vectors on that plane. Again, an analogous propriety can be observed in the tetrahedron: say we only have information about the indices of the $APC$ plain. $A$, $C$ and $P$ are not sufficient to determine a thanatological age $T$, death cohort $D$, or lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane.
 
-END NEW PANCHO.
-\bigskip
+However, if two indices of the $APC$ plane are known (the third one would be
+unnecessary as it could be derived from the other two), the additional
+information provided by any of these three ``independent'' indices $T$, $D$ or
+$L$ would be sufficient to cover the whole tetrahedron. For example, suppose we
+have information about thanatological age $T$ in addtion to $C$ and $P$, then
+$A=P-C$, $D=P+T$ and $L=T+A=T+P-C$. Hence, as with vectors in a 3d space, any
+triad of indices that are independent of each other---that is, none of them can
+be expressed as the sum or the difference of the other two---generates a full
+hexad identity or, using an analogous terminology, covers the whole ``space'' of
+demographic indices presented in this paper. Graphically, this is equivalent to
+choosing any combination of three indices that do not belong to the same face
+of the tetrahedron in Fig.~\ref{fig:tet}.
 
+
+% code given in R/TetraCombos.R, lines 70-95
 \begin{figure}[h!]
 \centering
 \caption{Graph of tetrahedron, edges eminating from vertice \vt{1} highlighted.}

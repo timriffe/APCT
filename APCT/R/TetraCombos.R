@@ -68,6 +68,8 @@ text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                    
 boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
 dev.off()
 
+####################################
+# PANCHO: this is the figure you want modified.
 # Figure 2
 pdf("Figures/tet4vert1.pdf", height=4,width=5.5)
 par(mai=c(.3,.3,.3,.3))
@@ -90,6 +92,11 @@ text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                    
 text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
 boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
 dev.off()
+###########################################
+
+
+
+
 
 # table of figures: identity criteria. experimental.
 

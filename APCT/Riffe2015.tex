@@ -29,6 +29,8 @@
 %\usepackage{color}
 %\usepackage{fontspec}
 %\usepackage{pdfsync}
+\usepackage[normalem]{ulem}
+
 
 \renewcommand{\listtablename}{List of Appendix Tables}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -70,10 +72,11 @@
 \title{A unified model of demographic time}
 
 \author[1]{Tim Riffe\thanks{triffe@demog.berkeley.edu}}
-\author[2]{Jonas Sch{\"o}ley}
-\author[2]{Francisco Villavicencio}
+\author[2,3]{Jonas Sch{\"o}ley}
+\author[2,3]{Francisco Villavicencio}
 \affil[1]{Max Planck Institute for Demographic Research}
 \affil[2]{University of Southern Denmark}
+\affil[3]{Max-Planck Odense Center on the Biodemography of Aging}
 
 %\author{[Authors]}
 
@@ -92,7 +95,7 @@ National Institute On Aging of the National Institutes of Health under award
 numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
 \end{abstract}
 
-The so-called Lexis diagram relates the chronological age (A), period (P),
+The \sout{so-called} \textbf{well-known?} Lexis diagram relates the chronological age (A), period (P),
 and birth cohort (C) indices of demographic time, APC, but it does not account
 for remaining years of life (thanatological age), and other related time
 indices.
@@ -132,7 +135,7 @@ can be used to index time.
 measures, respectively.
 \item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
 \item[A temporal space] is any $(x,y,z)$-mapping of a triad of time
-measures.
+measures \textbf{PANCHO: that generates a 3-dimensional space? ATC is a triad that just creats a plane, not a 3d-space}
 \item[Given measures] are any specified set of time measures.
 \item[Derived measures] are any unspecified time measures that are implied by or
 derived from a given set. 
@@ -148,8 +151,8 @@ derived time measures.
 Using this terminology, for example, we say that the ``Lexis'' measures
 constitute a triad identity between chronological age, period, and birth cohort. Each dyad
 combination of elements in this identity is informative, and can be mapped to a
-Lexis plane, the Lexis diagram. If we know that Mindel turned 50 on the 2\nth{1}
-of May, 1963, then we also also can derive that she was born on the 2\nth{1} of
+Lexis plane, the Lexis diagram. If we know that Mindel turned 50 on the \nth{21}
+of May, 1963, then we also also can derive that she was born on the \nth{21} of
 May, 1913. Any two pieces of information in this case will give the third, which
 means that any dyad from this set is informative. Three other such triad
 identities are also to found within the six measures of time we discuss.
@@ -290,7 +293,7 @@ depending on the dyad and axis orientation. Another possible mapping is to take
 the complete triad and translate to an $(x,y)$ coordinate so as to create
 60$^\circ$ angles between the three measures. This second mapping is primarily done in order to ensure that the spatial mapping is in equal units for the
 three measures, and we therefore refer to it as the isotropic mapping.
-The isotropic mapping comparable to using a ternary coordinate system, which we
+The isotropic mapping is comparable to using a ternary coordinate system, which we
 do not discuss.
 
 \FloatBarrier
@@ -390,7 +393,7 @@ sort of synthetic ATL plane.
 (section in progress, will contain 2 figures, like APC)
 * I've not thought much about this one, but it completes the tetrahedron :-P
 
-\subsection*{A tetrahedron relates the six time indices.}
+\section*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
 indices.
@@ -429,15 +432,19 @@ indices.}
 The edges APC at the base define the much-studied APC plane. If the only
 information we have is chronological age, period, and birth cohort (or just two
 of these), then we have no access to the vertex \vt{4}. Each of the faces of the
-tetrahedron has this quality. The South face \eg{TDP} has no access to \vt{1}.
+tetrahedron has this quality. The South face TDP has no access to \vt{1}.
 The Northeast face, ATL has no connection to \vt{3}, and the Northwest face
 CDL lacks a connection to \vt{2}. The triads that make up the faces of
-the tetrahedron are stuck in ``flatland''. However, there are twenty ways in
-total to choose three time indices from our total of six, and the four
-above-named triads are the only four of these that will not yield the full 3d
+the tetrahedron are stuck in ``flatland''. However, there are \sout{twenty} $\binom{6}{3}=20$ ways \sout{in
+total} to choose three time indices \sout{from our total}\textbf{out} of six, and the four
+above-named triads are the only \sout{four of these}\textbf{ones} that will not yield the full 3d
 space and imply the other three. The sixteen other combinations of three indices will recreate the full tetradhedron (hexad identity).
+\bigskip
 
-For example, say we are at vertex \vt{1}, and we therefore have
+BEGIN NEW PANCHO (I suggest to replace the following paragraph, or at least to introduce this geometrical perspective somewhere in the text)
+\smallskip
+
+\sout{For example, say we are at vertex \vt{1}, and we therefore have
 information on year of birth C, completed lifespan L, and
 chronological age A (see Figure~\ref{fig:tet4vert1}). Clearly, A and
 C imply P ($C+A=P$).
@@ -445,14 +452,7 @@ A and L imply T ($L-A=T$). Finally, C and
 L imply D ($C+L=D$), and we have the full hexad
 identity. In the tetrahedron graph, we have three edges that connect to the
 four vertices. This is the essential property of a fully informed triad.
-
-\begin{figure}[h!]
-\centering
-\caption{Graph of tetrahedron, edges eminating from vertice \vt{1} highlighted.}
-\label{fig:tet4vert1}
-\includegraphics[scale=1]{Figures/tet4vert1.pdf}
-\end{figure}
-\noindent It is easily verified that each vertex has this property.
+It is easily verified that each vertex has this property.
 However, there are twelve other sets of three that also have this property. To locate
 these ``hidden'' triads, first note that each index has an
 opposite index, with which it shares no information. These pairs are
@@ -460,7 +460,27 @@ A-D, L-P, and C-T, and can be found in Figure~\ref{fig:tet} as
 the three sets of perpendicular edges. Each of these pairs can be completed into
 a `fully-informed'' triad by the addition of any of the other four indices
 (thereby connecting the edges). Doing so for each of the opposite pairs will
-yield the remaining twelve triads.
+yield the remaining twelve triads.}
+
+A geometrical analogy seems pertinent at this point. Any pair of intersecting edges of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$ that determine a 2-dimensional plane in a 3-dimensional space.\footnote{Technically, a 2d plane in a 3d space is determined by two vectors of different direction and a point, but the inclusion of a point is not necessary for the intuitive analogy that we aim to present here.} Therefore, any third vector $\vec{w}$ of that plane could be expressed as a linear combination of $\vec{u}$ and $\vec{v}$ ($\vec{w}=\alpha\vec{u}+\beta\vec{v}$), which is usually referred as saying that $\vec{w}$ would be linearly dependent on $\vec{u}$ and $\vec{v}$. A similar property can be derived from the information contained in the tetrahedron: say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$ is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1} !!THE FIGURE SHOULD BE MODIFIED). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. It can be easily verified that any pair of intersecting edges have the same propriety: the third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
+
+From a geometrical perspective, once a 2d-plane is defined, an additional vector may be sufficient to cover the whole 3d-space. Nonetheless, this third vector needs to be linearly independent of any pair of vectors of that 2d plane---that is, it cannot be expressed as a linear combination of any two vectors on that plane. Again, an analogous propriety can be observed in the tetrahedron: say we only have information about the indices of the $APC$ plain. $A$, $C$ and $P$ are not sufficient to determine neither the thanatological age $T$, nor the death cohort $D$, nor the lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane.
+
+However, if two indices of the $APC$ plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of these three ``independent'' indices $T$, $D$ or $L$ would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age $T$ in addtion to $C$ and $P$, then $A=P-C$, $D=P+T$ and $L=T+A=T+P-C$. Hence, as with vectors in a 3d space, any triad of indices that are independent of each other---that is, none of them can be expressed as the sum or the subtraction of the other two---generates a full hexad identity or, using an analogous terminology, covers the whole ``space'' of demographic indices presented in this paper. Graphically, this is equivalent to chose any combination of three indices that do not belong to the same face of the tetrahedron in Fig.~\ref{fig:tet}.
+
+\smallskip
+
+END NEW PANCHO.
+\bigskip
+
+\begin{figure}[h!]
+\centering
+\caption{Graph of tetrahedron, edges eminating from vertice \vt{1} highlighted.}
+\label{fig:tet4vert1}
+\includegraphics[scale=1]{Figures/tet4vert1.pdf}
+\end{figure}
+\noindent 
+
 
 \begin{table}[h]
 \centering
@@ -478,8 +498,6 @@ CPT & DLP & DLT & LPT\\
 \tg{CPT} & \tg{DLP} & \tg{DLT} & \tg{LPT}
 \end{tabular}
 \end{table}
-
-
 
 A like-organized table for the four triad identities simply highlights each of
 the four faces of the tetrahedron, as seen in Table~\ref{tab:triadids}. When
@@ -501,8 +519,8 @@ complete in this sense. It can be verified that each of these
 triads implies the full hexad identity. This property is comparable to the
 reducibility characteristic of triad identities. For example, for the APC
 identity, the list of dyads that give full information is shorter:
-\eg{AC}, \eg{AP}, \eg{PC}. The triads in Table~\ref{tab:set3} give analogous
-information for the \eg{APCTDL} identity.
+AC, AP, PC. The triads in Table~\ref{tab:set3} give analogous
+information for the APCTDL identity.
 It may be further stated that no dyad of indices will give the hexad identity,
 and any quad (or greater) of indices will yield the hexad identity. Any index
 complemented by any index other than its opposite will imply one of
@@ -604,7 +622,7 @@ the most recent census).
 \caption[cap]{A mock-up example of the unified model of demographic
 time.\footnotemark}
 \label{fig:APCT}
-	\includegraphics[bb=0 0 3264 2448, width=\textwidth]{Figures/PhysicalModel.jpg}
+	\includegraphics[bb=0 0 3264 2448, width=.8\textwidth]{Figures/PhysicalModel.jpg}
 \end{figure}
 \footnotetext{This and other figures to be replaced with vector graphics, although
 	I may bring this model to the presentation, since it helps explain concepts.}

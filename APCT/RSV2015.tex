@@ -8,14 +8,13 @@
 \usepackage{caption}
 \usepackage{placeins}
 \usepackage{graphicx}
-
 \usepackage{subcaption}
 %\usepackage{subfig}
-
 \usepackage{longtable}
 \usepackage{setspace}
 %\usepackage{tikz}
 \usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{xcolor,colortbl}
 \usepackage{chngpage}
 %\usepackage[active,tightpage]{preview}
@@ -31,12 +30,9 @@
 %\usepackage{pdfsync}
 \usepackage[normalem]{ulem}
 \usepackage{amsfonts}
-
-
 \renewcommand{\listtablename}{List of Appendix Tables}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
 % working on this need to concatenate file name based on sex and variable name
 %\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
 
@@ -68,9 +64,10 @@
 \defcitealias{HMD}{HMD}
 
 % junk for longtable caption
-\AtBeginEnvironment{longtable}{\singlespacing}
+\AtBeginEnvironment{longtable}{\linespread{1}\selectfont}
 \setlength{\LTcapwidth}{\linewidth}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \title{A unified model of demographic time}
@@ -258,9 +255,8 @@ Table~\ref{tab:dyads}.
   \small
   \begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
   \caption{The 15 temporal dyads, with corresponding translations to Euclidean
-  and ternary representations in temporal planes.\protect\footnotemark } 
-  \label{tab:dyads}
-  \midrule
+  and ternary representations in temporal planes.\protect\footnotemark} 
+  \label{tab:dyads} \\
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variations of the Lexis Diagram}} \\
   \midrule

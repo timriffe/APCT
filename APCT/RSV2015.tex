@@ -67,6 +67,9 @@
 
 \defcitealias{HMD}{HMD}
 
+% junk for longtable caption
+\AtBeginEnvironment{longtable}{\singlespacing}
+\setlength{\LTcapwidth}{\linewidth}
 
 \begin{document}
 
@@ -97,18 +100,18 @@ numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility 
 \end{abstract}
 %\sout{so-called} \textbf{well-known?} 
 The Lexis diagram relates the chronological age (A), period (P),
-and birth cohort (C) indices of demographic time, APC, but it does not account
+and birth cohort (C) measures of demographic time, APC, but it does not account
 for remaining years of life (thanatological age), and other related time
 indices.
 The thanatological counterpart to APC is an identity between thanatological
 age (T), period (P), and death cohort (D), TPD. A third
 identity exists between chronological age (A), thanatological age (T), and lifespan (L), ATL, and a fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
-Each of these four triad identities may be sufficiently described by any
+Each of these four identities may be sufficiently described by any
 two of its consituent indices, making the third index redundant. Each of these
 four identities also lacks a major dimension of time. The ATL identity
 lacks calendar time, the CDL identity is ageless, APC lacks an endpoint in time,
 and TPD lacks a starting point in time. We refer to these four identities
-as triad identities.
+as the triad identities.
 
 To our knowledge, the only triad identity that has received serious
 treatment at the time of this writing is the APC identity. Different
@@ -120,9 +123,9 @@ much the same spirit as the work on APC relationships done between the late
 
 This paper provides a bottom-up description of the model, building from familar
 components to the full relationship. We begin by defining some terms used
-throughout the manuscript. We then explore the dyadic relationships, followed by
-the four triad identities, and finally the hexad identity. At the price of some
-redundancy, we give a systematic topological overview of the
+throughout the manuscript. We then explore all combinations of two time
+measures, the dyadic relationships, followed by the four triad identities, and
+finally the hexad identity. At the price of some redundancy, we give a systematic topological overview of the
 different elements of demographic time. 
 
 \section*{Definitions}
@@ -132,7 +135,7 @@ describes some of the more important terms we use.
 \begin{description}
 \item[Time measures] are any of the six demographic perspectives discussed that
 can be used to index time: chronological age ($A$), period ($P$), birth cohort ($C$), thanatological
-age ($T$), lifespan ($L$), and death cohort ($D$).
+age ($T$, time-to-death), lifespan ($L$), and death cohort ($D$).
 \item[Dyads, triads, and hexads] are any set of two, three, or six unique time
 measures, respectively.
 \item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
@@ -153,19 +156,20 @@ from which $C$ can be derived.
 Using this terminology, for example, we say that the ``Lexis'' measures
 constitute a triad identity between chronological age, period, and birth cohort. Each dyad
 combination of elements in this identity is informative, and can be mapped to a
-Lexis plane, the Lexis diagram. If we know that Mindel turned 50 on the \nth{21}
-of May, 1963, then we also also can derive that she was born on the \nth{21} of
+temporal plane, the Lexis diagram. If we know that Mindel turned 50 on the
+\nth{21} of May, 1963, then we also also can derive that she was born on the \nth{21} of
 May, 1913. Any two pieces of information in this case will give the third, which
 means that any dyad from this set is informative. Three other such triad
 identities are also to found within the six measures of time we discuss.
 \FloatBarrier
 
 \subsection*{Time measures}
+\FloatBarrier
 This model description is conceived in absolute, linear, Newtonian time, and we
 do not consider situating the model in any other perspective or model of time
 itself.
-This model is scalable to any time unit, but we decribe it in terms of years,
-the dominant human time scale. We therefore speak of calendar time,
+This relationship is scalable to any time unit, but we decribe it in terms of
+years, the dominant human time scale. We therefore speak of calendar time,
 imagining the modern Gregorian calendar, though this is not necessary. The six
 measures of time we consider are defined in Table~\ref{tab:sixdefs}, both in the
 demographic sense we describe, as well as in a more general event history
@@ -192,17 +196,18 @@ lifespan & L & duration of life & duration of exposure \\
 
 The concepts of thanatological age and death cohorts are likely less familar to
 readers than the other measures we consider. Thanatological age is sometimes
-referred to in the literature as remaining years of life, or time to death
+referred to in the literature as remaining years of life, or time-to-death
 (TTD), but we prefer the term thanatological age, and to think of the concept of
-age in general as marking a position on a lifeline. Chronological age and
-thanatological age are in this way complementary. Thanatological age is
+age in general as marking a position on a lifeline with respect to one of its
+endpoints.
+Chronological age and thanatological age are in this way complementary. Thanatological age is
 different from the notion of prospective age, used by
 \citet{sanderson2007new}, since prospective age is a relative term that reflects
 a comparison of expectancies. Prospective age scales chronological age by
 comparing mortality schedules, but it is neither an expectancy nor a statement
 of remaining years of life. Thanatological age is meaningful without much
-justification; it is what we all want to know, the thing we approximate with
-remaining life expectancy.
+justification; it is the measure we all want to know, the thing we approximate
+with remaining life expectancy.
 
 Cohorts in general associate individuals that share a characteristic. In
 demography the grouping characteristic is often a combination of place and time, such as
@@ -215,7 +220,7 @@ These concepts are analagous to the ideas of birth and death cohorts we use here
 deaths of a given year as a death cohort. In the time preceding
 death, the members of a given death cohort have much in common, despite
 heterogeneity with respect to time of birth. If the reader accepts this premise,
-then the abstract construct of a death cohort is also potentially meaningful in
+then the abstract construct of a death cohort is also meaningful in
 the way that the other measures are.
 
 Much of the work of demography is directed at the study of lifespan. Lifespan is
@@ -226,36 +231,35 @@ Demographers have more often used lifespan or age-at-death as a measure of morta
 
 Treating lifespan,
 death cohorts, and thanatological age as temporal structuring variables
-therefore opens the door to new classes of comparisons, models of understanding, and discovery,
+enables new classes of comparisons, models of understanding, and discovery,
 akin to those unlocked by breaking down demographic phenomena by chronological age,
 period, and birth cohort. The following sections will, in this sense, provide an
 exhaustive classification of the ways in which these six measures of time can be juxtaposed to such ends.
-We begin with the dyadic comparisons.
+We begin with all sets of two time measures, the informative and uninformative
+temporal dyads.
 
 \FloatBarrier
 
 \section*{Informative and uninformative dyads}
-%\begin{tcolorbox}[breakable, enhanced]
-%Note to Pancho and Jonas:
-%This section will contain Jonas' table of all 15 dyadic relationships, each with
-%a right and isotropic rendition. Describe graphing conventions, and walk through one line
-%from the table. Another box in each row of the table could give an accessible
-%example of deriving the third element from the dyad. Find 15 deceased
-%demographers' names and birth and death dates and use them in the examples.
-%We'll use the first names, birth and death dates of demographers.
-%Some suggestions to include those in Table~\ref{names}. You can get more
-%inspiration from \protect\url{http://www-personal.umich.edu/~eklanche/digdemog/index.html}
-%Maybe an idea would be to allow for a ``broken'' table, with the textual passage
-%between rows, similar to using intertext in math environment?
-%\end{tcolorbox}
 
-%%%% Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Any mapping of two time measures to a ($x,y$) coordinate
+system constitutes a temporal plane. If the two time measures in question are
+members of the same triad identity, the third member is called a derived
+measure. For instance, if we take the dyad $AP$, $C$ is called the derived
+measure, and we make this dyadic relationship explicit by writing $AP(C)$.
+The temporal plane that corresponds to this informative dydad is the contemporary representation of the
+Lexis diagram. The dyads $AC(P)$ and $CP(A)$ also belong to the Lexis identity, but imply different less-common rotations and projections of the Lexis
+diagram. 15 dyads are possible from our set of six time measures, 11 of
+which are informative, and four of which have no derived time measure, and are
+therefore called uninformative. The 15 dyads are summarized in
+Table~\ref{tab:dyads}.
 
 \begin{center}
   \small
   \begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
-  \toprule
-  \multicolumn{4}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
+  \caption{The 15 temporal dyads, with corresponding translations to Euclidean
+  and ternary representations in temporal planes.\protect\footnotemark } 
+  \label{tab:dyads}
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variations of the Lexis Diagram}} \\
@@ -324,7 +328,10 @@ We begin with the dyadic comparisons.
   $$\begin{aligned}
     &AL(T) \\
     &T = A - L
-  \end{aligned}$$ &
+  \end{aligned}$$ & \footnotetext{The
+  temporal planes are named after the two given time scales. The derived scale
+  is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.}
+  
   Tim is 34 years old (A) and will live to the age of 96 (L), leaving him 62
   years (T) to settle affairs.
   & \includegraphics[width = \linewidth]{Figures/JonasTable/ALt.pdf} &
@@ -394,7 +401,6 @@ We begin with the dyadic comparisons.
   \bottomrule
   \end{longtable}
 \end{center}
-
 
 
 

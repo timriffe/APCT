@@ -102,10 +102,11 @@ for remaining years of life (thanatological age), and other related time
 indices.
 The thanatological counterpart to APC is an identity between thanatological
 age (T), period (P), and death cohort (D), TPD. A third
-identity exists between chronological age (A), thanatological age (T), and lifespan (L), ATL, and a fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
+identity exists between thanatological age (T), chronological age (A), and
+lifespan (L), TAL, and a fourth between year of birth (C), year of death (D) and lifespan (L), CDL.
 Each of these four identities may be sufficiently described by any
 two of its consituent indices, making the third index redundant. Each of these
-four identities also lacks a major dimension of time. The ATL identity
+four identities also lacks a major dimension of time. The TAL identity
 lacks calendar time, the CDL identity is ageless, APC lacks an endpoint in time,
 and TPD lacks a starting point in time. We refer to these four identities
 as the triad identities.
@@ -258,13 +259,16 @@ between the $x$ and $y$ axes, such that the derived measure, if any, is then
 \textit{accidentally} present in a 45$^\circ$ ascending or descending angle,
 depending on the dyad and axis orientation. 
 
-In the case of dyads that imply a derived measure, another logical mapping is
-to translate to an $(x,y)$ coordinate that forces 60$^\circ$ angles between the
-three measures. Such a mapping ensures that the
-spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping.
-The isotropic mapping is comparable to using a ternary coordinate system, which we
-do not discuss. It does not make sense to provide an isotropic mapping of an
-uninformative dyad. 
+It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
+derived time measure, when plotted at 45$^\circ$, is relatively
+longer than either the age or years axes. If a right angle and unity aspect
+ratio is forced between the dyad, the derived measure is always stretched by
+$\sqrt{2}$, or 41\%. In the case of dyads that imply a derived measure, another logical mapping is to translate to an $(x,y)$ coordinate that forces 60$^\circ$ angles between the three measures. Such a mapping ensures that the
+spatial units are equal for the three measures, and we therefore refer to it as
+the isotropic mapping. The isotropic mapping is comparable to using a ternary
+coordinate system, which we do not discuss. It does not make sense to provide an isotropic mapping of an uninformative dyad. The primary justification for isotropic temporal planes comes from a data visualization perspective, where it may be
+hypothesized that the viewer's ability to compare slopes is hindered if the axes
+are not on the same scale.
 
 15 dyads are possible from our set of six time measures, 12 of
 which are informative, and three of which have no derived time measure, and are
@@ -327,7 +331,7 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   Irene died in 1974 (D). When she had 30 (T) remaining years of life the year
   must have been 1944 (P).& \includegraphics[width =
   \linewidth]{Figures/JonasTable/TDp.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/TDp_iso.pdf}  \\
-    \midrule
+  \midrule
   %%%% TP
   $$\begin{aligned}
     &TP(D) \\
@@ -339,8 +343,8 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variants of TAL}}
   \\
-    \midrule
-    %%%% TA
+  \midrule
+  %%%% TA
   $$\begin{aligned}
     &TA(L) \\
     &L = T + A
@@ -367,7 +371,7 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   & \includegraphics[width = \linewidth]{Figures/JonasTable/ALt.pdf} &
   \includegraphics[width = \linewidth]{Figures/JonasTable/ALt_iso.pdf}  \\
   \midrule
-    \midrule
+  \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variants of CDL}}
   \\
@@ -391,7 +395,7 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   her birth year in 1900 (C). &
   \includegraphics[width = \linewidth]{Figures/JonasTable/LDc.pdf} & 
   \includegraphics[width = \linewidth]{Figures/JonasTable/LDc_iso.pdf}  \\
-     \midrule
+  \midrule
   %%%% LC
   $$\begin{aligned}
     &LC(D) \\
@@ -400,10 +404,10 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   {\`A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
   untimely death in 2004 (D). & \includegraphics[width =
   \linewidth]{Figures/JonasTable/LCd.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/LCd_iso.pdf}  \\
-     \midrule
+  \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{The uninformative dyads}} \\
-     \midrule
+  \midrule
   %%%% LP
   $LP(-)$ &
   The $LP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just lifespan and period. &
@@ -416,7 +420,6 @@ and the corresponding graphical representations are summarized in Table~\ref{tab
   derived from birth cohort and thanatological age. & \includegraphics[width =
   \linewidth]{Figures/JonasTable/CT.pdf} & \\%\includegraphics[width =
   % \linewidth]{Figures/JonasTable/CT_iso.pdf}  \\
-  
   \midrule
   %%%% AD
   $AD(-)$ &
@@ -447,6 +450,7 @@ the four primary diagrams that belong to the triad identities.
 
 \FloatBarrier
 \subsection*{APC}%\tgh{APC}}
+\FloatBarrier
 The so-called Lexis diagram has long been used in demography as a conceptual
 tool for structuring data, observations, and rate estimation, as inspiration for work
 on statistical identification, and as the coordinate basis of contemporary
@@ -483,29 +487,16 @@ direction, starting with birth (filled circle) at chronological age zero, and de
 (circled x). Any APC surface can be interpreted along each of these
 three dimensions of temporal structure. 
 
-It has long been noted \citep{zeuner1869abhandlungen, perozzo1880della} that the
-birth cohort dimension, as represented in Figure~\ref{fig:APCrt}, is relatively
-longer than either the age or years axes. If a right angle and unity aspect
-ratio is forced between any two of the APC dimensions, the third dimension is always be
-stretched by $\sqrt{2}$, or 41\% longer. Another long-standing, but less
-common variant, is to treat the derived direction (in this case birth cohorts)
-as a redundant third axis, and forcing parity between the units of A, P, and C, as in
-Figure~\ref{fig:APCeq}. We refer to the second variety as the isotropic APC
-diagram, or an equilateral APC diagram. The primary justification for isotropic
-temporal planes comes from a data visualization perspective, where it may be
-hypothesized that the viewer's ability to compare slopes is hindered if the axes
-are not on the same scale.
-
-
 \FloatBarrier
 
 \subsection*{TPD}%\tgh{TPD}}
-(section in progress, will contain 2 figures, like APC)
-*add TPD reference to Villavicencio/Riffe paper under review
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the inverse of APC. One may take the same lifelines from
 Figure~\ref{fig:APC} and realign them in descending fashion to create the
-diagram in Figure~\ref{fig:TPD}.
+diagram in Figure~\ref{fig:TPD}. Such diagrams have to our knowledge only
+appeared once in the literature, as a visual aid to a mathematical prood of the
+Brouard-Carey equality
+\citep{pancho2015}.
 
 \begin{figure} 
 \caption{A TPD diagram in two projections.}
@@ -527,16 +518,16 @@ diagram in Figure~\ref{fig:TPD}.
 \end{figure} 
 
 \FloatBarrier
-\subsection*{ATL}%\tgh{ATL}}
+\subsection*{TAL}%\tgh{ATL}}
 (section in progress, will contain 2 figures, like APC)
-*add reference to Riffe, Chung, Spijker, MacInnes (although that ATL was a
+*add reference to Riffe, Chung, Spijker, MacInnes (although that TAL was a
 cross-section and not a compression) 
-The second plane is ATL, a valid coordinate
+The second plane is TAL, a valid coordinate
 system for processes that vary over the lifecourse, but not over time (P). Since the
-lifecourse belongs to the cohort perspective, it is best to think of the ATL
-plane as belonging to some particular birth cohort. Alternatively, an ATL
+lifecourse belongs to the cohort perspective, it is best to think of the TAL
+plane as belonging to some particular birth cohort. Alternatively, an TAL
 triangle may be taken as a cross-section along through the period dimension, a
-sort of synthetic ATL plane.
+sort of synthetic TAL plane.
 
 \subsection*{CDL}%\tgh{CDL}}
 (section in progress, will contain 2 figures, like APC)

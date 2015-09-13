@@ -123,7 +123,9 @@ components to the full relationship. We begin by defining some terms used
 throughout the manuscript. We then explore all combinations of two time
 measures, the dyadic relationships, followed by the four triad identities, and
 finally the hexad identity. At the price of some redundancy, we give a systematic topological overview of the
-different elements of demographic time. 
+different elements of demographic time. This paper
+contains no data visualizations, but it may serve as a basis for designing
+some. 
 
 \section*{Definitions}
 \subsection{Technical terminology}
@@ -240,32 +242,50 @@ temporal dyads.
 \section*{Informative and uninformative dyads}
 
 Any mapping of two time measures to a ($x,y$) coordinate
-system constitutes a temporal plane. If the two time measures in question are
-members of the same triad identity, the third member is called a derived
+system constitutes a temporal plane. If the two given time measures are members of the same triad identity, the third member is called a derived
 measure. For instance, if we take the dyad $AP$, $C$ is called the derived
 measure, and we make this dyadic relationship explicit by writing $AP(C)$.
 The temporal plane that corresponds to this informative dydad is the contemporary representation of the
 Lexis diagram. The dyads $AC(P)$ and $CP(A)$ also belong to the Lexis identity, but imply different less-common rotations and projections of the Lexis
-diagram. 15 dyads are possible from our set of six time measures, 11 of
-which are informative, and four of which have no derived time measure, and are
-therefore called uninformative. These dyads, an explanation or example, and the
-corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
-\pagebreak
+diagram. 
+
+For each dyad there is a fundamental question of how to map the constituent
+coordinates to a cartesian temporal plane. Typically one forces parity between time units within
+a specified dyad, and maps one element directly to $x$ and the second element
+directly to $y$, resulting in a 90$^\circ$ angle between the $x$ axis and $y$
+axis. In this case the convention is to force a unity aspect ratio
+between the $x$ and $y$ axes, such that the derived measure, if any, is then
+\textit{accidentally} present in a 45$^\circ$ ascending or descending angle,
+depending on the dyad and axis orientation. 
+
+In the case of dyads that imply a derived measure, another logical mapping is
+to translate to an $(x,y)$ coordinate that forces 60$^\circ$ angles between the
+three measures. Such a mapping ensures that the
+spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping.
+The isotropic mapping is comparable to using a ternary coordinate system, which we
+do not discuss. It does not make sense to provide an isotropic mapping of an
+uninformative dyad. 
+
+15 dyads are possible from our set of six time measures, 12 of
+which are informative, and three of which have no derived time measure, and are
+therefore called uninformative. These dyads, an explanation or simple example,
+and the corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
+
 \begin{center}
   \small
   \begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
   \caption{The 15 temporal dyads, with corresponding translations to Euclidean
-  and ternary temporal planes.\protect\footnotemark} 
+  and isotropic temporal planes.\protect\footnotemark} 
   \label{tab:dyads} \\
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variations of the Lexis Diagram}} \\
+  \multicolumn{4}{c}{\textsc{Variants of APC}} \\
   \midrule
   %%%% AP
   $$\begin{aligned}
     &AP(C) \\
     &C = P - A
-  \end{aligned}$$ &
-  The $AP(C)$ temporal plane constitutes the classical Lexis diagram. &
+  \end{aligned}$$ & \footnotetext{Contrary to mathematical convention we name
+  the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} The $AP(C)$ temporal plane constitutes the classical Lexis diagram. &
   \includegraphics[width = \linewidth]{Figures/JonasTable/APc.pdf} &
   \includegraphics[width = \linewidth]{Figures/JonasTable/APc_iso.pdf}  \\
   \midrule
@@ -288,7 +308,7 @@ corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
   \includegraphics[width = \linewidth]{Figures/JonasTable/CPa.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/CPa_iso.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{2-D Combinations of Thanatological Measures}} \\
+  \multicolumn{4}{c}{\textsc{Variants of TPD}} \\
   \midrule
   %%%% PD
   $$\begin{aligned}
@@ -315,11 +335,19 @@ corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
   \end{aligned}$$ & Helen had 30 yeasrs of life left (T) in 1971 (P) and
   therefore belonged to the 2001 death cohort (D). & \includegraphics[width =
   \linewidth]{Figures/JonasTable/TPd.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/TPd_iso.pdf}  \\
-  \bottomrule
+  \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{2-D Combinations of Lexis and Thanatological
-  Measures}}
+  \multicolumn{4}{c}{\textsc{Variants of TAL}}
   \\
+    \midrule
+    %%%% TA
+  $$\begin{aligned}
+    &TA(L) \\
+    &L = T + A
+  \end{aligned}$$ &
+  The time already lived and the time still left sum up to the total lifespan. &
+  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl.pdf} &
+  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl_iso.pdf}  \\
   \midrule
   %%%% TL
   $$\begin{aligned}
@@ -330,34 +358,19 @@ corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
   66. & \includegraphics[width = \linewidth]{Figures/JonasTable/TLa.pdf} &
   \includegraphics[width = \linewidth]{Figures/JonasTable/TLa_iso.pdf}  \\
   \midrule
-  %%%% LD
-  $$\begin{aligned}
-    &LD(C) \\
-    &C = D - L
-  \end{aligned}$$ &
-  Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting
-  her birth year in 1900 (C). &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LDc.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/LDc_iso.pdf}  \\
-  \midrule
-  %%%% AL
+   %%%% AL
   $$\begin{aligned}
     &AL(T) \\
     &T = A - L
-  \end{aligned}$$ & \footnotetext{The
-  temporal planes are named after the two given time scales. The derived scale
-  is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.}
-  
-  Tim is 34 years old (A) and will live to the age of 96 (L), leaving him 62
-  years (T) to settle affairs.
+  \end{aligned}$$ &  Tim is 34 years old (A) and will live to the age of 96 (L),
+  leaving him 62 years (T) to settle affairs.
   & \includegraphics[width = \linewidth]{Figures/JonasTable/ALt.pdf} &
   \includegraphics[width = \linewidth]{Figures/JonasTable/ALt_iso.pdf}  \\
   \midrule
-  %%%% LP
-  $LP(-)$ &
-  The $LP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just lifespan and period. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LP.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LP_iso.pdf}  \\
-  
+    \midrule
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \multicolumn{4}{c}{\textsc{Variants of CDL}}
+  \\
   \midrule
   %%%% CD
   $$\begin{aligned}
@@ -369,73 +382,68 @@ corresponding graphical representations are summarized in Table~\ref{tab:dyads}.
   & \includegraphics[width = \linewidth]{Figures/JonasTable/CDl.pdf} &
   \includegraphics[width = \linewidth]{Figures/JonasTable/CDl_iso.pdf}  \\
   \midrule
-  %%%% CT
-  $CT(-)$ &
-  The $CT$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just cohort and thanatological age. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/CT.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/CT_iso.pdf}  \\
-  \midrule
-  %%%% TA
+  %%%% LD
   $$\begin{aligned}
-    &TA(L) \\
-    &L = T + A
+    &LD(C) \\
+    &C = D - L
   \end{aligned}$$ &
-  The time already lived and the time still left sum up to the total lifespan. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl_iso.pdf}  \\
-  \midrule
-  %%%% AD
-  $AD(-)$ &
-  The $AD$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just death cohort and age. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/AD.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/AD_iso.pdf}  \\
-  \midrule
+  Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting
+  her birth year in 1900 (C). &
+  \includegraphics[width = \linewidth]{Figures/JonasTable/LDc.pdf} & 
+  \includegraphics[width = \linewidth]{Figures/JonasTable/LDc_iso.pdf}  \\
+     \midrule
   %%%% LC
   $$\begin{aligned}
     &LC(D) \\
     &D = C + L
   \end{aligned}$$ &
   {\`A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
-  untimely death in 2004 (D).
-  & \includegraphics[width = \linewidth]{Figures/JonasTable/LCd.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LCd_iso.pdf}  \\
-
+  untimely death in 2004 (D). & \includegraphics[width =
+  \linewidth]{Figures/JonasTable/LCd.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/LCd_iso.pdf}  \\
+     \midrule
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \multicolumn{4}{c}{\textsc{The uninformative dyads}} \\
+     \midrule
+  %%%% LP
+  $LP(-)$ &
+  The $LP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just lifespan and period. &
+  \includegraphics[width = \linewidth]{Figures/JonasTable/LP.pdf} & \\
+  %\includegraphics[width = \linewidth]{Figures/JonasTable/LP_iso.pdf}  \\
+  \midrule
+  %%%% CT
+  $CT(-)$ &
+  The $CT$ plane is \emph{non-informative}. No additional dimensions can be
+  derived from birth cohort and thanatological age. & \includegraphics[width =
+  \linewidth]{Figures/JonasTable/CT.pdf} & \\%\includegraphics[width =
+  % \linewidth]{Figures/JonasTable/CT_iso.pdf}  \\
+  
+  \midrule
+  %%%% AD
+  $AD(-)$ &
+  The $AD$ plane is \emph{non-informative}. No additional dimensions can be
+  derived from death cohort and chronological age. & \includegraphics[width =
+  \linewidth]{Figures/JonasTable/AD.pdf} & \\%\includegraphics[width =
+  % \linewidth]{Figures/JonasTable/AD_iso.pdf}  \
+ 
   \end{longtable}
 \end{center}
 
-Most of what we think we know about how rates change over age and time comes
+Most of what we know about how rates change over age and time comes
 from the very first juxtaposition in Table~\ref{tab:dyads}, $AP(C)$. While
 $CP(A)$ and $AC(P)$ are statistically redundant, they are not fully redundant
 in terms of perception and data visualization if using Euclidean
-coordinates, as demographers typically do. Any of the other dyadic
-juxtapositions can be considered a relatively novel way of structuring or
+coordinates, as demographers typically do. The other dyadic
+juxtapositions can be considered as either rare or novel ways of structuring or
 viewing temporal variation in demography.
 
 \section*{The triad identities}
-Visualizations of data structured by any dyad of time measures mapped onto a
-temporal plane from one of the triad identities are inherently richer in
-information than juxtapositions of uninformative dyads. There is no reason not
+Visualizations of data structured by any dyad belonging to a triad identity
+are inherently richer in information than juxtapositions of uninformative dyads. There is no reason not
 to explore all possible dyadic juxtapositions, but the triad identities have more
 apparent meaning, even in the absence of data, due to the underlying
-relationship between measures. In the present section, we therefore lay out the
-four primary diagrams that belong to the triad identities. This paper contains
-no such data visualizations, but it serves as a basis for designing some. Here
-we describe the underlying temporal planes of the triad identities.
-
-For the case of each identity,
-there is a fundamental question of how to map the constituent coordinates to a
-cartesian temporal plane. Typically one forces parity between time units within
-a specified dyad, and maps one element directly to $x$ and the second element
-directly to $y$, resulting in a 90$^\circ$ angle between the $x$ axis and $y$
-axis. In this case the convention is to force a unity aspect ratio
-between the $x$ and $y$ axes, such that the derived measure is then
-\textit{accidentally} present in a 45$^\circ$ ascending or descending angle,
-depending on the dyad and axis orientation. Another possible mapping is to take
-the complete triad and translate to an $(x,y)$ coordinate so as to create
-60$^\circ$ angles between the three measures. This second mapping is primarily done in order to ensure that the spatial mapping is in equal units for the
-three measures, and we therefore refer to it as the isotropic mapping.
-The isotropic mapping is comparable to using a ternary coordinate system, which we
-do not discuss.
+relationship between measures. Each of the triad identities can accomodate some
+version of a lifeline. In the present section, we therefore lay out
+the four primary diagrams that belong to the triad identities. 
 
 \FloatBarrier
 \subsection*{APC}%\tgh{APC}}
@@ -460,7 +468,7 @@ Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}.
 \end{subfigure}
 \\\vspace{-2em}
 \begin{subfigure}{1.1\textwidth}
-\caption{All 60$^\circ$ angles}
+\caption{Isotropic}
 \vspace{-6em}
 \label{fig:APCeq}
 \includegraphics[scale=0.6]{Figures/APCeq.pdf}
@@ -484,9 +492,9 @@ common variant, is to treat the derived direction (in this case birth cohorts)
 as a redundant third axis, and forcing parity between the units of A, P, and C, as in
 Figure~\ref{fig:APCeq}. We refer to the second variety as the isotropic APC
 diagram, or an equilateral APC diagram. The primary justification for isotropic
-temporal planes comes from a data visualization perspective, where it is
-supposed that the viewer's ability to compare slopes is hindered if the axes are
-not on the same scale. This property will be explored more in a future paper.
+temporal planes comes from a data visualization perspective, where it may be
+hypothesized that the viewer's ability to compare slopes is hindered if the axes
+are not on the same scale.
 
 
 \FloatBarrier

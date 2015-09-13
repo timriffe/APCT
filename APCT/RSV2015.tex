@@ -494,9 +494,14 @@ Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the inverse of APC. One may take the same lifelines from
 Figure~\ref{fig:APC} and realign them in descending fashion to create the
 diagram in Figure~\ref{fig:TPD}. Such diagrams have to our knowledge only
-appeared once in the literature, as a visual aid to a mathematical prood of the
-Brouard-Carey equality
-\citep{pancho2015}.
+appeared once in the literature, as a visual aid to a discrete mathematical
+proof of the Brouard-Carey equality
+\citep{pancho2015}. TPD coordinates may in general be used to arrange events or
+durations that are logically aligned (or may only be aligned) by time of
+termination, and in general any
+situation in which a terminal event predicts preceding patterns of variation.
+Examples may include lifelines preceding deaths from infectious or acquired
+conditions where the time of infection or acquisition is unknown. 
 
 \begin{figure} 
 \caption{A TPD diagram in two projections.}
@@ -510,7 +515,7 @@ Brouard-Carey equality
 \end{subfigure}
 \\\vspace{-2em}
 \begin{subfigure}{1.1\textwidth}
-\caption{All 60$^\circ$ angles}
+\caption{Isotropic}
 \vspace{-6em}
 \label{fig:TPDeq}
 \includegraphics[scale=0.6]{Figures/TPDeq.pdf}
@@ -519,15 +524,16 @@ Brouard-Carey equality
 
 \FloatBarrier
 \subsection*{TAL}%\tgh{ATL}}
-(section in progress, will contain 2 figures, like APC)
-*add reference to Riffe, Chung, Spijker, MacInnes (although that TAL was a
-cross-section and not a compression) 
-The second plane is TAL, a valid coordinate
-system for processes that vary over the lifecourse, but not over time (P). Since the
+
+
+TAL is an appropriate coordinate
+system for processes that vary over the lifecourse. Since the
 lifecourse belongs to the cohort perspective, it is best to think of the TAL
 plane as belonging to some particular birth cohort. Alternatively, an TAL
 triangle may be taken as a cross-section along through the period dimension, a
-sort of synthetic TAL plane.
+sort of synthetic TAL plane. To our knowledge, the TAL diagram has only appeared
+once in the literature, in an exploration and classification of late-life health
+conditions \citep{riffe2015ttd}.
 
 \subsection*{CDL}%\tgh{CDL}}
 (section in progress, will contain 2 figures, like APC)
@@ -537,28 +543,26 @@ sort of synthetic TAL plane.
 Each of the four above-mentioned triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
 indices.
-In this case, we may imagine the third ``lacking'' dimension as providing
-depth, for the sake of a mental image.
+In this case, we may imagine any of the excluded time measures as capable of
+providing depth, a potential $z-$coordinate, for the sake of a mental image.
 Having a non-redundant third dimension implies a multitude of parallel planes
-for the given identity, each plane belonging to a unique value of the third time dimension. Any of the
-identities can be extended in this way to fill a space. A space derived by
+for the given triad identity, each plane belonging to a unique value of the
+third time dimension. Any of the identities can be extended in this way to fill a space. A space derived by
 extending any of the triad identies into its lacking dimension implies each of the
 other triad identities, making a total of six time indices. In essence, the
-four triad identities may be thought of as \sout{parallel to }the four faces of a
-tetrahedron. \sout{In this case, the four ``lacking'' dimensions may be assigned to
-the four vertices of the tetrahedron, and the six demographic time indices match
-to the six edges of the tetrahedron.} \textbf{If an additional time-index dimension is added to each face (triad identity), the six demographic time indices can be derived, matching the six edges of the tetrahedron.} This three-dimensional construct
-unifies the six indices of demographic time, and is the subject of this paper.
+four triad identities may be thought of as the four faces of a
+tetrahedron. If an additional time measure is added to any face (triad
+identity), the six demographic time indices can be derived, matching the six edges of the tetrahedron. This three-dimensional construct unifies the six indices of demographic time, and is the subject of this paper.
 
 Let us first more rigorously define the previously-mentioned tetrahedron.
 Luckily, the edges and vertices of a tetrahedron are easily rendered in a
 two-dimensional graph, as seen in Figure~\ref{fig:tet}, with vertices labeled
-in red and the six time indices labeled as blue edges.\footnote{The same graph
-could be composed in four basic ways, depending on which \sout{vertex is in the
-middle} \textbf{triad-identity face in in the bottom}. These are given in an appendix.} The reader may also imagine this graph
-as a transparent 3d object, in which case the four faces become aparent. There are two intuitive ways to imagine the graph as 3d, either the vertex 4 is on top, and we gaze from a bird's-eye-view, or the
-vertex 4 is in the back, behind the other three vertices. Assume we
-gaze from the top, for the sake of description. 
+in red and the six time indices labeled as blue edges. The reader may also imagine this graph as a transparent 3d object, in which case the four faces become apparent. There
+are two intuitive ways to imagine the graph as 3d, either the vertex 4 is on top, and we gaze from a bird's-eye-view, or the vertex 4 is in the back, behind the other three vertices. Assume we
+gaze from the top, for the sake of description.\footnote{The same graph
+could be composed in four basic ways, depending on which triad-identity face
+forms the base.
+These are given in an appendix.} 
 
 \begin{figure}[h!]
 \centering
@@ -577,7 +581,7 @@ The Northeast face, ATL has no connection to 3, and the Northwest face
 CDL lacks a connection to 2. The triads that make up the faces of
 the tetrahedron are stuck in ``flatland''. However, there are $\binom{6}{3}=20$ ways to choose three time indices out of six, and the four
 above-named triads are the only ones that will not yield the full 3d
-space and imply the other three. The sixteen other combinations of three indices will recreate the full tetradhedron (hexad identity).
+space. The sixteen other combinations of three indices will recreate the full tetradhedron (hexad identity).
 
 
 % PV: I suggest to replace the following paragraph, or at least to introduce
@@ -616,23 +620,26 @@ vectors (with different direction) and a point, but the inclusion of a point is 
 necessary for the intuitive analogy that we describe here.} Therefore, any third
 vector $\vec{w}$ of that plane can be expressed as a linear combination of
 $\vec{u}$ and $\vec{v}$ (formally, $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ for some $\alpha, \beta \in \mathbb{R}$), which is usually
-referred as saying that $\vec{w}$ is linearly dependent on $\vec{u}$ and $\vec{v}$. A similar property can be derived from the information contained in the tetrahedron: Say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$ is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1}). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. It can be easily verified that any pair of intersecting edges have the same propriety: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
+described by saying that $\vec{w}$ is linearly dependent on $\vec{u}$ and
+$\vec{v}$.
+A similar property can be derived from the information contained in the
+tetrahedron: Say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$ is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1}). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. It can be easily verified that any pair of intersecting edges have the same property: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
 
 % code given in R/TetraCombos.R, lines 70-95
 % PV: already created the new figure
 \begin{figure}[h!]
 \centering
-\caption{Graph of tetrahedron, edges eminating from vertice \vt{1} highlighted.}
+\caption{Graph of tetrahedron, edges belomging to the APC face highlighted.}
 \label{fig:tet4vert1}
 \includegraphics[scale=1]{Figures/tet4vert1New.pdf}
 \end{figure}
 \noindent 
 
-Once a 2d-plane is defined, an additional vector may be sufficient to cover the whole 3d-space. Nonetheless, this third vector needs to be linearly independent of any pair of vectors of that 2d plane---that is, it cannot be expressed as a linear combination of any two vectors on that plane. Again, an analogous propriety can be observed in the tetrahedron: Say we only have information about the indices of the $APC$ plain; $A$, $C$ and $P$ are not sufficient to determine a thanatological age $T$, death cohort $D$, or lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane. However, if two of the three constituent time indices of the $APC$ plane are known (the third one would be
-unnecessary as it could be derived from the other two), the additional
-information provided by any of the three ``independent'' indices $T$, $D$ or
-$L$ would be sufficient to cover the whole tetrahedron. For example, suppose we
-have information about thanatological age $T$ in addition to $C$ and $P$, then
+Once a 2d-plane is defined, an additional vector may be sufficient to cover the
+whole 3d-space. Nonetheless, this third vector needs to be linearly independent
+of any pair of vectors of the 2d plane---that is, it cannot be expressed as a
+linear combination of any two vectors on that plane. Again, an analogous
+property can be observed in the tetrahedron: Say we only have information about the indices of the $APC$ plain; $A$, $C$ and $P$ are not sufficient to determine a thanatological age $T$, death cohort $D$, or lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane. However, if two of the three constituent time indices of the $APC$ plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of the three ``independent'' indices $T$, $D$ or $L$ would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age $T$ in addition to $C$ and $P$, then
 $A=P-C$, $D=P+T$ and $L=T+A=T+P-C$. 
 
 Hence, as with vectors in a 3d space, any
@@ -641,7 +648,8 @@ be expressed as the sum or the difference of the other two---generates a full
 hexad identity or, using an analogous terminology, covers the whole ``space'' of
 demographic indices presented in this paper. Graphically, this is equivalent to
 choosing any combination of three indices that do not belong to the same face
-of the tetrahedron, i.e. that they do not form one of the four triad identities represented in Table~\ref{tab:triadids}.
+of the tetrahedron, i.e., that do not form one of the four triad identities
+represented in Table~\ref{tab:triadids}.
 
 \begin{table}[h]
 \centering
@@ -653,29 +661,21 @@ APC & TPD & ATL & CDL\\
 \end{tabular}
 \end{table}
 
-\sout{A like-organized table for the four triad identities simply highlights each of
-the four faces of the tetrahedron, as seen in Table~\ref{tab:triadids}. When
-graphed in this way, the vertex lacking a connection becomes clearer.} \textbf{When graphed in this way, it is clearer that every triad identity surface lacks a connection to the opposite vertex of the tetrahedron.} We
+When graphed in this way, it is clearer that every triad identity surface lacks a connection to the opposite vertex of the tetrahedron. We
 therefore say that each of the triad identities is incomplete. Table~\ref{tab:set3} gives the full set of sixteen index-triads that are
-complete in this sense. It can be verified that each of these
-triads implies the full hexad identity. \sout{This property is comparable to the
-reducibility characteristic of triad identities. For example, for the APC
-identity, the list of dyads that give full information is shorter:
-AC, AP, PC. The triads in Table~\ref{tab:set3} give analogous
-information for the APCTDL identity.
-It may be further stated that no dyad of indices will give the hexad identity,
-and any quad (or greater) of indices will yield the hexad identity. Any index
-complemented by any index other than its opposite will imply one of
-the triad identities.}
+complete in this sense. It can be verified
+that each of these triads implies the full hexad identity.
 
-\textbf{Note that any pair of time indices generate one of the four triad identities in Table~\ref{tab:triadids}, but no dyad will generate the hexad identity given that a third ``independent'' time dimension is necessary. 
+12 different pairs of time indices generate one of the four triad identities in
+Table~\ref{tab:triadids}(and three do not), but no dyad will generate the hexad
+identity since a third ``independent'' time dimension is necessary.
 Similarly, any quad of indices is sufficient to complete the hexad identity, as at least one of them will not belong to the same face of the tetrahedron, but a triad may be sufficient if they 
-do not all belong to the same plane forming a triad identity.}
+do not all belong to the same plane forming a triad identity.
 
 \begin{table}[h]
 \centering
-\caption{All sets of three indices that imply the full six indices, graphed
-given the previous orientation of the tetrahedron.}
+\caption{All complete sets of three indices,
+graphed given the previous orientation of the tetrahedron.}
 \label{tab:set3}
 \begin{tabular}{cccc}
 ACD & ACL & ACT & ADL\\
@@ -689,11 +689,11 @@ CPT & DLP & DLT & LPT\\
 \end{tabular}
 \end{table}
 
+\FloatBarrier
 \subsection*{The extension of time axes.}
 We have said that planes defined by the four triad identities are parallel to
 the faces of the the above-described tetrahedron. In imagining this three-dimensional
-relationship, we are no longer confined to the extent of the tetrahedron that
-we have used thus far for orientation. Instead each of its edges extends a
+relationship, we are no longer confined to the extent of the tetrahedron used thus far for orientation. Instead each of its edges extends a
 certain distance in either direction.
 It may therefore help to first consider the extension of each axis (or index).
 Some indices have a lower bound of zero and an upper bound set by the maximum
@@ -713,12 +713,13 @@ will die in 2121. In this case a P that \textit{contains} the observed
 population will extend well before and after the observed data series, even
 moreso if we take into account that $\omega > 110$.} As an abstraction,
 however, the dimension of calendar time in this model is infinite. Of the four
-triad identities, only one lacks an unbounded dimension, the ATL. Adding
-the absent dimension to ATL therefore makes its 3d extension boundless. In
-this way, we may imagine a prism-like construct, where A, T, and L, compose
-the faces of a triangular cross-section of said prism, which extends infinitely ``through'' the triangle.
-We can think of the ATL triangle passing through time, extending the population
-forward to infinity. In this case, the ATL triangle may take either the period
+triad identities, only one lacks an unbounded dimension, the TAL. Adding
+the absent dimension to TAL therefore makes its 3d extension boundless. In
+this way, we may imagine a prism-like construct, where T, A, and L, compose
+the faces of a triangular cross-section of the prism, which extends infinitely
+``through'' the triangle.
+We can think of the TAL triangle passing through time, extending the population
+forward to infinity. In this case, the TAL triangle may take either the period
 or cohort perspective, and this will be explained later. 
 
 There are also
@@ -735,22 +736,22 @@ honeycomb.
 
 \section*{Intersecting planes}
 
-The APC, TPD, ATL, and CDL planes can be conceived of as
+The APC, TPD, TAL, and CDL planes can be conceived of as
 \textit{compressions} of this 3d space, or as cross-sections of the 3d space. To
 compress the space in this sense is to ignore the missing dimension,
 whereas a cross-section sets a given triad identity against a particular
 position of the absent dimension. APC has thus far always been treated as a
 compression, and myriad such uses and examples are familiar to demographers.
 A compressed TPD diagram has thus far only appeared in \citet{pancho2015}
-as an aid in \sout{explaining a mathematical proof}\textbf{proving the symmetries between chronological and thanatological age in stationary populations}, and a cross-sectional one has
+as an aid in proving the symmetries between chronological and thanatological age in stationary populations, and a cross-sectional one has
 never appeared.
-Cross-sectional ATL diagram and surfaces have thus far only appeared in
-\citet{riffe2015ttd}. This ATL usage was selected for the 1915-1919 birth
+Cross-sectional TAL diagram and surfaces have thus far only appeared in
+\citet{riffe2015ttd}. This TAL usage was selected for the 1915-1919 birth
 cohort, and therefore belongs to the 3d
 space,
 \raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
-We have been unable to located an example in the literature of a compressed
-ATL diagram, but it seems likely one will have arisen in the field of
+We have been unable to locate an example in the literature of a compressed
+TAL diagram, but it seems likely one will have arisen in the field of
 biology, albeit with no relation to the present discourse. We suppose
 that CDL diagrams of any kind are yet-unknown.
 
@@ -767,16 +768,10 @@ rush.
 *Again, the following stuff is from the original proposal and will be completely
 superceded, though tidbits still hold.
 
- We
-propose a geometric identity that unifies all such temporal notions into a single (simple) spatial relationship that serves as an omnibus conceptual aid to demographers, much as the Lexis diagram does for APC relationships. The full result is a three dimensional space that can be disected by any of four different planes, each of which is parallel to the faces of a regular tetrahedron (see
-Figure~\ref{fig:APCT} for a first mock-up of the model).
-Each dissecting plane relates three indices of demographic time in proportion to one
-another (1:1:1 ternary aspect ratio). The complete space can be described in
+The complete space can be described in
 geometry nomenclature as the tetrahedral-octahedral honeycomb, which is a kind of space-filling tessellation.\footnote{Constructs following
 this geometry exist both in nature and in man-made structures.} 
-One of these planes is the familar Lexis plane (horizontal planes in
-Figure~\ref{fig:APCT}, and the other three will be new surprises for
-demographers. This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for encolosing
+ This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for encolosing
 demographic time in the past and future (e.g., before the first census and after
 the most recent census). 
 
@@ -790,20 +785,14 @@ time.\footnotemark}
 \footnotetext{This and other figures to be replaced with vector graphics, although
 	I may bring this model to the presentation, since it helps explain concepts.}
 
-A property of the geometry that we propose is that
-the time units in every direction (with respect to each index) are proportional. The Lexis
-diagram based on right angles and $45^\circ$ birth cohort lines does not have
-this property, whereas Lexis diagrams and surfaces based on equilateral
-triangles, such as some early proposals \citep[inter
-alia, ][]{lexis1875einleitung, lewin1876rapport}, the masterful stereogram of
-\citet{perozzo1880della}, or the more recent APC diagram
-of \citet{ryder1980cohort}, do have this property. The disecting planes of the
-model I propose are likewise composed of equilateral triangles. In Lexis
-nomenclature, the 3d projections of an AP square, and AC or PC
+A property of the geometry that we propose is isotropy,
+the time units in every direction (with respect to each index) are proportional.
+In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 parallelograms are all congruent shapes known as regular trigonal trapezohedra
 (RTT). The orientation
 of a given RTT uniquely defines the Lexis shape in question. Similar constructs
 exist in the other time dimensions, and these will also be described. 
+
 \FloatBarrier
 
 \begin{appendices}

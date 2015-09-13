@@ -150,7 +150,7 @@ DrawDiatime(y_label = "A", x_label = "C", isoline_label = "P",
 dev.off()
 pdf(file = "./Figures/JonasTable/ACp_iso.pdf", width = width, height = width)
 DrawDiatimeIsotropic(y_label = "A", x_label = "C", isoline_label = "P",
-                     isoline_flow_direction = "W")
+                     isoline_flow_direction = "E")
 dev.off()
 
 # CPa
@@ -267,10 +267,24 @@ DrawDiatimeIsotropic(y_label = "L", x_label = "C", isoline_label = "D",
                      isoline_flow_direction = "W")
 dev.off()
 
+# TR: needed to modify this because it's indeed informative
+
+##################################
+# remove
 # TP
-pdf(file = "./Figures/JonasTable/TP.pdf", width = width, height = width)
-DrawDiatime(y_label = "T", x_label = "P", isoline = FALSE)
+#pdf(file = "./fig/TP.pdf", width = width, height = width)
+#DrawDiatime(y_label = "T", x_label = "P", isoline = FALSE)
+#dev.off()
+#pdf(file = "./fig/TP_iso.pdf", width = width, height = width)
+#DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline = FALSE)
+#dev.off()
+##################################
+
+# TPd
+pdf(file = "./Figures/JonasTable/TPd.pdf", width = width, height = width)
+DrawDiatime(y_label = "T", x_label = "P", isoline_label = "D", isoline = TRUE)
 dev.off()
-pdf(file = "./Figures/JonasTable/TP_iso.pdf", width = width, height = width)
-DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline = FALSE)
+pdf(file = "./Figures/JonasTable/TPd_iso.pdf", width = width, height = width)
+DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline_label = "D", isoline = TRUE,
+		isoline_flow_direction = "E")
 dev.off()

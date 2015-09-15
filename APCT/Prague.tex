@@ -33,9 +33,9 @@
 
 
 %% Declaring title and author
-\title{A model of lifetimes}
-\subtitle{Tim Riffe\\ Lab of Population Health}		%% subtitle means author in
-% this file...
+\title{Demographic time}
+\subtitle{Tim Riffe\\ Jonas Sch{\"o}ley \\ Francisco Villavicencio}		%% subtitle
+% means author in this file...
 % :/
 
 
@@ -50,7 +50,6 @@
 %%	Beginning of the document		%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
 %%	titlepage - fixed frame:
 %%	========================
 \begin{frame}
@@ -61,54 +60,39 @@
 %%	====
 \begin{frame}%{Table of Contents}
   \begin{description}
-    \item<1->{\textbf{APC}:} well-known. Aligned to time of birth.
+    \item<1->{\textbf{APC}:} Aligned to time of birth.
     \item<2->{\textbf{TPD}:} like APC, but aligned to death.
-    \item<3->{\textbf{ATL}:} shows variation over the lifespan, but not in
+    \item<3->{\textbf{TAL}:} shows variation over the lifespan, but not in
     calendar time.
-    \item<4->{\textbf{APCTDL}:} everything in one redundant 3d relationship.
-    \item<5->{\textbf{demonstration:}} a bottled example.
+    \item<4->{\textbf{CLD}:} lifespans in time, but without age.
+    \item<5->{\textbf{APCTDL}:} everything in one redundant 3d relationship.
   \end{description}
+\end{frame}
+
+\section{APCTDL}
+% typical APC setup
+\begin{frame}
+\frametitle{A graph of time measures}
+\begin{figure}[b]
+    \centering
+       % figure made in R/TetraCombos.R
+    \includegraphics{Figures/Tetra1prg.pdf}
+\end{figure} 
 \end{frame}
 
 %%	section 1:
 %%	APC
 \section{APC}
-% typical APC setup
-\begin{frame}
-\frametitle{APC, an old friend}
-\begin{figure}[b]
-    \centering
-       % figure made in R/APClab.R
-    \includegraphics{Figures/LabPres/APC1.pdf}
-    %\caption{An APC diagram}
-\end{figure} 
-\end{frame}
-
-% observed, with lifelines
-\begin{frame}
-\frametitle{APC, an old friend}
-\begin{figure}[b]
-    \centering
-      % figure made in R/APClab.R
-    \includegraphics{Figures/LabPres/APC2.pdf}
-    %\caption{Lifelines in the APC diagram}
-\end{figure} 
-\end{frame}
-
-% past, observed,
-\begin{frame}
-\frametitle{APC, an old friend}
-\begin{figure}[b]
-    \centering
-       % figure made in R/APClab.R
-    \includegraphics{Figures/LabPres/APC3.pdf}
-   %\caption{Lifelines in the APC diagram, past}
-\end{figure} 
-\end{frame}
-
 % past, observed, future
 \begin{frame}
-\frametitle{APC, an old friend}
+\frametitle{APC}
+\vspace{-6em}
+\begin{figure}
+\raggedleft
+    % figure made in R/TetraCombos.R
+    \includegraphics[scale=.7]{Figures/TetraAPCprg.pdf}
+\end{figure}
+\vspace{-3em}
 \begin{figure}[b]
     \centering
        % figure made in R/APClab.R
@@ -117,45 +101,8 @@
 \end{figure} 
 \end{frame}
 
-% Equilateral Lexis (Zeuner, Perozzo, Ryder)
-\begin{frame}
-\frametitle{APC, an old friend}
-\begin{figure}[b]
-    \centering
-    % figure made in R/APClab.R
-    \includegraphics{Figures/LabPres/APC5.pdf}
-    %\caption{Lifelines in the equilateral APC diagram}
-\end{figure} 
-\end{frame}
-
-\begin{frame}
-\frametitle{APC, the greatest and best}
-\begin{figure}[b]
-    \centering
-     % figure modified from a 600dpi scan of the original, HT interlibrary loan,
-     % and Stanford university library.
-    \includegraphics[scale=.5]{Figures/LabPres/Perozzo1000px_cropped_adj.png}
-\end{figure} 
-\end{frame}
-
 %%	TPD
 \section{TPD}
-%\begin{frame}
-%\frametitle{The inverse relationship}
-%\begin{figure}[b]
-%    \centering
-    % figure made in R/LexisStandard.R
-%    \includegraphics[scale=.9]{Figures/LabPres/TPD1.pdf}
-%    \caption{A TPD diagram}
-%\end{figure} 
-%\end{frame}
-
-%\begin{frame}
-%\begin{figure}[hpt!]
-%\includemovie[autoplay]{5in}{4in}{Figures/LabPres/Timelapsehourglass.mp4}                                   
-%\end{figure}
-%\end{frame}
-%
 \begin{frame} 
 \frametitle{realign lifelines}
 \begin{figure}
@@ -166,6 +113,13 @@
 
 \begin{frame}
 \frametitle{TPD, the inverse relationship}
+\vspace{-6em}
+\begin{figure}
+\raggedleft
+    % figure made in R/TetraCombos.R
+    \includegraphics[scale=.7]{Figures/TetraTPDprg.pdf}
+\end{figure}
+\vspace{-3em}
 \begin{figure}[b]
     \centering
     % figure made in R/TPDlab.R
@@ -174,41 +128,18 @@
 \end{figure} 
 \end{frame}
 
-% TPD equilateral
-\begin{frame}
-\frametitle{TPD, equilateral}
-\begin{figure}[b]
-    \centering
-    % figure made in R/TPDlab.R
-    \includegraphics{Figures/LabPres/TPD3.pdf}
-\end{figure} 
-\end{frame}
-
-\begin{frame}
-\frametitle{TPD, \small{spotted in the wild, HT Pancho Villavicencio.}}
-\begin{figure}[b]
-    \centering
-    % figure from elsewhere. Originally produced by myself and Pancho
-    % Vilavicencio. This was his most recent version that he used in a
-    % presentation at Max-O some weeks ago.
-    \includegraphics{Figures/LabPres/TPDexample_Pancho.pdf}
-\end{figure} 
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ATL}
-\begin{frame}
-\frametitle{ATL, a lifespan diagram}
-\begin{figure}[b]
-    \centering
-    % figure made in R/ATLlab.R
-    \includegraphics{Figures/LabPres/ATL1.pdf}
-\end{figure} 
-\end{frame}
-
+\section{TAL}
 % with
 \begin{frame}
-\frametitle{ATL, a lifespan diagram}
+\frametitle{TAL, a lifespan diagram}
+\vspace{-5em}
+\begin{figure}
+\raggedleft
+    % figure made in R/TetraCombos.R
+    \includegraphics[scale=.7]{Figures/TetraTALprg.pdf}
+\end{figure}
+\vspace{-5em}
 \begin{figure}[b]
     \centering
     % figure made in R/ATLlab.R
@@ -217,49 +148,28 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{ATL, a lifespan diagram}
-\begin{figure}[b]
-    \centering
-    % figure made in R/ATLlab.R
-    \includegraphics{Figures/LabPres/ATL3.pdf}
-\end{figure} 
-\end{frame}
-
-
-\begin{frame}
-\frametitle{ATL, a lifespan diagram}
-\begin{figure}[b]
-    \centering
-    % figure made in R/ATLlab.R
-    \includegraphics{Figures/LabPres/ATL4.pdf}
-\end{figure} 
-\end{frame}
-
-\begin{frame}
-\frametitle{ATL, a lifespan diagram, cohort}
-\begin{figure}[b]
-    \centering
-    % figure made in R/ATLlab.R
-    \includegraphics{Figures/LabPres/ATL5.pdf}
-    %\caption{Lifelines in the TPD diagram}
-\end{figure} 
-\end{frame}
-
-\begin{frame}
-\frametitle{ATL, a lifespan diagram, cohort, equilateral}
-\begin{figure}[b]
-    \centering
-    % figure made in R/ATLlab.R
-    \includegraphics{Figures/LabPres/ATL6.pdf}
-\end{figure} 
-\end{frame}
-
-\begin{frame}
-\frametitle{ATL, cohort, spotted in the wild}
+\frametitle{TAL (cohort), spotted in the wild}
 \begin{figure}[b]
     \centering
     % figure made in R/ATLlab.R
     \includegraphics[scale=.9]{Figures/LabPres/ATL_Surf_Male_psych_HRS.pdf}
+\end{figure} 
+\end{frame}
+
+\section{LCD}
+\begin{frame}
+\frametitle{LCD, a lifespan diagram}
+\vspace{-6em}
+\begin{figure}
+\raggedleft
+    % figure made in R/TetraCombos.R
+    \includegraphics[scale=.7]{Figures/TetraLCDprg.pdf}
+\end{figure}
+\vspace{-3em}
+\begin{figure}[b]
+    \centering
+    % figure made in R/ATLlab.R
+    \includegraphics{Figures/LCD.pdf}
 \end{figure} 
 \end{frame}
 

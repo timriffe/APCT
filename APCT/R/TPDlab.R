@@ -1,4 +1,4 @@
-# this script uses the HMDresults object to search for common patterns to the various defined measures.
+
 if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 	# if I'm on the laptop
 	setwd("/home/tim/git/APCT/APCT")

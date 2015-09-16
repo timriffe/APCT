@@ -29,6 +29,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{movie15}
 %\usepackage{multimedia}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
 \usepackage[mpidr]{./mpidr/beamerthemeMPIDR}
 
 
@@ -39,7 +41,7 @@ Francisco Villavicencio}
 %% subtitle means author in this file...
 % :/
 %%	the institute's logo
-\renewcommand{\mylogo}{\includegraphics[width=4.7in]{mpidr_logo_colour_en}}
+\renewcommand{\mylogo}{\includegraphics[width=5in]{mpidr/customlogo3}}
 
 
 %%	should be the very last package to be loaded
@@ -56,7 +58,7 @@ Francisco Villavicencio}
 \end{frame}
 
 \begin{frame}%{Table of Contents}
-\frametitle{Six time measures}
+\frametitle{~}
   \begin{description}
     \item<1->{\textbf{A}:} chronological age, time since birth
     \item<2->{\textbf{P}:} period, calendar year
@@ -69,14 +71,13 @@ Francisco Villavicencio}
 
 % typical APC setup
 \begin{frame}
-\frametitle{A graph of time measures}
+\frametitle{~}
 \begin{figure}[b]
     \centering
        % figure made in R/TetraCombos.R
     \includegraphics{Figures/Tetra1prg.pdf}
 \end{figure} 
 \end{frame}
-
 %%	====
 \begin{frame}%{Table of Contents}
 \frametitle{~}
@@ -90,14 +91,12 @@ Francisco Villavicencio}
     \item<5->{\textbf{APCTDL}:} everything in one redundant 3d relationship.
   \end{description}
 \end{frame}
-
-
 %%	section 1:
 %%	APC
 \section{APC}
 % past, observed, future
 \begin{frame}
-\frametitle{APC}
+\frametitle{~}
 \vspace{-6em}
 \begin{figure}
 \raggedleft
@@ -107,6 +106,7 @@ Francisco Villavicencio}
 \vspace{-3em}
 \begin{figure}[b]
     \centering
+    \caption{APC}
        % figure made in R/APClab.R
     \includegraphics{Figures/LabPres/APC4.pdf}
    % \caption{Lifelines in the APC diagram, past and future}
@@ -116,15 +116,17 @@ Francisco Villavicencio}
 %%	TPD
 \section{TPD}
 \begin{frame} 
-\frametitle{realign lifelines}
+\frametitle{~}
 \begin{figure}
     \centering
+    \caption{Birth \hspace{4in} Death}
+    \vspace{-5em}
   \animategraphics[height=5in]{36}{Figures/LabPres/AnimateLifeLines/frame_}{1}{95}
 \end{figure} 
 \end{frame} 
 
 \begin{frame}
-\frametitle{TPD, the inverse relationship}
+\frametitle{~}
 \vspace{-6em}
 \begin{figure}
 \raggedleft
@@ -134,6 +136,7 @@ Francisco Villavicencio}
 \vspace{-3em}
 \begin{figure}[b]
     \centering
+    \caption{TPD}
     % figure made in R/TPDlab.R
     \includegraphics{Figures/LabPres/TPD2.pdf}
     %\caption{Lifelines in the TPD diagram}
@@ -144,7 +147,7 @@ Francisco Villavicencio}
 \section{TAL}
 % with
 \begin{frame}
-\frametitle{TAL, a lifespan diagram}
+\frametitle{~}
 \vspace{-5em}
 \begin{figure}
 \raggedleft
@@ -154,15 +157,17 @@ Francisco Villavicencio}
 \vspace{-5em}
 \begin{figure}[b]
     \centering
+    \caption{TAL}
     % figure made in R/ATLlab.R
     \includegraphics{Figures/LabPres/ATL2.pdf}
 \end{figure} 
 \end{frame}
 
 \begin{frame}
-\frametitle{TAL (cohort), spotted in the wild}
+\frametitle{~}
 \begin{figure}[b]
     \centering
+    \caption{TAL (cohort), spotted in the wild}
     % figure made in R/ATLlab.R
     \includegraphics[scale=.9]{Figures/LabPres/ATL_Surf_Male_psych_HRS.pdf}
 \end{figure} 
@@ -170,7 +175,7 @@ Francisco Villavicencio}
 
 \section{LCD}
 \begin{frame}
-\frametitle{LCD, a lifespan diagram}
+\frametitle{~}
 \vspace{-6em}
 \begin{figure}
 \raggedleft
@@ -180,6 +185,7 @@ Francisco Villavicencio}
 \vspace{-3em}
 \begin{figure}[b]
     \centering
+    \caption{LCD}
     % figure made in R/ATLlab.R
     \includegraphics{Figures/LCD.pdf}
 \end{figure} 
@@ -188,26 +194,42 @@ Francisco Villavicencio}
 \section{APCTDL}
 
 \begin{frame}
-\frametitle{A tetrahedron joins the diagrams}
+\frametitle{~}
 \begin{figure}[b]
     \centering
+    \caption{A tetrahedron joins the diagrams}
        % figure made in R/TetraCombos.R
     \includegraphics{Figures/Tetra1prg.pdf}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{All diagrams combined:}
-Using right-angles (interactive, web):
+\frametitle{All diagrams combined (right angles)}
+Using right-angles (interactive, web):\footnote{assuming we have good
+internet\ldots}
 \url{http://demog.berkeley.edu/~triffe/RGL1/}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{All diagrams combined:}
+\frametitle{~}
 
-* As a regular honeycomb *
+\begin{figure}[b]
+    \centering
+    \caption{As a regular honeycomb\footnote{sorry, it doesn't fit in my
+    suitcase}}
+       % figure made in R/TetraCombos.R
+    \includegraphics[width=7in]{Figures/PhysicalModel.jpg}
+    \end{figure}
+\end{frame}
 
+\begin{frame}
+\frametitle{~}
+\begin{itemize}
+  \item<1-> A memorable and fun-to-derive geometric identity
+  \item<2-> but what is it for?
+  \item<3-> Late-life morbidity measurement and prediction.
+\end{itemize}
 \end{frame}
 
 \end{document}

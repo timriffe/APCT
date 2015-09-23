@@ -564,11 +564,30 @@ out, and cohorts overlapped.
 \end{figure} 
 
 \FloatBarrier
-\subsection*{CDL}%\tgh{CDL}}
+\subsection*{LCD}%\tgh{CDL}}
 \FloatBarrier
-(section in progress, will contain 2 figures, like APC)
-* I've not thought much about this one, but it completes the tetrahedron :-P
-
+*section in progress, will contain 2 figures, like the above*
+*Begin speculative thinking*
+I've not thought much about this one, but it completes the tetrahedron. Here is
+an example figure, followed by some speculation that will be replaced in the
+final paper version.
+\begin{figure}
+\centering
+\caption{An LCD diagram in right angles}
+\label{fig:LCDrt}
+\includegraphics[scale=0.5]{Figures/LCD.pdf}
+\end{figure}
+An LCD diagram is probably best without the lifelines, but probably is best to
+plot values that are cumulative over the lifecourse. Imagine an LCD surface of
+cumulative lifecourse deficit a la NTA, or cumulative lifetime citations, books
+read, miles travelled, progeny, anything that might vary by lifespan and over
+time, but where it might be OK to blend out age. In a sense, mortality Lexis
+surfaces already conform with this perspective, since the intensities that get
+plotted mark the endpoints of lifelines. Fertility surfaces are in this way very
+different from mortality surfaces, as they plot event intensities over the ages
+in which they occur. A health surface is more like a fertility surface than a
+mortality surface, but in this case proximity to death is an important time
+dimension. *End speculative thinking*
 
 \section*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
@@ -793,18 +812,20 @@ juxtapositions in the literature on event analysis in the analysis of
 big data \citep[see e.g.,]{watson2015timemaps}.
 
  \section*{APCTDL}
-*section ignored for the present: plan for a table with different distilled 3d
-views of the contruct, probably vector snapshots of an RGL model. Probably each
-will be centered on a single tetrahedron, with sides labeled, and one face of
-it (triad identity) will be highlighted and extended, and given depth). Each
-face will be seen from 2 angles, and also for the right and isotropic
-projections. use lighting, etc, to give depth. Need to work hard on this, but no
-rush.
+*section under construction*
+The final version of this section will contain different three-dimensional views
+of the tetrahedron with particular plan accentuated to match each of the four
+triad identities. These views will be in an expository table, similar to those
+above. The figures will probably by vector snapshots of an RGL model.
+Probably each will be centered on a single tetrahedron, with sides labeled, and one face of it (triad identity) will be highlighted and extended, and given depth). Each face will be seen from 2 angles, and also for the right and isotropic projections. use lighting, etc, to give depth. 
 
-*Again, the following stuff is from the original proposal and will be completely
-superceded, though tidbits still hold.
+A working mockup in WebGL can be seen here:\footnote{This graphic is best
+viewed on a large screen, in a browser with javascript enabled, and manipulated
+with a mouse that includes a wheel.}
+\url{http://www.demog.berkeley.edu/~triffe/RGL1}
+, though the snapshots in the final paper will be notably simpler.
 
-The complete space can be described in
+The complete space can be named using
 geometry nomenclature as the tetrahedral-octahedral honeycomb, which is a kind of space-filling tessellation.\footnote{Constructs following
 this geometry exist both in nature and in man-made structures.} 
  This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for encolosing
@@ -814,31 +835,38 @@ the most recent census).
 \begin{figure}[!h]
 \centering
 \caption[cap]{A mock-up example of the unified model of demographic
-time.\footnotemark}
+time.}
 \label{fig:APCT}
 	\includegraphics[bb=0 0 3264 2448, width=.8\textwidth]{Figures/PhysicalModel.jpg}
 \end{figure}
-\footnotetext{This and other figures to be replaced with vector graphics, although
-	I may bring this model to the presentation, since it helps explain concepts.}
 
 A property of the geometry that we propose is isotropy,
 the time units in every direction (with respect to each index) are proportional.
 In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 parallelograms are all congruent shapes known as regular trigonal trapezohedra
-(RTT). The orientation
-of a given RTT uniquely defines the Lexis shape in question. Similar constructs
-exist in the other time dimensions. 
+(RTT). The orientation of a given RTT uniquely defines the Lexis shape in
+question. Similar constructs exist in the other time dimensions. 
 
+\FloatBarrier
 \section*{Discussion}
 The contemporary practice of demography is based on the premise that vital
 rates, and other kinds of rates over the lifecourse, are the truest measure of
 demographic quantum. Rates are paramount because they tend to vary in
 empirically regular ways. The scalings and movements of primary vital rates fall
-within a limited range for humans. For this reason, much of the methods of
+within a limited range for humans. For this reason, many of the methods of
 demography are developed to estimate rates, independent of population composition, or to
 partition crude magnitudes into the effects of population age structure and
 pure vital rates. Controlling for age is in a more general sense controlling for
 temporal variation in stocks. 
+
+The best way to seek regular patterns in variation
+is via data visualization. The coordinate system proposed in this paper is
+conceived as one adequate to capture all such variation, and we suggest its use
+for visualizing data, probably via small multiples of successive time slices
+parallel to any of the four triad identities. Such strategies at this time are
+exploratory and speculative, but much may be learned from how quantities that
+vary through 3d volumes are visualized in other disciplines, such as
+neuroscience or geology.
 
 The techniques used to age-standardize mortality and fertility estimation are at
 times applied to other kinds of transitions over the life course. For example,
@@ -847,22 +875,25 @@ ability to carry out some common activities of daily life. Much of the
 regular temporal variation for such conditions is by thanatological age or
 lifespan, rather than chronological age. Apparent chronological age patterns for
 such conditions are artifactual and do not represent the same kind of
-intrinsic meaning as does the age pattern of mortality. This kind of
-measurement may benefit from the complete model presented in this paper. Further
-kinds of temporal standardization need to be developed in order to measure and
-understand the natural patterns of such conditions over the lifecourse.
+intrinsic meaning as does the age pattern of mortality. Further kinds of
+temporal standardization must be developed in order to measure and understand
+the natural patterns of such conditions over the lifecourse. The measurement of such conditions may benefit from consideration of the complete model presented in
+this paper. To this end, Table~\ref{tab:set3} provides all combinations of
+information that are sufficient to derive the full space. Some panel surveys
+with mortality followups already provide the requisite information, as do
+linkable registers that include items such as health measures or proxies and
+relevant dates of birth, observation, and death.
 
 Mortality determines three of the dimensions of
 demographic time, and it therefore makes little sense to model mortality using
 all six time measures. Any of the six measures may be pertinent in the case of
 conditions and states that vary over and within the lifecourse. Fertility is one
-such within-lifecourse event, although it may still turn out that most
+such within-lifecourse event, although it may still turn out that most important
 variation in fertiltiy is captured by APC. This remains to be seen until
 adequate data is brought to bear on the question. The most obvious application
 for the present model, given data commonly (and publicly) available at this
-time, are late-life health conditions. 
-
-
+time, are late-life health conditions, although there may be other substantive
+areas of application that have not occurred to us.
 
 \FloatBarrier
 

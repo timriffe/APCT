@@ -282,7 +282,7 @@ dev.off()
 
 # TPd
 pdf(file = "./Figures/JonasTable/TPd.pdf", width = width, height = width)
-DrawDiatime(y_label = "T", x_label = "P", isoline_label = "D", isoline = TRUE)
+DrawDiatime(y_label = "T", x_label = "P",  isoline_orientation = "diagdown", isoline_label = "D", isoline = TRUE)
 dev.off()
 pdf(file = "./Figures/JonasTable/TPd_iso.pdf", width = width, height = width)
 DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline_label = "D", isoline = TRUE,

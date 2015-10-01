@@ -9,6 +9,7 @@
 \usepackage{placeins}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{chngpage}
 %\usepackage{subfig}
 \usepackage{longtable}
 \usepackage{setspace}
@@ -87,8 +88,10 @@
 We describe a three-dimensional model that relates six different measures of
 lifespans and time. The six measures of demographic time considered are
 chronological age, thanatological age, lifespan, year of birth, year of death,
-and period. Two versions of the model are described: a relatively intuitive
-extension of the right-angled Lexis diagram, and an isotropic extension based on
+and period. We show three identities similar to the well-known
+age-period-cohort identity, and we then present an identity consisting of all
+six time measures. Two versions of the model are described:
+a relatively intuitive extension of the right-angled Lexis diagram, and an isotropic extension based on
 the regular tetrahedron. \ackn{The work reported in this manuscript was begun by
 the first author while at the Department of Demography at the University of
 California, Berkeley, and was supported by the U.S.
@@ -106,7 +109,7 @@ identity exists between thanatological age (T), chronological age (A), and
 lifespan (L), TAL, and a fourth between lifespan (L), year of birth (C) and year
 of death (D), LCD.
 Each of these four identities may be sufficiently described by any
-two of its consituent indices, making the third index redundant. Each of these
+two of its constituent indices, making the third index redundant. Each of these
 four identities also lacks a major dimension of time. The TAL identity
 lacks calendar time, the LCD identity is ageless, APC lacks an endpoint in time,
 and TPD lacks a starting point in time. We refer to these four identities
@@ -120,7 +123,7 @@ objective to relate the six major indices of time in a geometric identity, in
 much the same spirit as the work on APC relationships done between the late
 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age} for an overview of that literature.} 
 
-This paper provides a bottom-up description of the model, building from familar
+This paper provides a bottom-up description of the model, building from familiar
 components to the full relationship. We begin by defining some terms used
 throughout the manuscript. We then explore all combinations of two time
 measures, the dyadic relationships, followed by the four triad identities, and
@@ -169,15 +172,15 @@ identities are also to found within the six measures of time we discuss.
 This model description is conceived in absolute, linear, Newtonian time, and we
 do not consider situating the model in any other perspective or model of time
 itself.
-This relationship is scalable to any time unit, but we decribe it in terms of
+This relationship is scalable to any time unit, but we describe it in terms of
 years, the dominant human time scale. We therefore speak of calendar time,
 imagining the modern Gregorian calendar, though this is not necessary. The six
 measures of time we consider are defined in Table~\ref{tab:sixdefs}, both in the
 demographic sense we describe, as well as in a more general event history
 interpretation.
-
 \begin{table}
-\centering
+\begin{center}
+\begin{adjustwidth}{-1cm}{-1cm}
 \caption{Definitions of the six time measures.}
 \label{tab:sixdefs}
 \begin{tabular}{lcll}
@@ -192,10 +195,12 @@ thanatological age & T & time until death & time until event \\
 death cohort & D & calendar time of death & calendar time of event \\
 lifespan & L & duration of life & duration of exposure \\
 \end{tabular}
+\end{adjustwidth}
+\end{center}
 \end{table}
 
 
-The concepts of thanatological age and death cohorts are likely less familar to
+The concepts of thanatological age and death cohorts are likely less familiar to
 readers than the other measures we consider. Thanatological age is sometimes
 referred to in the literature as remaining years of life, or time-to-death
 (TTD), but we prefer the term thanatological age, and to think of the concept of
@@ -213,11 +218,11 @@ with remaining life expectancy.
 Cohorts in general associate individuals that share a characteristic. In
 demography the grouping characteristic is often a combination of place and time, such as
 the cohorts of young demographers passing through a particular graduate program.
-In this instance already, we accomodate the notion of a cohort for both the
+In this instance already, we accommodate the notion of a cohort for both the
 start and endpoints of the program, but we say e.g., ``the class of 2015''
 instead of the ``graduating cohort of 2015'', in contrast to ``cohort 37'', the
 \nth{37} class of entering students since the start of the program.
-These concepts are analagous to the ideas of birth and death cohorts we use here, though we do not often refer to the
+These concepts are analogous to the ideas of birth and death cohorts we use here, though we do not often refer to the
 deaths of a given year as a death cohort. In the time preceding
 death, the members of a given death cohort have much in common, despite
 heterogeneity with respect to time of birth. If the reader accepts this premise,
@@ -247,7 +252,7 @@ Any mapping of two time measures to an ($x,y$) coordinate
 system constitutes a temporal plane. If the two given time measures are members of the same triad identity, the third member is called a derived
 measure. For instance, if we take the dyad $AP$, $C$ is called the derived
 measure, and we make this dyadic relationship explicit by writing $AP(C)$.
-The temporal plane that corresponds to this informative dydad is the contemporary representation of the
+The temporal plane that corresponds to this informative dyad is the contemporary representation of the
 Lexis diagram. The dyads $AC(P)$ and $CP(A)$ also belong to the Lexis identity, but imply different less-common rotations and projections of the Lexis
 diagram. 
 
@@ -447,7 +452,7 @@ Visualizations of data structured by any dyad belonging to a triad identity
 are inherently richer in information than juxtapositions of uninformative dyads. There is no reason not
 to explore all possible dyadic juxtapositions, but the triad identities have more
 apparent meaning, even in the absence of data, due to the underlying
-relationship between measures. Each of the triad identities can accomodate some
+relationship between measures. Each of the triad identities can represent some
 version of a lifeline. In the present section, we therefore lay out
 the four primary diagrams that belong to the triad identities. 
 
@@ -567,11 +572,28 @@ out, and cohorts overlapped.
 \end{figure} 
 
 \FloatBarrier
-\subsection*{CDL}%\tgh{CDL}}
+\subsection*{LCD}%\tgh{CDL}}
 \FloatBarrier
-(section in progress, will contain 2 figures, like APC)
-* I've not thought much about this one, but it completes the tetrahedron :-P
-
+*section in progress, will contain 2 figures, like the above*
+This diagram completes the tetrahedron. Here is
+an example figure, followed by some speculation that will be replaced in the
+final paper version.
+\begin{figure}
+\centering
+\caption{An LCD diagram in right angles}
+\label{fig:LCDrt}
+\includegraphics[scale=0.5]{Figures/LCD.pdf}
+\end{figure}
+An LCD diagram is probably best conceived without the lifelines. It is probably
+best to plot values that are cumulative over the lifecourse, assigned to the
+endpoint of the lifespan. Imagine an LCD surface of cumulative lifecourse
+deficit \textit{a la} NTA, or anything that might vary by lifespan and over
+time, but where age is. In a sense, mortality Lexis surfaces already conform
+with this perspective, since the intensities that get plotted mark the endpoints of lifelines. Fertility surfaces are in this way very
+different from mortality surfaces, as they plot event intensities over the ages
+in which they occur. A health surface is more like a fertility surface than a
+mortality surface, but in this case proximity to death is an important time
+dimension. 
 
 \section*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
@@ -582,8 +604,8 @@ providing depth, a potential $z-$coordinate, for the sake of a mental image.
 Having a non-redundant third dimension implies a multitude of parallel planes
 for the given triad identity, each plane belonging to a unique value of the
 third time dimension. Any of the identities can be extended in this way to fill a space. A space derived by
-extending any of the triad identies into its lacking dimension implies each of the
-other triad identities, making a total of six time indices. In essence, the
+extending any of the triad identities into its lacking dimension implies each of
+the other triad identities, making a total of six time indices. In essence, the
 four triad identities may be thought of as the four faces of a
 tetrahedron. If an additional time measure is added to any face (triad
 identity), the six demographic time indices can be derived, matching the six edges of the tetrahedron. This three-dimensional construct unifies the six indices of demographic time, and is the subject of this paper.
@@ -796,52 +818,61 @@ juxtapositions in the literature on event analysis in the analysis of
 big data \citep[see e.g.,]{watson2015timemaps}.
 
  \section*{APCTDL}
-*section ignored for the present: plan for a table with different distilled 3d
-views of the contruct, probably vector snapshots of an RGL model. Probably each
-will be centered on a single tetrahedron, with sides labeled, and one face of
-it (triad identity) will be highlighted and extended, and given depth). Each
-face will be seen from 2 angles, and also for the right and isotropic
-projections. use lighting, etc, to give depth. Need to work hard on this, but no
-rush.
+*section under construction*
+The final version of this section will contain different three-dimensional views
+of the tetrahedron with particular plan accentuated to match each of the four
+triad identities. These views will be in an expository table, similar to those
+above. The figures will probably by vector snapshots of an RGL model.
+Probably each will be centered on a single tetrahedron, with sides labeled, and one face of it (triad identity) will be highlighted and extended, and given depth). Each face will be seen from 2 angles, and also for the right and isotropic projections. use lighting, etc, to give depth. 
 
-*Again, the following stuff is from the original proposal and will be completely
-superceded, though tidbits still hold.
+A working mockup in WebGL can be seen here:\footnote{This graphic is best
+viewed on a large screen, in a browser with javascript enabled, and manipulated
+with a mouse that includes a wheel.}
+\url{http://www.demog.berkeley.edu/~triffe/RGL1}
+, though the snapshots in the final paper will be notably simpler.
 
-The complete space can be described in
+The complete space can be named using
 geometry nomenclature as the tetrahedral-octahedral honeycomb, which is a kind of space-filling tessellation.\footnote{Constructs following
 this geometry exist both in nature and in man-made structures.} 
- This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for encolosing
+ This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for enclosing
 demographic time in the past and future (e.g., before the first census and after
 the most recent census). 
 
 \begin{figure}[!h]
 \centering
 \caption[cap]{A mock-up example of the unified model of demographic
-time.\footnotemark}
+time.}
 \label{fig:APCT}
 	\includegraphics[bb=0 0 3264 2448, width=.8\textwidth]{Figures/PhysicalModel.jpg}
 \end{figure}
-\footnotetext{This and other figures to be replaced with vector graphics, although
-	I may bring this model to the presentation, since it helps explain concepts.}
 
 A property of the geometry that we propose is isotropy,
 the time units in every direction (with respect to each index) are proportional.
 In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 parallelograms are all congruent shapes known as regular trigonal trapezohedra
-(RTT). The orientation
-of a given RTT uniquely defines the Lexis shape in question. Similar constructs
-exist in the other time dimensions. 
+(RTT). The orientation of a given RTT uniquely defines the Lexis shape in
+question. Similar constructs exist in the other time dimensions. 
 
+\FloatBarrier
 \section*{Discussion}
 The contemporary practice of demography is based on the premise that vital
 rates, and other kinds of rates over the lifecourse, are the truest measure of
 demographic quantum. Rates are paramount because they tend to vary in
 empirically regular ways. The scalings and movements of primary vital rates fall
-within a limited range for humans. For this reason, much of the methods of
+within a limited range for humans. For this reason, many of the methods of
 demography are developed to estimate rates, independent of population composition, or to
 partition crude magnitudes into the effects of population age structure and
 pure vital rates. Controlling for age is in a more general sense controlling for
 temporal variation in stocks. 
+
+The best way to seek regular patterns in variation
+is via data visualization. The coordinate system proposed in this paper is
+conceived as one adequate to capture all such variation, and we suggest its use
+for visualizing data, probably via small multiples of successive time slices
+parallel to any of the four triad identities. Such strategies at this time are
+exploratory and speculative, but much may be learned from how quantities that
+vary through 3d volumes are visualized in other disciplines, such as
+neuroscience or geology.
 
 The techniques used to age-standardize mortality and fertility estimation are at
 times applied to other kinds of transitions over the life course. For example,
@@ -850,22 +881,25 @@ ability to carry out some common activities of daily life. Much of the
 regular temporal variation for such conditions is by thanatological age or
 lifespan, rather than chronological age. Apparent chronological age patterns for
 such conditions are artifactual and do not represent the same kind of
-intrinsic meaning as does the age pattern of mortality. This kind of
-measurement may benefit from the complete model presented in this paper. Further
-kinds of temporal standardization need to be developed in order to measure and
-understand the natural patterns of such conditions over the lifecourse.
+intrinsic meaning as does the age pattern of mortality. Further kinds of
+temporal standardization must be developed in order to measure and understand
+the natural patterns of such conditions over the lifecourse. The measurement of such conditions may benefit from consideration of the complete model presented in
+this paper. To this end, Table~\ref{tab:set3} provides all combinations of
+information that are sufficient to derive the full space. Some panel surveys
+with mortality followups already provide the requisite information, as do
+linkable registers that include items such as health measures or proxies and
+relevant dates of birth, observation, and death.
 
 Mortality determines three of the dimensions of
 demographic time, and it therefore makes little sense to model mortality using
 all six time measures. Any of the six measures may be pertinent in the case of
 conditions and states that vary over and within the lifecourse. Fertility is one
-such within-lifecourse event, although it may still turn out that most
-variation in fertiltiy is captured by APC. This remains to be seen until
+such within-lifecourse event, although it may still turn out that most important
+variation in fertility is captured by APC. This remains to be seen until
 adequate data is brought to bear on the question. The most obvious application
 for the present model, given data commonly (and publicly) available at this
-time, are late-life health conditions. 
-
-
+time, are late-life health conditions, although there may be other substantive
+areas of application that have not occurred to us.
 
 \FloatBarrier
 

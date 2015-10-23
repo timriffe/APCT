@@ -43,3 +43,25 @@ text(TAL$L,TAL$T,TAL$A)
 # AL(T)
 plot(TAL$L,TAL$A, col = NA)
 text(TAL$L,TAL$A,TAL$T)
+
+# LCD
+LS  <- seq(0,100,by=10)
+Coh <- seq(1900,2000,by=10)
+
+LCD    <- expand.grid(L=LS,C=Coh)
+LCD$D  <- rowSums(LCD)
+
+par(mfrow=c(1,3))
+# LC(D)
+plot(LCD$C,LCD$L, col = NA)
+text(LCD$C,LCD$L,LCD$D)
+# CD(L)
+plot(LCD$D,LCD$C, col = NA)
+text(LCD$D,LCD$C,LCD$L)
+
+# LD(C)
+plot(LCD$D,LCD$L, col = NA)
+text(LCD$D,LCD$L,LCD$C)
+
+
+

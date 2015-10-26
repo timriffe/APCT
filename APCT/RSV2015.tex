@@ -308,14 +308,19 @@ ratio is forced between the dyad, the derived measure is always stretched by
 $\sqrt{2}$, or 41\%. In the case of dyads that imply a derived measure, another
 logical mapping is to translate to $(x,y)$ coordinates that forces 60$^\circ$
 angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. It does not make sense to provide an isotropic mapping of an uninformative dyad. The isotropic mapping
-is comparable to using ternary or baricentric coordinate systems, which we do not discuss. The primary justification for isotropic temporal planes comes from a data visualization perspective, where it may be hypothesized that the viewer's ability to compare slopes is hindered if the axes are not on the same scale.
+is comparable to using ternary or baricentric coordinate systems, which we do
+not discuss. The primary justification for isotropic temporal planes comes from
+a data visualization perspective, where it may be hypothesized that the viewer's
+ability to compare slopes is hindered if the axes are not on the same scale.
+Under the isotropic mapping, the three variants of each triad identity are
+simple rotations of one another, and they imply no rescaling.
 
 There are $15=\binom{6}{2}$ possible ways to form a dyad from our set of six time measures, 12 of
 which are informative, and three of which have no derived time measure, and are
 therefore called uninformative. These dyads, an explanation or simple example,
 and the corresponding graphical representations are summarized in
 Table~\ref{tab:dyads}. Each informative dyad is a subset consisting of two
-elements from one of the four triad identities (APC, TPD, TAL, CDL), which
+elements from one of the four triad identities (APC, TPD, TAL, LCD), which
 are be analysed in detail in further sections. The uninformative dyads
 are simply a pairs of time measures that are not contained in any of these four
 triad identities.
@@ -488,15 +493,25 @@ viewing temporal variation in demography.
 
 \section*{The triad identities}
 
-\textbf{There are $20=\binom{6}{3}$ ways to choose three time indices out of six. However, only four of them form a triad identity: APC, TPD, TAL, and CDL. Any time measure of these four triad identities can be derived from the other two time measures of the same triad, which is precisely the definition of a triad identity. For example, in APC one has $C=P-A$, $P=C+A$ and $A=P-C$, and the same propriety can be observed for the other three triad identities, as shown in Table~\ref{tab:dyads}. Contrary, if one selects three random time indices that do not form any of these four triad identities ($20-4=16$ possibilities), this propriety does not hold any more. For instance, in the triad $APT$, age and period are not sufficient to determine thanatological age.}
+There are $20=\binom{6}{3}$ ways to choose three time indices out of our
+six. However, only four of them form a triad identity: APC, TPD, TAL, and LCD.
+Any time measure taken from one of these four triad identities can be derived
+from the other two time measures of the same triad, which is precisely the
+definition of a triad identity. For example, in APC one has $C=P-A$, $P=C+A$ and $A=P-C$, and
+the same property can be observed for the other three triad identities, as shown
+in Table~\ref{tab:dyads}. However, if one selects three random time indices
+that do not form any of these four triad identities ($20-4=16$ possibilities),
+this property does not hold. For instance, in the triad $APT$, age and
+period are not sufficient to determine thanatological age.\footnote{We return
+to the case of $APT$ and similar constructs in later sections.}
 
 Visualizations of data structured by any dyad belonging to a triad identity
-are inherently richer in information \sout{than juxtapositions of uninformative dyads. There}\textbf{and there} is no reason not
-to explore all possible \sout{dyadic juxtapositions}\textbf{triads.}\sout{, but the}\textbf{However,} triad identities have more
-apparent meaning, even in the absence of data, due to the underlying
+are inherently richer in information than jare uxtapositions of uninformative
+dyads. While there is no reason not to explore all possible
+dyadic juxtapositions, triad identities have more apparent meaning, even in the absence of data, due to the underlying
 relationship between measures. Each of the triad identities can accommodate some
-version of a lifeline. In the present section, we therefore lay out
-the four primary diagrams that belong to the triad identities. 
+version of a lifeline, for instance. In the present section, we therefore lay
+out the four primary diagrams that belong to the triad identities. 
 
 \FloatBarrier
 \subsection*{APC}%\tgh{APC}}
@@ -504,7 +519,8 @@ the four primary diagrams that belong to the triad identities.
 The so-called Lexis diagram has long been used in demography as a conceptual
 tool for structuring data, observations, and rate estimation, as inspiration for work
 on statistical identification, and as the coordinate basis of contemporary
-Lexis-surfaces.
+Lexis-surfaces \footnote{Some prefer the term Lexis \textit{surface}, while
+others prefer to call them contour maps, heatmaps, or stereograms}.
 Since the Lexis diagram could have been named for others
 \citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
 temporal configurations, let us refer to it as the APC diagram, as seen in
@@ -516,7 +532,7 @@ Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}.
 \centering
 \begin{subfigure}{1.1\textwidth}
 \caption{Right angles}
-\vspace{-6em}
+\vspace{-5em}
 \label{fig:APCrt}
 \includegraphics[scale=0.6]{Figures/APCrt.pdf}
 \end{subfigure}
@@ -542,16 +558,18 @@ three dimensions of temporal structure.
 \FloatBarrier
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the inverse of APC. One may take the same lifelines from
-Figure~\ref{fig:APC} and realign them in descending fashion to create the
-diagram in Figure~\ref{fig:TPD}. Such diagrams have to our knowledge only
-appeared once in the literature, as a visual aid to a \sout{discrete mathematical
-proof of the Brouard-Carey equality}\textbf{formal proof of the symmetries between life lived and left in finite stationary populations}
-\citep{pancho2015}. TPD coordinates may in general be used to arrange events or
-durations that are logically aligned (or may only be aligned) by time of
+Figure~\ref{fig:APC} and realign them in descending fashion such that all
+endpoints align to thanatological age 0, creating the diagram in
+Figure~\ref{fig:TPD}.
+Such diagrams have to our knowledge only appeared once in the literature, as a visual aid to a formal proof of the
+symmetries between life lived and left in finite stationary populations \citep{pancho2015}. TPD coordinates may in general be used to arrange events or durations that are logically aligned (or may only be aligned) by time of
 termination, and in general any
-situation in which a terminal event predicts preceding patterns of variation.
+situation in which a terminal event aligns preceding patterns of variation.
 Examples may include lifelines preceding deaths from infectious or acquired
-conditions where the time of infection or acquisition is unknown. 
+conditions where the time of infection or acquisition is unknown. The main
+justification for visualizing data in such coordinates is when birth cohort and
+chronological age do not display regular empirical variation, but thanatological
+age or death cohort do.
 
 \begin{figure} 
 \caption{A TPD diagram in two projections.}
@@ -559,7 +577,7 @@ conditions where the time of infection or acquisition is unknown.
 \centering
 \begin{subfigure}{1.1\textwidth}
 \caption{Right angles}
-\vspace{-6em}
+\vspace{-5em}
 \label{fig:TPDrt}
 \includegraphics[scale=0.6]{Figures/TPDrt.pdf}
 \end{subfigure}
@@ -574,7 +592,7 @@ conditions where the time of infection or acquisition is unknown.
 
 \FloatBarrier
 \subsection*{TAL}%\tgh{ATL}}
-\FloatBarrier
+\FloatBarrier  
 TAL is an appropriate coordinate
 system to examine variation in processes over the lifecourse. Since
 the lifecourse belongs to the cohort perspective, it is best to think of the TAL
@@ -614,11 +632,28 @@ out, and cohorts overlapped.
 \end{figure} 
 
 \FloatBarrier
-\subsection*{CDL}%\tgh{CDL}}
+\subsection*{LCD}%\tgh{CDL}}
 \FloatBarrier
-(section in progress, will contain 2 figures, like APC)
-* I've not thought much about this one, but it completes the tetrahedron :-P
-
+*section in progress, will contain 2 figures, like the above*
+This diagram completes the tetrahedron. Here is
+an example figure, followed by some speculation that will be replaced in the
+final paper version.
+\begin{figure}
+\centering
+\caption{An LCD diagram in right angles}
+\label{fig:LCDrt}
+\includegraphics[scale=0.5]{Figures/LCD.pdf}
+\end{figure}
+An LCD diagram is probably best conceived without the lifelines. It is probably
+best to plot values that are cumulative over the lifecourse, assigned to the
+endpoint of the lifespan. Imagine an LCD surface of cumulative lifecourse
+deficit \textit{a la} NTA, or anything that might vary by lifespan and over
+time, but where age is. In a sense, mortality Lexis surfaces already conform
+with this perspective, since the intensities that get plotted mark the endpoints of lifelines. Fertility surfaces are in this way very
+different from mortality surfaces, as they plot event intensities over the ages
+in which they occur. A health surface is more like a fertility surface than a
+mortality surface, but in this case proximity to death is an important time
+dimension. 
 
 \section*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
@@ -843,23 +878,26 @@ juxtapositions in the literature on event analysis in the analysis of
 big data \citep[see e.g.,]{watson2015timemaps}.
 
  \section*{APCTDL}
-*section ignored for the present: plan for a table with different distilled 3d
-views of the contruct, probably vector snapshots of an RGL model. Probably each
-will be centered on a single tetrahedron, with sides labeled, and one face of
-it (triad identity) will be highlighted and extended, and given depth). Each
-face will be seen from 2 angles, and also for the right and isotropic
-projections. use lighting, etc, to give depth. Need to work hard on this, but no
-rush.
+*section under construction*
+The final version of this section will contain different three-dimensional views
+of the tetrahedron with particular plan accentuated to match each of the four
+triad identities. These views will be in an expository table, similar to those
+above. The figures will probably by vector snapshots of an RGL model.
+Probably each will be centered on a single tetrahedron, with sides labeled, and one face of it (triad identity) will be highlighted and extended, and given depth). Each face will be seen from 2 angles, and also for the right and isotropic projections. use lighting, etc, to give depth. 
 
-*Again, the following stuff is from the original proposal and will be completely
-superceded, though tidbits still hold.
+A working mockup in WebGL can be seen here:\footnote{This graphic is best
+viewed on a large screen, in a browser with javascript enabled, and manipulated
+with a mouse that includes a wheel.}
+\url{http://www.demog.berkeley.edu/~triffe/RGL1}
+, though the snapshots in the final paper will be notably simpler.
 
-The complete space can be described in
+The complete space can be named using
 geometry nomenclature as the tetrahedral-octahedral honeycomb, which is a kind of space-filling tessellation.\footnote{Constructs following
 this geometry exist both in nature and in man-made structures.} 
- This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for encolosing
+ This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for enclosing
 demographic time in the past and future (e.g., before the first census and after
 the most recent census). 
+
 
 \begin{figure}[!h]
 \centering
@@ -884,11 +922,20 @@ The contemporary practice of demography is based on the premise that vital
 rates, and other kinds of rates over the lifecourse, are the truest measure of
 demographic quantum. Rates are paramount because they tend to vary in
 empirically regular ways. The scalings and movements of primary vital rates fall
-within a limited range for humans. For this reason, much of the methods of
+within a limited range for humans. For this reason, many of the methods of
 demography are developed to estimate rates, independent of population composition, or to
 partition crude magnitudes into the effects of population age structure and
 pure vital rates. Controlling for age is in a more general sense controlling for
 temporal variation in stocks. 
+
+The best way to seek regular patterns in variation
+is via data visualization. The coordinate system proposed in this paper is
+conceived as one adequate to capture all such variation, and we suggest its use
+for visualizing data, probably via small multiples of successive time slices
+parallel to any of the four triad identities. Such strategies at this time are
+exploratory and speculative, but much may be learned from how quantities that
+vary through 3d volumes are visualized in other disciplines, such as
+neuroscience or geology.
 
 The techniques used to age-standardize mortality and fertility estimation are at
 times applied to other kinds of transitions over the life course. For example,
@@ -897,20 +944,25 @@ ability to carry out some common activities of daily life. Much of the
 regular temporal variation for such conditions is by thanatological age or
 lifespan, rather than chronological age. Apparent chronological age patterns for
 such conditions are artifactual and do not represent the same kind of
-intrinsic meaning as does the age pattern of mortality. This kind of
-measurement may benefit from the complete model presented in this paper. Further
-kinds of temporal standardization need to be developed in order to measure and
-understand the natural patterns of such conditions over the lifecourse.
+intrinsic meaning as does the age pattern of mortality. Further kinds of
+temporal standardization must be developed in order to measure and understand
+the natural patterns of such conditions over the lifecourse. The measurement of such conditions may benefit from consideration of the complete model presented in
+this paper. To this end, Table~\ref{tab:set3} provides all combinations of
+information that are sufficient to derive the full space. Some panel surveys
+with mortality followups already provide the requisite information, as do
+linkable registers that include items such as health measures or proxies and
+relevant dates of birth, observation, and death.
 
 Mortality determines three of the dimensions of
 demographic time, and it therefore makes little sense to model mortality using
 all six time measures. Any of the six measures may be pertinent in the case of
 conditions and states that vary over and within the lifecourse. Fertility is one
-such within-lifecourse event, although it may still turn out that most
-variation in fertiltiy is captured by APC. This remains to be seen until
+such within-lifecourse event, although it may still turn out that most important
+variation in fertility is captured by APC. This remains to be seen until
 adequate data is brought to bear on the question. The most obvious application
 for the present model, given data commonly (and publicly) available at this
-time, are late-life health conditions. 
+time, are late-life health conditions, although there may be other substantive
+areas of application that have not occurred to us.
 
 
 

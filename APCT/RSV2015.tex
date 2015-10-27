@@ -694,10 +694,9 @@ information we have is chronological age, period, and birth cohort (or just two
 of these), then we have no access to the vertex 4. Each of the faces of the
 tetrahedron has this quality. The South face TDP has no access to 1.
 The Northeast face, ATL has no connection to 3, and the Northwest face
-CDL lacks a connection to 2. The \sout{triads }\textbf{four triad identities }that make up the faces of
-the tetrahedron are stuck in ``flatland''\sout{. However, there are $\binom{6}{3}=20$ ways to choose three time indices out of six, and the four
-above-named triads are the only ones that will} \textbf{and do }not yield the full 3d
-space. \sout{The sixteen}\textbf{However, the 16} other \textbf{possible }combinations of three \textbf{time }indices will recreate the full tetradhedron (hexad identity).
+CDL lacks a connection to 2. The four triad identities that make up the faces of
+the tetrahedron are stuck in ``flatland'' and do not yield the full 3d
+space. However, the 16 other possible combinations of three time indices will recreate the full tetradhedron (hexad identity).
 
 
 % PV: I suggest to replace the following paragraph, or at least to introduce
@@ -730,7 +729,7 @@ space. \sout{The sixteen}\textbf{However, the 16} other \textbf{possible }combin
 
 A geometrical analogy is pertinent at this point. Any pair of intersecting edges
 of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$
-that determine a 2-dimensional plane in a \textbf{cartesian} 3-dimensional
+that determine a 2-dimensional plane in a cartesian 3-dimensional
 space ($\mathbb{R}^3$).\footnote{A 2d plane in a 3d space is determined by two linearly independent
 vectors (with different direction) and a point, but the inclusion of a point is not
 necessary for the intuitive analogy that we describe here.} Therefore, any third
@@ -739,24 +738,26 @@ $\vec{u}$ and $\vec{v}$ (formally, $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ for some
 described by saying that $\vec{w}$ is linearly dependent on $\vec{u}$ and
 $\vec{v}$.
 A similar property can be derived from the information contained in the
-tetrahedron: \sout{Say we have information on year of birth $C$ and period $P$. Clearly, $C$ and $P$ are sufficient to determine the chronological age $A$, given that  $A=P-C$. That is, $A$}\textbf{$A=P-C$} is a linear combination of $C$ and $P$ and it ``depends'' on them because they all belong to the same $APC$ plane (see Figure~\ref{fig:tet4vert1}). Analogously, $P=C+A$ ``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. \sout{It can be easily verified that } \textbf{Given that the faces of the tetrahedron represent the triad identities, } any pair of intersecting edges have the same property: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
+tetrahedron: $A=P-C$ is a linear combination of $C$ and $P$ and it ``depends''
+on them because they all belong to the same $APC$ plane. Analogously, $P=C+A$
+``depends'' on $C$ and $A$, and $C=P-A$ ``depends'' on $P$ and $A$. Given that the faces of the tetrahedron represent the triad identities, any pair of intersecting edges has the same property: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
 
 % code given in R/TetraCombos.R, lines 70-95
 % PV: already created the new figure
-\begin{figure}[h!]
-\centering
-\caption{Graph of tetrahedron, edges belomging to the APC face highlighted.}
-\label{fig:tet4vert1}
-\includegraphics[scale=1]{Figures/tet4vert1New.pdf}
-\end{figure}
-\noindent 
+%\begin{figure}[h!]
+%\centering
+%\caption{Graph of tetrahedron, edges belonging to the APC face highlighted.}
+%\label{fig:tet4vert1}
+%\includegraphics[scale=1]{Figures/tet4vert1New.pdf}
+%\end{figure}
+%\noindent 
 
-Once a 2d-plane is defined \textbf{in $\mathbb{R}^3$}, an additional vector may be sufficient to cover \sout{the whole}\textbf{a} 
+Once a 2d-plane is defined in $\mathbb{R}^3$, an additional vector may be sufficient to cover a
 3d-space. Nonetheless, this third vector needs to be linearly independent
 of any pair of vectors of the 2d plane---that is, it cannot be expressed as a
 linear combination of any two vectors on that plane. Again, an analogous
 property can be observed in the tetrahedron: Say we only have information about the indices of the $APC$ plain; $A$, $C$ and $P$ are not sufficient to determine a thanatological age $T$, death cohort $D$, or lifespan $L$ (the three indices that do not belong to the $APC$ plane). So, $T$, $D$ and $L$ are ``independent'' of the overall information that can be extracted from the $APC$ plane. However, if two of the three constituent time indices of the $APC$ plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of the three ``independent'' indices $T$, $D$ or $L$ would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age $T$ in addition to $C$ and $P$, then
-$A=P-C$, $D=P+T$ and $L=T+A=T+P-C$. 
+$A=P-C$, $D=P+T$ and $L=T+A=T+P-C=D-C$. 
 
 Hence, as with vectors in a 3d space, any
 triad of indices that are independent of each other---that is, none of them can
@@ -777,13 +778,11 @@ APC & TPD & ATL & CDL\\
 \end{tabular}
 \end{table}
 
-When graphed in this way, it is clearer that every triad identity surface lacks a connection to the opposite vertex of the tetrahedron. \sout{We
-therefore say that each of the triad identities is incomplete. }Table~\ref{tab:set3} gives the full set of \sout{sixteen}\textbf{16} index-triads that are
-complete in \sout{this} \textbf{the} sense\sout{. It can be verified}
-that each of \sout{these triads implies }\textbf{them imply} the full hexad identity.
+When graphed in this way, it is clearer that every triad identity surface lacks a connection to the opposite vertex of the tetrahedron. Table~\ref{tab:set3} gives the full set of 16 index-triads that are
+complete in the sense that each of them implies the full hexad identity.
 
-\sout{12 different pairs of time indices}\textbf{Note that the 12 pairs of intersecting edges of the tetrahedron are, in fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the uninformative dyads LP, CT, and AD are the pairs of opposite edges of the tetrahedron. As has already been discussed, all 12 informative dyads} generate one of the four triad identities in
-Table~\ref{tab:triadids}\sout{(and three do not)}, but no dyad will generate the hexad
+Note that the 12 possible pairs of intersecting edges on the tetrahedron are, in
+fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the uninformative dyads LP, CT, and AD are the pairs of opposite edges of the tetrahedron. As discussed, all 12 informative dyads generate one of the four triad identities in Table~\ref{tab:triadids}, but no dyad will generate the hexad
 identity since a third ``independent'' time dimension is necessary.
 Similarly, any quad of indices is sufficient to complete the hexad identity, as at least one of them will not belong to the same face of the tetrahedron, but a triad may be sufficient if they 
 do not all belong to the same plane forming a triad identity.
@@ -854,63 +853,48 @@ honeycomb.
 
 The APC, TPD, TAL, and CDL planes can be conceived of either as
 \textit{compressions} of this 3d space, or as cross-sections of the 3d space. To
-compress the space in this sense is to ignore the missing dimension,
+compress space in this sense is to ignore the missing dimension,
 whereas a cross-section sets a given triad identity against a particular
-position of the absent dimension. APC has thus far always been treated as a
-compression in this sense.
-A compressed TPD diagram has thus far only appeared in \citet{pancho2015}
-as an aid in proving the symmetries between chronological and thanatological age in stationary populations, and a cross-sectional one has
+position of the absent dimension. This is a more general sense of the term
+\textit{cross-section} than is often used in the demographic literature, where
+it typically implies a period cross-section.
+APC has thus far always been treated as a compression in this sense.
+A compressed TPD diagram has thus far only appeared in \citet{pancho2015} as an aid in proving the symmetries between chronological and thanatological age in stationary populations, and a cross-sectional one has
 never appeared.
-Cross-sectional TAL diagram and surfaces have thus far only appeared in
-\citet{riffe2015ttd}. This TAL usage was selected for the 1915-1919 birth
-cohort, and therefore belongs to the 3d
-space,
+Cross-sectional TAL diagrams and surfaces have thus far only appeared in
+\citet{riffe2015ttd}. This TAL usage was selected for the 1915-1919 birth cohort, and therefore belongs to the 3d space,
 \raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
 We have been unable to locate an example in the literature of a compressed
 TAL diagram, but it seems plausible one will have arisen in the field of
 biology, albeit with no relation to the present discourse. We suppose
-that CDL diagrams of any kind are yet-unknown.
+that LCD diagrams of any kind are yet-unknown.
 
 A simultaneous juxtaposition of the six demographic time measures has also never
 appeared in the literature, either as a visual diagnostic or in any line of
 inquiry or argumentation, although there are some novel temporal
-juxtapositions in the literature on event analysis in the analysis of
-big data \citep[see e.g.,]{watson2015timemaps}.
+juxtapositions in the literature on event analysis of
+big data \citep[see e.g.,][]{watson2015timemaps}.
 
  \section*{APCTDL}
-*section under construction*
-The final version of this section will contain different three-dimensional views
-of the tetrahedron with particular plan accentuated to match each of the four
-triad identities. These views will be in an expository table, similar to those
-above. The figures will probably by vector snapshots of an RGL model.
-Probably each will be centered on a single tetrahedron, with sides labeled, and one face of it (triad identity) will be highlighted and extended, and given depth). Each face will be seen from 2 angles, and also for the right and isotropic projections. use lighting, etc, to give depth. 
-
-A working mockup in WebGL can be seen here:\footnote{This graphic is best
-viewed on a large screen, in a browser with javascript enabled, and manipulated
-with a mouse that includes a wheel.}
-\url{http://www.demog.berkeley.edu/~triffe/RGL1}
-, though the snapshots in the final paper will be notably simpler.
-
-The complete space can be named using
-geometry nomenclature as the tetrahedral-octahedral honeycomb, which is a kind of space-filling tessellation.\footnote{Constructs following
-this geometry exist both in nature and in man-made structures.} 
- This three dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for enclosing
-demographic time in the past and future (e.g., before the first census and after
-the most recent census). 
+A property of the model that we propose is isotropy, i.e,
+the time units with respect to each time measure are proportional.
+In geometry nomenclature, the isotropic 3d space that results from this model is called the tetrahedral-octahedral honeycomb, a kind of
+space-filling tessellation. Constructs following this geometry exist in nature,
+in other theoretical settings, and in man-made structures. This three
+dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for enclosing demographic time in the past and future (e.g., before the first census and after the most recent census). 
 
 
-\begin{figure}[!h]
-\centering
-\caption[cap]{A mock-up example of the unified model of demographic
-time.\footnotemark}
-\label{fig:APCT}
+%\begin{figure}[!h]
+%\centering
+%\caption[cap]{A mock-up example of the unified model of demographic
+%time.\footnotemark}
+%\label{fig:APCT}
 %\includegraphics[bb=0 0 3264 2448, width=.8\textwidth]{Figures/PhysicalModel.jpg}
-\end{figure}
-\footnotetext{This and other figures to be replaced with vector graphics, although
-	I may bring this model to the presentation, since it helps explain concepts.}
+%\end{figure}
+%\footnotetext{This and other figures to be replaced with vector graphics,
+% although I may bring this model to the presentation, since it helps explain concepts.}
 
-A property of the geometry that we propose is isotropy,
-the time units in every direction (with respect to each index) are proportional.
+
 In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 parallelograms are all congruent shapes known as regular trigonal trapezohedra
 (RTT). The orientation
@@ -968,52 +952,52 @@ areas of application that have not occurred to us.
 
 \FloatBarrier
 
-\begin{appendices}
-\section{Variants of tetrahedron graph}
-The graph depicted in Figure~\ref{fig:tet} could be drawn with any of the
-four vertices in the middle of the triangle (as well as other inversions
-and rotations).
-These would all serve equally well to present the same aspects of the model, and
-we have no insight as to whether one of these renditions is more or less
-intuitive. Figure~\ref{fig:app:tet} provides four perspectives on the
-tetrahedron, for the case that this aids in understanding. The reader may make a
-paper tetrahedron, with labeled edges and vertices to be convinced that
-these are identical graphs.
-\begin{figure*}
-        \centering
-        \caption{Some variants of the graph of the APCTDL tetrahedron.} 
-         \label{fig:app:tet}
-        \begin{subfigure}[b]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{Figures/Tetra1.pdf}
-           \caption{\small Vertex \vt{1} in middle. APC Northwest.}
-            \label{fig:tet1}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{Figures/Tetra2.pdf}
-           \caption{\small Vertex \vt{2} in middle. APC Northeast.}
-            \label{fig:tet2}
-        \end{subfigure}
-        \vskip\baselineskip
-        \begin{subfigure}[b]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Figures/Tetra3.pdf}
-           \caption{\small Vertex \vt{3} in middle. APC Northwest.}
-            \label{fig:tet3}
-        \end{subfigure}
-        \quad
-        \begin{subfigure}[b]{0.475\textwidth}   
-            \centering 
-            \includegraphics[width=\textwidth]{Figures/Tetra4.pdf}
-            \caption{\small Vertex \vt{4} in middle, as in
-            Figure~\ref{fig:tet}. APC base.}
-            \label{fig:tet4}
-        \end{subfigure}
-    \end{figure*}
-\end{appendices}
-\FloatBarrier
+%\begin{appendices}
+%\section{Variants of tetrahedron graph}
+%The graph depicted in Figure~\ref{fig:tet} could be drawn with any of the
+%four vertices in the middle of the triangle (as well as other inversions
+%and rotations).
+%These would all serve equally well to present the same aspects of the model,
+% and we have no insight as to whether one of these renditions is more or less
+%intuitive. Figure~\ref{fig:app:tet} provides four perspectives on the
+%tetrahedron, for the case that this aids in understanding. The reader may make
+% a paper tetrahedron, with labeled edges and vertices to be convinced that
+%these are identical graphs.
+%\begin{figure*}
+%        \centering
+%        \caption{Some variants of the graph of the APCTDL tetrahedron.} 
+%         \label{fig:app:tet}
+%        \begin{subfigure}[b]{0.475\textwidth}
+%            \centering
+%            \includegraphics[width=\textwidth]{Figures/Tetra1.pdf}
+%           \caption{\small Vertex \vt{1} in middle. APC Northwest.}
+%            \label{fig:tet1}
+%        \end{subfigure}
+%    \hfill
+%        \begin{subfigure}[b]{0.475\textwidth}  
+%            \centering 
+%            \includegraphics[width=\textwidth]{Figures/Tetra2.pdf}
+%           \caption{\small Vertex \vt{2} in middle. APC Northeast.}
+%            \label{fig:tet2}
+%        \end{subfigure}
+%        \vskip\baselineskip
+%        \begin{subfigure}[b]{0.475\textwidth}   
+%            \centering 
+%            \includegraphics[width=\textwidth]{Figures/Tetra3.pdf}
+%           \caption{\small Vertex \vt{3} in middle. APC Northwest.}
+%            \label{fig:tet3}
+%        \end{subfigure}
+%        \quad
+%        \begin{subfigure}[b]{0.475\textwidth}   
+%            \centering 
+%            \includegraphics[width=\textwidth]{Figures/Tetra4.pdf}
+%            \caption{\small Vertex \vt{4} in middle, as in
+%            Figure~\ref{fig:tet}. APC base.}
+%            \label{fig:tet4}
+%        \end{subfigure}
+%    \end{figure*}
+%\end{appendices}
+%\FloatBarrier
 
 \bibliographystyle{plainnat}
   \bibliography{references} 

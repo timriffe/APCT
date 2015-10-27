@@ -3,7 +3,7 @@
 # Author: triffe
 ###############################################################################
 #install.packages("rgl")
-
+#update.packages("rgl")
 library(rgl)
 #
 #clear3d()
@@ -11,7 +11,7 @@ library(rgl)
 #rgl.close()
 # =====================================
 # set up space, a box, a prelim aspect ratio (final adjustment later)
-plot3d(x1, y1, z1, 
+plot3d(c(0,1), c(0,1),c(0,1), 
 		box = FALSE, 
 		aspect = c(3, 1, 1),
 		axes = FALSE, 
@@ -21,9 +21,9 @@ plot3d(x1, y1, z1,
 		zlab = "")
 par3d(family="sans",FOV=10)
 bg3d("white")
-par3d(mouseMode=c("trackball","none",  "zoom",  "pull" ))
+#par3d(mouseMode=c("trackball","none",  "zoom",  "pull" ))
 par3d(skipRedraw=TRUE)
-#decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
+decorate3d(xlim=c(1800,2100), ylim=c(0,100), zlim=c(0,100),aspect=c(3,1,1),box = FALSE, axes = FALSE, xlab = "year",ylab = "chrono age", zlab = "thano age")
 
 
 # =====================================
@@ -231,4 +231,16 @@ decorate3d(xlim = c(1800, 2100), ylim = c(0, 100), zlim = c(0, 100),
 # can save to WebGL, for viewing in browser.
 # just set a working directory if needed.
 #writeWebGL(dir = "RGL1")
+
+
+
+
+
+
+
+
+
+
+
+
 

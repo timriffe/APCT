@@ -20,7 +20,7 @@ getwd()
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 # LCD  right angle, with life lines
-pdf(file.path("Figures","LCD.pdf"),height=5,width=8)
+pdf(file.path("Figures","LCDrt.pdf"),height=5,width=8)
 par(mai = c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
 LexRefN(0:100, 1820:2060, col = "#A5A5A5", N = 20, chrono = FALSE, xpd=TRUE)
@@ -34,11 +34,36 @@ segments(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),
 points(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),pch=19,col="blue",xpd=TRUE)
 points(c(1920-85,1930-75,1905,1922,1965,1995),
 		c(85,75,65,75,25,50), pch=13,cex=1.3,col="blue",lwd=2)
-polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")
-polygon(c(2000,2060,2060,1900),c(0,0,100,100),border=NA,col="#00000020")
+#polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")
+#polygon(c(2000,2060,2060,1900),c(0,0,100,100),border=NA,col="#00000020")
 text(1950,-10,"Birth Cohort",xpd=TRUE,pos=1)
 text(1805,70,"Lifespan",xpd=TRUE,pos=2,srt=90)
 text(1925,35,"Death cohort",srt=-45,col="blue")
+dev.off()
+
+# isotropic
+pdf(file.path("Figures","LCDeq.pdf"),height=5,width=8)
+par(mai = c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
+plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
+LexRefN(0:100, 1820:2060, col = "#A5A5A5", N = 20, chrono = FALSE, xpd=TRUE,equilateral=TRUE)
+#
+text(1820+seq(0,100,by=20)*.5,seq(0,100,by=20)*sqrt(3)/2,seq(0,100,by=20),pos=2,xpd=TRUE)
+text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE)
+# life lines
+
+xc <- c(1920-85,1930-75,1905,1922,1965,1995)
+yc <- c(0,0,0,0,0,0)
+xd <- c(1920-85,1930-75,1905,1922,1965,1995)
+yd <- c(85,75,65,75,25,50)
+
+segments(xc,yc,xc+.5*yd,yd*sqrt(3)/2, col = "blue", lwd=2)
+points(xc,yc,pch=19,col="blue",xpd=TRUE)
+points(xc+.5*yd,yd*sqrt(3)/2, pch=13,cex=1.3,col="blue",lwd=2)
+#polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")
+#polygon(c(2000,2060,2060,1900),c(0,0,100,100),border=NA,col="#00000020")
+text(1950,-10,"Birth Cohort",xpd=TRUE,pos=1)
+text(1805+35,80*sqrt(3)/2,"Lifespan",xpd=TRUE,pos=2,srt=60)
+text(1925+35/2,35*sqrt(3)/2,"Death cohort",srt=-60,col="blue")
 dev.off()
 
 

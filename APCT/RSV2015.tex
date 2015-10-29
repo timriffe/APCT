@@ -88,9 +88,7 @@ We describe a three-dimensional model that relates six different measures of
 demographic time. The six measures of demographic time considered are
 chronological age, remaining years of life, lifespan, year of birth, year of
 death, and period. We describe four identities among subsets of these six
-measures, and then a full identity that relates the six of them. Two versions of
-the full model are described: a relatively intuitive extension of the
-right-angled Lexis diagram, and an isotropic extension based on the regular tetrahedron. \ackn{The work reported in this manuscript was begun by
+measures, and then a full identity that relates the six of them. \ackn{The work reported in this manuscript was begun by
 the first author while at the Department of Demography at the University of
 California, Berkeley, and was supported by the U.S.
 National Institute On Aging of the National Institutes of Health under award
@@ -325,163 +323,148 @@ are be analysed in detail in further sections. The uninformative dyads
 are simply a pairs of time measures that are not contained in any of these four
 triad identities.
 
-\begin{center}
-  \small
-  \begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
-  \caption{The 15 temporal dyads, with corresponding translations to Euclidean
-  and isotropic temporal planes.\protect\footnotemark} 
-  \label{tab:dyads} \\
+\begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
+  \caption{All dyadic juxtapositions of the six measures of demographic time.}\\
+  \label{tab:dyads}\\
+  \toprule
+  \multicolumn{4}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
+  \midrule
+  \multicolumn{1}{c}{relationship} & \multicolumn{1}{c}{description} &
+  \multicolumn{1}{c}{cartesian} & \multicolumn{1}{c}{isotropic} \\
+  \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variants of APC}} \\
   \midrule
-  %%%% AP
+  %%%% APc
   $$\begin{aligned}
     &AP(C) \\
     &C = P - A
-  \end{aligned}$$ & \footnotetext{Contrary to mathematical convention we name
-  the ordinate scale first and the abscissa scale second. This is to be
-  consistent with the established acronym of $APC$, which under other
-  circumstances might just be called $PA$.}The $AP(C)$ temporal plane
-  constitutes the classical Lexis diagram.
-  & \includegraphics[width = \linewidth]{Figures/JonasTable/APc.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/APc_iso.pdf}  \\
-  \midrule
-  %%%% AC
+  \end{aligned}$$ &
+  The $AP(C)$ temporal plane constitutes the classical Lexis diagram. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/APc-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/APc_iso-crop.pdf}  \\
+  %%%% ACp
   $$\begin{aligned}
     &AC(P) \\
     &P = C + A
   \end{aligned}$$ &
-  The $AC(P)$ temporal plane is equivalent to the Lexis diagram except that
-  birth cohort is given and period is derived. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/ACp.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/ACp_iso.pdf}  \\
-  \midrule
-  %%%% CP
+  The $AC(P)$ temporal plane is equivalent to the Lexis diagram only that birth cohort is given and period is embedded instead of the other way round. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/ACp-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/ACp_iso-crop.pdf}  \\
+  %%%% CPa
   $$\begin{aligned}
     &CP(A) \\
     &A = P - C
   \end{aligned}$$ &
-  The $CP(A)$ temporal plane is equivalent to the Lexis diagram except that
-  birth cohort is given and age is derived. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/CPa.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/CPa_iso.pdf}  \\
+  The $CP(A)$ temporal plane is equivalent to the Lexis diagram only that birth cohort is given and age is embedded instead of the other way round. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/CPa-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/CPa_iso-crop.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variants of TPD}} \\
   \midrule
-  %%%% TP
+  %%%% TPd
   $$\begin{aligned}
     &TP(D) \\
     &D = P + T
-  \end{aligned}$$ & Helen had 30 yeasrs of life left (T) in 1971 (P) and
-  therefore belonged to the 2001 death cohort (D). & \includegraphics[width =
-  \linewidth]{Figures/JonasTable/TPd.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/TPd_iso.pdf}  \\
-  \midrule
-  %%%% PD
+  \end{aligned}$$ &
+  Helen had 30 years of life left ($T$) in 1971 ($P$) and therefore belonged to the 2001 death cohort ($D$) &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TPd-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TPd_iso-crop.pdf}  \\
+  %%%% PDt
   $$\begin{aligned}
     &PD(T) \\
     &T = D - P
   \end{aligned}$$ &
-  Mindel died in 1973 (D). In 1953 (P) she had 20 (T) years left to live. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/PDt.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/PDt_iso.pdf}  \\
-  \midrule
-  %%%% TD
+  Mindel died in 1973 ($D$). In 1953 ($P$) she had 20 years left to live ($T$). &
+  \includegraphics[height = 2cm]{Figures/JonasTable/PDt-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/PDt_iso-crop.pdf}  \\
+  %%%% TDp
   $$\begin{aligned}
     &TD(P) \\
     &P = D - T
   \end{aligned}$$ &
-  Irene died in 1974 (D). When she had 30 (T) remaining years of life the year
-  must have been 1944 (P).& \includegraphics[width =
-  \linewidth]{Figures/JonasTable/TDp.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/TDp_iso.pdf}  \\
+  Irene died in 1974 ($D$). When she had 30 remaining years of life ($T$) the year must have been 1944 ($P$). &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TDp-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TDp_iso-crop.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of TAL}}
-  \\
+  \multicolumn{4}{c}{\textsc{Variants of TAL}} \\
   \midrule
-  %%%% TA
+  %%%% TAl
   $$\begin{aligned}
     &TA(L) \\
     &L = T + A
   \end{aligned}$$ &
   The time already lived and the time still left sum up to the total lifespan. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/TAl_iso.pdf}  \\
-  \midrule
-  %%%% TL
+  \includegraphics[height = 2cm]{Figures/JonasTable/TAl-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TAl_iso-crop.pdf}  \\
+  %%%% TLa
   $$\begin{aligned}
     &TL(A) \\
     &A = L - T
   \end{aligned}$$ &
-  Helen lived to the age of 86. When she had 20 years left she must have been
-  66. & \includegraphics[width = \linewidth]{Figures/JonasTable/TLa.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/TLa_iso.pdf}  \\
-  \midrule
-   %%%% AL
+  Helen lived to the age of 86 ($L$). When she had 20 years left ($T$) she must have been 66 ($A$). &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TLa-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/TLa_iso-crop.pdf}  \\
+  %%%% ALt
   $$\begin{aligned}
     &AL(T) \\
     &T = A - L
-  \end{aligned}$$ &  Tim is 34 years old (A) and will live to the age of 96 (L),
-  leaving him 62 years (T) to settle affairs.
-  & \includegraphics[width = \linewidth]{Figures/JonasTable/ALt.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/ALt_iso.pdf}  \\
-  \midrule
+  \end{aligned}$$ &
+  Tim is 34 years old ($A$) and will live to the age of 96 ($L$), leaving him 62 years ($T$) to settle affairs. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/ALt-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/ALt_iso-crop.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of LCD}}
-  \\
+  \multicolumn{4}{c}{\textsc{Variants of LCD}} \\
   \midrule
-   %%%% LC
+  %%%% LCd
   $$\begin{aligned}
     &LC(D) \\
     &D = C + L
   \end{aligned}$$ &
-  {\`A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
-  untimely death in 2004 (D). & \includegraphics[width =
-  \linewidth]{Figures/JonasTable/LCd.pdf} & \includegraphics[width = \linewidth]{Figures/JonasTable/LCd_iso.pdf}  \\
-  \midrule
-  %%%% CD
+  Àngels was born in 1940 ($C$) and she lived to be 64 ($L$), implying an
+  untimely death in 2004 ($D$) &
+  \includegraphics[height = 2cm]{Figures/JonasTable/LCd-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/LCd_iso-crop.pdf}  \\
+  %%%% CDl
   $$\begin{aligned}
     &CD(L) \\
     &L = D - C
   \end{aligned}$$ &
-  Pascal was born in 1893 (C) and died in 1964 (D), implying a lifespan of 71
-  (L), or so.
-  & \includegraphics[width = \linewidth]{Figures/JonasTable/CDl.pdf} &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/CDl_iso.pdf}  \\
-  \midrule
-  %%%% LD
+  Pascal was born in 1893 ($C$) and died in 1964 ($D$), implying a lifespan of 71 ($L$), or so. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/CDl-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/CDl_iso-crop.pdf}  \\
+  %%%% LDc
   $$\begin{aligned}
     &LD(C) \\
     &C = D - L
   \end{aligned}$$ &
-  Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting
-  her birth year in 1900 (C). &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LDc.pdf} & 
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LDc_iso.pdf}  \\
+  Margaret died in Dec., 1995 ($D$) with a completed lifespan of 96 ($L$), putting her birth year in 1900 ($C$). &
+  \includegraphics[height = 2cm]{Figures/JonasTable/LDc-crop.pdf} &
+  \includegraphics[height = 2cm]{Figures/JonasTable/LDc_iso-crop.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{The uninformative dyads}} \\
+  \multicolumn{4}{c}{\textsc{The Uninformative Dyads}} \\
   \midrule
   %%%% LP
   $LP(-)$ &
   The $LP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just lifespan and period. &
-  \includegraphics[width = \linewidth]{Figures/JonasTable/LP.pdf} & \\
-  %\includegraphics[width = \linewidth]{Figures/JonasTable/LP_iso.pdf}  \\
-  \midrule
+  \includegraphics[height = 2cm]{Figures/JonasTable/LP-crop.pdf} &
+   \\
   %%%% CT
   $CT(-)$ &
-  The $CT$ plane is \emph{non-informative}. No additional dimensions can be
-  derived from birth cohort and thanatological age. & \includegraphics[width =
-  \linewidth]{Figures/JonasTable/CT.pdf} & \\%\includegraphics[width =
-  % \linewidth]{Figures/JonasTable/CT_iso.pdf}  \\
-  \midrule
+  The $CT$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just cohort and thanatological age. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/CT-crop.pdf} &
+   \\
   %%%% AD
   $AD(-)$ &
-  The $AD$ plane is \emph{non-informative}. No additional dimensions can be
-  derived from death cohort and chronological age. & \includegraphics[width =
-  \linewidth]{Figures/JonasTable/AD.pdf} & \\%\includegraphics[width =
-  % \linewidth]{Figures/JonasTable/AD_iso.pdf}  \
- 
-  \end{longtable}
-\end{center}
+  The $AD$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just death cohort and age. &
+  \includegraphics[height = 2cm]{Figures/JonasTable/AD-crop.pdf} &
+    \\
+  \bottomrule
+\end{longtable}
 
 Most of what we know about how rates change over age and time comes
 from the very first juxtaposition in Table~\ref{tab:dyads}, $AP(C)$. While
@@ -876,30 +859,45 @@ juxtapositions in the literature on event analysis of
 big data \citep[see e.g.,][]{watson2015timemaps}.
 
  \section*{APCTDL}
+There are various ways in
+which one might visualize the 3d space of demographic time, emphasizing
+different planes or intersections. In figure~\ref{fig:apctTAL} we offer a view
+of the hexad identity, where birth-cohort TAL cross-section planes are placed in
+sequence. The most recent TAL plane, for year $t$, is placed in the front,
+whereas past TAL planes are stacked behind it in century intervals. In this
+view, the emphasis is on how the juxtaposition of thanatological age, chronological age, and lifespan change over time. This is the view used in \citet{riffe2015ttd}, albeit for a single birth cohort only.
+The base of this figure is the APC plane. Each of the TAL planes therefore sits
+atop a single birth cohort line from the APC plane that makes up the base of the
+figure. 
+
 A property of the model that we propose is isotropy, i.e,
 the time units with respect to each time measure are proportional.
-In geometry nomenclature, the isotropic 3d space that results from this model is called the tetrahedral-octahedral honeycomb, a kind of
-space-filling tessellation. Constructs following this geometry exist in nature,
-in other theoretical settings, and in man-made structures. This three
-dimensional space is not only useful for the sake of formalizing observed temporal relationships, but also for enclosing demographic time in the past and future (e.g., before the first census and after the most recent census). 
+In geometry nomenclature, the isotropic 3d space that results from this model is
+called the tetrahedral-octahedral honeycomb, a kind of space-filling
+tessellation. Constructs following this geometry exist in nature, in other
+theoretical settings, and in man-made structures. 
 
 
-%\begin{figure}[!h]
-%\centering
-%\caption[cap]{A mock-up example of the unified model of demographic
-%time.\footnotemark}
-%\label{fig:APCT}
-%\includegraphics[bb=0 0 3264 2448, width=.8\textwidth]{Figures/PhysicalModel.jpg}
-%\end{figure}
-%\footnotetext{This and other figures to be replaced with vector graphics,
-% although I may bring this model to the presentation, since it helps explain concepts.}
+\begin{figure}[!h]
+\centering
+\begin{adjustwidth}{-2em}{-2em}
+\caption[cap]{Birth cohort TAL planes over time}
+\label{fig:apctTAL}
+\includegraphics[scale=.5]{Figures/TALisomarkedup.pdf}
+\end{adjustwidth}
+\end{figure}
 
 
-In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
-parallelograms are all congruent shapes known as regular trigonal trapezohedra
-(RTT). The orientation
-of a given RTT uniquely defines the Lexis shape in question. Similar constructs
-exist in the other time dimensions. 
+
+%In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
+%parallelograms are all congruent shapes known as regular trigonal trapezohedra
+%(RTT). The orientation
+%of a given RTT uniquely defines the Lexis shape in question. Similar constructs
+%exist in the other time dimensions. 
+
+%This three
+%dimensional space is not only useful for the sake of formalizing observed
+% temporal relationships, but also for enclosing demographic time in the past and future (e.g., before the first census and after the most recent census).
 
 \section*{Discussion}
 The contemporary practice of demography is based on the premise that vital

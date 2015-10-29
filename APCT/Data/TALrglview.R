@@ -1,0 +1,11 @@
+structure(list(FOV = 30, ignoreExtent = FALSE, mouseMode = structure(c("trackball", 
+"zoom", "fov"), .Names = c("left", "right", "middle")), skipRedraw = FALSE, 
+    userMatrix = structure(c(0.225067615509033, -0.0634855479001999, 
+    0.972272992134094, 0, 0.963658452033997, 0.161884605884552, 
+    -0.212502524256706, 0, -0.143904790282249, 0.984766066074371, 
+    0.0976134389638901, 0, 0, 0, 0, 1), .Dim = c(4L, 4L)), scale = c(942.118225097656, 
+    942.118225097656, 942.118225097656), zoom = 0.111296705901623, 
+    windowRect = c(1331L, 785L, 2646L, 1505L), family = "bitmap", 
+    font = 1L, cex = 1, useFreeType = FALSE), .Names = c("FOV", 
+"ignoreExtent", "mouseMode", "skipRedraw", "userMatrix", "scale", 
+"zoom", "windowRect", "family", "font", "cex", "useFreeType"))

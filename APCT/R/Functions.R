@@ -110,7 +110,7 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,col1=
 #' @export
 #' 
 
-ATLRefN <- function(ages, N = 5, equilateral = FALSE, ...){
+ATLRefN <- function(ages, N = 5, equilateral = FALSE, col1="#A5A5A5",col2="#A5A5A5",col3="#A5A5A5",...){
 	
 	minA      <- min(ages)
 	maxA      <- max(ages)
@@ -118,29 +118,29 @@ ATLRefN <- function(ages, N = 5, equilateral = FALSE, ...){
 	
 	if (equilateral){
 		# left-leaning
-		segments(C,rep(minA, length(C)) * sqrt(3)/2 ,C*.5, Th * sqrt(3)/2, ...)
+		segments(C,rep(minA, length(C)) * sqrt(3)/2 ,C*.5, Th * sqrt(3)/2, col = col1,...)
 		
 		# right-leaning
-		segments(C,rep(minA, length(C)) * sqrt(3)/2, C + rev(Th)*.5,rev(Th) * sqrt(3)/2, ...)
+		segments(C,rep(minA, length(C)) * sqrt(3)/2, C + rev(Th)*.5,rev(Th) * sqrt(3)/2, col = col2, ...)
 		
 		# horizontals.
-		segments(C - .5 * Th, Th * sqrt(3) / 2, rev(C) + .5 * Th, Th * sqrt(3) / 2, ...)
+		segments(C - .5 * Th, Th * sqrt(3) / 2, rev(C) + .5 * Th, Th * sqrt(3) / 2, col = col3, ...)
 
 	} else {
 		# verticals
 		xv  <- rev(C)
 		y1v <- rep(minA,length(C))
 		y2v <- Th
-		segments(xv,y1v,xv,y2v, ...)
+		segments(xv,y1v,xv,y2v, col = col1, ...)
 		
 		# horizontals
 		x1h <- rep(minA, length(Th))
 		x2h <- rev(C)
 		yh  <- Th
-		segments(x1h,yh,x2h,yh, ...)
+		segments(x1h,yh,x2h,yh, col = col2, ...)
 		
 		# diagonals
-		segments(rep(minA,length(Th)),Th,C,rep(minA,length(C)), ...)
+		segments(rep(minA,length(Th)),Th,C,rep(minA,length(C)), col = col3, ...)
 	}
 }
 

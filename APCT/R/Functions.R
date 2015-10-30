@@ -23,7 +23,7 @@ require(HMDHFDplus)
 #' @export
 #' 
 
-LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
+LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,col1=gray(.5),col2=gray(.5),col3=gray(.5),...){
 	# vertical
 	#par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 	#plot(NULL, xlim = c(1820,2060), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
@@ -40,6 +40,7 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 			min(ages) * agemult,
 			years[years %% N == 0] - maxA * yearshift,
 			max(ages) * agemult,
+			col = col1,
 			...
 	)
 	
@@ -48,6 +49,7 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 			ages[ages %% N == 0] * agemult,
 			max(years) - ages[ages %% N == 0] * yearshift,
 			ages[ages %% N == 0] * agemult,
+			col = col2,
 			...
 	)
 	# diag cohort references, bit more tricky:
@@ -79,6 +81,7 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 				yb * agemult, 
 				xr - yt * yearshift, 
 				yt * agemult, 
+				col = col3,
 				...
 				)
 	} else {
@@ -86,6 +89,7 @@ LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,...){
 				yb * agemult, 
 				rev(xl)- yt * yearshift, 
 				yt * agemult,
+				col = col3,
 				...
 				)
 	}
@@ -138,4 +142,16 @@ ATLRefN <- function(ages, N = 5, equilateral = FALSE, ...){
 		# diagonals
 		segments(rep(minA,length(Th)),Th,C,rep(minA,length(C)), ...)
 	}
+}
+
+# colors chosen by JS, his function. May as well use the same ones!
+# here: https://github.com/jschoeley/typotime/blob/master/R/diatime.R
+AssignColour <- function (x) {
+	if (x == "A") result <- "#D23737"
+	if (x == "P") result <- "#3191C9"
+	if (x == "C") result <- "#D2BC2D"
+	if (x == "T") result <- "#4EC93B"
+	if (x == "D") result <- "#881F93"
+	if (x == "L") result <- "#C5752B"
+	return(result)
 }

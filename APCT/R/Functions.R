@@ -155,3 +155,12 @@ AssignColour <- function (x) {
 	if (x == "L") result <- "#C5752B"
 	return(result)
 }
+
+xyz2ternxyz <- function(xyz){
+	ternxyz   <- xyz
+	
+	ternxyz$x <- xyz$x - (xyz$y * .5)
+	ternxyz$y <- xyz$y * sqrt(3) / 2 + xyz$z * (sqrt(3) / 2 - 1 / sqrt(3))
+	ternxyz$z <- xyz$z * sqrt(6) / 3
+	ternxyz
+}

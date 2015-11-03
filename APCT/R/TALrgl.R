@@ -14,27 +14,9 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 		setwd(paste0("/data/commons/",system("whoami",intern=TRUE),"/git/APCT/APCT"))
 	}
 }
+library(rgl)
+source("R/Functions.R")
 
-# need a function to take an xyz coord and transform to ternary xyz.
-xyz2ternxyz <- function(xyz){
-	ternxyz   <- xyz
-	
-	ternxyz$x <- xyz$x - (xyz$y * .5)
-	ternxyz$y <- xyz$y * sqrt(3) / 2 + xyz$z * (sqrt(3) / 2 - 1 / sqrt(3))
-	ternxyz$z <- xyz$z * sqrt(6) / 3
-	ternxyz
-}
-# colors chosen by JS, his function. May as well use the same ones!
-# here: https://github.com/jschoeley/typotime/blob/master/R/diatime.R
-AssignColour <- function (x) {
-	if (x == "A") result <- "#D23737"
-	if (x == "P") result <- "#3191C9"
-	if (x == "C") result <- "#D2BC2D"
-	if (x == "T") result <- "#4EC93B"
-	if (x == "D") result <- "#881F93"
-	if (x == "L") result <- "#C5752B"
-	return(result)
-}
 #rgl.close()
 
 # from Josh O'Brien on SO:
@@ -47,7 +29,7 @@ AssignColour <- function (x) {
 pp <- dget("Data/TALrglview.R")
 
 
-
+rgl.close()
 omega <- 125 # for the sake of dimensioning
 # =====================================
 # set up space, a box, a prelim aspect ratio (final adjustment later)
@@ -65,9 +47,9 @@ bg3d("white")
 cal1 <- xyz2ternxyz(data.frame(x=c(1000,2500),y=c(0,0),z=c(0,0)))
 cal2 <- xyz2ternxyz(data.frame(x=c(1000,2500),y=c(omega,omega),z=c(0,0)))
 cal3 <- xyz2ternxyz(data.frame(x=c(1000,2500),y=c(0,0),z=c(omega,omega)))
-rgl.linestrips(cal1$x,cal1$y,cal1$z,color = AssignColour("A"))
-rgl.linestrips(cal2$x,cal2$y,cal2$z,color = AssignColour("A"))
-rgl.linestrips(cal3$x,cal3$y,cal3$z,color = AssignColour("A"))
+rgl.linestrips(cal1$x,cal1$y,cal1$z,color = AssignColour("P"),lwd=2)
+rgl.linestrips(cal2$x,cal2$y,cal2$z,color = AssignColour("P"),lwd=2)
+rgl.linestrips(cal3$x,cal3$y,cal3$z,color = AssignColour("P"),lwd=2)
 
 # add an apc plane on the bottom
 
@@ -98,45 +80,62 @@ for (n in ns){
 					x = c(2000, 2000+omega, 2000) - n,
 					y = c(0, omega, 0),
 					z = c(0, 0, omega)))
-	rgl.triangles(
-			x = xyztern$x,
-			y = xyztern$y, 
-			z = xyztern$z,
-			col = gray(.5),
-			shininess = 0,
-			lit=FALSE,
-			alpha = .4)
+	rgl.linestrips(xyztern$x[c(1,2)],xyztern$y[c(1,2)],xyztern$z[c(1,2)],color = gray(.5))
+	rgl.linestrips(xyztern$x[c(2,3)],xyztern$y[c(2,3)],xyztern$z[c(2,3)],color = gray(.5))
+	rgl.linestrips(xyztern$x[c(1,3)],xyztern$y[c(1,3)],xyztern$z[c(1,3)],color = gray(.5))
+#	rgl.triangles(
+#			x = xyztern$x,
+#			y = xyztern$y, 
+#			z = xyztern$z,
+#			col = gray(.5),
+#			shininess = 0,
+#			lit=FALSE,
+#			alpha = .4)
 }
 
 # the fron TAL cohort panel (2000 birth cohort)
-xyztern <- xyz2ternxyz(data.frame(
-				x = c(2000, 2000+omega, 2000),
-				y = c(0, omega, 0),
-				z = c(0, 0, omega)))
-rgl.triangles(
-		x = xyztern$x,
-		y = xyztern$y, 
-		z = xyztern$z,
-		col = gray(.9),
-		shininess = 0,
-		lit=FALSE,
-		alpha = .85)
+#xyztern <- xyz2ternxyz(data.frame(
+#				x = c(2000, 2000+omega, 2000),
+#				y = c(0, omega, 0),
+#				z = c(0, 0, omega)))
+#rgl.triangles(
+#		x = xyztern$x,
+#		y = xyztern$y, 
+#		z = xyztern$z,
+#		col = gray(.9),
+#		shininess = 0,
+#		lit=FALSE,
+#		alpha = .85)
 # add lifespan lines to 2000 TAL
 ages <- seq(0,omega,by=25)
 for (i in ages){
 	lsi <- xyz2ternxyz(data.frame(x=c(2000,2000+i),y=c(0,i),z=c(i,0)))
-	rgl.linestrips(lsi$x,lsi$y,lsi$z,color = AssignColour("L"))
+	if (i == omega){
+		rgl.linestrips(lsi$x,lsi$y,lsi$z,color = AssignColour("A"), lwd=2)
+	} else {
+		rgl.linestrips(lsi$x,lsi$y,lsi$z,color = AssignColour("L"))
+	}
 }
 # add thano lines to 2000 TAL
 for (i in ages){
 	tsi <- xyz2ternxyz(data.frame(x=c(2000,2000+i),y=c(0,i),z=omega-c(i,i)))
-	rgl.linestrips(tsi$x,tsi$y,tsi$z,color = AssignColour("T"))
+	if (i == 0){
+		rgl.linestrips(tsi$x,tsi$y,tsi$z,color = AssignColour("L"),lwd=2)
+	} else {
+		rgl.linestrips(tsi$x,tsi$y,tsi$z,color = AssignColour("T"))
+	}
 }
 # add chrono lines to 2000 TAL
 for (i in ages){
 	asi <- xyz2ternxyz(data.frame(x=c(2000+i,2000+i),y=c(i,i),z=c(0,omega-i)))
-	rgl.linestrips(asi$x,asi$y,asi$z,color = AssignColour("A"))
+	if (i == 0){
+		rgl.linestrips(asi$x,asi$y,asi$z,color = AssignColour("T"),lwd=2)
+	} else {
+		rgl.linestrips(asi$x,asi$y,asi$z,color = AssignColour("A"))
+	}
 }
+
+
 
 par3d(pp)
 x <- diff(par3d("bbox")[1:2])

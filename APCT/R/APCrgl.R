@@ -18,14 +18,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 library(rgl)
 source("R/Functions.R")
 # need a function to take an xyz coord and transform to ternary xyz.
-xyz2ternxyz <- function(xyz){
-	ternxyz   <- xyz
-	
-	ternxyz$x <- xyz$x - (xyz$y * .5)
-	ternxyz$y <- xyz$y * sqrt(3) / 2 + xyz$z * (sqrt(3) / 2 - 1 / sqrt(3))
-	ternxyz$z <- xyz$z * sqrt(6) / 3
-	ternxyz
-}
+
 
 #rgl.close()
 
@@ -85,7 +78,7 @@ for (A in Asi){
 					z = c(0, omega-A)))
 	rgl.linestrips(asi$x,asi$y,asi$z,color = AssignColour("A"),line_antialias=TRUE)
 }
-Tsi <- seq(25,100,by=25)
+Tsi <- seq(50,100,by=25)
 for (TT in Tsi){
 	tsi <- xyz2ternxyz(data.frame(
 					x = c(p,p),
@@ -99,34 +92,25 @@ for (TT in Tsi){
 #rgl.linestrips(xyztern$x[3:4],xyztern$y[3:4],xyztern$z[3:4],color = AssignColour("P"))
 #rgl.linestrips(xyztern$x[2:3],xyztern$y[2:3],xyztern$z[2:3],color = AssignColour("A"))
 # an example rgl TAL (1900 birth cohort)
- #n <- 0
+ #n <- 25
 
  for (n in ns){
 	 xyztern <- xyz2ternxyz(data.frame(
 					 x = c(minP, minP, maxP, maxP),
 					 y = c(0, omega-n, omega-n, 0),
 					 z = c(n,n,n,n)))
-#	 if (n == 25){
-#	 rgl.quads(
-#			 x = xyztern$x,
-#			 y = xyztern$y, 
-#			 z = xyztern$z,
-#			 col = gray(.9),
-#			 shininess = 0,
-#			 lit=FALSE,
-#			 alpha = .5,
-#			 front = "fill",
-#			 back = "fill")
-# }
-	 if (n != 25){
+	 # apc perimeter for layers > 25 --- green for thano
+	 if (n > 25){
 		 rgl.linestrips(xyztern$x[1:2],xyztern$y[1:2],xyztern$z[1:2],color = AssignColour("T"),line_antialias=TRUE)
 		 rgl.linestrips(xyztern$x[3:4],xyztern$y[3:4],xyztern$z[3:4],color = AssignColour("T"))
 		 rgl.linestrips(xyztern$x[2:3],xyztern$y[2:3],xyztern$z[2:3],color = AssignColour("T"),line_antialias=TRUE)
-		 #rgl.linestrips(xyztern$x[c(1,4)],xyztern$y[c(1,4)],xyztern$z[c(1,4)],color = AssignColour("A"),line_antialias=TRUE)
 	 }
+	 # bottom APC perimeter front & back --- green for thano
 	 if (n == 0){
-		 rgl.linestrips(xyztern$x[c(1,4)],xyztern$y[c(1,4)],xyztern$z[c(1,4)],color = AssignColour("A"),line_antialias=TRUE)
+		 rgl.linestrips(xyztern$x[c(1,4)],xyztern$y[c(1,4)],xyztern$z[c(1,4)],color = AssignColour("T"),line_antialias=TRUE)
+		 rgl.linestrips(xyztern$x[2:3],xyztern$y[2:3],xyztern$z[2:3],color = AssignColour("T"),line_antialias=TRUE)
 	 }
+	 # the APC plane
 	 if (n == 25){
 		 cohorts <- seq(minP-omega+n,maxP,by=25)
 		 # i <- 1
@@ -165,6 +149,7 @@ for (TT in Tsi){
 	 
 	 }
  }
+ # axes for apc
  peri <- xyz2ternxyz(data.frame(x=c(minP,minP),y=c(0,omega-25),z=c(25,25)))
  rgl.linestrips(peri$x,peri$y,peri$z,color = AssignColour("A"),line_antialias=TRUE, lwd =2)
  agei <- xyz2ternxyz(data.frame(x=c(minP,maxP),y=0,z=c(25,25)))
@@ -175,27 +160,6 @@ for (TT in Tsi){
 				 y = c(0, 0),
 				 z = c(0,0)))
  rgl.linestrips(xyzfront$x,xyzfront$y,xyzfront$z,color = AssignColour("T"),line_antialias=TRUE)
- # start census triangle
-# xyztern <- xyz2ternxyz(data.frame(
-#				 x = c(minP,minP,minP),
-#				 y = c(0, omega, 0),
-#				 z = c(0, 0, omega)))
-# #rgl.triangles(
-##		 x = xyztern$x,
-##		 y = xyztern$y, 
-##		 z = xyztern$z,
-##		 col = AssignColour("P"),
-##		 shininess = 0,
-##		 lit=FALSE,
-##		 alpha = .2,
-##		 front = "fill",
-##		 back = "fill")
-# rgl.linestrips(xyztern$x[1:2],xyztern$y[1:2],xyztern$z[1:2],color = AssignColour("P"),line_antialias=TRUE)
-# rgl.linestrips(xyztern$x[2:3],xyztern$y[2:3],xyztern$z[2:3],color = AssignColour("L"),line_antialias=TRUE)
-# rgl.linestrips(xyztern$x[c(1,3)],xyztern$y[c(1,3)],xyztern$z[c(1,3)],color = AssignColour("T"),line_antialias=TRUE)
-# 
-
- 
  
  
  par3d(pp)

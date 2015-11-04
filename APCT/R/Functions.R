@@ -146,6 +146,18 @@ ATLRefN <- function(ages, N = 5, equilateral = FALSE, col1="#A5A5A5",col2="#A5A5
 
 # colors chosen by JS, his function. May as well use the same ones!
 # here: https://github.com/jschoeley/typotime/blob/master/R/diatime.R
+#AssignColour <- function (x) {
+#	if (x == "A") result <- "#D23737"
+#	if (x == "P") result <- "#3191C9"
+#	if (x == "C") result <- "#D2BC2D"
+#	if (x == "T") result <- "#4EC93B"
+#	if (x == "D") result <- "#881F93"
+#	if (x == "L") result <- "#C5752B"
+#	return(result)
+#}
+#library(RColorBrewer)
+#display.brewer.pal(8,"Dark2")
+#brewer.pal(8,"Dark2")
 AssignColour <- function (x) {
 	if (x == "A") result <- "#D23737"
 	if (x == "P") result <- "#3191C9"
@@ -155,6 +167,7 @@ AssignColour <- function (x) {
 	if (x == "L") result <- "#C5752B"
 	return(result)
 }
+
 
 xyz2ternxyz <- function(xyz){
 	ternxyz   <- xyz

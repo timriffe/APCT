@@ -156,7 +156,7 @@ ATLRefN <- function(ages, N = 5, equilateral = FALSE, col1="#A5A5A5",col2="#A5A5
 #	return(result)
 #}
 #library(RColorBrewer)
-#display.brewer.pal(8,"Dark2")
+#display.brewer.pal(7,"Dark2")
 #brewer.pal(8,"Dark2")
 AssignColour <- function (x) {
 	if (x == "A") result <- "#D23737"
@@ -167,7 +167,10 @@ AssignColour <- function (x) {
 	if (x == "L") result <- "#C5752B"
 	return(result)
 }
-
+#library(scales)
+#cols <- c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e",
+#		"#e6ab02")
+#show_col(c(cols, muted(cols, l = 40, c = 100)))
 
 xyz2ternxyz <- function(xyz){
 	ternxyz   <- xyz

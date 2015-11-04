@@ -30,12 +30,17 @@
 %\usepackage{pdfsync}
 \usepackage[normalem]{ulem}
 \usepackage{amsfonts}
-\renewcommand{\listtablename}{List of Appendix Tables}
+%\renewcommand{\listtablename}{List of Appendix Tables}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 % working on this need to concatenate file name based on sex and variable name
 %\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
 
+% for Demography submission: floats at the end.
+\usepackage{endfloat}
+% otherwise it ignores this big table!
+\DeclareDelayedFloatFlavour*{longtable}{table}
+\usepackage[margin=1in]{geometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
 % http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
@@ -71,29 +76,40 @@
 \begin{document}
 
 \title{A unified framework of demographic time}
-
-\author[1]{Tim Riffe\thanks{triffe@demog.berkeley.edu}}
-\author[2,3]{Jonas Sch{\"o}ley}
-\author[2,3]{Francisco Villavicencio}
-\affil[1]{Max Planck Institute for Demographic Research}
-\affil[2]{University of Southern Denmark}
-\affil[3]{Max-Planck Odense Center on the Biodemography of Aging}
+\author{author(s) redacted}
+%\author[1]{Tim Riffe\thanks{triffe@demog.berkeley.edu}}
+%\author[2,3]{Jonas Sch{\"o}ley}
+%\author[2,3]{Francisco Villavicencio}
+%\affil[1]{Max Planck Institute for Demographic Research}
+%\affil[2]{University of Southern Denmark}
+%\affil[3]{Max-Planck Odense Center on the Biodemography of Aging}
 
 %\author{[Authors]}
 
 \maketitle
-
+\pagebreak
 \begin{abstract}
 We describe a three-dimensional relationship between six different measures
 of demographic time. The six measures of demographic time considered are
 chronological age, time to death, lifespan, time of birth, time of
 death, and period. We describe four identities among subsets of these six
-measures, and a full identity that relates the six of them. \ackn{The work
-reported in this manuscript began by the first author while at the Department of
-Demography at the University of California, Berkeley, and was supported by the U.S.
-National Institute On Aging of the National Institutes of Health under award
-numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility of the authors and does not necessarily represent the official views of the funding agencies.}
+measures, and a full identity that relates the six of them. We provide
+a topological overview of the diagrams that pertain to these
+identities. The 3-d geometric representation of the full six-way
+identity is proposed as a coordinate system to fully describe
+temporal variation in demographic data.
+
+\smallskip
+\noindent \textbf{Keywords.} Age structure, formal demography, data
+visualization, age period cohort.%\ackn{The work reported in this manuscript
+%began by the first author while at the Department of Demography at the
+% University of California, Berkeley, and was supported by the U.S.
+%National Institute On Aging of the National Institutes of Health under award
+%numbers R01-AG011552 and R01-AG040245. The content is solely the responsibility
+% of the authors and does not necessarily represent the official views of the funding agencies.}
 \end{abstract}
+
+\pagebreak
 
 \section*{Introduction}
 %\sout{so-called} \textbf{well-known?} 
@@ -199,10 +215,10 @@ yield the full set of six, the hexad identity. Thus, some triads are
 informative, and others are uninformative. It turns out that each of the triad
 identities is uninformative in this sense.
 
-\FloatBarrier
+%FloatBarrier
 
 \subsection*{Time measures}
-\FloatBarrier
+%FloatBarrier
 Our model description is conceived in absolute, linear, Newtonian time, and we
 do not consider situating the model in any other perspective on or notion of
 time itself.
@@ -282,7 +298,7 @@ exhaustive classification of the ways in which these six measures of time can be
 We begin with all sets of two time measures, the informative and uninformative
 temporal dyads.
 
-\FloatBarrier
+%FloatBarrier
 
 \section*{Informative and uninformative dyads}
 
@@ -500,9 +516,9 @@ relationship between measures. Each of the triad identities can accommodate some
 version of a lifeline, for instance. In the following, we therefore lay
 out the four primary diagrams that belong to the triad identities. 
 
-\FloatBarrier
+%FloatBarrier
 \subsection*{APC}%\tgh{APC}}
-\FloatBarrier
+%FloatBarrier
 The so-called Lexis diagram has long been used in demography as a conceptual
 tool for structuring data, observations, and rate estimation, as inspiration for work
 on statistical identification, and as the coordinate basis of contemporary
@@ -540,9 +556,9 @@ cohort direction, starting with birth (filled circle) at chronological age zero,
 (circled x). Any APC surface can be interpreted along each of these
 three dimensions of temporal structure. 
 
-\FloatBarrier
+%FloatBarrier
 \subsection*{TPD}%\tgh{TPD}}
-\FloatBarrier
+%FloatBarrier
 Thanatological age (T), period (P) and death cohort (D) form a coordinate system
 best imagined as the inverse of APC. One may take the same lifelines from
 Figure~\ref{fig:APC} and realign them in descending fashion such that all
@@ -577,9 +593,9 @@ age or death cohort do.
 \end{subfigure}
 \end{figure} 
 
-\FloatBarrier
+%FloatBarrier
 \subsection*{TAL}%\tgh{ATL}}
-\FloatBarrier  
+%FloatBarrier  
 TAL is an appropriate coordinate
 system to examine variation in processes over the lifecourse. Since
 the lifecourse belongs to the cohort perspective, it is best to think of the TAL
@@ -618,9 +634,9 @@ out, and cohorts overlapped.
 }
 \end{figure} 
 
-\FloatBarrier
+%FloatBarrier
 \subsection*{LCD}%\tgh{CDL}}
-\FloatBarrier
+%FloatBarrier
 
 The LCD diagram completes our set of identities. It consists in an identity
 between lifespans, birth cohorts, and death cohorts. This identity bears
@@ -664,7 +680,7 @@ values.
 
 Fertility surfaces are in this way very different from mortality surfaces, as they plot event intensities over the ages in which they occur. A health surface is more like a fertility surface than a mortality surface, but in this case proximity to death is an important time dimension. 
 
-\FloatBarrier
+%FloatBarrier
 \section*{A tetrahedron relates the six time indices.}
 Each of the four above-mentioned triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
@@ -818,7 +834,7 @@ CPT & DLP & DLT & LPT\\
 \end{tabular}
 \end{table}
 
-\FloatBarrier
+%FloatBarrier
 \subsection*{The extension of time axes.}
 We have said that planes defined by the four triad identities are parallel to
 the faces of the the above-described tetrahedron. In imagining this three-dimensional
@@ -907,11 +923,11 @@ figure.
 
 \begin{figure}[!h]
 \centering
-\begin{adjustwidth}{-2em}{-2em}
+%\begin{adjustwidth}{-2em}{-2em}
 \caption[cap]{Birth cohort TAL planes over time}
 \label{fig:apctTAL}
 \includegraphics[scale=.5]{Figures/TALisomarkedup.pdf}
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{figure}
 
 Since the APC plane at the base of Fig.~\ref{fig:apctTAL} could have been
@@ -929,7 +945,7 @@ planes stand in intersection.
 
 \begin{figure}[!h]
 \centering
-\begin{adjustwidth}{-8em}{-8em}
+\begin{adjustwidth}{-6em}{-6em}
 \caption[cap]{The APC plane of thanatological age 25, with period TAL planes.}
 \label{fig:apctAPC}
 \includegraphics[scale=.5]{Figures/APCisomarkedup.pdf}
@@ -953,7 +969,7 @@ die.
 %dimensional space is not only useful for the sake of formalizing observed
 % temporal relationships, but also for enclosing demographic time in the past and future (e.g., before the first census and after the most recent census).
 
-\FloatBarrier
+%FloatBarrier
 \section*{Discussion}
 
 It is straightforward to
@@ -969,8 +985,8 @@ geometric representation that can be easily derived by ascribing the various tim
 key to understanding the temporal structure of demographic processes, which
 itself underlies the comparability of demographic measures.
 
-The contemporary practice of demography is based on the premise that vital
-rates, and other kinds of rates over the lifecourse, are the truest measure of
+The contemporary practice of (macro) demography is based on the premise that
+vital rates, and other kinds of rates over the lifecourse, are the truest measure of
 demographic forces. Rates are paramount because they tend to vary in
 empirically regular ways over the life course. The scalings and movements of
 primary vital rates fall within a limited range for humans. For this reason, many of the methods of
@@ -1018,7 +1034,8 @@ areas of application. Above all, we believe in the pedagogical value of the
 concepts and tools introduced in the following pages. 
 
 
-\FloatBarrier
+% remove appendix, it pushes figures + tables past 10\ldots
+%FloatBarrier
 
 %\begin{appendices}
 %\section{Variants of tetrahedron graph}
@@ -1065,11 +1082,10 @@ concepts and tools introduced in the following pages.
 %        \end{subfigure}
 %    \end{figure*}
 %\end{appendices}
-%\FloatBarrier
+%%FloatBarrier
 
-\bibliographystyle{apacite}
+\bibliographystyle{apacite} % required for demography
   \bibliography{references} 
-
 
 
 \end{document}

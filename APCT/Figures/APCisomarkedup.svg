@@ -947,7 +947,7 @@
          sodipodi:role="line"
          id="tspan3442-2"
          x="693.13971"
-         y="-50.904118">period</tspan></text>
+         y="-50.904118">Period</tspan></text>
 <text
        xml:space="preserve"
        style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
@@ -959,7 +959,7 @@
          sodipodi:role="line"
          id="tspan3442-2-5-1"
          x="-0.15234238"
-         y="-275.26511">chronological age</tspan></text>
+         y="-275.26511">Chronological Age</tspan></text>
 <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
@@ -971,7 +971,7 @@
          sodipodi:role="line"
          id="tspan3442-2-5-1-7"
          x="791.73083"
-         y="-500.95248">lifespan</tspan></text>
+         y="-500.95248">Lifespan</tspan></text>
 <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
@@ -983,10 +983,10 @@
          sodipodi:role="line"
          id="tspan3442-2-5"
          x="-413.84909"
-         y="-1065.1249">thanatological age</tspan></text>
+         y="-1065.1249">Thanatological Age</tspan></text>
 <text
        xml:space="preserve"
-       style="font-size:32.00000008px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L;text-anchor:start;text-align:start;writing-mode:lr"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
        x="385.43973"
        y="525.1322"
        id="text4925"
@@ -996,7 +996,7 @@
          id="tspan4927"
          x="385.43973"
          y="525.1322"
-         style="font-size:32.00000008px;-inkscape-font-specification:Nimbus Roman No9 L;font-family:Nimbus Roman No9 L;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">Birth cohort</tspan></text>
+         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L">Birth Cohort</tspan></text>
 <text
        xml:space="preserve"
        style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
@@ -1150,7 +1150,7 @@
          sodipodi:role="line"
          id="tspan3442-2-5-1-4"
          x="924.07727"
-         y="142.7103">chronological age</tspan></text>
+         y="142.7103">Chronological Age</tspan></text>
 <path
        style="fill:none;stroke:#000000;stroke-width:1.76226389;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
        d="m 853.6552,80.015934 c 0,0 -0.83626,25.218856 -42.10429,61.380456 -79.65747,69.8008 -153.34879,16.80542 -153.34879,16.80542"

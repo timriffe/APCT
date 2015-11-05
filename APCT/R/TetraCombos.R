@@ -14,6 +14,9 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 		setwd(paste0("/data/commons/",system("whoami",intern=TRUE),"/git/APCT/APCT"))
 	}
 }
+
+source("R/Functions.R")
+
 getwd()
 persps <- c("A","P","C","T","D","L")
 COMBS <- combn(persps,3)
@@ -52,20 +55,23 @@ library(plotrix)
 pdf("Figures/TetraHedronVerticesEdges.pdf", height=4,width=5.5)
 par(mai=c(.3,.3,.3,.3))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
-text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+segments(1,0,.5,sqrt(3)/2,lwd=2,col=AssignColour("A"))
+segments(0,0,1,0,lwd=2,col=AssignColour("P"))
+segments(0,0,.5,sqrt(3)/2,lwd=2,col=AssignColour("C"))
+segments(0,0,.5,sqrt(3)/6,lwd=2,col=AssignColour("D"))
+segments(1,0,.5,sqrt(3)/6,lwd=2,col=AssignColour("T"))
+segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=AssignColour("L"))
+
+boxed.labels(.5,0,"P",col = AssignColour("P"),cex=2,font=2,border=FALSE)                          # South edge
+boxed.labels(.75,sqrt(3)/4,"A",col = AssignColour("A"),cex=2,font=2,border=FALSE)                 # NE edge
+boxed.labels(.25,sqrt(3)/4,"C",col = AssignColour("C"),cex=2,font=2,border=FALSE)                 # NW edge
+boxed.labels(.75,sqrt(3)/12,"T",col = AssignColour("T"),cex=2,font=2,border=FALSE)                # inner SE edge
+boxed.labels(.25,sqrt(3)/12,"D",col = AssignColour("D"),cex=2,font=2,border=FALSE)                # inner SW edge
+boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = AssignColour("L"),cex=2,font=2,border=FALSE)       # inner N edge
+text(.5,sqrt(3)/2,"1",col = "black",cex=2,font=2,pos=3)                                  # top vert
+text(1,0,"2",col = "black",cex=2,font=2,pos=4)                                           # bottom right vert
+text(0,0,"3",col = "black",cex=2,font=2,pos=2)                                           # bottom left vert
+boxed.labels(.5,sqrt(3)/6,"4",col = "black",cex=2,font=2,border=FALSE)                   # middle vert
 dev.off()
 
 ####################################
@@ -152,15 +158,15 @@ tet4drawcombo <- function(combo =c("A","P","C")){
 
 	mapply( function(id,hi){
 				if(hi){
-					tet4drawhexsegment(id, col = "black", lwd = 3)
+					tet4drawhexsegment(id, col = AssignColour(id), lwd = 3)
 					#tet4drawhexlabel(id, col = "blue")
 				} else {
 					tet4drawhexsegment(id, col = gray(.9), lwd = 1)
 				}
 			},ids, highlight)
-	points(c(0,1,.5,.5),c(0,0,sqrt(3)/2,sqrt(3)/6),pch=19,col="red",cex=1.2)
+	points(c(0,1,.5,.5),c(0,0,sqrt(3)/2,sqrt(3)/6),pch=19,col=gray(.3),cex=1.2)
 }
-
+comb <- 1
 for (comb in 1:ncol(COMBS)){
 	triad <- COMBS[,comb]
 	name <- paste0("triad",paste(triad,collapse=""),".pdf")
@@ -194,126 +200,126 @@ dev.off()
 
 
 # Figure 2
-pdf("Figures/tet4vert1.pdf", height=4,width=5.5)
-par(mai=c(.3,.3,.3,.3))
-plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.7))
-
-segments(0,0,1,0,lwd=2,col=gray(.7)) # P
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.7)) # D
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.7)) # T
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=3,col="black") # L
-segments(0,0,.5,sqrt(3)/2,lwd=3,col="black") # C
-segments(1,0,.5,sqrt(3)/2,lwd=3,col="black") # A
-boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)   
-
-text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
-dev.off()
-
-
+#pdf("Figures/tet4vert1.pdf", height=4,width=5.5)
+#par(mai=c(.3,.3,.3,.3))
+#plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
+#polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.7))
+#
+#segments(0,0,1,0,lwd=2,col=gray(.7)) # P
+#segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.7)) # D
+#segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.7)) # T
+#segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=3,col="black") # L
+#segments(0,0,.5,sqrt(3)/2,lwd=3,col="black") # C
+#segments(1,0,.5,sqrt(3)/2,lwd=3,col="black") # A
+#boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)   
+#
+#text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+#dev.off()
+#
+#
 
 
 
 
 # appendices
-pdf("Figures/Tetra4.pdf", height=4,width=5.5)
-par(mai=c(.3,.3,.3,.3))
-plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
-text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
-dev.off()
-
-
-
-# 1 in the middle
-pdf("Figures/Tetra1.pdf", height=4,width=5.5)
-par(mai=c(.3,.3,.3,.3))
-plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-
-boxed.labels(.5,0,"D",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"T",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"P",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-
-boxed.labels(.75,sqrt(3)/12,"L",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"C",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"A",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
-
-text(.5,sqrt(3)/2,"2",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"4",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"1",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
-dev.off()
-
-# 2 in the middle
-pdf("Figures/Tetra2.pdf", height=4,width=5.5)
-par(mai=c(.3,.3,.3,.3))
-plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-
-boxed.labels(.5,0,"D",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"L",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-
-boxed.labels(.75,sqrt(3)/12,"P",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"A",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
-
-text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"3",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"4",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"2",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
-dev.off()
-
-# 3 in the middle
-pdf("Figures/Tetra3.pdf", height=4,width=5.5)
-par(mai=c(.3,.3,.3,.3))
-plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
-
-boxed.labels(.5,0,"T",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
-boxed.labels(.75,sqrt(3)/4,"L",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
-boxed.labels(.25,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
-
-boxed.labels(.75,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
-boxed.labels(.25,sqrt(3)/12,"P",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
-boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"C",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
-
-text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
-text(1,0,"4",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
-text(0,0,"2",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
-boxed.labels(.5,sqrt(3)/6,"3",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
-dev.off()
-
+#pdf("Figures/Tetra4.pdf", height=4,width=5.5)
+#par(mai=c(.3,.3,.3,.3))
+#plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
+#polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+#segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#boxed.labels(.5,0,"P",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#boxed.labels(.75,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
+#text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"2",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"4",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+#dev.off()
+#
+#
+#
+## 1 in the middle
+#pdf("Figures/Tetra1.pdf", height=4,width=5.5)
+#par(mai=c(.3,.3,.3,.3))
+#plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
+#polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+#segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#
+#boxed.labels(.5,0,"D",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"T",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"P",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#
+#boxed.labels(.75,sqrt(3)/12,"L",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"C",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"A",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
+#
+#text(.5,sqrt(3)/2,"2",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"4",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"3",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"1",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+#dev.off()
+#
+## 2 in the middle
+#pdf("Figures/Tetra2.pdf", height=4,width=5.5)
+#par(mai=c(.3,.3,.3,.3))
+#plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
+#polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+#segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#
+#boxed.labels(.5,0,"D",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"C",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"L",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#
+#boxed.labels(.75,sqrt(3)/12,"P",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"T",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"A",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
+#
+#text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"3",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"4",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"2",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+#dev.off()
+#
+## 3 in the middle
+#pdf("Figures/Tetra3.pdf", height=4,width=5.5)
+#par(mai=c(.3,.3,.3,.3))
+#plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
+#polygon(c(0,1,.5),c(0,0,sqrt(3)/2),lwd=2,border=gray(.5))
+#segments(0,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(1,0,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=gray(.5))
+#
+#boxed.labels(.5,0,"T",col = "blue",cex=2,font=2,border=FALSE)                          # South edge
+#boxed.labels(.75,sqrt(3)/4,"L",col = "blue",cex=2,font=2,border=FALSE)                 # NE edge
+#boxed.labels(.25,sqrt(3)/4,"A",col = "blue",cex=2,font=2,border=FALSE)                 # NW edge
+#
+#boxed.labels(.75,sqrt(3)/12,"D",col = "blue",cex=2,font=2,border=FALSE)                # inner SE edge
+#boxed.labels(.25,sqrt(3)/12,"P",col = "blue",cex=2,font=2,border=FALSE)                # inner SW edge
+#boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"C",col = "blue",cex=2,font=2,border=FALSE)       # inner N edge
+#
+#text(.5,sqrt(3)/2,"1",col = "red",cex=2,font=2,pos=3)                                  # top vert
+#text(1,0,"4",col = "red",cex=2,font=2,pos=4)                                           # bottom right vert
+#text(0,0,"2",col = "red",cex=2,font=2,pos=2)                                           # bottom left vert
+#boxed.labels(.5,sqrt(3)/6,"3",col = "red",cex=2,font=2,border=FALSE)                   # middle vert
+#dev.off()
+#
 
 
 #########################################

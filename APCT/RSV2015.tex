@@ -42,6 +42,10 @@
 \DeclareDelayedFloatFlavour*{longtable}{table}
 \usepackage[margin=1in]{geometry}
 \doublespacing % for review
+
+% line numbers to make review easier
+\usepackage{lineno}
+\linenumbers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
 % http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
@@ -90,15 +94,19 @@
 \maketitle
 \pagebreak
 \begin{abstract}
-We describe a three-dimensional relationship between six different measures
-of demographic time. The six measures of demographic time considered are
-chronological age, time to death, lifespan, time of birth, time of
-death, and period. We describe four identities among subsets of these six
-measures, and a full identity that relates the six of them. We provide
-a topological overview of the diagrams that pertain to these
-identities. The 3-d geometric representation of the full six-way
-identity is proposed as a coordinate system to fully describe
-temporal variation in demographic data.
+Demographic thought and practice is largely conditioned by the Lexis diagram,
+a two-dimensional graphical representation of the identity between age,
+period, and birth cohort. This relationship does not account for remaining years
+of life or other related time measures, whose use in
+demographic research is both underrepresented and incompletely situated.
+We describe a three-dimensional relationship between six different measures of demographic time: chronological age, time to death, lifespan, time of birth, time of death, and period. We describe four identities among subsets of these six measures, and a full identity that relates the six of them. One of these identities is the age-period-cohort identity, while the other three are relatively novel. We
+provide a topological overview of the diagrams that pertain to these identities.
+The 3-d geometric representation of the full six-way identity is proposed as a
+coordinate system that fully describes temporal variation in demographic data. We offer this framework as an
+instrument to enable the discovery of yet-undescribed relationships and
+patterns in formal and empirical demography.
+
+
 
 \smallskip
 \noindent \textbf{Keywords.} Age structure, formal demography, data
@@ -123,11 +131,12 @@ policy makers. % The Lexis diagram relates the chronological age (A), period (P)
 % and birth cohort (C) measures of demographic time, APC, but it does not account
 % for remaining years of life (thanatological age), and other related time
 % indices.
+
 We wish to draw attention to three time indices that are complementary to age
 (A), period (P) and birth cohort (C). The first such index is time-to-death,
-which we refer to as ``thanatological age'' (T) in contrast to ``chronolgical age'' (A). The second index is death cohort (D), which groups all individuals (of different ages) dying in the same time period. Finally,
-lifespan (L) is itself an index by which data may be structured. We therefore
-have six time measures in total to relate. We call these measures of demographic
+which we refer to as ``thanatological age'' (T) in contrast to ``chronological
+age'' (A). The second index is death cohort (D), which groups all individuals (of different ages) dying in the same time period. Finally, lifespan (L) or age of death itself is an index by which data may be structured.
+We therefore have six time measures in total to relate. We call these measures of demographic
 time because each, except period, depends on the timing of birth, death, or
 both.
 
@@ -181,10 +190,8 @@ different elements of demographic time.
 We attempt to adhere to a rigorous terminology in this paper. The following list
 describes some of the more important terms we use.
 \begin{description}
-\item[Time measures] are any of the six time indices discussed to describe demographic time: chronological age (A), period (P), birth cohort (C), thanatological
-age (T)\footnote{Elsewhere in the literature, thanatological age is known
-as residual life, time-to-death, remaining years, or simply years left.}, lifespan (L), and death
-cohort (D).
+\item[Time measures] are any of the six time indices discussed to describe
+demographic time: chronological age (A), period (P), birth cohort (C), thanatological age (T), lifespan (L), and death cohort (D).
 \item[Dyads, triads, and hexads] are any set of two, three, or six unique time
 measures, respectively.
 \item[An informative dyad] is any pair of two time measures from which a third
@@ -208,26 +215,25 @@ constitute a triad identity between chronological age, period, and birth cohort.
 combination of elements in this identity is informative, and can be mapped to a
 temporal plane, the Lexis diagram. If we know that Mindel turned 50 on the
 \nth{21} of May, 1963, then we also also can derive that she was born on the \nth{21} of
-May, 1913. Any two pieces of information in this case will give the third, which
-means that any dyad from this set is informative. Three other such triad
-identities are also to found within the six measures of time we discuss.
-However, as we describe in later sections, not all sets of three time measures
-yield the full set of six, the hexad identity. Thus, some triads are
-informative, and others are uninformative. It turns out that each of the triad
-identities is uninformative in this sense.
+May, 1913. Hence, any two pieces of information in this case will give the
+third, which means that any dyad from this set is informative. 
+
+%Three other such triad
+%identities are also to found within the six measures of time we discuss.
+%However, as we describe in later sections, not all sets of three time measures
+%yield the full set of six, the hexad identity. Thus, some triads are
+%informative, and others are uninformative. It turns out that each of the triad
+%identities is uninformative in this sense.
 
 %FloatBarrier
 
 \subsection*{Time measures}
 %FloatBarrier
-Our model description is conceived in absolute, linear, Newtonian time, and we
-do not consider situating the model in any other perspective on or notion of
-time itself.
-This relationship is scalable to any time unit, but we describe it in terms of
-years, the dominant time scale for human demography. We therefore speak of
-calendar time, imagining the modern Gregorian calendar, though this is not
-necessary. We also describe the framework in terms of human lifespans, although
-it applies in a more general sense to any durations observed over time.
+Our model description is conceived in absolute, linear, Newtonian time. We
+describe time in terms of years, the dominant time scale for human demography, although all relationships
+are scalable to any time unit. We therefore speak of calendar time,
+imagining the modern Gregorian calendar. We also describe the framework in terms of human lifespans, although it applies in a more general sense to any durations observed over time.
+
 The six measures of time we consider are defined in Table~\ref{tab:sixdefs}, both in the demographic sense we describe, as well as in a more general event history interpretation.
 
 %\begin{adjustwidth}{-3em}{-3em}
@@ -253,12 +259,13 @@ lifespan & L & duration of life & duration of exposure \\
 \end{table}
 
 Each of the time measures except for period are governed by the processes of
-birth and/or death. For this reason we call this a model a demographic time.
+birth and/or death. For this reason we call this a framework of demographic
+time.
 The concepts of thanatological age and death cohorts are likely less famialar to
 readers than the other measures we consider. Thanatological age is sometimes
 referred to in the literature as remaining years of life, time-to-death (TTD),
-or residual lifespan, but we prefer the term thanatological age. Age in this
-general sense marks a position on a lifeline with respect to one of its
+or residual lifespan, but we prefer the term thanatological age
+\citep{riffe2015force}. Age in this general sense marks a position on a lifeline with respect to one of its
 endpoints.
 Chronological age and thanatological age are in this way
 complementary.\footnote{Thanatological age is different from the notion of
@@ -296,8 +303,6 @@ enables new classes of comparisons, models of understanding, and discovery,
 akin to those unlocked by breaking down demographic phenomena by chronological age,
 period, and birth cohort. The following sections will, in this sense, provide an
 exhaustive classification of the ways in which these six measures of time can be juxtaposed to such ends.
-We begin with all sets of two time measures, the informative and uninformative
-temporal dyads.
 
 %FloatBarrier
 
@@ -327,7 +332,7 @@ longer than either the age or period axes. If a right angle and unity aspect
 ratio is forced between the dyad, the derived measure is always stretched by
 $\sqrt{2}$, or 41\%. In the case of dyads that imply a derived measure, another
 logical mapping is to translate to $(x,y)$ coordinates that forces 60$^\circ$
-angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. It does not make sense to provide an isotropic mapping of an uninformative dyad. The isotropic mapping
+angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. The isotropic mapping
 is comparable to using ternary or barycentric coordinate systems, which we do
 not discuss. 
 %The primary justification for isotropic temporal planes comes from
@@ -352,8 +357,8 @@ triad identities.
   \toprule
   \multicolumn{4}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
   \midrule
-  \multicolumn{1}{c}{relationship} & \multicolumn{1}{c}{description} &
-  \multicolumn{1}{c}{Cartesian} & \multicolumn{1}{c}{isotropic} \\
+  \multicolumn{1}{c}{Relationship} & \multicolumn{1}{c}{Description} &
+  \multicolumn{1}{c}{Cartesian} & \multicolumn{1}{c}{Isotropic} \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variants of APC}} \\
@@ -497,11 +502,12 @@ coordinates, as demographers typically do. The other dyadic
 juxtapositions can be considered as either rare or novel ways of structuring or
 viewing temporal variation in demography.
 
+\subsection*{The triad identities}
+
 There are $20=\binom{6}{3}$ ways to choose three time indices out of our
 six, of which four form a triad identity: APC, TPD, TAL, and LCD.
 Given the three time measures from any of the
-triad identities, one can derive no further time measures. We therefore say
-that the triad identities are themselves uninformative. If one selects three
+triad identities, one can derive no further time measures. If one selects three
 random time indices that do not form any of these four triad identities
 ($20-4=16$ possibilities), this property does not hold. For instance, in the
 triad $APT$, age and period are not sufficient to determine thanatological age.
@@ -509,9 +515,10 @@ Given the triad $APT$ one can however derive the remaining three time measures,
 and for this reason we call it an informative triad.\footnote{We return to the
 case of $APT$ and similar constructs in later sections.}
 
-Visualizations of data structured by any dyad belonging to a triad identity
-are inherently richer in information than are juxtapositions of uninformative
-dyads. While there is no reason not to explore all possible
+%Visualizations of data structured by any dyad belonging to a triad identity
+%are inherently richer in information than are juxtapositions of uninformative
+%dyads. 
+While there is no reason not to visualize all possible
 dyadic juxtapositions, triad identities have more apparent meaning, even in the absence of data, due to the underlying
 relationship between measures. Each of the triad identities can accommodate some
 version of a lifeline, for instance. In the following, we therefore lay
@@ -526,9 +533,9 @@ on statistical identification, and as the coordinate basis of contemporary
 Lexis-surfaces \footnote{Some prefer the term Lexis \textit{surface}, while
 others prefer to call them contour maps, heatmaps, or stereograms}.
 Since the Lexis diagram could have been named for others
-\citep{vandeschrick2001lexis,keiding2011age}, and since we compare with other
+\citep{keiding2011age, vandeschrick2001lexis}, and since we compare with other
 temporal configurations, let us refer to it as the APC diagram, as seen in
-Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
+Figs.~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
 
 \begin{figure} 
 \caption{An APC diagram in two projections.}
@@ -701,17 +708,19 @@ Let us first more rigorously define the previously-mentioned tetrahedron.
 Luckily, the edges and vertices of a tetrahedron are easily rendered in a
 two-dimensional graph, as seen in Fig.~\ref{fig:tet}, with vertices labeled
 in black and the six time indices colored following the pattern from
-Table~\ref{tab:dyads}.
-The reader may also imagine this graph as a transparent 3d object, in which case the four faces become apparent. There are two intuitive ways to imagine the graph as 3d, either the vertex 4 is on top, and we gaze from a bird's-eye-view, or the vertex 4 is in the back, behind the other three vertices. Assume we
-gaze from the top, for the sake of description.\footnote{The same graph
-could be composed in four basic ways, depending on which triad-identity face
-forms the base.
-These are given in an appendix.} 
+Table~\ref{tab:dyads}. The tetrahedron is composed with the APC plane at the
+base and vertex four on top. The same graph could be composed in four basic
+ways, depending on which identity forms the base.
+%The reader may also imagine this graph as a transparent 3d object, in which
+% case the four faces become apparent. There are two intuitive ways to imagine the graph as 3d, either the vertex 4 is on top, and we gaze from a bird's-eye-view, or the vertex 4 is in the back, behind the other three vertices. Assume we gaze from the top, for the sake of description.\footnote{The same graph
+%could be composed in four basic ways, depending on which triad-identity face
+%forms the base.
+%These are given in an appendix.} 
 
 \begin{figure}[h!]
 \centering
 \caption{Graph of tetrahedron, with edges labeled by the six demographic time
-indices.}
+indices. The APC plane is at the base, and vertex four on top.}
 \label{fig:tet}
 \includegraphics[scale=.8]{Figures/TetraHedronVerticesEdges.pdf}
 \end{figure}
@@ -809,6 +818,9 @@ APC & TPD & ATL & CDL\\
 
 When graphed in this way, it is clearer that every triad identity surface lacks a connection to the opposite vertex of the tetrahedron. Table~\ref{tab:set3} gives the full set of 16 index-triads that are
 informative in the sense that each of them implies the full hexad identity.
+Practically, this means that if a given dataset contains variables in one of
+the combinations displayed in Table~\ref{tab:set3} that the entire
+temporal relationship is available to the researcher.
 
 Note that the 12 possible pairs of intersecting edges on the tetrahedron are, in
 fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the uninformative dyads LP, CT, and AD are the pairs of opposite edges of the tetrahedron. As discussed, all 12 informative dyads generate one of the four triad identities in Table~\ref{tab:triadids}, but no dyad will generate the hexad
@@ -820,8 +832,8 @@ a triad identity.
 
 \begin{table}[h]
 \centering
-\caption{All informative triads,
-graphed given the previous orientation of the tetrahedron.}
+\caption{All triads from which the full tetrahedron is derivable (same
+orientation).}
 \label{tab:set3}
 \begin{tabular}{cccc}
 ACD & ACL & ACT & ADL\\
@@ -878,14 +890,19 @@ position of the absent dimension. This is a more general sense of the term
 \textit{cross-section} than is often used in the demographic literature, where
 it typically implies a period cross-section.
 APC has thus far always been treated as a compression in this sense.
-A compressed TPD diagram has thus far only appeared in \citet{pancho2015} as an aid in proving the symmetries between chronological and thanatological age in stationary populations, and a cross-sectional one has
-never appeared.
-Cross-sectional TAL diagrams and surfaces have thus far only appeared in
-\citet{riffe2015ttd}. This TAL usage was selected for the 1915-1919 birth cohort, and therefore belongs to the 3d space,
-\raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
+As mentioned, a compressed A compressed TPD diagram has thus far only appeared
+in \citet{pancho2015}, and cross-sectional TAL diagrams and surfaces have thus
+far only appeared in \citet{riffe2015ttd}. 
+%A compressed TPD diagram has thus far only appeared in \citet{pancho2015} as an
+% aid in proving the symmetries between chronological and thanatological age in stationary populations, and a cross-sectional one has never appeared.
+%Cross-sectional TAL diagrams and surfaces have thus far only appeared in
+%\citet{riffe2015ttd}. This TAL usage was selected for the 1915-1919 birth
+% cohort, and therefore belongs to the 3d space, \raisebox{-.25\height}{\includegraphics[scale=.15]{Figures/triadtable/ATLC.pdf}}.
 We have been unable to locate an example in the literature of a compressed
-TAL diagram, but it seems plausible one will have arisen in the field of
-biology, albeit with no relation to the present discourse. We suppose
+TAL or cross-sectional TPD diagrams, though it seems plausible that the former
+will have arisen. 
+
+We suppose
 that LCD diagrams of any kind are novel. A simultaneous juxtaposition of
 the six demographic time measures has also never appeared in the literature, either as a visual diagnostic or in any line of
 inquiry or argumentation.\footnote{There are, however, some novel temporal
@@ -913,7 +930,7 @@ In Fig.~\ref{fig:apctTAL} we
 offer a view of the hexad identity, where birth-cohort TAL cross-sectional
 planes are placed in sequence in a perspective drawing.\footnote{The coordinates
 used to generate Figures~\ref{fig:apctTAL} and \ref{fig:apctAPC} are isotropic.
-However, there are no 60$^\circ$ angles in this figure due to the use of parallax and and an indirect viewing angle in this rendering for the sake of increased legibility.} The most recent TAL plane, for year $t$, is placed in the front, whereas past TAL planes are stacked behind it, highlighted in century intervals.
+However, there are no 60$^\circ$ angles in this figure due to the use of parallax and an indirect viewing angle in this rendering for the sake of increased legibility.} The most recent TAL plane, for year $t$, is placed in the front, whereas past TAL planes are stacked behind it, highlighted in century intervals.
 This view emphasizes how the juxtaposition of thanatological age,
 chronological age, and lifespan shifts over time. This is the view used in
 \citet{riffe2015ttd} to describe late-life health outcomes, albeit for a single
@@ -1031,8 +1048,17 @@ all six time measures. Any of the six measures may be pertinent in the case of
 conditions and states that vary over and within the lifecourse. The most obvious application
 for the present model, given data commonly (and publicly) available at this
 time, are late-life health conditions, although there may be other substantive
-areas of application. Above all, we believe in the pedagogical value of the
-concepts and tools introduced in the following pages. 
+areas of application. 
+
+Furthermore, we believe in the pedagogical value of the framework
+introduced in this paper. We hope that the
+present inquiry will be useful as a teaching instrument in the same way as APC
+diagrams have formed a part of basic demographic education.
+The relationship between the six dimensions of demographic time helps situate the APC
+paradigm in a broader framework. Just as scientific discovery in general
+depends partly on the development of finer optics and instrumentation, we hope
+that the framework we give will be an instrument to enable new discoveries
+in formal and empirical demography.
 
 
 % remove appendix, it pushes figures + tables past 10\ldots

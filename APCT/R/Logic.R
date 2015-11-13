@@ -152,6 +152,7 @@ dyadaxes <- function(x = "P", y = "A", verbose = TRUE){
 	}
 }
 
-
-#dyadaxes("L","D")
-
+#dyadaxes(x="P",y="A")
+#dyadaxes(x="L",y="D")
+#dyadaxes(x="C",y="T")
+# APCTDL

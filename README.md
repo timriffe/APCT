@@ -1,7 +1,7 @@
 # APCT
 Code and LaTex for a paper together with Jonas Schöley and Francisco Villavicencio: "A unified framework of demographic time"
 
-The paper was presented this at the EAPS Health and Morbidity working group conference in Prague in September, 2015. It has been submitted for consideration at PAA 2016 (dataviz and open sessions), and it's now been submitted to the journal Demography. 
+The paper was presented this at the EAPS Health and Morbidity working group conference in Prague in September, 2015. It will be presented at PAA 2016 (dataviz session), it will be considered for EPC and ADEH as well. The paper is in pre-review at the journal Demography. 
 
 You are free to see what we're up to and use (with attribution):
 

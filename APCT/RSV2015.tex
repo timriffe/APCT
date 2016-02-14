@@ -37,15 +37,15 @@
 %\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
 
 % for Demography submission: floats at the end.
-\usepackage{endfloat}
+%\usepackage{endfloat}
 % otherwise it ignores this big table!
-\DeclareDelayedFloatFlavour*{longtable}{table}
+%\DeclareDelayedFloatFlavour*{longtable}{table}
 \usepackage[margin=1in]{geometry}
-\doublespacing % for review
+%\doublespacing % for review
 
 % line numbers to make review easier
-\usepackage{lineno}
-\linenumbers
+%\usepackage{lineno}
+%\linenumbers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
 % http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
@@ -982,6 +982,42 @@ only the lowest chronological ages may live so long. The APC base plane at
 thanatological age 0 is the largest because members of any chronological may
 die.
 
+\FloatBarrier
+\section*{Application}
+The relationship between the six measures of demographic time is true in the
+same sense that mathematics is true: Under linear time it is an internally valid
+set of relationships, and this is self-evident. We have mentioned that the
+coordinates described here may be useful for the visualization of data, to
+enable discovery, and to better inform demographic methods. Such a set of
+derivatives would demonstrate the usefulness of this coordinate system, which
+might otherwise not be evident to the reader. We therefore give a shematic
+overview of a real process of scientific inquiry that was based this coordinate
+system, and that would not have arisen without it. In short, we explain how one
+can come to the conclusion that many health expectancies cannot be projected, compared between groups, or compared over time without taking into account the
+time-to-death process and changing mortality.
+
+There are three steps in our empirical inquiry. The first step is to visualize
+variables on health outcomes using this coordinate system. The second step is to
+determine the primary time measures over which health outcomes vary. Under the
+assumption that these patterns of temporal variation are empirically regular,
+we procede to develop a method of standardizing health expectancy calculations
+for time-to-death processes. Using standardization, one can show that estimates
+of health expecancies are very biased when mortality has been or will-be
+changing. We know that mortality has been changeing, and we assume that
+mortality will be changeing, and so we conclude that comparisons of health
+expecancies
+
+*in progress*
+
+\subsection*{Visualizations}
+*in progress*
+
+Variables that change over the life course, such as health variables,
+``fill'' the temporal space represented by e.g., Figure~\ref{fig:apctTAL}.
+Visualization techniques may therefore borrow from those used in other
+disciplines for three-dimensional composites, such as 
+
+
 %In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 %parallelograms are all congruent shapes known as regular trigonal trapezohedra
 %(RTT). The orientation
@@ -1116,7 +1152,8 @@ in formal and empirical demography.
 %\end{appendices}
 %%FloatBarrier
 
-\bibliographystyle{apacite} % required for demography
+%\bibliographystyle{apacite} % required for demography
+\bibliographystyle{plain}
   \bibliography{references} 
 
 

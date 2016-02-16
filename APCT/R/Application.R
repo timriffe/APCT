@@ -272,21 +272,68 @@ dev.off()
 #}
 #
 
-plot(0:12,rowMeans(SRHPOOR$Male$Surf[,,1],na.rm=TRUE), ylim = c(0,.4))
-lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,2],na.rm=TRUE))
-lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,3],na.rm=TRUE))
-lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,4],na.rm=TRUE))
-lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,5],na.rm=TRUE))
-lines(0:12,rowMeans(SRHPOOR$Male$Surf,na.rm=TRUE),col="red")
-
-matplot(0:12,SRHPOOR$Male$Surf[,,1], ylim = c(0,.5), pch=19,col="#00000020")
-matplot(0:12,SRHPOOR$Male$Surf[,,2], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
-matplot(0:12,SRHPOOR$Male$Surf[,,3], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
-matplot(0:12,SRHPOOR$Male$Surf[,,4], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
-matplot(0:12,SRHPOOR$Male$Surf[,,5], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
-lines(0:12,rowMeans(SRHPOOR$Male$Surf,na.rm=TRUE),col="red")
 
 
+# Now we take a look at a canned example!
+#plot(0:12,rowMeans(SRHPOOR$Male$Surf[,,1],na.rm=TRUE), ylim = c(0,.4))
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,2],na.rm=TRUE))
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,3],na.rm=TRUE))
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,4],na.rm=TRUE))
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf[,,5],na.rm=TRUE))
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf,na.rm=TRUE),col="red")
+#
+#matplot(0:12,SRHPOOR$Male$Surf[,,1], ylim = c(0,.5), pch=19,col="#00000020")
+#matplot(0:12,SRHPOOR$Male$Surf[,,2], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
+#matplot(0:12,SRHPOOR$Male$Surf[,,3], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
+#matplot(0:12,SRHPOOR$Male$Surf[,,4], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
+#matplot(0:12,SRHPOOR$Male$Surf[,,5], ylim = c(0,.5), pch=19,col="#00000020",add=TRUE)
+#lines(0:12,rowMeans(SRHPOOR$Male$Surf,na.rm=TRUE),col="red")
 
+# produce generic g(y)
+gy <- rowMeans(SRHPOOR$Male$Surf,na.rm=TRUE)
+getwd()
+library(HMDHFDplus)
+source("R/Functions.R")
+x  <- 60:110
+y  <- 0:40
+LT <- readHMDweb("USA","mltper_1x1",username=us,password=pw)
+mx2 <- LT$mx[LT$Year == 2010 & LT$Age %in% x]
+mx1 <- LT$mx[LT$Year == 1980 & LT$Age %in% x]
 
+lx2 <- mx2lx(mx2)
+lx1 <- mx2lx(mx1)
+dx2 <- mx2dx(mx2)
+dx1 <- mx2dx(mx1)
+Lx2 <- mx2Lx(mx2)
+Lx1 <- mx2Lx(mx1)
+N   <- length(x)
+gy  <- c(gy,rep(0,N-length(gy)))
 
+Morb <- May(gy,dx2)
+
+# remaining life expectancy at age 70
+(ex2 <- mx2ex(mx2))
+(ex1  <- mx2ex(mx1))
+ex2-ex1
+(eH2 <- geteH(mx2,Morb)  )
+(eH1 <- geteH(mx1,Morb))
+eH2 - eH1
+(eH1 / ex1)
+(eH2 / ex2) # higher proportion
+
+# unhealthy, similar but also increased
+(ex1 - eH1)
+(ex2 - eH2)
+
+################################################
+# buy what if we had used the sullivan method based on 
+# 1980 age pattern of morbidity fixed, rather than ttd pattern fixed?
+
+ga1         <- mxgay2gaLx(mx1, gy)
+ga2         <- mxgay2gaLx(mx2, gy)
+eU2sullivan <- sum(ga1 * Lx2)
+(eHsullivan  <- ex2 - eU2sullivan)
+eU2sullivan - (ex1 - eH1)
+# sullivan increase in unhealthy expectancy
+100 * eU2sullivan / (ex1 - eH1) # sullivan predicts 56% increase
+100 * (ex2 - eH2) / (ex1 - eH1) # real 0% increase

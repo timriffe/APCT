@@ -997,72 +997,183 @@ order to understand the composition of demographic variables through the space.
 For the case of continuous information, much can be learned by looking at
 general strategies to visualize quantitative information through a 3d space (weather
 models, fMRIs, geology). Most such strategies are either fully interactive or
-represent series of cross-sections. The latter are much easier to implement. In
-the present case, cross-sections could be any of the four planes (triad identities) held constant for a given value of the
-dimension that is ``sliced through''. For example, a set of TAL contour
-plots (similar to ``Lexis surfaces''), each for a different birth cohort,
-probably as a series of small multiples \citep{tufte1983visual} is one way to visualize data in the construct
-we propose. This is the strategy we follow in the application example.
+represent series of cross-sections at regular intervals through the space. The
+latter choice is much easier for the researcher to implement.
+In the present case, cross-sections could be any of the four planes (triad identities) held constant for a given value of the
+dimension that is controlled for or ``sliced through''. For example, a set of
+TAL contour plots (similar to ``Lexis surfaces''), each for a different birth cohort,
+displayed as a small multiples series \citep{tufte1983visual} is one
+way to visualize data in the construct we propose. This is the strategy we follow in the application example.
 
 The familiar notion of a life line may be directly applied within the
 hexad identity without much modification. For example, would could retrofit the
 ``Lexis Pencil'' instrument of \citet{francis1996visualization} to display
 multiple categorical states within individuals over the life course. The legibility of said visualization would
-be inversely proportional to the number of life lines in the plot, and the plot
-device would need to be flexible and interactive in order to relate life
-lines to the various demographic time measures. 
+be inversely proportional to the number of life lines in the plot. Life lines are useful for small
+sets of individuals and for demonstrative purposes.
 
-A set of life lines squeezed together and sorted by lifespan becomes a survival
-curve. Event charts \citep{goldman1992eventcharts,lee2000extensions}, or
+A set of cohort life lines squeezed together and sorted by lifespan becomes a
+survival curve. Event charts \citep{goldman1992eventcharts,lee2000extensions}, or
 visually richer event history graphs \citep{carey1998simple,dubin2001event} have
-been developed as a way to display within-individual sequences under survival
+been developed as a way to display within-individual sequences inside survival
 curves. Such plots in our framework would also necessarily apply to the birth
 cohort TAL slice, and would probably need to be displayed in small multiples.
 For large numbers of life sequences, one may apply some version of the
-grouping or smoothing techniques proposed by \citet{piccarreta2012graphical} and
-\citet{fasang2013visualizing}. 
+grouping or smoothing techniques proposed by \citet{piccarreta2012graphical} or
+\citet{fasang2013visualizing} in order to reduce noise. 
 
 For both the case of visualizing continuous variables or sequences within
 lifelines, individuals that are censored because they are not yet dead (and therefore only
 have three known time measures) cannot be fully situated in this framework.
-This is a larger statistical question about the prediction of remaining
-lifetime for living individuals, and it is not a problem peculiar to
-visualization. One can either opt to omit living individuals from the space, as
-their coordinates are not yet determined. This is the course we take in the
-application example. Often one would like to predict for these
-live-censored individuals, either for the sake of making a more
+Assigning living individuals death times is a larger
+statistical question about the prediction of remaining lifetime for living
+individuals, and it is neither a problem peculiar to the present case of
+visualization nor .
+One can either opt to omit living individuals from the 3d space, as their
+coordinates are not yet determined. This is the course we take in the application example. Often one would like to predict for censored individuals, either for the sake of making a more
 relevant statement about an entire population stock \citep{wolf2015disability},
-or for the sake of completing an event history graph \citep{dubin2001event} so
-as to better communicate a distribution. In this case
+or for the sake of completing an event history graph so
+as to better communicate a distribution \citep{dubin2001event}. In this case the
+modeling choice for imputing remaining lifetime is a separate question beyond
+the present treatment. Imputing remaining lifetime necessarily
+expands the bounds of the framework into the future, so as to contain the
+imputed individuals. The outer bounds of the framework are already
+determined, as they are purely a function of the maximum attainable lifespan, if
+there is such a thing.
 
-*in progress*
+
 \FloatBarrier
 \section*{Application}
 The relationship between the six measures of demographic time is true in the
 same sense that mathematics is true: Under linear time it is an internally valid
 set of relationships, and this is self-evident. We have mentioned that the
 coordinates described here may be useful for the visualization of data, to
-enable discovery, and to better inform demographic methods. Such a set of
-derivatives would demonstrate the usefulness of this coordinate system, which
-might otherwise not be evident to the reader. We therefore give a shematic
-overview of a real process of scientific inquiry that was based this coordinate
-system, and that would not have arisen without it. In short, we explain how one
-can come to the conclusion that many health expectancies cannot be projected, compared between groups, or compared over time without taking into account the
-time-to-death process and changing mortality.
+enable discovery, and to better inform demographic methods. We have not yet
+mentioned how visualization can inspire such developments, or inform researchers
+of their necessity. We therefore give a shematic overview of our own process of
+scientific inquiry and reflection that was based this coordinate system, and
+that would not have arisen without it. This chain of inquiry is meant to demonstrate the
+usefulness of the present framework, but it is far from an exhaustive
+application of its potential for other substantive questions, nor is the case
+study described in complete rigor. Specifically, we reason that health
+expectancies for many health conditions cannot be projected, compared between groups, or compared over time without taking into account the time-to-death process and mortality
+differences.
 
 There are three steps in our empirical inquiry. The first step is to visualize
-variables on health outcomes using this coordinate system. The second step is to
-determine the primary time measures over which health outcomes vary. Under the
+variables on health outcomes using our framework. The second step is to
+assess the primary time measures over which health outcomes vary. Under the
 assumption that these patterns of temporal variation are empirically regular,
 we procede to develop a method of standardizing health expectancy calculations
-for time-to-death processes. Using standardization, one can show that estimates
-of health expecancies are very biased when mortality has been or will-be
-changing. We know that mortality has been changeing, and we assume that
-mortality will be changeing, and so we conclude that comparisons of health
-expecancies
+for time-to-death processes. Finally, one can argue from reason that estimates
+of health expecancies for certain health conditions are biased when
+mortality has been or will-be changing. We know that mortality has been
+changeing, and it is widely assumed that mortality will be changeing, and so we
+conclude that comparisons of health expecancies are biased in ways not previously documented.
 
-*in progress*
+Let us take the example of self-reported health (SRH). This variable is
+available from many different survey sources, and it is familiar to many researchers. There are
+many known pitfalls to this particular variable that already make it difficult
+to compare between sexes, over time, or between populations, and these do not
+concern us. We use this variable as an example because of the particular clear
+pattern of variation that it shows, which we use to make our more general point.
 
+Figure~\ref{fig:poorsrh} displays a series of TAL surface plots, each referring
+to a different quinquennial birth cohort (1905-1909, etc). The data come from
+the Rand version of the US Health and Retirement Study \citep{HRS}. Since this
+survey has a mortality follow-up, we have each of the six
+time measures for each observation. Further methodological details are given by \citet{riffe2015ttd}. The TAL surfaces for each birth
+cohort are shifted by five years because the observation window available is
+from 1992 to 2011 for each cohort.
+
+\begin{figure}[h!] 
+\caption{Proportion of males self-reporting poor health by chronological and
+thanatological age, by quinquennial birth cohorts, 1905-1925. (HRS)}
+\label{fig:poorsrh}
+\centering
+\vspace{-1em}
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption{1905}
+\vspace{-1em}
+\label{fig:srh1905}
+\includegraphics[scale=0.3]{Figures/TALapplication/srhpoor1905.pdf}
+\end{subfigure}
+~
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption{1910}
+\vspace{-1em}
+\label{fig:srh1910}
+\includegraphics[scale=0.3]{Figures/TALapplication/srhpoor1910.pdf}
+\end{subfigure}
+
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption{1915}
+\vspace{-1em}
+\label{fig:srh1915}
+\includegraphics[scale=0.3]{Figures/TALapplication/srhpoor1915.pdf}
+\end{subfigure}
+~
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption{1920}
+\vspace{-1em}
+\label{fig:srh1920}
+\includegraphics[scale=0.3]{Figures/TALapplication/srhpoor1920.pdf}
+\end{subfigure}
+
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption{1925}
+\vspace{-1em}
+\label{fig:srh1925}
+\includegraphics[scale=0.3]{Figures/TALapplication/srhpoor1925.pdf}
+\end{subfigure}
+~
+\begin{subfigure}{.45\textwidth}
+\centering
+\caption*{~}
+\vspace{-1em}
+\label{fig:srhlegend}
+\includegraphics[scale=0.3]{Figures/TALapplication/Legend.pdf}
+\end{subfigure}
+\end{figure} 
+
+The x-axis of these plots is chronological age, while the y-axis is
+remaining years of life. Contour lines in the surfaces indicate the
+primary direction of variation, in this case over thanatological age. Downward
+diagonals indicate lifespans, which the reader may also think of as very specific birth-death cohorts. These are the diaongals along which lifelines may be imagined, as suggested in
+Figure~\ref{fig:TAL}. For each of these birth-death cohorts we have a prevalence
+trajectory--- empirical examples of the lifeline morbidity trajectories
+often conceptually diagrammed in the literature on morbidity compression
+\citep[e.g.,][]{fries2005frailty}.
+In each surface the primary axis of variation is along thanatological age, and not chronological age. The prevalence
+for those with $t$ remaining years of life was similar, irrespective of
+chronological age, birth cohort, or ultimate lifespan. 
+
+When one looks at a chronological age pattern of SRH, as measured
+here (the Sullivan curve), one sees an increasing tendency over age.
+However, such an increasing line is a marginal ruse, due to an interaction
+between the distribution of lifespans and the relatively fixed underlying
+pattern of morbidity seen in Figure~\ref{fig:poorsrh}. These surfaces can indeed
+be tidily summarized with a single line, but it is a line over the
+thanatological age margin rather than over chronological age.
+
+Since the patterns for each of these cohorts can be presumed to be the same, any
+shifting in the distribution of lifetimes ought not produce a change in the
+expected years of poor health for a given lifespan. Further, the life years
+spent in poor health should also be approximately the same ``on average'', even
+if the underlying mortality patterns shift. If morbidity change is a pure
+function of time to death, an increase in life expectancy should increase
+healthy life expectancy by the same amount. This is not what we predict when we
+base analyses on the chronological age pattern of self-reported health. An
+underlying morbidity pattern this stable would predict improvements in the
+marginal chronological age pattern of self-reported health if the lifespan
+distribution were to shift right. This bias in the current status quo of
+morbidity measurement and prediction leads to pessimistic morbidity scenarios
+when mortality improvements are foreseen, and it undermines health expectancy
+comparisons between groups with different mortality.
 %In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 %parallelograms are all congruent shapes known as regular trigonal trapezohedra
 %(RTT). The orientation
@@ -1073,7 +1184,7 @@ expecancies
 %dimensional space is not only useful for the sake of formalizing observed
 % temporal relationships, but also for enclosing demographic time in the past and future (e.g., before the first census and after the most recent census).
 
-%FloatBarrier
+\FloatBarrier
 \section*{Discussion}
 
 It is straightforward to
@@ -1198,7 +1309,7 @@ in formal and empirical demography.
 %%FloatBarrier
 
 %\bibliographystyle{apacite} % required for demography
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
   \bibliography{references} 
 
 

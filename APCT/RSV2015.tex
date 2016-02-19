@@ -982,67 +982,68 @@ only the lowest chronological ages may live so long. The APC base plane at
 thanatological age 0 is the largest because members of any chronological may
 die. 
 
+%\FloatBarrier
+%\section*{Data visualization}
+%The perspective renderings of the hexad identity in
+%Figures~\ref{fig:apctTAL} and~\ref{fig:apctAPC} show how the four
+%planes intersect and repeat to fill a space. These references help understand how the six measures of demographic
+%time relate to fill a space in such a spatial construction, but this does not mean that said
+%structure is necessarily the best way to visualize data. To visualize data directly in the 3d
+%space would imply visual overlap, whether the data is categorical or continuous.
+%We briefly discus the cases of continuous data and sequences within lifelines,
+%both of which will typically lead one to produce small multiples of plots in
+%order to understand the composition of demographic variables through the space.
+%
+%For the case of continuous information, much can be learned by looking at
+%general strategies to visualize quantitative information through a 3d space (weather
+%models, fMRIs, geology). Most such strategies are either fully interactive or
+%represent series of cross-sections at regular intervals through the space. The
+%latter choice is much easier for the researcher to implement.
+%In the present case, cross-sections could be any of the four planes (triad identities) held constant for a given value of the
+%dimension that is controlled for or ``sliced through''. For example, a set of
+%TAL contour plots (similar to ``Lexis surfaces''), each for a different birth cohort,
+%displayed as a small multiples series \citep{tufte1983visual} is one
+%way to visualize data in the construct we propose. This is the strategy we follow in the application example.
+%
+%The familiar notion of a life line may be directly applied within the
+%hexad identity without much modification. For example, would could retrofit the
+%``Lexis Pencil'' instrument of \citet{francis1996visualization} to display
+%multiple categorical states within individuals over the life course. The legibility of said visualization would
+%be inversely proportional to the number of life lines in the plot. Life lines are useful for small
+%sets of individuals and for demonstrative purposes.
+%
+%A set of cohort life lines squeezed together and sorted by lifespan becomes a
+%survival curve. Event charts \citep{goldman1992eventcharts,lee2000extensions}, or
+%visually richer event history graphs \citep{carey1998simple,dubin2001event} have
+%been developed as a way to display within-individual sequences inside survival
+%curves. Such plots in our framework would also necessarily apply to the birth
+%cohort TAL slice, and would probably need to be displayed in small multiples.
+%For large numbers of life sequences, one may apply some version of the
+%grouping or smoothing techniques proposed by \citet{piccarreta2012graphical} or
+%\citet{fasang2013visualizing} in order to reduce noise. 
+%
+%For both the case of visualizing continuous variables or sequences within
+%lifelines, individuals that are censored because they are not yet dead (and therefore only
+%have three known time measures) cannot be fully situated in this framework.
+%Assigning living individuals death times is a larger
+%statistical question about the prediction of remaining lifetime for living
+%individuals, and it is neither a problem peculiar to the present case of
+%visualization nor .
+%One can either opt to omit living individuals from the 3d space, as their
+%coordinates are not yet determined. This is the course we take in the application example. Often one would like to predict for censored individuals, either for the sake of making a more
+%relevant statement about an entire population stock \citep{wolf2015disability},
+%or for the sake of completing an event history graph so
+%as to better communicate a distribution \citep{dubin2001event}. In this case the
+%modeling choice for imputing remaining lifetime is a separate question beyond
+%the present treatment. Imputing remaining lifetime necessarily
+%expands the bounds of the framework into the future, so as to contain the
+%imputed individuals. The outer bounds of the framework are already
+%determined, as they are purely a function of the maximum attainable lifespan, if
+%there is such a thing.
+%
+
 \FloatBarrier
-\section*{Data visualization}
-The perspective renderings of the hexad identity in
-Figures~\ref{fig:apctTAL} and~\ref{fig:apctAPC} show how the four
-planes intersect and repeat to fill a space. These references help understand how the six measures of demographic
-time relate to fill a space in such a spatial construction, but this does not mean that said
-structure is necessarily the best way to visualize data. To visualize data directly in the 3d
-space would imply visual overlap, whether the data is categorical or continuous.
-We briefly discus the cases of continuous data and sequences within lifelines,
-both of which will typically lead one to produce small multiples of plots in
-order to understand the composition of demographic variables through the space.
 
-For the case of continuous information, much can be learned by looking at
-general strategies to visualize quantitative information through a 3d space (weather
-models, fMRIs, geology). Most such strategies are either fully interactive or
-represent series of cross-sections at regular intervals through the space. The
-latter choice is much easier for the researcher to implement.
-In the present case, cross-sections could be any of the four planes (triad identities) held constant for a given value of the
-dimension that is controlled for or ``sliced through''. For example, a set of
-TAL contour plots (similar to ``Lexis surfaces''), each for a different birth cohort,
-displayed as a small multiples series \citep{tufte1983visual} is one
-way to visualize data in the construct we propose. This is the strategy we follow in the application example.
-
-The familiar notion of a life line may be directly applied within the
-hexad identity without much modification. For example, would could retrofit the
-``Lexis Pencil'' instrument of \citet{francis1996visualization} to display
-multiple categorical states within individuals over the life course. The legibility of said visualization would
-be inversely proportional to the number of life lines in the plot. Life lines are useful for small
-sets of individuals and for demonstrative purposes.
-
-A set of cohort life lines squeezed together and sorted by lifespan becomes a
-survival curve. Event charts \citep{goldman1992eventcharts,lee2000extensions}, or
-visually richer event history graphs \citep{carey1998simple,dubin2001event} have
-been developed as a way to display within-individual sequences inside survival
-curves. Such plots in our framework would also necessarily apply to the birth
-cohort TAL slice, and would probably need to be displayed in small multiples.
-For large numbers of life sequences, one may apply some version of the
-grouping or smoothing techniques proposed by \citet{piccarreta2012graphical} or
-\citet{fasang2013visualizing} in order to reduce noise. 
-
-For both the case of visualizing continuous variables or sequences within
-lifelines, individuals that are censored because they are not yet dead (and therefore only
-have three known time measures) cannot be fully situated in this framework.
-Assigning living individuals death times is a larger
-statistical question about the prediction of remaining lifetime for living
-individuals, and it is neither a problem peculiar to the present case of
-visualization nor .
-One can either opt to omit living individuals from the 3d space, as their
-coordinates are not yet determined. This is the course we take in the application example. Often one would like to predict for censored individuals, either for the sake of making a more
-relevant statement about an entire population stock \citep{wolf2015disability},
-or for the sake of completing an event history graph so
-as to better communicate a distribution \citep{dubin2001event}. In this case the
-modeling choice for imputing remaining lifetime is a separate question beyond
-the present treatment. Imputing remaining lifetime necessarily
-expands the bounds of the framework into the future, so as to contain the
-imputed individuals. The outer bounds of the framework are already
-determined, as they are purely a function of the maximum attainable lifespan, if
-there is such a thing.
-
-
-\FloatBarrier
 \section*{Application}
 The relationship between the six measures of demographic time is true in the
 same sense that mathematics is true: Under linear time it is an internally valid

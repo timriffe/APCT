@@ -385,6 +385,114 @@ geteH <- function(mx, Morb){
 }
 
 
+devtools::load_all("/home/tim/workspace/DemoSurf/DemoSurf")
+library(scales)
+Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P", 
+		AbColor = NULL, OrdColor = NULL, DerColor = NULL,
+		N = 5, isotropic = FALSE, add = TRUE){
+	
+	# Reference lines follow ticks
+	Refs  <- LexRefNinternal(
+			c(Abscissae, max(Abscissae) + 1), 
+			c(Ordinate, max(Ordinate + 1)), 
+			AbMeasure, OrdMeasure,
+			N = N, 
+			isotropic = isotropic)
+	dyad          <- dyadaxes(x = OrdMeasure, y = AbMeasure, verbose = FALSE)
+	increasing    <- dyad$increasing
+	if (Refs$constrained){
+		increasing <- FALSE
+	}
+	if (is.na(dyad$derived)){
+		# isotropic has to be FALSE here, since Cartesian is the isotropic rendering...
+		isotropic <- FALSE
+	}
+	# determine colors
+	AbColor  <- ifelse(is.null(AbColor),DefaultColors(AbMeasure),AbColor)
+	OrdColor <- ifelse(is.null(OrdColor),DefaultColors(OrdMeasure),OrdColor)
+	DerColor <- ifelse(is.null(DerColor),DefaultColors(dyad$derived),DerColor)
+	
+	# ranges for plot device
+	xrange <- range(c(Refs$Horizontal$x1,Refs$Horizontal$x2))
+	yrange <- range(c(Refs$Vertical$y1,Refs$Vertical$y2))
+	
+	# open device if we're not adding to one
+	if (!add){
+		plot(NULL, type = "n", xlim = xrange, ylim = yrange, axes = FALSE, xlab = "", ylab = "",asp=1)
+	}
+	
+	
+
+	
+	# Ordinate (Age) ticks:
+	O2 <- c(Ordinate,max(Ordinate)+1)
+	yat 	<- ylabs   <- O2[O2 %% N == 0]
+	y0  	<- min(Abscissae)
+	
+	# Abscissa (Year) ticks
+	A2 <- c(Abscissae,max(Abscissae)+1)
+	xat 	<- xlabs   <- A2[A2 %% N == 0]
+	x0 		<- min(Ordinate)
+	Ticks 	<- list(
+			x0 = x0, 
+			xat = xat, 
+			xlabs = xlabs, 
+			y0 = y0, 
+			yat = yat, 
+			ylabs = ylabs)
+	
+	# adjust for isotropic, if necessary
+	if (isotropic){
+		
+		# Ticks adjust
+		if (increasing){
+			Ticks$xat 	<- Ticks$xat - .5 * Ticks$x0
+			Ticks$y0 	<- Ticks$y0 - .5 * Ticks$yat
+		} else {
+			Ticks$xat 	<- Ticks$xat + .5 * Ticks$x0
+			Ticks$y0 	<- Ticks$y0 + .5 * Ticks$yat
+		}
+		Ticks$x0 	<- Ticks$x0 * sqrt(3) / 2    # this is a y coord
+		Ticks$yat 	<- Ticks$yat * sqrt(3) / 2
+	}
+	
+	# draw elements
+	
+	
+	# Vertical
+	segments(Refs$Vertical$x1,
+			Refs$Vertical$y1,
+			Refs$Vertical$x2,
+			Refs$Vertical$y2,
+			col = muted(OrdColor, l = 70, c = 50),
+			lty = "dashed")
+	# and its axis
+	segments(min(Refs$Vertical$x1),min(Refs$Vertical$y1), max(Refs$Vertical$x1), min(Refs$Vertical$y1),
+			col = OrdColor, lwd = 1.5)
+	
+	# Horizontal
+	segments(Refs$Horizontal$x1,
+			Refs$Horizontal$y1,
+			Refs$Horizontal$x2,
+			Refs$Horizontal$y2,
+			col = muted(AbColor, l = 70, c = 50),
+			lty = "dashed") 
+	
+	# and its axis
+	segments(min(Refs$Horizontal$x1),min(Refs$Horizontal$y1), min(Refs$Horizontal$x1), mmax(Refs$Horizontal$y1),
+			col = AbColor, lwd = 1.5)
+	# Diagonal
+	if (all(!is.na(Refs$Diagonal))){
+		# if there is no derived measure, we don't do diagonals
+		segments(Refs$Diagonal$x1,
+				Refs$Diagonal$y1,
+				Refs$Diagonal$x2,
+				Refs$Diagonal$y2,
+				col = muted(DerColor, l = 70, c = 50),
+				lty = "dashed")  
+	}
+	
+}
 
 
 

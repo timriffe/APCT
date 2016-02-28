@@ -464,7 +464,7 @@ Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P",
 			Refs$Vertical$y1,
 			Refs$Vertical$x2,
 			Refs$Vertical$y2,
-			col = muted(OrdColor, l = 70, c = 50),
+			col = scales::muted(OrdColor, l = 70, c = 50),
 			lty = "dashed")
 	# and its axis
 	segments(min(Refs$Vertical$x1),min(Refs$Vertical$y1), max(Refs$Vertical$x1), min(Refs$Vertical$y1),
@@ -475,7 +475,7 @@ Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P",
 			Refs$Horizontal$y1,
 			Refs$Horizontal$x2,
 			Refs$Horizontal$y2,
-			col = muted(AbColor, l = 70, c = 50),
+			col = scales::muted(AbColor, l = 70, c = 50),
 			lty = "dashed") 
 	
 	# and its axis
@@ -488,7 +488,7 @@ Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P",
 				Refs$Diagonal$y1,
 				Refs$Diagonal$x2,
 				Refs$Diagonal$y2,
-				col = muted(DerColor, l = 70, c = 50),
+				col = scales::muted(DerColor, l = 70, c = 50),
 				lty = "dashed")  
 	}
 	

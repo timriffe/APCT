@@ -38,8 +38,8 @@ Combos <- matrix(c("A","P",
 noid <- function(vcol, hcol){
 	x <- c(1/3,2/3)
 	
-	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=2,lwd=1.5)
-	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
@@ -48,11 +48,11 @@ noid <- function(vcol, hcol){
 down_rt <- function(vcol, hcol, dcol){
 	x <- c(1/3,2/3)
 		
-	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=2,lwd=1.5)
-	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
 	
-	segments(0,x,x,0,col=muted(dcol, l = 70, c = 50),lty=2,lwd=1.5)
-	segments(c(0,x),1,1,c(0,x),col=muted(dcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(0,x,x,0,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1.5)
+	segments(c(0,x),1,1,c(0,x),col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
@@ -61,14 +61,14 @@ down_rt <- function(vcol, hcol, dcol){
 up_rt <- function(vcol, hcol, dcol){
 	x <- c(1/3,2/3)
 		
-	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=2,lwd=1.5)
-	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(x,0,x,1,col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(0,x,1,x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	x1 <- c(0,0,0,1/3,2/3)
 	x2 <- c(1/3,2/3,1,1,1)
 	y1 <- c(2/3,1/3,0,0,0)
 	y2 <- c(1,1,1,2/3,1/3)
-	segments(x1,y1,x2,y2,col=muted(dcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(x1,y1,x2,y2,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
@@ -76,10 +76,10 @@ up_rt <- function(vcol, hcol, dcol){
 tri_rt <- function(vcol, hcol, dcol){
 	x <- c(1/3,2/3)
 	
-	segments(x,0,x,rev(x),col=muted(vcol, l = 70, c = 50),lty=2,lwd=1.5)
-	segments(0,x,rev(x),x,col=muted(hcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(x,0,x,rev(x),col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(0,x,rev(x),x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
 	
-	segments(0,c(x,1),c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(0,c(x,1),c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
@@ -88,16 +88,16 @@ up_eq <- function(vcol, hcol, dcol){
 	x <- c(1 / 3, 2 / 3)
 	
 	segments(x, 0, x - .5, sqrt(3) / 2, 
-			col = muted(vcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(vcol, l = 70, c = 50), lty = 1, lwd = 1)
 	segments(-x / 2, x * sqrt(3) / 2, 1 - x / 2, x * sqrt(3) / 2, 
-			col = muted(hcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(hcol, l = 70, c = 50), lty = 1, lwd = 1)
 	
 	x1 <- c(0, 0, 0, 1 / 3, 2 / 3)
 	x2 <- c(1 / 3, 2 / 3, 1, 1, 1)
 	y1 <- c(2 / 3, 1 / 3, 0, 0, 0)
 	y2 <- c(1, 1, 1, 2 / 3, 1 / 3)
 	segments(x1 - y1 / 2, y1 * sqrt(3) / 2, x2 - y2 / 2, y2 * sqrt(3) / 2,
-			col = muted(dcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(dcol, l = 70, c = 50), lty = 1, lwd = 1)
 	
 	arrows(0, 0, -.5, sqrt(3)/2, col = hcol, length = .05, lwd = 2)
 	arrows(0, 0, 1, 0, col = vcol, length = .05, lwd = 2)
@@ -106,14 +106,14 @@ down_eq <- function(vcol, hcol, dcol){
 	x <- c(1 / 3, 2 / 3)
 
 	segments(x, 0, x + .5, sqrt(3) / 2, 
-			col = muted(vcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(vcol, l = 70, c = 50), lty = 1, lwd = 1)
 	segments(x / 2, x * sqrt(3) / 2, 1 + x / 2, x * sqrt(3) / 2, 
-			col = muted(hcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(hcol, l = 70, c = 50), lty = 1, lwd = 1)
 
 	segments(x / 2, x * sqrt(3) / 2, x, 0,
-			col = muted(dcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(dcol, l = 70, c = 50), lty = 1, lwd = 1)
 	segments(c(0, x) + .5, sqrt(3) / 2, 1 + c(0, x) / 2, c(0, x) * sqrt(3) / 2,
-			col = muted(dcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(dcol, l = 70, c = 50), lty = 1, lwd = 1)
 	
 	arrows(0, 0, .5, sqrt(3) / 2, col = hcol, length = .05, lwd = 2)
 	arrows(0, 0, 1, 0, col = vcol, length = .05, lwd = 2)
@@ -122,11 +122,11 @@ tri_eq <- function(vcol, hcol, dcol){
 	x <- c(1/3,2/3)
 	
 	segments(x, 0, x + rev(x) / 2, rev(x) * sqrt(3) / 2,
-			col = muted(vcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col = muted(vcol, l = 70, c = 50), lty = 1, lwd = 1)
 	segments(x / 2, x * sqrt(3) / 2, rev(x) + x / 2, x * sqrt(3) / 2,
-			col=muted(hcol, l = 70, c = 50), lty = 2, lwd = 1.5)
+			col=muted(hcol, l = 70, c = 50), lty = 1, lwd = 1)
 	
-	segments(c(x,1)/2,c(x,1)*sqrt(3)/2,c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=2,lwd=1.5)
+	segments(c(x,1)/2,c(x,1)*sqrt(3)/2,c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,.5,sqrt(3)/2,col=hcol,length=.05, lwd = 2)
 	arrows(0,0,1,0,col=vcol,length=.05, lwd = 2)

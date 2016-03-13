@@ -29,7 +29,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 	}
 }
 getwd()
-
+library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 
@@ -48,7 +48,11 @@ lifelines <- c(85,75,65,75,25,50)
 pdf("Figures/TALrt.pdf",height=6,width=6)
 par(mai = c(.7,.9,.1,.3), xaxs="i",yaxs="i")
 plot(NULL, type = "n", xlim = c(0,100), ylim=c(0,100), asp = 1, axes = FALSE, xlab = "", ylab = "")
-ATLRefN(0:100, N = 20, col1 = AssignColour("A"), col2 = AssignColour("T"), col3 = AssignColour("L"),lty=2,lwd=.5)
+ATLRefN(0:100, N = 20, 
+		col1 = muted(AssignColour("A"), l = 70, c = 50), 
+		col2 = muted(AssignColour("T"), l = 70, c = 50), 
+		col3 = muted(AssignColour("L"), l = 70, c = 50),
+		lty=1,lwd=.5)
 segments(0,0,0,100,col=AssignColour("T"),lwd=2)
 segments(0,0,100,0,col=AssignColour("A"),lwd=2)
 text(0,seq(0,100,by=20),seq(0,100,by=20),pos=2,xpd=TRUE)
@@ -66,7 +70,11 @@ dev.off()
 pdf("Figures/TALeq.pdf",height=6,width=6)
 par(mai = c(.7,.9,.1,.3), xaxs="i",yaxs="i")
 plot(NULL, type = "n", xlim = c(0,100), ylim=c(0,100), asp = 1, axes = FALSE, xlab = "", ylab = "")
-ATLRefN(0:100, N = 20, col1 = AssignColour("L"), col2 = AssignColour("A"), col3 = AssignColour("T"),lty=2,lwd=.5, equilateral = TRUE)
+ATLRefN(0:100, N = 20, 
+		col1 = muted(AssignColour("L"), l = 70, c = 50), 
+		col2 = muted(AssignColour("A"), l = 70, c = 50), 
+		col3 = muted(AssignColour("T"), l = 70, c = 50),
+		lty=1,lwd=.5, equilateral = TRUE)
 segments(0,0,50,100*sqrt(3)/2,col=AssignColour("T"),lwd=2)
 segments(0,0,100,0,col=AssignColour("A"),lwd=2)
 segments(lifelines*.5,lifelines*sqrt(3)/2,lifelines,0,col="black",lwd=2)

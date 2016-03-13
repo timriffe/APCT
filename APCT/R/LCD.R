@@ -16,6 +16,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 }
 getwd()
 
+library(scales)
 
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
@@ -23,8 +24,11 @@ source(file.path("R","Functions.R"))
 pdf(file.path("Figures","LCDrt.pdf"),height=5,width=8)
 par(mai = c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("C"), col2 = AssignColour("L"), col3 = AssignColour("D"), 
-		N = 20, chrono = FALSE, xpd=TRUE,lty=2,lwd=.5)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("C"), l = 70, c = 50), 
+		col2 = muted(AssignColour("L"), l = 70, c = 50), 
+		col3 = muted(AssignColour("D"), l = 70, c = 50), 
+		N = 20, chrono = FALSE, xpd=TRUE,lty=1,lwd=.5)
 segments(1820,0,1820,100,lwd=2,col=AssignColour("L"))
 segments(1820,0,2060,0,lwd=2,col=AssignColour("C"))
 #
@@ -33,7 +37,7 @@ text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE)
 # life lines
 segments(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),
 		c(1920-85,1930-75,1905,1922,1965,1995),
-		c(85,75,65,75,25,50), col = "black", lwd=2)
+		c(85,75,65,75,25,50), col = gray(.7), lwd=1.5)
 points(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),pch=19,col="black",xpd=TRUE)
 points(c(1920-85,1930-75,1905,1922,1965,1995),
 		c(85,75,65,75,25,50), pch=13,cex=1.3,col="black",lwd=2)
@@ -48,8 +52,11 @@ dev.off()
 pdf(file.path("Figures","LCDeq.pdf"),height=5,width=8)
 par(mai = c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("C"), col2 = AssignColour("L"), col3 = AssignColour("D"), 
-		N = 20, chrono = FALSE, xpd=TRUE,lty=2,lwd=.5,equilateral=TRUE)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("C"), l = 70, c = 50), 
+		col2 = muted(AssignColour("L"), l = 70, c = 50), 
+		col3 = muted(AssignColour("D"), l = 70, c = 50), 
+		N = 20, chrono = FALSE, xpd=TRUE,lty=1,lwd=.5,equilateral=TRUE)
 segments(1820,0,1820+50,100*sqrt(3)/2,lwd=2,col=AssignColour("L"))
 segments(1820,0,2060,0,lwd=2,col=AssignColour("C"))
 #
@@ -62,7 +69,7 @@ yc <- c(0,0,0,0,0,0)
 xd <- c(1920-85,1930-75,1905,1922,1965,1995)
 yd <- c(85,75,65,75,25,50)
 
-segments(xc,yc,xc+.5*yd,yd*sqrt(3)/2, col = "black", lwd=2)
+segments(xc,yc,xc+.5*yd,yd*sqrt(3)/2, col = gray(.7), lwd=1.5)
 points(xc,yc,pch=19,col="black",xpd=TRUE)
 points(xc+.5*yd,yd*sqrt(3)/2, pch=13,cex=1.3,col="black",lwd=2)
 #polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")

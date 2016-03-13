@@ -13,7 +13,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 }
 getwd()
 
-
+library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 
@@ -21,8 +21,11 @@ source(file.path("R","Functions.R"))
 pdf(file.path("Figures","TPDrt.pdf"),height=5,width=8)
 par(mai=c(.5,.5,.5,.5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("P"), col2 = AssignColour("T"),col3 = AssignColour("D"),
-		N = 20, chrono = FALSE, xpd=TRUE, lwd = .5, lty = 2)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("P"), l = 70, c = 50), 
+		col2 = muted(AssignColour("T"), l = 70, c = 50),
+		col3 = muted(AssignColour("D"), l = 70, c = 50),
+		N = 20, chrono = FALSE, xpd=TRUE, lwd = .5, lty = 1)
 segments(1820,0,1820,100,lwd=2,col=AssignColour("T"))
 segments(1820,0,2060,0,lwd=2,col=AssignColour("P"))
 #
@@ -49,8 +52,11 @@ pdf(file.path("Figures","TPDeq.pdf"),height=5,width=8)
 par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
 #LexRefN(0:100, 1820:2060, col = "#A5A5A5", N = 20, chrono=FALSE, equilateral = TRUE, xpd=TRUE)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("P"), col2 = AssignColour("T"),col3 = AssignColour("D"),
-		N = 20, chrono = FALSE, equilateral = TRUE, xpd=TRUE, lwd = .5, lty = 2)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("P"), l = 70, c = 50), 
+		col2 = muted(AssignColour("T"), l = 70, c = 50),
+		col3 = muted(AssignColour("D"), l = 70, c = 50),
+		N = 20, chrono = FALSE, equilateral = TRUE, xpd=TRUE, lwd = .5, lty = 1)
 segments(1820,0,1820+50,100*sqrt(3)/2,lwd=2,col=AssignColour("T"))
 segments(1820,0,2060,0,lwd=2,col=AssignColour("P"))
 text(1820+seq(0,100,by=20)*.5,seq(0,100,by=20)*sqrt(3)/2,seq(0,100,by=20),pos=2,xpd=TRUE)

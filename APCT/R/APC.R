@@ -12,6 +12,8 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 	}
 }
 getwd()
+
+library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 
@@ -19,7 +21,11 @@ source(file.path("R","Functions.R"))
 pdf(file.path("Figures","APCrt.pdf"),height=5,width=8)
 par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("P"),col2=AssignColour("A"),col3=AssignColour("C"), N = 20, xpd=TRUE,lty=2,lwd=.5)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("P"), l = 70, c = 50),
+		col2 = muted(AssignColour("A"), l = 70, c = 50),
+		col3 = muted(AssignColour("C"), l = 70, c = 50), N = 20, 
+		xpd=TRUE,lty=1,lwd=.5)
 text(1820,seq(0,100,by=20),seq(0,100,by=20),pos=2,xpd=TRUE)
 text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE)
 segments(1820,0,1820,100,lwd=2,col=AssignColour("A"))
@@ -43,7 +49,11 @@ dev.off()
 pdf(file.path("Figures","APCeq.pdf"),height=5,width=8)
 par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
-LexRefN(0:100, 1820:2060, col1 = AssignColour("P"),col2=AssignColour("A"),col3=AssignColour("C"), N = 20, xpd=TRUE,lty=2,lwd=.5,
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("P"), l = 70, c = 50),
+		col2=muted(AssignColour("A"), l = 70, c = 50),
+		col3=muted(AssignColour("C"), l = 70, c = 50), 
+		N = 20, xpd=TRUE,lty=1,lwd=.5,
 		equilateral = TRUE)
 segments(1820,0,1820-50,100*sqrt(3)/2,lwd=2,col=AssignColour("A"))
 segments(1820,0,2060,0,lwd=2,col=AssignColour("P"))

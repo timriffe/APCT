@@ -6,7 +6,8 @@ if (!"HMDHFDplus" %in% rownames(installed.packages())){
 	devtools::install_github("timriffe/TR1/TR1/HMDHFDplus")
 }
 require(HMDHFDplus)
-
+devtools::load_all("/home/tim/workspace/DemoSurf/DemoSurf")
+library(scales)
 
 #'
 #' @title LexRefN Overlays semi-transparent N-year lexis triangle outlines onto a Lexis plot
@@ -385,8 +386,7 @@ geteH <- function(mx, Morb){
 }
 
 
-devtools::load_all("/home/tim/workspace/DemoSurf/DemoSurf")
-library(scales)
+
 Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P", 
 		AbColor = NULL, OrdColor = NULL, DerColor = NULL,
 		N = 5, isotropic = FALSE, add = TRUE){

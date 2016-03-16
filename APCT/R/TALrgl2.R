@@ -23,7 +23,7 @@ source("R/Functions.R")
 #http://stackoverflow.com/questions/16362381/save-the-orientation-of-a-rgl-plot3d-plot
 ## Save RGL parameters to a list object
 #pp <- par3d(no.readonly=TRUE)
-pp <- par3d(no.readonly=TRUE)
+#pp <- par3d(no.readonly=TRUE)
 ## Save the list to a text file
 #dput(pp, file="Data/TALrglview2.R", control = "all")
 pp <- dget("Data/TALrglview2.R")

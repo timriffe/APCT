@@ -19,7 +19,7 @@
    sodipodi:docname="TALisomarkedup2.svg"><metadata
      id="metadata8"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs6"><linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6288"
@@ -447,15 +447,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="999"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.68986027"
+     inkscape:zoom="0.97560975"
      inkscape:cx="506.03235"
-     inkscape:cy="273.9728"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:cy="198.35016"
+     inkscape:window-x="1280"
+     inkscape:window-y="746"
      inkscape:window-maximized="1"
      inkscape:current-layer="g10" /><g
      id="g10"
@@ -1943,15 +1943,15 @@
            sodipodi:nodetypes="cc" /></g></g><text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
-       x="2.7248681"
-       y="-224.68434"
+       x="0.52453583"
+       y="-222.36086"
        id="text3440"
        sodipodi:linespacing="125%"
        transform="matrix(0.68760384,-0.72608606,-0.72608606,-0.68760384,0,0)"><tspan
          sodipodi:role="line"
          id="tspan3442"
-         x="2.7248681"
-         y="-224.68434">calendar time</tspan></text>
+         x="0.52453583"
+         y="-222.36086">calendar time</tspan></text>
 <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
@@ -2298,18 +2298,18 @@
 <text
        xml:space="preserve"
        style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L"
-       x="27.355623"
-       y="-134.22781"
+       x="21.615623"
+       y="-121.10781"
        id="text3528-9"
        sodipodi:linespacing="125%"
        transform="scale(1,-1)"><tspan
          sodipodi:role="line"
          id="tspan3530-4"
-         x="27.355623"
-         y="-134.22781">APC plane</tspan><tspan
+         x="21.615623"
+         y="-121.10781">APC plane</tspan><tspan
          sodipodi:role="line"
-         x="27.355623"
-         y="-109.56391"
+         x="21.615623"
+         y="-96.443909"
          id="tspan6670"
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Nimbus Roman No9 L;-inkscape-font-specification:Nimbus Roman No9 L">(within th. age 0)</tspan></text>
 <text
@@ -2371,7 +2371,7 @@
          id="tspan8611" /></text>
 <path
        style="fill:none;stroke:#000000;stroke-width:1.51999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Lend)"
-       d="m 104.08638,99.43482 c 1.56864,-58.641992 110.4469,-80.26904 199.923,-34.35798"
+       d="m 102.44638,85.49482 c 1.56864,-58.641992 140.7869,-64.68904 201.563,-20.41798"
        id="path3557-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" /><text

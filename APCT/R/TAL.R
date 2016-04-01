@@ -66,6 +66,9 @@ points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.3,col="black",xpd=TRUE)
 text(27,27,"Lifespan",srt=-45,col="black")
 dev.off()
 
+
+
+
 # equilateral
 pdf("Figures/TALeq.pdf",height=6,width=6)
 par(mai = c(.7,.9,.1,.3), xaxs="i",yaxs="i")
@@ -88,3 +91,28 @@ text(16,50,"Thanatological age", pos = 1, srt=60, xpd=TRUE)
 #text(seq(0,100,by=20),-10,seq(1900,2000,by=20),pos=1,col="blue",xpd=TRUE)
 text(27+13.5,27*sqrt(3)/2,"Lifespan",srt=-60,col="black")
 dev.off()
+
+############################################################3
+# TAL presentation:
+
+pdf("PAApresentation/Figures/TALrt.pdf",height=6,width=6)
+par(mai = c(.7,.9,.1,.3), xaxs="i",yaxs="i",xpd=TRUE)
+plot(NULL, type = "n", xlim = c(0,100), ylim=c(0,100), asp = 1, axes = FALSE, xlab = "", ylab = "")
+ATLRefN(0:100, N = 20, 
+		col1 = muted(AssignColour("A"), l = 70, c = 50), 
+		col2 = muted(AssignColour("T"), l = 70, c = 50), 
+		col3 = muted(AssignColour("L"), l = 70, c = 50),
+		lty=1,lwd=1.7)
+segments(0,0,0,100,col=AssignColour("T"),lwd=3)
+segments(0,0,100,0,col=AssignColour("A"),lwd=3)
+text(0,seq(0,100,by=20),seq(0,100,by=20),pos=2,xpd=TRUE,col=gray(.3))
+text(seq(0,100,by=20),0,seq(0,100,by=20),pos=1,xpd=TRUE,col=gray(.3))
+text(50,-5,"Chronological age", pos = 1, xpd=TRUE,cex=1.2)
+text(-10,50,"Time to death", pos = 1, srt=90, xpd=TRUE,cex=1.2)
+llcol <- gray(.3)
+segments(0,lifelines,lifelines,0,col=llcol,lwd=3)
+points(rep(0,length(lifelines)),lifelines, pch=19,col=llcol,xpd=TRUE,cex=1.5)
+points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.5,col=llcol,xpd=TRUE)
+text(27,27,"Lifespan",srt=-45,col="black",cex=1.2)
+dev.off()
+

@@ -202,7 +202,7 @@ FitLoess <- function(varname,
 	list(Surf = Surf, span = span, sex = sex, varname = varname, Cohorts = Coh5)
 }
 
-Dat$coh5
+
 Female <- FitLoess(varname = "srhpoor", 
 				Dat = Dat, 
 				sex = "f",
@@ -222,6 +222,7 @@ Male <- FitLoess(varname = "srhpoor",
 SRHPOOR <- list(Male = Male, Female = Female)
 save(SRHPOOR, file = "Data/srhpoor.Rdata")
 
+SRHPOOR <- local(get(load("Data/srhpoor.Rdata")))
 source("/home/tim/git/APCT/APCT/R/SurfMap.R")
 
 # these are the plots to be arranged in a panel for the paper
@@ -257,6 +258,36 @@ rect(70,ticksat[-length(ticks)],71.5,ticksat[-1],col=col, border = gray(.6))
 text(71.5, ticksat,ticks,pos=4)
 text(71,14,"Prevalence",cex=1.3)
 dev.off()
+str(SRHPOOR)
+# for PAA presentation:
+Coh5 <- SRHPOOR[[1]]$Cohorts
+for (i in 1:5){
+	pdf(file.path("PAApresentation/Figures",paste0("srhpoor",Coh5[i],".pdf")), width=9,height=5)
+# dev.new(width=9,height=5)
+	par(mai=c(.6,.6,.1,.1),xpd=TRUE)
+	plot(NULL, type = "n", axes = FALSE, xlab = "", ylab = "", xlim = c(70,100), ylim = c(0,15), asp = 1)
+	SurfMap(SRHPOOR$Male$Surf[, , i], 
+			ticks = seq(0, .5, by = .05), 
+			outline = FALSE, 
+			ylab = "",
+			xlab = "", 
+			bg = TRUE, 
+			add = TRUE,
+			legnd = FALSE,
+			yshift = 0,
+			cex=1.5)
+	text(85,-2.5,"Chronological age",cex=1.5)
+	text(67,7,"Time to death", srt = 90,cex=1.5)
+	dev.off()
+}
+
+
+
+
+
+
+
+
 
 #plot(NULL, type = "n", axes = FALSE, xlab = "", ylab = "", xlim = c(70,100), ylim = c(0,100), asp = 1)
 #for (i in 1:5){

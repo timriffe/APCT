@@ -74,3 +74,35 @@ text(1950,-10,"Period",xpd=TRUE,pos=1)
 text(1805-10,20*sqrt(3)/2,"Chronological age",srt=300,xpd=TRUE,pos=2)
 text(1930-35/2,35*sqrt(3)/2,"Birth cohort",srt=60)
 dev.off()
+
+########################################3
+# APC for presentation:
+
+# APC with life lines 4.
+pdf(file.path("PAApresentation/Figures","APCrt.pdf"),height=5,width=8)
+par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i", xpd=TRUE)
+plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
+LexRefN(0:100, 1820:2060, 
+		col1 = muted(AssignColour("P"), l = 70, c = 50),
+		col2 = muted(AssignColour("A"), l = 70, c = 50),
+		col3 = muted(AssignColour("C"), l = 70, c = 50), N = 20, 
+		xpd=TRUE,lty=1,lwd=1)
+text(1820,seq(0,100,by=20),seq(0,100,by=20),pos=2,xpd=TRUE,cex=.7,col=gray(.3))
+text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE,cex=.7,col=gray(.3))
+segments(1820,0,1820,100,lwd=2,col=AssignColour("A"))
+segments(1820,0,2060,0,lwd=2,col=AssignColour("P"))
+# life lines
+llcol <- gray(.3)
+segments(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),
+		c(1900,1900,1905,1922,1965,1995)+c(20,30,65,75,25,50),
+		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), col = llcol, lwd=2)
+points(c(1920-85,1930-75,1905,1922,1965,1995),rep(0,6),pch=19,col=llcol,xpd=TRUE)
+points(c(1900,1900,1905,1922,1965,1995)+c(20,30,65,75,25,50),
+		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), pch=13,cex=1.3,col=llcol,lwd=2)
+#rect(1820,0,1900,100,border=NA,col="#00000020")
+#rect(2000,0,2060,100,border=NA,col="#00000020")
+text(1950,-10,"Period",xpd=TRUE,pos=1, cex = .8)
+text(1805,80,"Chronological age",xpd=TRUE,pos=2,srt=90,cex=.8)
+text(1930,35,"Birth cohort",srt=45,col="black",cex=.8)
+dev.off()
+

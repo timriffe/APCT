@@ -15,7 +15,8 @@ SurfMap <- function (Surf,
  bg=FALSE,
  add = FALSE,
  xshift = 0,
- yshift = 0) 
+ yshift = 0,
+ cex=.8) 
 {
     if (is.null(ticks)){
       ticks <- pretty(Surf,n=napprox)
@@ -65,8 +66,8 @@ SurfMap <- function (Surf,
     # axes
     segments(70+xshift,seq(0,15,by=5)+yshift,69.6+xshift,seq(0,15,by=5)+yshift)
     segments(seq(70,100,by=5)+xshift,0+yshift,seq(70,100,by=5)+xshift,-.4+yshift)
-    text(69.6+xshift,seq(0,15,by=5)+yshift,seq(0,15,by=5),pos=2,cex=.8, xpd=TRUE)
-    text(seq(70,100,by=5)+xshift,-.4+yshift,seq(70,100,by=5),pos=1,cex=.8, xpd=TRUE)
+    text(69.6+xshift,seq(0,15,by=5)+yshift,seq(0,15,by=5),pos=2,cex=cex, xpd=TRUE)
+    text(seq(70,100,by=5)+xshift,-.4+yshift,seq(70,100,by=5),pos=1,cex=cex, xpd=TRUE)
     
     if (legnd){
       # legend

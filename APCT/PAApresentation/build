@@ -1,0 +1,8 @@
+
+setwd("/home/tim/git/APCT/APCT/PAApresentation")
+
+system("pdflatex Riffe_Presentation.tex")
+
+getwd()
+
+

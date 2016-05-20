@@ -496,10 +496,14 @@ Diagram2 <- function(Abscissae, Ordinate, AbMeasure = "A", OrdMeasure = "P",
 
 
 
-
-
-
-
-
-
+# to get values for FreeCAD
+#assignColorRGB <- function(x){
+#	colorspace::hex2RGB(AssignColour(x))@coords * 255
+#}
+#assignColorRGB("A")
+#assignColorRGB("P")
+#assignColorRGB("C")
+#assignColorRGB("T")
+#assignColorRGB("D")
+#assignColorRGB("L")
 

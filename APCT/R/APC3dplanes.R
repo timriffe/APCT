@@ -85,26 +85,26 @@ for (i in 1:length(ages)){
 }
 
 # an example rgl TAL (1800 birth cohort, at back)
+xyztern <- xyz2ternxyz(data.frame(
+				x = c(1800, 1800+omega, 1800),
+				y = c(0, omega, 0),
+				z = c(0, 0, omega)))
+rgl.linestrips(xyztern$x[c(1,2)],xyztern$y[c(1,2)],xyztern$z[c(1,2)],color = gray(.5))
+rgl.linestrips(xyztern$x[c(2,3)],xyztern$y[c(2,3)],xyztern$z[c(2,3)],color = gray(.5))
+rgl.linestrips(xyztern$x[c(1,3)],xyztern$y[c(1,3)],xyztern$z[c(1,3)],color = gray(.5))
+cohs <- seq(1800,1850,by=25)
+# an example rgl TAL (2000 birth cohort)
+for (co in cohs){
 	xyztern <- xyz2ternxyz(data.frame(
-					x = c(1800, 1800+omega, 1800),
+					x = c(co, co+omega, co) ,
 					y = c(0, omega, 0),
 					z = c(0, 0, omega)))
+	rgl.triangles(xyztern$x,xyztern$y,xyztern$z,alpha=0.1,color = gray(.8),
+			ambient="black",specular="black",emission="black",shininess=0)
 	rgl.linestrips(xyztern$x[c(1,2)],xyztern$y[c(1,2)],xyztern$z[c(1,2)],color = gray(.5))
 	rgl.linestrips(xyztern$x[c(2,3)],xyztern$y[c(2,3)],xyztern$z[c(2,3)],color = gray(.5))
 	rgl.linestrips(xyztern$x[c(1,3)],xyztern$y[c(1,3)],xyztern$z[c(1,3)],color = gray(.5))
-cohs <- seq(1800,1850,by=25)
-# an example rgl TAL (2000 birth cohort)
-	for (co in cohs){
-		xyztern <- xyz2ternxyz(data.frame(
-						x = c(co, co+omega, co) ,
-						y = c(0, omega, 0),
-						z = c(0, 0, omega)))
-		rgl.triangles(xyztern$x,xyztern$y,xyztern$z,alpha=0.1,color = gray(.8),
-				ambient="black",specular="black",emission="black",shininess=0)
-		rgl.linestrips(xyztern$x[c(1,2)],xyztern$y[c(1,2)],xyztern$z[c(1,2)],color = gray(.5))
-		rgl.linestrips(xyztern$x[c(2,3)],xyztern$y[c(2,3)],xyztern$z[c(2,3)],color = gray(.5))
-		rgl.linestrips(xyztern$x[c(1,3)],xyztern$y[c(1,3)],xyztern$z[c(1,3)],color = gray(.5))
-	}
+}
 zs <- c(0,25)	
 for (z in zs){
 	xyztern <- xyz2ternxyz(data.frame(

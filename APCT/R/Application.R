@@ -239,9 +239,10 @@ for (i in 1:5){
 			bg = TRUE, 
 			add = TRUE,
 			legnd = FALSE,
-			yshift = 0)
-	text(85,-2,"Chronological age")
-	text(68,7,"Thanatological age", srt = 90)
+			yshift = 0,
+			cex=1.5)
+	text(85,-2,"Chronological age",cex=1.5)
+	text(67.75,7.2,"Thanatological age", srt = 90,cex=1.5)
 	dev.off()
 }
 

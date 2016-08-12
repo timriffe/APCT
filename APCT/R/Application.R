@@ -242,7 +242,7 @@ for (i in 1:5){
 			yshift = 0,
 			cex=1.5)
 	text(85,-2,"Chronological age",cex=1.5)
-	text(67.75,7.2,"Thanatological age", srt = 90,cex=1.5)
+	text(67.75,7.6,"Thanatological age", srt = 90,cex=1.5)
 	dev.off()
 }
 
@@ -256,9 +256,11 @@ pdf("Figures/TALapplication/Legend.pdf", width=9,height=5)
 par(mai=c(.4,.4,.1,.1),xpd=TRUE)
 plot(NULL, type = "n", axes = FALSE, xlab = "", ylab = "", xlim = c(70,100), ylim = c(0,15), asp = 1)
 rect(70,ticksat[-length(ticks)],71.5,ticksat[-1],col=col, border = gray(.6))
-text(71.5, ticksat,ticks,pos=4)
-text(71,14,"Prevalence",cex=1.3)
+text(71.5, ticksat,ticks,pos=4,cex=1.5)
+text(71,14,"Prevalence",cex=1.5)
 dev.off()
+
+
 str(SRHPOOR)
 # for PAA presentation:
 Coh5 <- SRHPOOR[[1]]$Cohorts

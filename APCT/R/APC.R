@@ -79,7 +79,7 @@ dev.off()
 # APC for presentation:
 
 # APC with life lines 4.
-pdf(file.path("PAApresentation/Figures","APCrt.pdf"),height=5,width=8)
+pdf(file.path("PAA/Figures","APCrt.pdf"),height=5,width=8)
 par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i", xpd=TRUE)
 plot(NULL, xlim = c(1770,2090), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)
 LexRefN(0:100, 1820:2060, 

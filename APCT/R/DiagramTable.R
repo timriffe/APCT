@@ -73,13 +73,24 @@ up_rt <- function(vcol, hcol, dcol){
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
 }
-tri_rt <- function(vcol, hcol, dcol){
+tri_rt_dg <- function(vcol, hcol, dcol){
 	x <- c(1/3,2/3)
 	
 	segments(x,0,x,rev(x),col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
 	segments(0,x,rev(x),x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	segments(0,c(x,1),c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
+	
+	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
+	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
+}
+tri_rt_vt <- function(vcol, hcol, dcol){
+	x <- c(1/3,2/3)
+	
+	segments(c(x,1),0,c(x,1),c(x,1),col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(x,x,1,x,col=muted(hcol, l = 70, c = 50),lty=1,lwd=1)
+	
+	segments(c(0,x),0,1,c(1,rev(x)),col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(0,0,0,1,col=hcol,length=.05,lwd=2)
 	arrows(0,0,1,0,col=vcol,length=.05,lwd=2)
@@ -145,8 +156,16 @@ drawdiagram <- function(AbMeasure = "P", OrdMeasure = "A",isotropic=FALSE){
 			
 			# TA(L) triangle
 			if (all(ax$ID == c("T", "A", "L"))){
-				tri_rt(hcol = hcol, vcol = vcol, dcol = dcol)
-				text(.5, .5, paste0("(",ax$derived,")"), pos = 3, col = dcol,srt=-45)
+				
+				if (!ax$increasing){
+					tri_rt_dg(hcol = hcol, vcol = vcol, dcol = dcol)
+					text(.5, .5, paste0("(",ax$derived,")"), pos = 3, col = dcol,srt=-45)	
+				} else {
+					tri_rt_vt(hcol = hcol, vcol = vcol, dcol = dcol)
+					text(.5, .5, paste0("(",ax$derived,")"), pos = 3, col = dcol,srt=45)	
+				}
+				
+				
 			} else {
 				# AP(C)-style
 				if (ax$increasing){
@@ -224,9 +243,8 @@ for (i in 1:nrow(Combos)){
 			OrdMeasure = Combos[i,1], isotropic = TRUE)
 }
 # 1) if you regenerate figures, first remove cropped figures:
-cropped <- list.files("Figures/DiagramTable")[grepl("-crop",list.files("Figures/DiagramTable"))]
-file.remove(file.path("Figures/DiagramTable",cropped))
+#cropped <- list.files("Figures/DiagramTable")[grepl("-crop",list.files("Figures/DiagramTable"))]
+#file.remove(file.path("Figures/DiagramTable",cropped))
 # then go to folder in navigator (not Eclipse), double-click pdfcropall.sh, and select run in terminal.
 # appends -crop to each.
-
 

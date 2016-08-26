@@ -148,11 +148,11 @@ tri_eq_vt <- function(vcol, hcol, dcol){
 #	plot(NULL, type = "n", xlim = c(xmin, xmax), ylim = c(0, 1), 
 #			axes = FALSE, xlab = "", ylab = "", asp = 1)
 	segments(c(0,x), 0, c(0,x) + c(1,rev(x)) / 2, c(1,rev(x)) * sqrt(3) / 2,
-			col = muted(vcol, l = 70, c = 50), lty = 1, lwd = 1)
+			col = muted(dcol, l = 70, c = 50), lty = 1, lwd = 1)
 	segments(x / 2, x * sqrt(3) / 2, rev(x) + x / 2, x * sqrt(3) / 2,
 			col=muted(hcol, l = 70, c = 50), lty = 1, lwd = 1)
 	
-	segments(c(x,1)/2,c(x,1)*sqrt(3)/2,c(x,1),0,col=muted(dcol, l = 70, c = 50),lty=1,lwd=1)
+	segments(c(x,1)/2,c(x,1)*sqrt(3)/2,c(x,1),0,col=muted(vcol, l = 70, c = 50),lty=1,lwd=1)
 	
 	arrows(1,0,.5,sqrt(3)/2,col=hcol,length=.05, lwd = 2)
 	arrows(0,0,1,0,col=vcol,length=.05, lwd = 2)
@@ -208,7 +208,7 @@ drawdiagram <- function(AbMeasure = "P", OrdMeasure = "A",isotropic=FALSE){
 					# TL(A) or AL(T)
 					tri_eq_vt(hcol = hcol, vcol = vcol, dcol = dcol)
 					text(.3, sqrt(3)/4+.1, paste0("(",ax$derived,")"), pos = 2, col = dcol,srt=60)
-					text(.5, sqrt(3)/2, ax$y, pos = 2, col = DefaultColors(ax$y))
+					text(.5, sqrt(3)/2, ax$y, pos = 4, col = DefaultColors(ax$y))
 				}
 			} else {
 				if (ax$increasing){
@@ -269,8 +269,13 @@ for (i in 1:nrow(Combos)){
 #file.remove(file.path("Figures/DiagramTable",cropped))
 # then go to folder in navigator (not Eclipse), double-click pdfcropall.sh, and select run in terminal.
 # appends -crop to each.
-
-par(mai = c(.25, .25, .25, .25), xaxs = "i", yaxs = "i", xpd = TRUE)
-plot(NULL, type = "n", xlim = c(xmin, xmax), ylim = c(0, 1), 
-		axes = FALSE, xlab = "", ylab = "", asp = 1)
-drawdiagram("L", "T", isotropic = TRUE)
+#graphics.off()
+#par(mai = c(.25, .25, .25, .25), xaxs = "i", yaxs = "i", xpd = TRUE)
+#plot(NULL, type = "n", xlim = c(xmin, xmax), ylim = c(0, 1), 
+#		axes = FALSE, xlab = "", ylab = "", asp = 1)
+#drawdiagram("L", "T", isotropic = FALSE)
+#dev.new()
+#par(mai = c(.25, .25, .25, .25), xaxs = "i", yaxs = "i", xpd = TRUE)
+#plot(NULL, type = "n", xlim = c(xmin, xmax), ylim = c(0, 1), 
+#		axes = FALSE, xlab = "", ylab = "", asp = 1)
+#drawdiagram("L", "T", isotropic = TRUE)

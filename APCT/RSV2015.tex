@@ -1200,9 +1200,10 @@ Figure~\ref{fig:poorsrh} displays a series of TAL surface plots, each referring
 to a different quinquennial birth cohort (1905-1909, etc). The data come from
 the RAND version of the US Health and Retirement Study \citep{HRS}. Since this
 survey has multiple observations of individuals, as well as a mortality
-follow-up, we have each of the six time measures for each observation. Further methodological details are given by \citet{riffe2015ttd}. The TAL surfaces for each birth
-cohort are shifted by five years because the observation window available is
-from 1992 to 2011 for each cohort.
+follow-up, we have each of the six time measures for each observation. Further
+methodological details are given by \citet{riffe2015ttd}. The TAL surfaces for
+each successive birth cohort are shifted by five years because the observation
+window available is from 1992 to 2011 for each cohort.
 
 \begin{figure}[h!] 
 \caption{Prevalence of males self-reporting poor health by chronological and
@@ -1291,8 +1292,8 @@ healthy life expectancy by the same amount. This is not the prediction when we
 base analyses on the chronological age pattern of self-reported health. An
 underlying morbidity pattern this stable would predict improvements in the
 marginal chronological age pattern of self-reported health if the lifespan
-distribution were to shift right. This bias in the current status quo of
-morbidity measurement and prediction leads to pessimistic morbidity scenarios
+distribution were to shift to higher ages. This bias in the current status quo
+of morbidity measurement and prediction leads to pessimistic morbidity scenarios
 when mortality improvements are foreseen, and it undermines health expectancy
 comparisons between groups with different mortality. Cohort health expectancies
 are in either case unbiased, but these are also not common.
@@ -1358,29 +1359,13 @@ processes over the life course.
  % the former will have arisen. We suppose
 %that LCD diagrams of any kind are novel. 
 
-
 %either as a visual
 %diagnostic or in any line of inquiry or argumentation.
 %\footnote{There are, however, some novel temporal
 %juxtapositions in the literature on event analysis of
 %big data \citep[see e.g.,][]{watson2015timemaps}.}
-
 \FloatBarrier
-\section{Discussion}
-
-It is straightforward to
-think of examples to derive time measures based on other given
-time measures. In isolation, the various triad identities are also intuitive.
-The TPD diagram is similar to APC, but it is aligned to time of death rather
-than time of birth. The TAL diagram presents a clear way to classify events
-over the life course of a cohort. Finally, the LCD diagram can be used to
-structure quantities that vary over time and by length of life.
-Joined together, the relationship between all six time measures is more
-complex than any of the triad identities, but it condenses into a simple
-geometric representation that can be easily derived by ascribing the various time measures to the six edges of a tetrahedron. An understanding of how the six time measures relate is
-key to understanding the temporal structure of demographic processes, which
-itself underlies the comparability of demographic measures.
-
+\section{Related concepts}
 A simultaneous juxtaposition of
 the six demographic time measures has never appeared in the literature. However,
 \citet{lexis1875einleitung} describes an analogous hexad relationship between,
@@ -1395,12 +1380,45 @@ hexad identity has up to three possible points. The period dimension is
 not explicit, but rather nested within three varieties of cohort.
 Clearly with age, \textit{period}, and total duration, remaining
 time should also be identifiable, but this is not included in Lexis' hexad
-identity. Our hexad identity is designed to contain and identify any point on
+identity. 
+
+Our hexad identity is designed to contain and identify any point on
 the lifecourse of individuals in populations with heterogeneous
 lifespans. As such it fully describes a population of single state durations.
 We liken the Lexis identity to something similar to a two state APC, albeit
-without explict period. We do not claim that the concepts in Lexis' hexad
-identity are not transportable, but perhaps the specificity of this identity has made it unwieldy in practice, or difficult to conform with data.
+without explict period. Lexis' marriage hexad identity is also
+illustrated with complex perspective line drawings (see Lexis' Figures 5 and 6).
+These figures (based on cubes rather than tetrahedra--octahedra) and the portion of
+the text that discusses these relationships has unfortunately been largely
+overlooked in posterior literature, which has focused much more on the APC
+plane. We do not claim that the concepts in Lexis' hexad
+identity are not transportable, but perhaps the specificity of this identity has
+made it unwieldy in practice, or difficult to conform with data. Adding an
+additional state to the identity we propose would also greatly expand its
+complexity.
+
+Our hexad diagram is also reminiscent of the Lexis pencil notion from
+\citet{francis1996visualization}. Lexis pencils are a method of representing
+limited numbers of multistate lifelines in three dimensional space, where
+lifelines ascend from age zero. This visualization system could be constrained
+to match the one we present if the $z$ axis were set to remaining years of life
+and lifeline trajectories were realigned to descend toward zero remaining years
+of life (or some rotation thereof).
+
+\section{Discussion}
+
+It is straightforward to
+think of examples to derive time measures based on other given
+time measures. In isolation, the various triad identities are also intuitive.
+The TPD diagram is similar to APC, but it is aligned to time of death rather
+than time of birth. The TAL diagram presents a clear way to classify events
+over the life course of a cohort. Finally, the LCD diagram can be used to
+structure quantities that vary over time and by length of life.
+Joined together, the relationship between all six time measures is more
+complex than any of the triad identities, but it condenses into a simple
+geometric representation that can be easily derived by ascribing the various time measures to the six edges of a tetrahedron. An understanding of how the six time measures relate is
+key to understanding the temporal structure of demographic processes, which
+itself underlies the comparability of demographic measures.
 
 The contemporary practice of (macro) demography is based on the premise that
 vital rates, and other kinds of rates over the lifecourse, are the truest measure of
@@ -1417,10 +1435,10 @@ age-standardization does not fully account for such structure.
 The techniques used to age-standardize mortality and fertility estimation are at
 times applied to other kinds of transitions over the life course. For example,
 one may estimate an age pattern to some degenerative disease, or the
-ability to carry out some common activities of daily life. Much of the
-regular temporal variation for such conditions is by time-to-death or
-lifespan, rather than by chronological age. Apparent chronological age patterns
-for such conditions are artifactual and do not represent the same kind of
+ability to carry out some common activities of daily life. However, much of the
+regular temporal variation for the prevalence of such conditions is by
+time-to-death or lifespan, rather than by chronological age. Apparent chronological age patterns
+in such cases are artifactual and do not represent the same kind of
 intrinsic meaning as does the \textit{age pattern} of mortality. Further kinds
 of temporal standardization must be developed in order to measure and understand
 the natural patterns of such conditions over the lifecourse. 
@@ -1432,43 +1450,24 @@ Panel surveys with mortality followups already provide the requisite
 information, as do linkable registers that include items such as
 health measures or proxies and relevant dates of birth, observation, and death.
 
-The best way to seek regular patterns in variation
+The best way to detect patterns in temporal variation
 is via data visualization. The coordinate system proposed in this paper is
-conceived as one adequate to capture all such variation, and we suggest its use
+conceived as one adequate to capture such variation, and we suggest its use
 for visualizing data, probably via small multiples of successive time slices
 parallel to any of the four triad identities, similar to that shown in
 Figure~\ref{fig:poorsrh}.
 Such visualization strategies at this time are exploratory, and this is a
 technique that may benefit from further refinement. 
 
-The 3d diagram of the hexad identity we propose is reminiscent of some rigorous
-descriptions found starting in section IV of \citet{lexis1875einleitung}. Lexis
-provides a rigorous treatment of the hexad identity between birth cohort ($n$), age at
-marriage ($\alpha$), age at separation due to death or widowhood ($a$), marriage cohort ($\chi$),
-separation cohort ($z$) and duration of marriage ($\delta$). He also slices
-through this hexad space to produce cross-sections that also find direct
-parallels in our triad identities. The marriage hexad identity is also
-illustrated with complex perspective line drawings (see Lexis' Figures 5 and 6).
-These figures (based on cubes rather than tetrahedra--octahedra) and the portion of
-the text that discusses these relationships has unfortunately been largely
-overlooked in posterior literature, which has focused much more on the APC
-plane. We are fortunate to have noticed it in the course of this work, not least
-because Lexis' use of marriage durations is itself a good example of the
-translation of the demographic time framework used in an event history setting.
-This further highlights the fact that we are in a general sense simply modeling sets of durations of variable length that are distributed over time. 
-
-Our hexad diagram is also reminiscent of the Lexis pencil notion from
-\citet{francis1996visualization}. That visualization system could be
-constrained to match the one we present if the $z$ axis were set to remaining
-years of life and lifeline trajectories were realigned to descend toward zero remaining years of life (or some rotation thereof).
-
 Mortality determines three of the dimensions of
 demographic time, and it therefore makes little sense to model mortality using
-all six time measures. Any of the six measures may be pertinent in the case of
-conditions and states that vary over and within the lifecourse. The most obvious application
-for the present model, given data commonly (and publicly) available at this
-time, are late-life health conditions, although there may be other substantive
-areas of application. 
+all six time measures. Rather, mortality determines the placement of
+lifelines in the three-dimensional space. Death itself is only representable
+with the endpoints of lifelines, ergo the APC plane through thanatological age
+zero. This full coordinate system instead defines and contains the space through
+which life is lived; any of the six measures may be pertinent in the case of
+conditions and states that vary over and within the lifecourse. An obvious
+application for the present model, given data commonly (and publicly) available at this time, are late-life health conditions, although there may be other substantive areas of application. 
 
 Furthermore, we believe in the pedagogical value of the framework
 introduced in this paper. We hope that the

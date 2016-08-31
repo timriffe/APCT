@@ -21,6 +21,7 @@
 \usepackage[normalem]{ulem}
 \geometry{paperwidth=10in, paperheight=7.5in}
 \usepackage{animate}
+\usepackage{array}
 
 \usepackage[utf8]{inputenc}
 
@@ -54,38 +55,33 @@
 \begin{frame}
 \frametitle{Demographic time}
 % three stock images: baby, clock or timeline, death (scythe?)
+\includegraphics{Figures/DemoTime.pdf}
 \end{frame}
 %-------------------
 \begin{frame}
 \frametitle{Demographic time measures}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1) make graphics appear when line comes to foreground.
-% 2) maybe description list type so that letters can be normal bold
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \begin{itemize}[<+->]
-  \item[A] \hspace{3em}\includegraphics<1->[scale=.5]{Figures/llA.pdf}
-  \hspace{3em}chronological age
-  \item[P] \hspace{3em}\includegraphics<2->[scale=.5]{Figures/llP.pdf} 
-  \hspace{3em}period
-  \item[C] \hspace{3em}\includegraphics<3->[scale=.5]{Figures/llC.pdf}
-  \hspace{3em}birth cohort
-  \item[T] \hspace{3em}\includegraphics<4->[scale=.5]{Figures/llT.pdf}
-  \hspace{3em}thanatological age (TTD)
-  \item[D] \hspace{3em}\includegraphics<5->[scale=.5]{Figures/llD.pdf}
-  \hspace{3em}death cohort
-  \item[L] \hspace{3em}\includegraphics<6->[scale=.5]{Figures/llL.pdf}
-  \hspace{3em}ultimate complete lifespan
+  \item[A]  \hspace{3em}\begin{tabular}{L{6cm}c}chronological
+  age&\hspace{2em}\includegraphics<1->[scale=.5]{Figures/llA.pdf}\end{tabular}
+  \item[T] \hspace{3em}\begin{tabular}{L{6cm}c}thanatological
+  age&\hspace{2em}\includegraphics<2->[scale=.5]{Figures/llT.pdf}\end{tabular}
+  \item[L] \hspace{3em}\begin{tabular}{L{6cm}c}complete
+  lifespan&\hspace{2em}\includegraphics<3->[scale=.5]{Figures/llL.pdf}\end{tabular}
+  \item[C] \hspace{3em}\begin{tabular}{L{6cm}c}birth
+  cohort&\hspace{2em}\includegraphics<4->[scale=.5]{Figures/llC.pdf}\end{tabular}
+  \item[D] \hspace{3em}\begin{tabular}{L{6cm}c}death
+  cohort&\hspace{2em}\includegraphics<5->[scale=.5]{Figures/llD.pdf}\end{tabular}
+  \item[P]\hspace{3em}\begin{tabular}{L{6cm}c}period&\hspace{2em}\includegraphics<6->[scale=.5]{Figures/llP.pdf}\end{tabular}
 \end{itemize}
 \end{frame}
-
 
 %------------------------
 
 \begin{frame}
-\begin{block}{objective}
-We add a third dimension to the Lexis diagram to account for time-to-death. This
-results in three \textit{new} kinds of 2D Lexis diagrams, and a 3D Lexis diagram
-that is the intersection of the four \textit{degenerate} diagrams.
+\begin{block}{Objective}
+Expand the Lexis diagram to include death-related time measures.
 \end{block}
 \color{mygray}(It turns out Lexis himself did something eerily similar, but not
 identical. Happy to explain how it works too)
@@ -192,32 +188,26 @@ identical. Happy to explain how it works too)
 
 %-------------------
 
-% build this sequentially.
-% 1) vanishing lines
-% 2) APC laid flat in final position (years and ages labelled)
-% 3) Year 2000 TAL plane sits on top (thano age labelled)
-% 4) then complete diagram.
-% CAN this all be done in Inkscape without needing to remake everything?
+\begin{frame}
+\frametitle{Building a demographic time diagram (1)}
+\vspace{-3em}
+\begin{center}
+\includegraphics[scale=.8]{Figures/IkeaBuild.pdf}
+\end{center}
+\end{frame}
 
 %-------------------
 \begin{frame}
-\frametitle{Building the demographic time diagram (1)}
+\frametitle{Building a demographic time diagram (2)}
 \vspace{-1em}
 \begin{center}
 \includegraphics[scale=.8]{Figures/buildTAL1.pdf}
 \end{center}
 \end{frame}
+
 %-------------------
 \begin{frame}
-\frametitle{Building the demographic time diagram (2)}
-\vspace{-1em}
-\begin{center}
-\includegraphics[scale=.8]{Figures/buildTAL2.pdf}
-\end{center}
-\end{frame}
-%-------------------
-\begin{frame}
-\frametitle{Building the demographic time diagram (3)}
+\frametitle{Building a demographic time diagram (3)}
 \vspace{-1em}
 \begin{center}
 \includegraphics[scale=.8]{Figures/buildTAL3.pdf}
@@ -225,7 +215,7 @@ identical. Happy to explain how it works too)
 \end{frame}
 %-------------------
 \begin{frame}
-\frametitle{Building the demographic time diagram (4)}
+\frametitle{Building a demographic time diagram (4)}
 \vspace{-1em}
 \begin{center}
 \includegraphics[scale=.8]{Figures/buildTAL4.pdf}
@@ -233,23 +223,36 @@ identical. Happy to explain how it works too)
 \end{frame}
 %-------------------
 \begin{frame}
-\frametitle{Building the demographic time diagram (5)}
+\frametitle{Building a demographic time diagram (5)}
 \vspace{-1em}
 \begin{center}
 \includegraphics[scale=.8]{Figures/buildTAL5.pdf}
 \end{center}
 \end{frame}
 
-%-------------------
-
-%\begin{frame}
-%\frametitle{APC can reveal patterns}
-%\begin{center}
-%\includegraphics[trim 100 100 300
-%300,scale=.5]{Figures/Perozzo1000px_cropped_adj.png}
-%\end{center}
-%\end{frame}
-
+%------------------------------
+% Think of images to use here %
+%------------------------------
+\begin{frame}
+\frametitle{So why more planes? (1)}
+\begin{center}
+\includegraphics[]{Figures/MagnifyingGlass.pdf}
+\end{center}
+\end{frame}
+%-----------------------------
+\begin{frame}
+\frametitle{So why more planes? (2)}
+\begin{center}
+\includegraphics[scale=1.2]{Figures/Calipers.pdf}
+\end{center}
+\end{frame}
+%-----------------------------
+\begin{frame}
+\frametitle{So why more planes? (3)}
+\begin{center}
+\includegraphics[scale=.9]{Figures/gearhead.pdf}
+\end{center}
+\end{frame}
 %-------------------
 
 \begin{frame}
@@ -259,35 +262,18 @@ identical. Happy to explain how it works too)
 \hspace*{-6cm}\includegraphics[scale=.7]{Figures/prism.jpg}
 \end{center}
 \end{frame}
-
-%------------------------------
-% Think of images to use here %
-%------------------------------
-\begin{frame}
-\frametitle{So why more planes?}
-\normalsize
-\begin{itemize}[<+->]
-  \item to uncover more patterns  % magnifying glass
-  \item to improve measurement    % calipers
-  \item to make better models     % icons of birth death marriage boxes and
-  % arrows
-  \item to understand processes   % person thinking?
-\end{itemize}
-\end{frame}
-
-
 %----------------------------------
 
-\begin{frame}
-\frametitle{You should}
-\normalsize
-\begin{itemize}[<+->]
-  \item make an origami tetrahedron and label its edges with the demographic
-  time measures
-  \item visualize data structured in this way ASAP, because you might see new
-  and exciting things
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{You should}
+%\normalsize
+%\begin{itemize}[<+->]
+%  \item make an origami tetrahedron and label its edges with the demographic
+%  time measures
+%  \item visualize data structured in this way ASAP, because you might see new
+%  and exciting things
+%\end{itemize}
+%\end{frame}
 
 %----------------------------------
 
@@ -364,17 +350,6 @@ identical. Happy to explain how it works too)
 \end{frame}
 
 %----------------------------------
-
-\begin{frame}
-\frametitle{So why more planes?}
-\normalsize
-\begin{itemize}[<+->]
-  \item easier to detect patterns
-  \item to better understand the relationships between the measures of
-  demographic time
-\end{itemize}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%	End of the document			%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

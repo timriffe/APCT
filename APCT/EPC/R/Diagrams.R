@@ -120,3 +120,42 @@ text(1950,-10,"Period",xpd=TRUE,pos=1)
 text(1805,80,"Thanatological age",xpd=TRUE,pos=2,srt=90)
 text(1925,35,"Death cohort",srt=-45,col="black")
 dev.off()
+
+
+#logit <- function(x){
+#	log(x/(1-x))
+#}
+#logit(.5)
+#rates <- seq(1e-5,1-1e-5,by=.01)
+#plot(rates,logit(rates))
+#lines(rates*.9,logit(rates*.9),col = "red")
+#lines(rates*.7,logit(rates*.7), col= "blue")
+
+#library(HMDHFDplus)
+#mx <- readHMDweb("USA","mltper_1x1",username=us,password=pw)
+#head(mx)
+#logit <- function(x){
+#	log(x/(1-x))
+#}
+#plot(logit(mx$mx[1:111]),log(mx$mx[1:111]))
+#
+#mx1 <- mx$mx[1:111]
+#mx2 <- mx$mx[mx$Year==2000]
+#
+#mx1 - mx2
+#
+#
+#abline(a=0,b=1)
+#lines(logit(mx$mx[mx$Year==2000]),log(mx$mx[mx$Year==2000]), col = "red")
+## lines(logit(mx$mx[mx$Year==2000]),log(mx$mx[mx$Year==2000]), col = "red")
+
+
+
+plot(log(mx$mx[1:111]))
+
+#rates <- seq(1e-5,1-1e-5,by=.01)
+#plot(rates,logit(rates))
+#lines(rates*.9,logit(rates*.9),col = "red")
+#lines(rates*.7,logit(rates*.7), col= "blue"))
+
+

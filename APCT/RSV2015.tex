@@ -76,11 +76,15 @@
 \newcommand\tg[1]{\includegraphics[scale=.5]{Figures/triadtable/triad#1.pdf}}
 \newcommand\tgh[1]{\raisebox{-.25\height}{\includegraphics[scale=.3]{Figures/triadtable/triad#1.pdf}}}
 
-\defcitealias{HMD}{HMD}
+\defcitealias{HMD}{HMD 2016}
 
 % junk for longtable caption
 \AtBeginEnvironment{longtable}{\linespread{1}\selectfont}
 \setlength{\LTcapwidth}{\linewidth}
+
+% sort van Raalte properly
+% #1: sorting key, #2: prefix for citation, #3: prefix for bibliography
+\DeclareRobustCommand{\VAN}[3]{#2} % set up for citation
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -1301,8 +1305,8 @@ marginal chronological age pattern of self-reported health if the lifespan
 distribution were to shift to higher ages. This bias in the current status quo
 of morbidity measurement and prediction leads to pessimistic morbidity scenarios
 when mortality improvements are foreseen, and it undermines health expectancy
-comparisons between groups with different mortality. Cohort health expectancies
-are in either case unbiased, but these are also not common.
+comparisons between groups with different mortality \citep{vanRaalte2015HLE}.
+Cohort health expectancies are in either case unbiased, but these are also not common.
 
 Using the data from our example surfaces, we can calculate an average prevalence
 trajectory with the approach to death and calculate some basic results that
@@ -1310,8 +1314,8 @@ support our case. Let us take the population of US males aged 60 and older, and
 assume that the trajectory derived from the Figure~\ref{fig:poorsrh} surfaces
 is valid for them.
 If we apply this trajectory to the synthetic stationary population of each
-year from 1980 and 2010 \citep{HMD}, we can calculate the resulting healthy and
-unhealthy life expectancies, and compare these with the expectancies that we would have projected assuming the 1980 Sullivan curve.
+year from 1980 and 2010 \citepalias{HMD}, we can calculate the resulting healthy
+and unhealthy life expectancies, and compare these with the expectancies that we would have projected assuming the 1980 Sullivan curve.
 Total remaining life expectancy at age 60 increased 4.3 years from 17.4 to 21.7
 years from 1980 to 2010. Assuming the thanatological trajectory of
 morbidity, we calculate healthy life expectancies of 15.7 and 19.9,
@@ -1327,11 +1331,17 @@ enabled by this temporal framework and adjusting standard demographic methods
 to capture the direction of temporal variation in data. There is a wide variety
 of prevalence patterns when viewed in this way \citep{riffe2015ttd,
 wolf2015disability}, and much empirical and methodological work is still required to verify
-these findings and understand the consequences for the standard ways of
-comparing and projecting HLE. Our objective in this application has been
+that these findings are representative and to understand the consequences for
+the standard ways of comparing and projecting HLE. 
+
+Our objective in this application has been
 to demonstrate how viewing data under the rigorous conditions enabled by the
 time-framework we propose can lead to new scientific understandings of
-processes over the life course.
+processes over the life course. Applications for other aspects of the
+lifecourse, particular stages of the lifecourse, non-human species on all time
+scales, populations of inanimate items on all time scales, and myriad other
+substantive areas may gain new insight by applying the relationships contained
+in the demographic time identity or its consituent triad identities.
 
 %In Lexis-nomenclature, the 3d projections of an AP square, and AC or PC
 %parallelograms are all congruent shapes known as regular trigonal trapezohedra
@@ -1391,7 +1401,7 @@ identity.
 Our hexad identity is designed to contain and identify any point on
 the lifecourse of individuals in populations with heterogeneous
 lifespans. As such it fully describes a population of single state durations.
-We liken the Lexis identity to something similar to a two state APC, albeit
+We liken Lexis' hexad identity to something similar to a two state APC, albeit
 without explict period. Lexis' marriage hexad identity is also
 illustrated with complex perspective line drawings (see Lexis' Figures 5 and 6).
 These figures (based on cubes rather than tetrahedra--octahedra) and the portion of
@@ -1403,21 +1413,21 @@ made it unwieldy in practice, or difficult to conform with data. Adding an
 additional state to the identity we propose would also greatly expand its
 complexity.
 
-Our hexad diagram is also reminiscent of the Lexis pencil notion from
-\citet{francis1996visualization}. Lexis pencils are a method of representing
+Lifelines represented in our hexad diagram are also reminiscent of the Lexis
+pencil notion from \citet{francis1996visualization}. Lexis pencils are a method of representing
 limited numbers of multistate lifelines in three dimensional space, where
-lifelines ascend from age zero. This visualization system could be constrained
-to match the one we present if the $z$ axis were set to remaining years of life
+lifelines ascend diagonally from age zero. This visualization system could be
+constrained to match the one we present if the $z$ axis were set to remaining years of life
 and lifeline trajectories were realigned to descend toward zero remaining years
-of life (or some rotation thereof).
+of life (or some rotation thereof), and sorted by length of life.
 
 \section{Discussion}
 
-It is straightforward to
-think of examples to derive time measures based on other given
-time measures. In isolation, the various triad identities are also intuitive.
-The TPD diagram is similar to APC, but it is aligned to time of death rather
-than time of birth. The TAL diagram presents a clear way to classify events
+%It is straightforward to
+%think of examples to derive time measures based on other given
+%time measures. 
+In isolation, each of the four triad identities is intuitive. The TPD
+diagram is similar to APC, but it is aligned to time of death rather than time of birth. The TAL diagram presents a clear way to classify events
 over the life course of a cohort. Finally, the LCD diagram can be used to
 structure quantities that vary over time and by length of life.
 Joined together, the relationship between all six time measures is more
@@ -1433,8 +1443,8 @@ empirically regular ways over the life course. The scalings and movements of
 primary vital rates fall within a limited range for humans. For this reason, many of the methods of
 demography are developed to estimate rates, independent of population composition, or to
 partition crude magnitudes into the effects of population age structure and
-pure vital rates. Controlling for age is in a more general sense controlling for
-temporal variation in stocks. To the extent that regular temporal variation
+pure vital rates. Controlling for age like this is in a more general sense
+controlling for temporal variation in stocks. To the extent that regular temporal variation
 relates to the end of life, or the length of life, common
 age-standardization does not fully account for such structure.
 
@@ -1452,18 +1462,22 @@ The measurement of
 such conditions may benefit from consideration of the framework presented in
 this paper. To this end, Table~\ref{tab:set3} provides all combinations of
 information that are sufficient to derive the full set of six time measures.
-Panel surveys with mortality followups already provide the requisite
+Panel surveys with mortality follow-ups already provide the requisite
 information, as do linkable registers that include items such as
 health measures or proxies and relevant dates of birth, observation, and death.
+Other kinds of populations, such as animals or items, may have quite different
+data-gathering mechanisms.
 
-The best way to detect patterns in temporal variation
+An effective way to detect patterns in temporal variation
 is via data visualization. The coordinate system proposed in this paper is
 conceived as one adequate to capture such variation, and we suggest its use
 for visualizing data, probably via small multiples of successive time slices
 parallel to any of the four triad identities, similar to that shown in
 Figure~\ref{fig:poorsrh}.
 Such visualization strategies at this time are exploratory, and this is a
-technique that may benefit from further refinement. 
+technique that may benefit from further refinement. Further, a cross-section
+through the demographic time-space need not be parallel to one of the four
+identity-planes.
 
 Mortality determines three of the dimensions of
 demographic time, and it therefore makes little sense to model mortality using
@@ -1482,8 +1496,9 @@ diagrams have formed a part of basic demographic education.
 The relationship between the six dimensions of demographic time helps situate the APC
 paradigm in a broader framework. Just as scientific discovery in general
 depends partly on the development of finer optics and instrumentation, we hope
-that the framework we give will be an instrument to enable new discoveries
-in formal and empirical demography.
+that the framework we describe will prove an instrument to enable new
+discoveries in formal, and empirical demography, as well as other diverse fields of
+investigation.
 
 
 % remove appendix, it pushes figures + tables past 10\ldots
@@ -1535,7 +1550,7 @@ in formal and empirical demography.
 %    \end{figure*}
 %\end{appendices}
 %%FloatBarrier
-
+\DeclareRobustCommand{\VAN}[3]{#3}
 \bibliographystyle{chicago} % required for demography
 %\bibliographystyle{plainnat}
   \bibliography{references} 

@@ -12,24 +12,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 	}
 }
 getwd()
-#library(LexisUtils)
-source(file.path("R","Functions.R"))
 
-# this script uses the HMDresults object to search for common patterns to the various defined measures.
-if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
-	# if I'm on the laptop
-	setwd("/home/tim/git/APCT/APCT")
-} else {
-	if (system("hostname",intern=TRUE) == "PC-403478"){
-		# on MPIDR PC
-		setwd("U://git//APCT//APCT")
-	} else {
-		# in that case I'm on Berkeley system, and other people in the dept can run this too
-		setwd(paste0("/data/commons/",system("whoami",intern=TRUE),"/git/APCT/APCT"))
-	}
-}
-getwd()
-library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 
@@ -42,7 +25,7 @@ lifelines <- c(85,75,65,75,25,50)
 #dx    <- dx / sum(dx)
 #scale <- 280
 ##############################
-
+llcol <- gray(.3)
 
 # TAL, timeless, with lifelines
 pdf("Figures/TALrt.pdf",height=6,width=6)
@@ -60,9 +43,9 @@ text(seq(0,100,by=20),0,seq(0,100,by=20),pos=1,xpd=TRUE)
 text(50,-5,"Chronological age", pos = 1, xpd=TRUE)
 text(-10,50,"Thanatological age", pos = 1, srt=90, xpd=TRUE)
 
-segments(0,lifelines,lifelines,0,col="black",lwd=2)
-points(rep(0,length(lifelines)),lifelines, pch=19,col="black",xpd=TRUE)
-points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.3,col="black",xpd=TRUE)
+segments(0,lifelines,lifelines,0,col=llcol,lwd=2)
+points(rep(0,length(lifelines)),lifelines, pch=19,col=llcol,xpd=TRUE)
+points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.3,col=llcol,xpd=TRUE)
 text(27,27,"Lifespan",srt=-45,col="black")
 dev.off()
 
@@ -80,9 +63,9 @@ ATLRefN(0:100, N = 20,
 		lty=1,lwd=.5, equilateral = TRUE)
 segments(0,0,50,100*sqrt(3)/2,col=AssignColour("T"),lwd=2)
 segments(0,0,100,0,col=AssignColour("A"),lwd=2)
-segments(lifelines*.5,lifelines*sqrt(3)/2,lifelines,0,col="black",lwd=2)
-points(lifelines*.5,lifelines*sqrt(3)/2, pch=19,col="black",xpd=TRUE)
-points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.3,col="black",xpd=TRUE)
+segments(lifelines*.5,lifelines*sqrt(3)/2,lifelines,0,col=llcol,lwd=2)
+points(lifelines*.5,lifelines*sqrt(3)/2, pch=19,col=llcol,xpd=TRUE)
+points(lifelines, rep(0,length(lifelines)), pch=13,cex=1.3,col=llcol,xpd=TRUE)
 text(seq(0,100,by=20)*.5,seq(0,100,by=20)*sqrt(3)/2,seq(0,100,by=20),pos=2,xpd=TRUE)
 text(seq(0,100,by=20),0,seq(0,100,by=20),pos=1,xpd=TRUE)
 text(50,-5,"Chronological age", pos = 1, xpd=TRUE)

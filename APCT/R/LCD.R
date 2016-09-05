@@ -17,7 +17,7 @@ if (system("hostname",intern=TRUE) %in% c("triffe-N80Vm", "tim-ThinkPad-L440")){
 getwd()
 
 library(scales)
-
+llcol <- gray(.3)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
 # LCD  right angle, with life lines
@@ -40,7 +40,7 @@ text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE)
 #		c(85,75,65,75,25,50), col = gray(.7), lwd=1.5)
 #points(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),pch=19,col="black",xpd=TRUE)
 points(c(1920-85,1930-75,1905,1922,1965,1995),
-		c(85,75,65,75,25,50), pch=13,cex=1.3,col="black",lwd=2)
+		c(85,75,65,75,25,50), pch=13,cex=1.3,col=llcol,lwd=2)
 #polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")
 #polygon(c(2000,2060,2060,1900),c(0,0,100,100),border=NA,col="#00000020")
 text(1950,-10,"Birth Cohort",xpd=TRUE,pos=1)
@@ -71,7 +71,7 @@ yd <- c(85,75,65,75,25,50)
 
 #segments(xc,yc,xc+.5*yd,yd*sqrt(3)/2, col = gray(.7), lwd=1.5)
 #points(xc,yc,pch=19,col="black",xpd=TRUE)
-points(xc+.5*yd,yd*sqrt(3)/2, pch=13,cex=1.3,col="black",lwd=2)
+points(xc+.5*yd,yd*sqrt(3)/2, pch=13,cex=1.3,col=llcol,lwd=2)
 #polygon(c(1820,1900,1820),c(0,0,80),border=NA,col="#00000020")
 #polygon(c(2000,2060,2060,1900),c(0,0,100,100),border=NA,col="#00000020")
 text(1950,-10,"Birth Cohort",xpd=TRUE,pos=1)

@@ -150,9 +150,9 @@ The Lexis diagram can be understood as an APC plane
 that relates age, period, and birth cohort. Other such planes are
 also identifiable.
 The ``thanatological'' counterpart to APC is an identity between thanatological
-age, period, and death cohort, TPD. A third identity relates thanatological age, chronological age, and lifespan, TAL. Finally, a potentially less
-intuitive graphical identity relates lifespan, birth cohort, and death
-cohort, LCD. We call three-way identities of this sort ``triad identities''.
+age, period, and death cohort, TPD. A third identity relates thanatological age,
+chronological age, and lifespan, TAL. A fourth identity relates lifespan, birth
+cohort, and death cohort, LCD. We call three-way identities of this sort ``triad identities''.
 % The thanatological counterpart to APC is an identity between thanatological
 % age (T), period (P), and death cohort (D), TPD. A third
 % identity exists between thanatological age (T), chronological age (A), and
@@ -242,8 +242,7 @@ third, and the same holds for the other triad identities.
 \subsection{Time measures}
 \FloatBarrier
 We describe time in terms of years, the dominant time scale for human
-demography, although all relationships are scalable to any time unit. We therefore speak of calendar time,
-imagining the modern Gregorian calendar. We also describe the framework in terms
+demography, although all relationships are scalable to any time unit. We therefore speak of calendar time. We also describe the framework in terms
 of human lifespans, although it applies in a more general sense to any durations
 observed over time. This is to say, birth may be translated to entry, and death
 to exit, or any other terminal state. The six measures of time we consider are
@@ -293,7 +292,9 @@ In the time preceding death, the members of a given death cohort have much in co
 heterogeneity with respect to time of birth.\footnote{Death cohorts lack a
 shared identity, so any kind of emergent homogeneity in a death cohort probably
 has a physiological basis.} If the reader accepts this premise, then the
-abstract construct of a death cohort is also meaningful in the way that other cohort measures are.
+abstract construct of a death cohort is also meaningful in the way that other
+cohort measures are. In event history or non-human contexts, anologs to death
+cohorts in this framework may be even more meaningful.
 
 Much of the work of demography is directed at the study of lifespan. Lifespan is
 synonymous both with longevity, chronological age at death, and thanatological
@@ -318,7 +319,8 @@ can be derived, forming a triad identity. There are
 $15=\binom{6}{2}$ possible dyads in our set of time measures, 12 of which are
 informative, and three of which have no derived time measure, and are therefore
 called uninformative. For instance, if we take the dyad TA, L is the derived
-measure, and TAL the corresponding triad identity. In contrast, nothing can be derived from the LP dyad: You can have an eventual lifespan of 100 in the year 2016 and still be alive with the same eventual lifespan in 2017.
+measure, and TAL the corresponding triad identity. In
+contrast, nothing can be derived from the LP dyad: You can have an eventual lifespan of 100 in the year 2016 and still be alive with the same eventual lifespan in 2017.
 
 In this section we systematically map each dyad to its temporal plane, and we
 synthesize these into the four primary identities and their essential diagrams.
@@ -331,9 +333,9 @@ applications.
 \subsection{The question of mapping}
 Any mapping of two time measures to an ($x,y$) coordinate
 system constitutes a temporal plane. If the two given time measures are members of the same triad identity, the third member is a derived
-measure. For instance, if we take the dyad AP, C is the derived
-measure, making AP an informative dyad. We make this dyadic relationship
-explicit by writing AP(C).
+measure. If we assign A to $y$ and P to $x$, thereby implying C (and the APC
+triad identity) we state this relationship explicitly by writing
+AP(C).
 The temporal plane that corresponds to this informative dyad is the contemporary representation of the
 Lexis diagram \citep{lexis1875einleitung, pressat1961analyse}. The informative
 dyads AC(P) and CP(A) also belong to the Lexis identity, but imply different
@@ -373,10 +375,12 @@ Each of the 15 dyads, an explanation or simple example,
 and the corresponding diagram representations are summarized in
 Table~\ref{tab:dyads}. Each informative dyad is a subset consisting of two
 elements from one of the four triad identities (APC, TPD, TAL, LCD), which we
-analyze in detail in further sections. The uninformative dyads are simply pairs of time measures that dot have a derived measure, and therefore are not contained in any of these four triad identities.
+analyze in detail in further sections. The uninformative dyads are simply pairs
+of time measures that do not have a derived measure, and therefore are not
+contained in any of these four triad identities.
 \pagebreak
 
-\begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.2\textwidth}}
+\begin{longtable}{m{0.13\textwidth}L{0.37\textwidth}m{0.17\textwidth}m{0.2\textwidth}}
   \caption{All dyadic juxtapositions of the six measures of demographic time.}
   \label{tab:dyads}\\
  
@@ -513,9 +517,9 @@ analyze in detail in further sections. The uninformative dyads are simply pairs 
   \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} \\
   %%%% CT
   CT(-) &
-  The CT plane is \emph{non-informative}. No additional measures can be derived knowing just cohort and thanatological age. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} \\
+  The CT plane is \emph{non-informative}. No additional measures can be derived
+  knowing just birth cohort and thanatological age. &
+  \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} & \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} \\
   %%%% AD
   AD(-) &
   The AD plane is \emph{non-informative}. No additional measures can be derived
@@ -605,11 +609,11 @@ three dimensions of temporal structure.
 \FloatBarrier
 \subsubsection{TPD: thanatological age, period, and death cohort}%\tgh{TPD}}
 
-Thanatological age (T), period (P) and death cohort (D) form a coordinate system
-best imagined as the inverse of APC. One may take the same individuals
-represented in Figure~\ref{fig:APC} and group them by death cohorts (D) instead
+The TPD diagram is best imagined as the inverse of the APC diagram. One may take
+the same individuals represented in Figure~\ref{fig:APC} and group them by death cohorts (D) instead
 of birth cohorts (C). Lifelines then descend such that all
-endpoints align to thanatological age 0, creating the diagram in Figure 2 in which individuals dying at different ages but in the same time period are grouped together.
+endpoints align to thanatological age 0, creating the diagram in
+Figure~\ref{fig:TPD} in which individuals dying at different ages but in the same time period are grouped together.
 To our knowledge, the TPD diagram has only appeared once in the literature, as
 a didactic aid in a proof of symmetry between chronological and thanatological
 age structure in discrete stationary populations \citep{villavicencioRiffeSymmetires2016}. TPD
@@ -647,7 +651,7 @@ Barcelona Historical Marriage Database, which collects information about
 marriage licenses of Barcelona (Spain) from the mid-\nth{15} century until the
 early \nth{20} century, individuals are first identified in their marriage
 record and then followed-up, but no information is available about dates of
-birth or marriage \citep{villavicencio2015lifespans}.
+birth or age at marriage \citep{villavicencio2015lifespans}.
 We speculate that TPD diagrams could also be used in biomedical studies
 for the representation of lifelines preceding deaths from infectious or acquired conditions, when the time of infection or acquisition remains unknown.
 
@@ -656,8 +660,8 @@ for the representation of lifelines preceding deaths from infectious or acquired
 \subsubsection{TAL: Thanatological age, chronological age, and
 lifespan}%\tgh{ATL}}
 \FloatBarrier  
-TAL is an appropriate coordinate
-system to examine variation in processes that vary over the lifecourse.
+TAL is an appropriate diagram to examine processes that vary over the
+lifecourse.
 More precisely, the TAL plane can highlight variation that is related to time
 since birth, time until death, length of life, and their combinations. These
 key aspects of demographic time are compressed to chronological age only in the
@@ -669,8 +673,9 @@ The lifelines depicted are identical to those shown in APC Figure~\ref{fig:APC} 
 Figure~\ref{fig:TAL} and appear to be five.} The TAL diagram is useful for
 characterizing patterns of prevalence of health conditions. We speculate
 that data structured and aligned in this way may yield hitherto undescribed
-patterns in other contexts, such as smaller event-history time scales, or
-patterns of growth or reproduction in non-human species.
+patterns in other contexts, such as pregnancy (from the perspective of either
+mother or fetus) by time since conception, time until parturition, and length of
+gestation, or even smaller event-history time scales, or patterns of growth or reproduction in non-human species.
 
 \begin{figure}[h!] 
 \caption{A TAL diagram in two projections.}
@@ -697,17 +702,17 @@ patterns of growth or reproduction in non-human species.
 \subsubsection{LCD: Lifespan, birth cohort, and death cohort}%\tgh{CDL}}
 \FloatBarrier
 
-The LCD diagram completes our set of identities. It consists in an identity
-between lifespans, birth cohorts, and death cohorts. In Figure~\ref{fig:LCDrt},
-lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
-are found in rightward-descending diagonals. To structure data on these three
+The LCD diagram completes our set of identities. It is based on the relationship
+between lifespan, birth cohort, and death cohort. In
+Figure~\ref{fig:LCDrt}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
+are found in descending diagonals. To structure data on these three
 time measures implies excluding time-varying information over the lifecourse.
 An individual
 only ever has one lifespan, one birth cohort, and one death cohort, such that
 the LCD coordinates of an individual are constant throughout life.
-Individuals can therefore be identified with points only in the LCD diagram,
-rather than lifelines. In Figure~\ref{fig:LCD}, the same six individuals from
-previous diagram figures are represented with crossed circles.
+The LCD plane is therefore orthogonal to lifelines, and individuals are located
+with points, rather than life segments.
+In Figure~\ref{fig:LCD}, the same six individuals from previous diagram figures are represented with crossed circles.
 
 \begin{figure}[h!] 
 \caption{An LCD diagram in two projections.}
@@ -729,7 +734,7 @@ previous diagram figures are represented with crossed circles.
 \end{figure} 
 
 We
-recommend this mapping for plotting surfaces of values that vary over time by year of birth or death and that vary by lifespan, e.g., that are cumulative or
+recommend this mapping for plotting surfaces of values that are cumulative or
 static over the lifecourse. Imagine an LCD surface of cumulative lifecourse
 consumptive surplus or deficit, or anything else that might vary by lifespan and
 moment of birth or death, such as children ever born, years of retirement, the
@@ -739,6 +744,7 @@ relationship between marriage cohort, separation cohort, and duration of
 marriage.
 
 \subsubsection{Relationships between the diagrams}
+\label{relationshipstriads}
 Since demographic time measures themselves depend on the demographic events of
 fertility and mortality, it stands to reason that fertility and mortality also
 link the different diagrams. In a loose sense, the LCD diagram has a
@@ -748,7 +754,7 @@ to lifespan ($A=L$), period is equal to death cohort ($P=D$), and birth cohort
 equivalent in the case of death counts or densities, since in either case
 quantities are represented with points, the endpoint of life for which this
 equivalence holds. For any other demographic measure, however, the LCD diagram
-is distinct from APC. APC fertility surfaces are in this way very different from
+is distinct from APC. APC fertility surfaces are in this way different from
 APC mortality surfaces, as the former represent events or characteristics over
 the ages in which they occur, allowing for the represention of
 durations and repetitions.
@@ -757,7 +763,7 @@ again finds an approximate dual in the APC mortality surface. This works
 because birth marks the starting point of the lifeline which is otherwise
 missing in TPD coordinates, whereas death marks the endpoint of a lifeline,
 which is otherwise missing from APC coordinates. This relationship is exact in
-the special case of a stationary population. Further reflection may
+the special case of a stationary population series. Further reflection may
 reveal other such dualities.
 
 \FloatBarrier
@@ -910,8 +916,7 @@ fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the unin
 identity since a third ``independent'' time dimension is necessary.
 Similarly, any quad of indices is sufficient to complete the hexad identity, as
 at least one of them will not belong to the same face of the tetrahedron, but a
-triad may be sufficient if its edges do not all belong to the same plane forming
-a triad identity.
+triad may be sufficient if its edges do not all belong to the same triad identity.
 
 \begin{table}[h]
 \centering
@@ -960,8 +965,8 @@ this way, we may imagine a prism-like construct, where T, A, and L, compose
 the faces of a triangular cross-section of the prism, which extends infinitely
 ``through'' the triangle.
 We can think of the TAL triangle passing through time, extending the population
-forward to infinity. In this case, the TAL triangle may take either the period
-or cohort perspective. 
+forward into the future and backward into the past. In this case, the TAL
+triangle may take either the period or cohort perspective. 
 
  \section{Diagram of the hexad identity}
  There are different ways to proportion this three dimensional construct,
@@ -1015,7 +1020,8 @@ life for this individual, at chronological age 50 (red line, labelled), and
 thanatological age 50 (green line). If another APC plane were drawn through thanatological age 50, we would see that point A is in the year 2050. Since all individuals born in the year 2000 complete the same age in the same year, we can
 also recuperate the year for point A by following the chronological age 50 line
 (red) down to where it meets the blue line for the year 2050. The lifeline
-descends downward toward the APC plane for thanatological age 0 at chronological age 100, meeting the year 2100, which determines the death cohort. 
+descends downward toward the APC plane for thanatological age 0 at chronological age 100, meeting the year 2100, which determines the
+death cohort.
 
 The density and location of imaginary lifelines in this diagram, omitting
 migration, is purely a function of birth cohort size and survival. For extinct

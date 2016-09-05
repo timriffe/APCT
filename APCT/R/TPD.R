@@ -16,7 +16,7 @@ getwd()
 library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
-
+llcol <- gray(.3)
 # TPD 2  right angle, with life lines
 pdf(file.path("Figures","TPDrt.pdf"),height=5,width=8)
 par(mai=c(.5,.5,.5,.5), xaxs = "i", yaxs = "i")
@@ -35,11 +35,11 @@ text(seq(1820,2060,by=20),0,seq(1820,2060,by=20),pos=1,xpd=TRUE)
 segments(c(1920-85,1930-75,1970-65,1997-75,1990-25,1995),
 		c(85,75,65,75,25,50),
 		c(1920,1930,1970,1997,1990,2045),
-		c(0,0,0,0,0,0),col = "black", lwd=2)
+		c(0,0,0,0,0,0),col = llcol, lwd=2)
 points(c(1920-85,1930-75,1970-65,1997-75,1990-25,1995),
-		c(85,75,65,75,25,50),pch=19,col="black",xpd=TRUE) # births
+		c(85,75,65,75,25,50),pch=19,col=llcol,xpd=TRUE) # births
 points(c(1920,1930,1970,1997,1990,2045),
-		c(0,0,0,0,0,0), pch=13,cex=1.3,col="black",lwd=2,xpd=TRUE)
+		c(0,0,0,0,0,0), pch=13,cex=1.3,col=llcol,lwd=2,xpd=TRUE)
 #rect(1820,0,1900,100,border=NA,col="#00000020")
 #rect(2000,0,2060,100,border=NA,col="#00000020")
 text(1950,-10,"Period",xpd=TRUE,pos=1)
@@ -69,11 +69,11 @@ yd <- c(0,0,0,0,0,0)
 
 segments(xd,yd,
 		xb + yb * .5,
-		yb*sqrt(3)/2, col = "black", lwd=2)
+		yb*sqrt(3)/2, col = llcol, lwd=2)
 
 points(xb + yb * .5,
-		yb*sqrt(3)/2,pch=19,col="black",xpd=TRUE)
-points(xd, yd, pch=13,cex=1.3,col="black",lwd=2)
+		yb*sqrt(3)/2,pch=19,col=llcol,xpd=TRUE)
+points(xd, yd, pch=13,cex=1.3,col=llcol,lwd=2)
 #polygon(c(1820,1820+50,1900+50,1900),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020")
 #polygon(c(2000,2000+50,2060+50,2060),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020", xpd=TRUE)
 text(1950,-10,"Period",xpd=TRUE,pos=1)

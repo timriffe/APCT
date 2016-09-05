@@ -16,7 +16,7 @@ getwd()
 library(scales)
 #library(LexisUtils)
 source(file.path("R","Functions.R"))
-
+llcol <- gray(.3)
 # APC with life lines 4.
 pdf(file.path("Figures","APCrt.pdf"),height=5,width=8)
 par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
@@ -33,10 +33,10 @@ segments(1820,0,2060,0,lwd=2,col=AssignColour("P"))
 # life lines
 segments(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),
 		c(1900,1900,1905,1922,1965,1995)+c(20,30,65,75,25,50),
-		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), col = "black", lwd=2)
-points(c(1920-85,1930-75,1905,1922,1965,1995),rep(0,6),pch=19,col="black",xpd=TRUE)
+		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), col = llcol, lwd=2)
+points(c(1920-85,1930-75,1905,1922,1965,1995),rep(0,6),pch=19,col=llcol,xpd=TRUE)
 points(c(1900,1900,1905,1922,1965,1995)+c(20,30,65,75,25,50),
-		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), pch=13,cex=1.3,col="black",lwd=2)
+		c(65,45,0,0,0,0) + c(20,30,65,75,25,50), pch=13,cex=1.3,col=llcol,lwd=2)
 #rect(1820,0,1900,100,border=NA,col="#00000020")
 #rect(2000,0,2060,100,border=NA,col="#00000020")
 text(1950,-10,"Period",xpd=TRUE,pos=1)
@@ -64,10 +64,10 @@ x2 <- c(1900,1900,1905,1922,1965,1995)+c(20,30,65,75,25,50)
 y2 <- c(65,45,0,0,0,0) + c(20,30,65,75,25,50)
 segments(c(1920-85,1930-75,1905,1922,1965,1995),c(0,0,0,0,0,0),
 		x2 - y2 * .5,
-		y2*sqrt(3)/2, col = "black", lwd=2)
-points(c(1920-85,1930-75,1905,1922,1965,1995),rep(0,6),pch=19,col="black",xpd=TRUE)
+		y2*sqrt(3)/2, col = llcol, lwd=2)
+points(c(1920-85,1930-75,1905,1922,1965,1995),rep(0,6),pch=19,col=llcol,xpd=TRUE)
 points(x2 - y2 * .5,
-		y2*sqrt(3)/2, pch=13,cex=1.3,col="black",lwd=2)
+		y2*sqrt(3)/2, pch=13,cex=1.3,col=llcol,lwd=2)
 #polygon(c(1820,1820-50,1900-50,1900),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020")
 #polygon(c(2000,2000-50,2060-50,2060),c(0,100*sqrt(3)/2,100*sqrt(3)/2,0),border=NA,col="#00000020")
 text(1950,-10,"Period",xpd=TRUE,pos=1)

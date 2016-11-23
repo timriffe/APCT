@@ -79,12 +79,12 @@ dev.off()
 pdf("Figures/TetraHedronEdgesOnly.pdf",width=4,height=4)
 par(mai=c(.3,.3,.3,.3))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
-segments(1,0,.5,sqrt(3)/2,lwd=2,col=AssignColour("A"))
-segments(0,0,1,0,lwd=2,col=AssignColour("P"))
-segments(0,0,.5,sqrt(3)/2,lwd=2,col=AssignColour("C"))
-segments(0,0,.5,sqrt(3)/6,lwd=2,col=AssignColour("D"))
-segments(1,0,.5,sqrt(3)/6,lwd=2,col=AssignColour("T"))
-segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=2,col=AssignColour("L"))
+segments(1,0,.5,sqrt(3)/2,lwd=4,col=AssignColour("A"))
+segments(0,0,1,0,lwd=4,col=AssignColour("P"))
+segments(0,0,.5,sqrt(3)/2,lwd=4,col=AssignColour("C"))
+segments(0,0,.5,sqrt(3)/6,lwd=4,col=AssignColour("D"))
+segments(1,0,.5,sqrt(3)/6,lwd=4,col=AssignColour("T"))
+segments(.5,sqrt(3)/2,.5,sqrt(3)/6,lwd=4,col=AssignColour("L"))
 
 boxed.labels(.5,0,"P",col = AssignColour("P"),cex=2,font=2,border=FALSE)                          # South edge
 boxed.labels(.75,sqrt(3)/4,"A",col = AssignColour("A"),cex=2,font=2,border=FALSE)                 # NE edge

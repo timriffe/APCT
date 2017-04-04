@@ -51,6 +51,9 @@
 % line numbers to make review easier
 %\usepackage{lineno}
 %\linenumbers
+
+\usepackage{soul}% for \st{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
 % http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
@@ -106,14 +109,17 @@
 Demographic thought and practice is largely conditioned by the Lexis diagram,
 a two-dimensional graphical representation of the identity between age,
 period, and birth cohort. This relationship does not account for remaining years
-of life or other related time measures, whose use in
-demographic research is both underrepresented and incompletely situated.
-We describe a three-dimensional relationship between six different measures of demographic time: chronological age, time to death, lifespan, time of birth, time of death, and period. We describe four identities among subsets of these six measures, and a full identity that relates the six of them. One of these identities is the age-period-cohort identity, while the others are relatively novel. We
-provide a topological overview of the diagrams that pertain to these identities.
-The 3-d geometric representation of the full six-way identity is proposed as a
-coordinate system that fully describes temporal variation in demographic data. We offer this framework as an
-instrument to enable the discovery of yet-undescribed relationships and
-patterns in formal and empirical demography.
+of life, total length of life, or time of death, whose use in
+demographic research is both underrepresented and incompletely situated. We
+describe an identity between these six demographic time measures, and generalize
+this identity to time measures derived from an arbitrary number of events in
+calendar time. We describe the sub-identities that pertain to the six-way
+demographic time identity, and provide a topological overview of the diagrams that pertain to
+these identities in both two and three dimensions. We provide an application of
+this framework on the measurement of late-life disability prevalence. \st{We
+offer this framework as an instrument to enable the discovery of yet-undescribed
+relationships and patterns in formal and empirical demography}
+
 
 
 \smallskip
@@ -132,11 +138,13 @@ visualization, age period cohort.%\ackn{The work reported in this manuscript
 %\sout{so-called} \textbf{well-known?} 
 In the course of training, all demographers are introduced
 to the Lexis diagram, a convenient graphical identity between the three main
-time measures used to structure demographic stocks and flows: Age, period, and birth cohort.
-This popular representation does not account for remaining years of life and
-other related time indices that may be of interest to researchers and
-policy makers. % The Lexis diagram relates the chronological age (A), period (P),
-% and birth cohort (C) measures of demographic time, APC, but it does not account
+time measures used to structure demographic stocks and flows: Age, period, and
+birth cohort. This representation does not account for time of death, time until
+death, or length of life, which may be of interest to researchers and
+policy makers as structuring rather than random variables. \st{This popular
+representation does not account for remaining years of life and other related time indices that may be of interest to researchers and
+policy makers.} % The Lexis diagram relates the chronological age (A), period
+% (P), and birth cohort (C) measures of demographic time, APC, but it does not account
 % for remaining years of life (thanatological age), and other related time
 % indices.
 
@@ -145,7 +153,7 @@ We wish to draw attention to three time indices that are complementary to age
 which we refer to as ``thanatological age'' (T) in contrast to ``chronological
 age'' (A). The second index is death cohort (D), which groups all individuals
 (of different ages) dying in the same time period. Finally, lifespan (L) or
-age-at-death itself is an index by which data may be structured.
+individual age-at-death itself is an index by which data may be structured.
 We therefore have six time measures in total to relate. We call these measures of demographic
 time because each, except period, depends on the timing of birth, death, or
 both.

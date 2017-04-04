@@ -1,0 +1,58 @@
+
+
+\documentclass[12pt,oneside,a4paper,leqno]{article}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+%\usepackage{pgf}
+\usepackage{tikz}
+
+\newcommand{\Ed}[1]{\includegraphics[scale=.5]{{edgep#1}.pdf}}
+\newcommand{\Tl}[1]{\includegraphics[scale=.5]{{linep#1}.pdf}}
+\newcommand{\St}[1]{\includegraphics[scale=.5]{{starp#1}.pdf}}
+
+\begin{document}
+
+\title{Timeline and graph table}
+\author{Tim Riffe}
+\maketitle
+
+\newcolumntype{C}{ >{\centering\arraybackslash} m{2cm} }
+\newcolumntype{D}{ >{\centering\arraybackslash} m{6cm} }
+\newcolumntype{E}{ >{\centering\arraybackslash} m{4cm} }
+
+
+%\begin{adjustbox}{center}
+\begin{table}[ht]
+
+\centering
+\caption{Event-duration timeline, graph, and temporal plane graphs for two, three, and four event sequences.}
+\label{tab}
+\makebox[\linewidth][c]{
+\begin{tabular}{C D E E}
+nr. events  & timeline & graph & temporal plane graph \\
+& & &\\
+  $n = 2 $ & \Tl{2} & \St{2} & \Ed{2} \\
+  $n = 3 $ & \Tl{3} & \St{3} & \Ed{3} \\
+  $n = 4 $ & \Tl{4} & \St{4} & \Ed{4}
+\end{tabular}
+}
+\end{table}
+%\end{adjustbox}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

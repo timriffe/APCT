@@ -86,6 +86,7 @@ star.timeline <- function(p,lprop=.5){
 	n     <- length(p)
 	verts <- decide.verts(p)
 	durs  <- DefaultDurationOrdering(p)
+	par(xpd=TRUE)
 	plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
  
 	for (i in 1:nrow(durs)){
@@ -116,6 +117,7 @@ star.timeline.edges.only <- function(p,lprop=.5){
 	n1 <- n + 1
 	verts <- decide.verts(c(p,1))
 	durs  <- DefaultDurationOrdering(p)
+	par(xpd=TRUE)
 	plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
 	
 	for (i in 1:n){
@@ -130,7 +132,7 @@ star.timeline.edges.only <- function(p,lprop=.5){
 		
 		lx <- x1*lpropi+x2*(1-lpropi)
 		ly <- y1*lpropi+y2*(1-lpropi)
-		points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
+		points(lx,ly,pch=21,cex=3.5,col="red",bg="white",lwd=.5)
 		text(lx,ly,substitute(p[x], list(x = i)))
 	}
 	
@@ -180,4 +182,54 @@ star.timeline.edges.only(p3,.4)
 star.timeline.edges.only(p4)
 #star.timeline.edges.only(p5,.4)
 
+# system command to crop pdf white space.
+#pdfcrop filename.pdf filename.pdf
+
+outdir <-"/home/tim/git/APCT/APCT/Figures/TimeLinesAndGraphs"
+pdf(file.path(outdir,"linep2.pdf"),width=5,height=5)
+draw.timeline(p2) 
+dev.off()
+
+pdf(file.path(outdir,"linep3.pdf"),width=5,height=5)
+draw.timeline(p3) 
+dev.off()
+
+pdf(file.path(outdir,"linep4.pdf"),width=5,height=5)
+draw.timeline(p4) 
+dev.off()
+
+pdf(file.path(outdir,"starp2.pdf"),width=5,height=5)
+star.timeline(p2) 
+dev.off()
+
+pdf(file.path(outdir,"starp3.pdf"),width=5,height=5)
+star.timeline(p3) 
+dev.off()
+
+pdf(file.path(outdir,"starp4.pdf"),width=5,height=5)
+star.timeline(p4,.4) 
+dev.off()
+
+pdf(file.path(outdir,"edgep2.pdf"),width=5,height=5)
+star.timeline.edges.only(p2) 
+dev.off()
+
+pdf(file.path(outdir,"edgep3.pdf"),width=5,height=5)
+star.timeline.edges.only(p3,.4) 
+dev.off()
+
+pdf(file.path(outdir,"edgep4.pdf"),width=5,height=5)
+star.timeline.edges.only(p4) 
+dev.off()
+
+#pdfcrop filename.pdf filename.pdf
+system(paste("pdfcrop",file.path(outdir,"linep2.pdf"),file.path(outdir,"linep2.pdf")))
+system(paste("pdfcrop",file.path(outdir,"linep3.pdf"),file.path(outdir,"linep3.pdf")))
+system(paste("pdfcrop",file.path(outdir,"linep4.pdf"),file.path(outdir,"linep4.pdf")))
+system(paste("pdfcrop",file.path(outdir,"starp2.pdf"),file.path(outdir,"starp2.pdf")))
+system(paste("pdfcrop",file.path(outdir,"starp3.pdf"),file.path(outdir,"starp3.pdf")))
+system(paste("pdfcrop",file.path(outdir,"starp4.pdf"),file.path(outdir,"starp4.pdf")))
+system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.pdf")))
+system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
+system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
 

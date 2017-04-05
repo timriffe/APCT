@@ -21,10 +21,13 @@ GenerateTransformationMatrix <- function (n) {
 	do.call("rbind", lapply(1:n, "GenSubmatrx"))
 }
 
+# this produces all durations implied by a set of events, p
+# including to-from vertices (not directed), as well as duration values.
+# used as utility here and there.
 DefaultDurationOrdering <- function(p){
 	n       <- length(p)
 	At      <- GenerateTransformationMatrix(n)
-	# ugly but works
+	# an inane way to get 
 	tofromi <- t(apply(At, 1, function(x){
 						c(which(x == -1),  which(x == 1))
 					}))
@@ -36,30 +39,34 @@ DefaultDurationOrdering <- function(p){
 	data.frame(d = 1:m,pfrom = tofromi[,1],pto=tofromi[,2],from = from, to = to, dur = to - from)
 }
 
+# this generates an adjacency matrix for the n+1 edge-only identity
 np_adjacency <- function(n=4, edges=c("p1","p2","d1")){
-	p       <- rep(1,n)
-	n1    	<- n + 1
+	p       				<- rep(1, n)
+	n1    					<- n + 1
 	# get all durations
-	durs  	<- DefaultDurationOrdering(p)
-	dd 	  	<- paste0("d",durs$d)
-	pp    	<- paste0("p",1:n)
+	durs  					<- DefaultDurationOrdering(p)
+	dd 	  					<- paste0("d", durs$d)
+	pp    					<- paste0("p", 1:n)
 	# set of all durations and events, given with vertices in edge-only graph.
-	edges.all  	<- data.frame(v1 = c(durs$pfrom,1:n),
-			                  v2 = c(durs$pto,rep(n1,n)))
-	rownames(edges.all)   <- c(dd,pp)
+	edges.all  				<- data.frame(v1 = c(durs$pfrom, 1:n),
+			                  			  v2 = c(durs$pto, rep(n1,n)))
+	rownames(edges.all)   	<- c(dd,pp)
 	
-	edges.have            <- edges.all[edges,]
+	edges.have            	<- edges.all[edges,]
+	edges.have            	<- as.matrix(edges.have)
 	# make an adjacency matrix
-	adj 	              <- matrix(0,ncol=n1,nrow=n1,dimnames = list(1:n1,1:n1))   
-	adj[cbind(edges.have$v1,edges.have$v2)] <- 1
-	adj[cbind(edges.have$v2,edges.have$v1)] <- 1
-	adj                   <- adj + diag(n1)
+	adj 	              	<- matrix(0, ncol = n1, nrow = n1, dimnames = list(1:n1, 1:n1))   
+	adj[edges.have] 		<- 1
+	adj[edges.have[,c(2,1)]] <- 1
+	adj                   	<- adj + diag(n1)
+	
 	# an extra object for orientation
-	edges.all             <- as.matrix(edges.all)
-	A                     <- adj * 0
-	A[edges.all]          <- rownames(edges.all)
-	A[edges.all[,c(2,1)]] <- rownames(edges.all)
-	diag(A) <- paste0("v",1:n1)
+	edges.all             	<- as.matrix(edges.all)
+	A                     	<- adj * 0
+	A[edges.all]          	<- rownames(edges.all)
+	A[edges.all[,c(2,1)]] 	<- rownames(edges.all)
+	diag(A) 				<- paste0("v",1:n1)
+	
 	list(adj=adj, edgeids = A)
 }
 

@@ -46,7 +46,7 @@
 % otherwise it ignores this big table!
 %\DeclareDelayedFloatFlavour*{longtable}{table}
 \usepackage[margin=1in]{geometry}
-\doublespacing % for review
+%\doublespacing % for review
 
 % line numbers to make review easier
 %\usepackage{lineno}
@@ -161,7 +161,7 @@ both.
 The Lexis diagram can be understood as an APC plane
 that relates age, period, and birth cohort. Other such planes are
 also identifiable.
-The ``thanatological'' counterpart to APC is an identity between thanatological
+The ``thanatological'' ``dual'' of APC is an identity between thanatological
 age, period, and death cohort, TPD. A third identity relates thanatological age,
 chronological age, and lifespan, TAL. A fourth identity relates lifespan, birth
 cohort, and death cohort, LCD. We call three-way identities of this sort ``triad identities''.
@@ -172,8 +172,8 @@ cohort, and death cohort, LCD. We call three-way identities of this sort ``triad
 % of death (D), LCD.
 
 Each of these four triad identities (APC, TPD, TAL, and LCD) is sufficiently
-described by any two of its constituent indices, making the third index
-redundant. For instance, if the exact age of an individual at a particular
+described by any two of its constituent indices\st{, making the third index
+redundant}. For instance, if the exact age of an individual at a particular
 time is known, the birth cohort to which he or she belongs can be immediately derived. Each of these four identities also lacks a major dimension of time. The TAL identity lacks calendar time, the LCD identity is ageless, APC lacks an endpoint in time, and TPD lacks a starting point in time.
 % Each of these four identities may be sufficiently described by any
 % two of its consituent indices, making the third index redundant. Each of these
@@ -209,7 +209,14 @@ young demographers. The temporal relationships we describe will also be useful
 for researchers to better detect and understand patterns data, and for
 methodologists to better account for the structure of data in demographic methods.
 
+
+\vt{will need to change to account for generalized Lexis surface}
+
+
 \section{Definitions}
+\vt{events in calendar time \textbf{p}, and durations \textbf{d} might also
+need to be added here now?}
+
 \subsection{Technical terminology}
 In describing this relationship we attempt to adhere to a rigorous
 terminology.
@@ -282,16 +289,16 @@ lifespan & L & duration of life & duration of exposure \\
 \end{adjustwidth}
 \end{table}
 
+\vt{citations removed for TTD terminology}
 The concepts of thanatological age and death cohorts are likely less familiar to
 readers than the other measures we consider. Thanatological age is sometimes
-referred to as remaining years of life, time-to-death, years left
-\citep{vaupel2009life, villavicencioRiffeSymmetires2016}, prospective age
-\citep{sanderson2007new}, or residual life, but we prefer the term thanatological age \citep{riffe2015force}. Age in this general sense marks a position on a lifeline with respect to one of its
-endpoints. Chronological age and thanatological age are in this way
-complementary, duals. Thanatological age is meaningful without much
+referred to as remaining lifetime, time-to-death, years left, prospective age,
+or residual life, but we prefer the term thanatological age. Age in this general sense marks a position on a lifeline with respect to one of its endpoints. Chronological age and thanatological age are in this way
+complementary, duals. \st{Thanatological age is meaningful without much
 justification: It is the measure we all want to know, the thing we approximate
-with remaining life expectancy.
+with remaining life expectancy.}
 
+\vt{cite Brouard 1986 ``generations de deces''. Rethink rest of paragraph.}
 Cohorts in general associate individuals that share a characteristic. In
 demography the grouping characteristic is often a combination of place and time, such as
 a cohort of young demographers passing through a particular graduate program.
@@ -356,8 +363,8 @@ uncommon as diagram orientations, these latter two dyads are used to tabulate
 data for different kinds of rates and probabilities. Measures
 based on the AC dydad are variously referred to as Type III rates
 \citep{caselli2005demography} or vertical parallelograms \citep{HMDMP}. The CP
-dyad delineates Type II rates \citep{caselli2005demography}, a.k.a. horizontal
-parallelograms, for instance used to calculate cohort lifetables in the Human
+dyad delineates Type II rates \citep{caselli2005demography}, also known as
+horizontal parallelograms, for instance used to calculate cohort lifetables in the Human
 Mortality Database \citep{HMDMP}. }
 
 For each dyad there is a fundamental question of how to map the constituent
@@ -369,7 +376,7 @@ between the $x$ and $y$ axes, such that the derived measure, if any, is then
 \textit{accidentally} present in a 45$^\circ$ ascending or descending angle,
 depending on the dyad and axis orientation. 
 
-It has long been noted \citep{perozzo1880della, zeuner1869abhandlungen} that the
+It has long been noted \citep{lexis1875einleitung, perozzo1880della} that the
 derived time measure (usually birth cohort) is longer than either the age or period axes when plotted at 45$^\circ$.
 If a right angle and unity aspect ratio is forced between the dyad, the derived measure is always stretched by
 $\sqrt{2}$, or 41\%. In the case of informative dyads, another
@@ -380,7 +387,9 @@ is comparable to using ternary or barycentric coordinate systems.
 %a data visualization perspective, where it may be hypothesized that the
 % viewer's ability to compare slopes is hindered if the axes are not on the same scale.
 Under the isotropic representation, the three variants of each triad identity
-are simple rotations of one another, and they require no rescaling.
+are simple rotations of one another, and they require no rescaling. 
+\vt{add sentence saying all two dimensional diagrams rendered in cartesian
+coordinates.}
 
 \subsection{Dyads to diagrams}
 Each of the 15 dyads, an explanation or simple example,
@@ -392,18 +401,19 @@ of time measures that do not have a derived measure, and therefore are not
 contained in any of these four triad identities.
 \pagebreak
 
-\begin{longtable}{m{0.13\textwidth}L{0.37\textwidth}m{0.17\textwidth}m{0.2\textwidth}}
+\begin{longtable}{m{0.15\textwidth}L{0.4\textwidth}m{0.2\textwidth}}%m{0.2\textwidth}}
   \caption{All dyadic juxtapositions of the six measures of demographic time.}
   \label{tab:dyads}\\
  
   \toprule
-  \multicolumn{4}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
+  \multicolumn{3}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal
+  planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
   \midrule
   \multicolumn{1}{c}{Relationship} & \multicolumn{1}{c}{Description} &
-  \multicolumn{1}{c}{Cartesian} & \multicolumn{1}{c}{Isotropic} \\
+  \multicolumn{1}{c}{Cartesian} \\%& \multicolumn{1}{c}{Isotropic} \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of APC}} \\
+  \multicolumn{3}{c}{\textsc{Variants of APC}} \\
   \midrule
   %%%% APc
   $$\begin{aligned}
@@ -412,8 +422,8 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The AP(C) temporal plane constitutes the classical Lexis diagram. &
   \includegraphics[scale=.5]{Figures/DiagramTable/AP_rt.pdf}
-  &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AP_iso.pdf}
+  %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/AP_iso.pdf}
   \\
   %%%% ACp
   $$\begin{aligned}
@@ -422,8 +432,9 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The AC(P) temporal plane is equivalent to the Lexis diagram except birth
   cohort is given and period is derived rather than the other way around. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AC_rt.pdf} & 
-  \includegraphics[scale=.5]{Figures/DiagramTable/AC_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/AC_rt.pdf} %& 
+  %\includegraphics[scale=.5]{Figures/DiagramTable/AC_iso.pdf} 
+   \\
   %%%% CPa
   $$\begin{aligned}
     &CP(A) \\
@@ -431,11 +442,12 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The CP(A) temporal plane is equivalent to the Lexis diagram except birth
   cohorts are given and age is derived rather than the other way around. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CP_rt.pdf} & 
-  \includegraphics[scale=.5]{Figures/DiagramTable/CP_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/CP_rt.pdf} %& 
+  %\includegraphics[scale=.5]{Figures/DiagramTable/CP_iso.pdf}  
+  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of TPD}} \\
+  \multicolumn{3}{c}{\textsc{Variants of TPD}} \\
   \midrule
   %%%% TPd
   $$\begin{aligned}
@@ -443,27 +455,30 @@ contained in any of these four triad identities.
     &D = P + T
   \end{aligned}$$ &
   Helen had 30 years of life left (T) in 1971 (P) and therefore belonged to the 2001 death cohort (D) &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TP_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TP_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/TP_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/TP_iso.pdf} 
+   \\
   %%%% PDt
   $$\begin{aligned}
     &PD(T) \\
     &T = D - P
   \end{aligned}$$ &
   Mindel died in 1973 (D). In 1953 (P) she had 20 years left to live (T). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/PD_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/PD_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/PD_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/PD_iso.pdf} 
+   \\
   %%%% TDp
   $$\begin{aligned}
     &TD(P) \\
     &P = D - T
   \end{aligned}$$ &
   Irene died in 1974 (D). When she had 30 remaining years of life (T) the year must have been 1944 (P). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TD_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TD_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/TD_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/TD_iso.pdf}  
+  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of TAL}} \\
+  \multicolumn{3}{c}{\textsc{Variants of TAL}} \\
   \midrule
   %%%% TAl
   $$\begin{aligned}
@@ -471,27 +486,30 @@ contained in any of these four triad identities.
     &L = T + A
   \end{aligned}$$ &
   The time already lived and the time still left sum up to the total lifespan. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TA_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TA_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/TA_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/TA_iso.pdf}  
+  \\
   %%%% TLa
   $$\begin{aligned}
     &TL(A) \\
     &A = L - T
   \end{aligned}$$ &
   Helen lived to the age of 86 (L). When she had 20 years left (T) she must have been 66 (A). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TL_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TL_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/TL_rt.pdf} %&
+ % \includegraphics[scale=.5]{Figures/DiagramTable/TL_iso.pdf}  
+ \\
   %%%% ALt
   $$\begin{aligned}
     &AL(T) \\
     &T = A - L
   \end{aligned}$$ &
   Tim is 34 years old (A) and will live to the age of 96 (L), leaving him 62 years (T) to settle affairs. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AL_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AL_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/AL_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/AL_iso.pdf} \\
+  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{Variants of LCD}} \\
+  \multicolumn{3}{c}{\textsc{Variants of LCD}} \\
   \midrule
   %%%% LCd
   $$\begin{aligned}
@@ -500,43 +518,48 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   \`{A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
   untimely death in 2004 (D) &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LC_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LC_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/LC_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/LC_iso.pdf}  
+  \\
   %%%% CDl
   $$\begin{aligned}
     &CD(L) \\
     &L = D - C
   \end{aligned}$$ &
   Pascal was born in 1893 (C) and died in 1964 (D), implying a lifespan of 71 (L), or so. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CD_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CD_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/CD_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/CD_iso.pdf}  
+  \\
   %%%% LDc
   $$\begin{aligned}
     &LD(C) \\
     &C = D - L
   \end{aligned}$$ &
   Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting her birth year in 1900 (C). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LD_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LD_iso.pdf}  \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/LD_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/LD_iso.pdf}  
+  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \multicolumn{4}{c}{\textsc{The Uninformative Dyads}} \\
+  \multicolumn{3}{c}{\textsc{The Uninformative Dyads}} \\
   \midrule
   %%%% LP
   LP(-) &
   The LP plane is \emph{non-informative}. No additional measures can be derived knowing just lifespan and period. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} %&
+  %\includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} 
+  \\
   %%%% CT
   CT(-) &
   The CT plane is \emph{non-informative}. No additional measures can be derived
   knowing just birth cohort and thanatological age. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} & \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/CT_rt.pdf} \\
   %%%% AD
   AD(-) &
   The AD plane is \emph{non-informative}. No additional measures can be derived
-  knowing just death cohort and age. & \includegraphics[scale=.5]{Figures/DiagramTable/AD_rt.pdf} &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AD_rt.pdf}  \\
+  knowing just death cohort and age. &
+  \includegraphics[scale=.5]{Figures/DiagramTable/AD_rt.pdf} 
+\\
   \bottomrule
 \end{longtable}
 
@@ -548,7 +571,7 @@ often provided in aggregated official statistics. Double classified data are
 found on the APC diagram in the shape of squares (AP), horizontal parallelograms
 (AC) and vertical paralellograms (PC), and
 these are commonly used to compute different kinds of demographic
-rates and probabilities \citep[][p63]{caselli2005demography}. The other dyadic
+rates and probabilities \citep[][p. 63]{caselli2005demography}. The other dyadic
 juxtapositions (involving the measures T, D, or L) can be considered as either
 rare or novel ways of structuring or viewing temporal variation in demography,
 and these imply new families of rates and probabilities.
@@ -592,25 +615,25 @@ temporal configurations, let us refer to it as the APC diagram, as seen in
 Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
 
 \begin{figure}[h!] 
-\caption{An APC diagram in two projections.}
+\caption{An APC diagram with six lifelines.}
 \label{fig:APC}
 \centering
-\begin{subfigure}{1.1\textwidth}
-\caption{Cartesian}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Cartesian}
 \vspace{-5em}
-\label{fig:APCrt}
+%\label{fig:APCrt}
 \includegraphics[scale=0.8]{Figures/APCrt.pdf}
-\end{subfigure}
-\\\vspace{-2em}
-\begin{subfigure}{1.1\textwidth}
-\caption{Isotropic}
-\vspace{-6em}
-\label{fig:APCeq}
-\includegraphics[scale=0.8]{Figures/APCeq.pdf}
-\end{subfigure}
+%\end{subfigure}
+%\\\vspace{-2em}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Isotropic}
+%\vspace{-6em}
+%\label{fig:APCeq}
+%\includegraphics[scale=0.8]{Figures/APCeq.pdf}
+%\end{subfigure}
 \end{figure}
 
-The APC diagram in Figure~\ref{fig:APCrt} represents years lived on the $y$
+The APC diagram in Figure~\ref{fig:APC} represents years lived on the $y$
 axis, calendar years on the $x$ axis, and birth cohorts as the right-ascending
 diagonals. This is the most common of several possible configurations
 of the APC dimensions. Individual lifelines (black) are aligned in the birth
@@ -635,22 +658,22 @@ align on termination in cases where this brings preceding patterns of
 variation into focus.
 
 \begin{figure}[h!] 
-\caption{A TPD diagram in two projections.}
+\caption{A TPD diagram with six lifelines.}
 \label{fig:TPD}
 \centering
-\begin{subfigure}{1.1\textwidth}
-\caption{Cartesian}
-\vspace{-5em}
-\label{fig:TPDrt}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Cartesian}
+%\vspace{-5em}
+%\label{fig:TPDrt}
 \includegraphics[scale=0.8]{Figures/TPDrt.pdf}
-\end{subfigure}
-\\\vspace{-2em}
-\begin{subfigure}{1.1\textwidth}
-\caption{Isotropic}
-\vspace{-6em}
-\label{fig:TPDeq}
-\includegraphics[scale=0.8]{Figures/TPDeq.pdf}
-\end{subfigure}
+%\end{subfigure}
+%\\\vspace{-2em}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Isotropic}
+%\vspace{-6em}
+%\label{fig:TPDeq}
+%\includegraphics[scale=0.8]{Figures/TPDeq.pdf}
+%\end{subfigure}
 \end{figure} 
 
 There are several examples of analysis of this kind of
@@ -692,21 +715,21 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 \caption{A TAL diagram in two projections.}
 \label{fig:TAL}
 \centering
-\makebox[\textwidth][c]{
-\begin{subfigure}{.48\textwidth}
-\centering
-\caption{Cartesian}
-\label{fig:TALrt}
+%\makebox[\textwidth][c]{
+%\begin{subfigure}{.48\textwidth}
+%\centering
+%\caption{Cartesian}
+%\label{fig:TALrt}
 \includegraphics[scale=0.55]{Figures/TALrt.pdf}
-\end{subfigure}
-~~~~~
-\begin{subfigure}{.48\textwidth}
-\centering
-\caption{Isotropic}
-\label{fig:TALeq}
-\includegraphics[scale=0.55]{Figures/TALeq.pdf}
-\end{subfigure}
-}
+%\end{subfigure}
+%~~~~~
+%\begin{subfigure}{.48\textwidth}
+%\centering
+%\caption{Isotropic}
+%\label{fig:TALeq}
+%\includegraphics[scale=0.55]{Figures/TALeq.pdf}
+%\end{subfigure}
+%}
 \end{figure} 
 
 \FloatBarrier
@@ -715,7 +738,7 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 
 The LCD diagram completes our set of identities. It is based on the relationship
 between lifespan, birth cohort, and death cohort. In
-Figure~\ref{fig:LCDrt}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
+Figure~\ref{fig:LCD}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
 are found in descending diagonals. To structure data on these three
 time measures implies excluding time-varying information over the lifecourse.
 An individual
@@ -1560,6 +1583,6 @@ investigation.
 \DeclareRobustCommand{\VAN}[3]{#3}
 \bibliographystyle{apacite} % required for demography
 %\bibliographystyle{plainnat}
-  \bibliography{references} 
+  \bibliography{refs} 
 
 \end{document}

@@ -233,3 +233,11 @@ system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.p
 system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
 system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
 
+
+
+
+
+
+
+#p8 <- seq(0,10,length=8)
+#star.timeline.edges.only(p8,.43) 

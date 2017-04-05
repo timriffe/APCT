@@ -1,7 +1,8 @@
 
 # Author: tim
 ###############################################################################
-
+# install.packages("expm")
+library(expm)
 # Theorem 3 P^n <-> M^n for mixed point durations.
 
 
@@ -35,12 +36,7 @@ DefaultDurationOrdering <- function(p){
 	data.frame(d = 1:m,pfrom = tofromi[,1],pto=tofromi[,2],from = from, to = to, dur = to - from)
 }
 
-# this is the new function to determine if a set of events and durations (p_i and d_i) identifies an
-# n-point identity. This works by defining the n+1-vertex graph consisting of all possible p_i and d_i,
-# and then checking whether the specified set of edges connects the graph or not. This is done by 
-# checking whether the symmetrix adjacency matrix is invertible or not. Returns TRUE or FALSE.
-
-identifiable <- function(n,edges=c("p1","p2","d1")){
+np_adjacency <- function(n=4, edges=c("p1","p2","d1")){
 	p       <- rep(1,n)
 	n1    	<- n + 1
 	# get all durations
@@ -50,17 +46,65 @@ identifiable <- function(n,edges=c("p1","p2","d1")){
 	# set of all durations and events, given with vertices in edge-only graph.
 	edges.all  	<- data.frame(v1 = c(durs$pfrom,1:n),
 			                  v2 = c(durs$pto,rep(n1,n)))
-	rownames(edges.all) <- c(dd,pp)
-	   
-	edges.have <- edges.all[edges,]
+	rownames(edges.all)   <- c(dd,pp)
+	
+	edges.have            <- edges.all[edges,]
 	# make an adjacency matrix
-	adj 	<- matrix(0,ncol=n1,nrow=n1,dimnames = list(1:n1,1:n1))   
+	adj 	              <- matrix(0,ncol=n1,nrow=n1,dimnames = list(1:n1,1:n1))   
 	adj[cbind(edges.have$v1,edges.have$v2)] <- 1
 	adj[cbind(edges.have$v2,edges.have$v1)] <- 1
-	adj     <- adj + diag(n1)
+	adj                   <- adj + diag(n1)
+	# an extra object for orientation
+	edges.all             <- as.matrix(edges.all)
+	A                     <- adj * 0
+	A[edges.all]          <- rownames(edges.all)
+	A[edges.all[,c(2,1)]] <- rownames(edges.all)
+	diag(A) <- paste0("v",1:n1)
+	list(adj=adj, edgeids = A)
+}
+
+# this function expands to the full set of identifiable edges
+np_expand <- function(n=4, edges=c("p1","p2","d1")){
+	require(expm)
+	adjs 		<- np_adjacency(n, edges)
+	adj 		<- adjs$adj
+	ids 		<- adjs$edgeids
+	
+	# build out full coinnectivity by taking nth power
+	# operator from expm package
+	adji 		<- adj %^% n
+	
+	U 			<- upper.tri(adj)
+	edges.identifiable <- adji > 0 & U
+	
+	list(edges.have = edges, 
+		 edges.expanded = ids[edges.identifiable],
+		 edges.all = ids[U])
+} 
+
+# this is the new function to determine if a set of events and durations (p_i and d_i) identifies an
+# n-point identity. This works by defining the n+1-vertex graph consisting of all possible p_i and d_i,
+# and then checking whether the specified set of edges connects the graph or not. This is done by 
+# checking whether the symmetrix adjacency matrix is invertible or not. Returns TRUE or FALSE.
+
+identifiable <- function(n=4,edges=c("p1","p2","d1")){
+	adj <- np_adjacency(n, edges)$adj
 	# is this matrix invertible?
 	determinant(adj,FALSE)$modulus != 0
 }
+
+
 # test
-identifiable(3, c("p1","p2","d1")) # APC
-identifiable(3, c("p1","p3","d1")) # APD
+np_adjacency(n=3,  edges = c("p1","p2","d1"))
+
+# APCTDL
+np_expand(n=3,  edges = c("p1","p2","d1"))   # APC
+np_expand( n = 3, edges = c("p1","p3","d1")) # APD
+# a higher order identity, partial expansion
+np_expand( n = 4, edges = c("p1","p3","d1")) # APD
+
+# APCTDL
+identifiable(3,  edges = c("p1","p2","d1"))  # APC
+identifiable(3, edges =  c("p1","p3","d1"))  # APD
+
+

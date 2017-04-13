@@ -79,6 +79,12 @@
 \newcommand\tg[1]{\includegraphics[scale=.5]{Figures/triadtable/triad#1.pdf}}
 \newcommand\tgh[1]{\raisebox{-.25\height}{\includegraphics[scale=.3]{Figures/triadtable/triad#1.pdf}}}
 
+
+\newcommand{\Ed}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/edgep#1}.pdf}}
+\newcommand{\Tl}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/linep#1}.pdf}}
+\newcommand{\St}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/starp#1}.pdf}}
+
+
 \defcitealias{HMD}{HMD 2016}
 
 % junk for longtable caption
@@ -140,9 +146,10 @@ In the course of training, all demographers are introduced
 to the Lexis diagram, a convenient graphical identity between the three main
 time measures used to structure demographic stocks and flows: Age, period, and
 birth cohort. This representation does not account for time of death, time until
-death, or length of life, which may be of interest to researchers and
-policy makers as structuring rather than random variables. \st{This popular
-representation does not account for remaining years of life and other related time indices that may be of interest to researchers and
+death, or length of life, which may be of interest to researchers \st{and
+policy makers} as structuring rather than random variables in order to capture
+variation in demographic data.
+\st{This popular representation does not account for remaining years of life and other related time indices that may be of interest to researchers and
 policy makers.} % The Lexis diagram relates the chronological age (A), period
 % (P), and birth cohort (C) measures of demographic time, APC, but it does not account
 % for remaining years of life (thanatological age), and other related time
@@ -189,13 +196,15 @@ aspects of the APC identity have been discussed since at least 1868
 
 Our goal is to describe the geometric identity between all
 six measures of demographic time, a hexad identity, that may be useful or an intuitive
-referent for demographers in the same way as the Lexis diagram. At the same time, this identity relates the
-four triad identities we have mentioned. We give a bottom-up
-description of how the six dimensions of time relate in a single framework,
-building from familiar components to the full relationship. A similar
-six-way identity was in fact originally described by \citet{lexis1875einleitung}
-for the case of marriage cohorts. The framework we describe is more general and
-adaptable for such event history scenarios.
+referent for demographers in the same way as the Lexis diagram. At the same
+time, this identity relates the four triad identities we have mentioned. We give a bottom-up
+description of how such temporal identities can be derived from an
+arbitrary number of events in calendar time in a simple and general
+event-duration relationship. These more general event-duration foundations
+facilitate comparison of the demographic time framework with other temporal designs found in the
+literature, such as the higher-order temporal model of \citet{brinks2014lexis},
+or the marriage cohort hexad identity described by \citet{lexis1875einleitung}.
+The framework we describe is general and adaptable for such event history scenarios.
 We begin by defining some terms used throughout the manuscript.
 We then explore all combinations of two time measures, the dyadic relationships, followed by the four triad identities, and
 finally the hexad identity. We give a systematic topological overview of the
@@ -207,16 +216,10 @@ teach demography for decades, we hope that the demographic time measures and
 their graphical depictions presented here will be helpful to teachers and
 young demographers. The temporal relationships we describe will also be useful
 for researchers to better detect and understand patterns data, and for
-methodologists to better account for the structure of data in demographic methods.
-
-
-\vt{will need to change to account for generalized Lexis surface}
-
+methodologists to better account for the structure of data in demographic
+methods or statistical designs.
 
 \section{Definitions}
-\vt{events in calendar time \textbf{p}, and durations \textbf{d} might also
-need to be added here now?}
-
 \subsection{Technical terminology}
 In describing this relationship we attempt to adhere to a rigorous
 terminology.
@@ -264,7 +267,7 @@ We describe time in terms of years, the dominant time scale for human
 demography, although all relationships are scalable to any time unit. We therefore speak of calendar time. We also describe the framework in terms
 of human lifespans, although it applies in a more general sense to any durations
 observed over time. This is to say, birth may be translated to entry, and death
-to exit, or any other terminal state. The six measures of time we consider are
+to exit, or any other absorbing state. The six measures of time we consider are
 defined in Table~\ref{tab:sixdefs}, both in the demographic sense we describe, as well as in a more general event history interpretation.
 
 %\begin{adjustwidth}{-3em}{-3em}
@@ -289,31 +292,43 @@ lifespan & L & duration of life & duration of exposure \\
 \end{adjustwidth}
 \end{table}
 
-\vt{citations removed for TTD terminology}
 The concepts of thanatological age and death cohorts are likely less familiar to
-readers than the other measures we consider. Thanatological age is sometimes
-referred to as remaining lifetime, time-to-death, years left, prospective age,
-or residual life, but we prefer the term thanatological age. Age in this general sense marks a position on a lifeline with respect to one of its endpoints. Chronological age and thanatological age are in this way
-complementary, duals. \st{Thanatological age is meaningful without much
-justification: It is the measure we all want to know, the thing we approximate
-with remaining life expectancy.}
+readers than the other measures we consider. Thanatological age invokes the
+remaining lifetime until death, the information approximated with life
+expectancy. This term is sometimes referred to in the literature as life left,
+time to death, remaining lifespan, follow-up duration, residual life, or
+reverse time.
+Chronological and thanatological age are in this way complementary, duals. On the other hand, cohorts in general associate individuals that share a characteristic. In demography the grouping characteristic is often a combination of place and time, such as a cohort of young demographers passing through a particular graduate program. These concepts are analogous to the ideas of birth and death cohorts we use here. The deaths of a given year are not usually referred to as a death cohort, although this concept was already introduced by \cite{brouard1986} as ``g\'en\'eration de d\'ec\`es'' in a retrospective study of the French population during the twentieth century. In the time preceding death, the members of a given death cohort have much in common, despite heterogeneity with respect to time of birth. If the reader accepts this premise, then the abstract construct of a death cohort is also meaningful in the way that other cohort measures are. In event history or non-human contexts, anologs to death cohorts in this framework may be even more meaningful.
 
-\vt{cite Brouard 1986 ``generations de deces''. Rethink rest of paragraph.}
-Cohorts in general associate individuals that share a characteristic. In
-demography the grouping characteristic is often a combination of place and time, such as
-a cohort of young demographers passing through a particular graduate program.
-In this instance already, we accommodate the notion of a cohort for both the
-start and endpoints of the program, saying for example, ``the class of 2015''
-instead of the ``graduating cohort of 2015'', in contrast to ``cohort 37'', the
-\nth{37} class of entering students since the start of the program. These concepts are analogous to the ideas of
-birth and death cohorts we use here, but we do not often refer to the deaths of a given year as a death cohort.
-In the time preceding death, the members of a given death cohort have much in common, despite
-heterogeneity with respect to time of birth.\footnote{Death cohorts lack a
-shared identity, so any kind of emergent homogeneity in a death cohort probably
-has a physiological basis.} If the reader accepts this premise, then the
-abstract construct of a death cohort is also meaningful in the way that other
-cohort measures are. In event history or non-human contexts, anologs to death
-cohorts in this framework may be even more meaningful.
+
+%The concepts of thanatological age and death cohorts are likely less familiar
+% to
+%readers than the other measures we consider. Thanatological age is sometimes
+%referred to as remaining lifetime, time-to-death, years left, prospective age,
+%or residual life, but we prefer the term thanatological age. Age in this
+% general sense marks a position on a %lifeline with respect to one of its endpoints. Chronological age and thanatological age are in this way
+%complementary, duals. \st{Thanatological age is meaningful without much
+%justification: It is the measure we all want to know, the thing we approximate
+%with remaining life expectancy.}
+%Cohorts in general associate individuals that share a characteristic. In
+%demography the grouping characteristic is often a combination of place and
+% time, such as
+%a cohort of young demographers passing through a particular graduate program.
+%In this instance already, we accommodate the notion of a cohort for both the
+%start and endpoints of the program, saying for example, ``the class of 2015''
+%instead of the ``graduating cohort of 2015'', in contrast to ``cohort 37'', the
+%\nth{37} class of entering students since the start of the program. These
+%concepts are analogous to the ideas %of
+%birth and death cohorts we use here, but we do not often refer to the deaths of
+% a given year as a death cohort.
+%In the time preceding death, the members of a given death cohort have much in
+% common, despite
+%heterogeneity with respect to time of birth.\footnote{Death cohorts lack a
+%shared identity, so any kind of emergent homogeneity in a death cohort probably
+%has a physiological basis.} If the reader accepts this premise, then the
+%abstract construct of a death cohort is also meaningful in the way that other
+%cohort measures are. In event history or non-human contexts, anologs to death
+%cohorts in this framework may be even more meaningful.
 
 Much of the work of demography is directed at the study of lifespan. Lifespan is
 synonymous both with longevity, chronological age at death, and thanatological
@@ -383,13 +398,13 @@ $\sqrt{2}$, or 41\%. In the case of informative dyads, another
 logical mapping is to translate to $(x,y)$ coordinates that force 60$^\circ$
 angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. The isotropic mapping
 is comparable to using ternary or barycentric coordinate systems. 
-%The primary justification for isotropic temporal planes comes from
-%a data visualization perspective, where it may be hypothesized that the
-% viewer's ability to compare slopes is hindered if the axes are not on the same scale.
-Under the isotropic representation, the three variants of each triad identity
-are simple rotations of one another, and they require no rescaling. 
-\vt{add sentence saying all two dimensional diagrams rendered in cartesian
-coordinates.}
+The primary justification for isotropic demographic surfaces comes from
+a data visualization perspective, where it may be hypothesized that the
+ viewer's ability to compare slopes is hindered if time coordinates are not on
+ the same scale. Under the isotropic representation, the three variants of each
+ triad identity are simple rotations of one another, and they require no
+ rescaling. In this paper, all two-dimensional diagrams are rendered in
+ Cartesian rather than isotropic coordinates.
 
 \subsection{Dyads to diagrams}
 Each of the 15 dyads, an explanation or simple example,
@@ -607,9 +622,7 @@ potential uses.
 The so-called Lexis diagram has long been used in demography as a conceptual
 tool for structuring data, observations, and rate estimation, as inspiration for work
 on statistical identification, and as the coordinate basis of contemporary
-Lexis-surfaces.\footnote{Some prefer the term Lexis \textit{surface}, while
-others prefer to call them contour maps, heatmaps, or stereograms.}
-Since the Lexis diagram could have been named for others
+Lexis-surfaces. Since the Lexis diagram could have been named for others
 \citep{keiding2011age, vandeschrick2001lexis}, and since we compare with other
 temporal configurations, let us refer to it as the APC diagram, as seen in
 Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
@@ -675,20 +688,37 @@ variation into focus.
 %\includegraphics[scale=0.8]{Figures/TPDeq.pdf}
 %\end{subfigure}
 \end{figure} 
+There are several examples of analysis of this kind of data, usually stemming
+from a lack of information on chronological age. This is the case, for instance,
+in biodemographic studies in which wild animals with unknown ages are captured
+and then followed-up until death \cite{muller2004demographic,
+muller2007survival}. Other examples are human historical databases, which
+usually lack information about births, but individuals can be traced from a
+particular event until death. This is the case in the Barcelona Historical
+Marriage Database, which collects information about marriage licenses of
+Barcelona (Spain) from the mid-fifteenth century until the early twentieth
+century. In this database, ages are unknown, but individuals are first
+identified in their marriage record and an estimation of the times of death is
+plausible \citep{villavicencio2015reconstructing}. We speculate that TPD
+diagrams could also be used in biomedical studies for the representation of
+lifelines preceding deaths from infectious or acquired conditions, when the time
+of infection or acquisition remains unknown, an issue which has received
+attention in the statistical literature \citep[see e.g.][]{chan2010backward}.
 
-There are several examples of analysis of this kind of
-data, usually stemming from a lack of information on chronological age. This is
-the case, for instance, in biodemographic studies in which wild animals with unknown
-ages are captured and then followed-up until death
-\citep{muller2004demographic, muller2007survival}, but it can be
-generalized to other kinds of human and non-human demographic data with a similar structure. For example, in the
-Barcelona Historical Marriage Database, which collects information about
-marriage licenses of Barcelona (Spain) from the mid-\nth{15} century until the
-early \nth{20} century, individuals are first identified in their marriage
-record and then followed-up, but no information is available about dates of
-birth or age at marriage \citep{villavicencio2015reconstructing}.
-We speculate that TPD diagrams could also be used in biomedical studies
-for the representation of lifelines preceding deaths from infectious or acquired conditions, when the time of infection or acquisition remains unknown.
+% There are several examples of analysis of this kind of
+%data, usually stemming from a lack of information on chronological age. This is
+%the case, for instance, in biodemographic studies in which wild animals with
+% unknown ages are captured and then followed-up until death
+%\citep{muller2004demographic, muller2007survival}, but it can be
+%generalized to other kinds of human and non-human demographic data with a
+%similar structure. For example, in the Barcelona Historical Marriage
+%Database, which collects information about marriage licenses of Barcelona
+% (Spain) from the mid-\nth{15} century until the early \nth{20} century, individuals are first identified in their marriage
+%record and then followed-up, but no information is available about dates of
+%birth or age at marriage \citep{villavicencio2015reconstructing}.
+%We speculate that TPD diagrams could also be used in biomedical studies
+%for the representation of lifelines preceding deaths from infectious or
+% acquired conditions, when the time of infection or acquisition remains unknown.
 
 \FloatBarrier
 \subsubsection{TAL: Thanatological age, chronological age, and
@@ -699,20 +729,22 @@ lifecourse.
 More precisely, the TAL plane can highlight variation that is related to time
 since birth, time until death, length of life, and their combinations. These
 key aspects of demographic time are compressed to chronological age only in the
-APC perspective, which can blend out meaningful variation. Since the lifecourse belongs to the cohort perspective, it is best to think of the TAL plane as belonging to some particular birth cohort. Alternatively, a TAL triangle may be taken as a cross-section through the period dimension, a sort of synthetic TAL plane. To our knowledge, the TAL diagram has only appeared once in the literature, in an exploration and classification of late-life health
-conditions \citep{riffe2015ttd}. The TAL diagram in Figure~\ref{fig:TAL} contains
-no indication of period or cohorts, as calendar time is blended out in this
-diagram.
-The lifelines depicted are identical to those shown in APC Figure~\ref{fig:APC} and TPD Figure~\ref{fig:TPD}.\footnote{The prior figures contained six lifelines each, but since two of them were of equal length (75), they are overlapped in
-Figure~\ref{fig:TAL} and appear to be five.} The TAL diagram is useful for
-characterizing patterns of prevalence of health conditions. We speculate
+APC perspective, which can blend out meaningful variation. Since the lifecourse belongs to the cohort perspective, it is best to think of the TAL plane as belonging to some particular birth cohort. Alternatively, a TAL triangle may be taken as a cross-section through the period dimension, a sort of synthetic TAL plane. 
+
+To our knowledge, the TAL diagram has only appeared once in the literature, in an exploration and classification of late-life health
+conditions \citep{riffe2015ttd}. There are however instances of statistical
+designs adapted to this coordinate plane \citep[see e.g.,][]{Jewell2016,
+dempsey2016}. The TAL diagram in Figure~\ref{fig:TAL} contains no indication of
+period or cohorts, as calendar time is blended out in this diagram.
+The lifelines depicted are identical to those shown in APC Figure~\ref{fig:APC}
+and TPD Figure~\ref{fig:TPD}. The TAL diagram is useful for characterizing patterns of prevalence of health conditions. We speculate
 that data structured and aligned in this way may yield hitherto undescribed
 patterns in other contexts, such as pregnancy (from the perspective of either
 mother or fetus) by time since conception, time until parturition, and length of
 gestation, or even smaller event-history time scales, or patterns of growth or reproduction in non-human species.
 
 \begin{figure}[h!] 
-\caption{A TAL diagram in two projections.}
+\caption{A TAL diagram with six lifelines (*).}
 \label{fig:TAL}
 \centering
 %\makebox[\textwidth][c]{
@@ -730,7 +762,11 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 %\includegraphics[scale=0.55]{Figures/TALeq.pdf}
 %\end{subfigure}
 %}
+\bigskip
+(*) Since two of the six lifelines are of equal length (75), they are
+overlapped in this figure and appear to be five.
 \end{figure} 
+
 
 \FloatBarrier
 \subsubsection{LCD: Lifespan, birth cohort, and death cohort}%\tgh{CDL}}
@@ -752,19 +788,19 @@ In Figure~\ref{fig:LCD}, the same six individuals from previous diagram figures 
 \caption{An LCD diagram in two projections.}
 \label{fig:LCD}
 \centering
-\begin{subfigure}{1.1\textwidth}
-\caption{Cartesian}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Cartesian}
 \vspace{-5em}
-\label{fig:LCDrt}
+%\label{fig:LCDrt}
 \includegraphics[scale=0.8]{Figures/LCDrt.pdf}
-\end{subfigure}
-\\\vspace{-2em}
-\begin{subfigure}{1.1\textwidth}
-\caption{Isotropic}
-\vspace{-6em}
-\label{fig:LCDeq}
-\includegraphics[scale=0.8]{Figures/LCDeq.pdf}
-\end{subfigure}
+%\end{subfigure}
+%\\\vspace{-2em}
+%\begin{subfigure}{1.1\textwidth}
+%\caption{Isotropic}
+%\vspace{-6em}
+%\label{fig:LCDeq}
+%\includegraphics[scale=0.8]{Figures/LCDeq.pdf}
+%\end{subfigure}
 \end{figure} 
 
 We
@@ -777,30 +813,75 @@ cities, and so forth. \citet{lexis1875einleitung} describes an analogous
 relationship between marriage cohort, separation cohort, and duration of
 marriage.
 
-\subsubsection{Relationships between the diagrams}
-\label{relationshipstriads}
-Since demographic time measures themselves depend on the demographic events of
-fertility and mortality, it stands to reason that fertility and mortality also
-link the different diagrams. In a loose sense, the LCD diagram has a
-special dual in the case of an APC surface of mortality. Age at death is equal
-to lifespan ($A=L$), period is equal to death cohort ($P=D$), and birth cohort
-(C) is just the same in the event of death. These two surfaces are exactly
-equivalent in the case of death counts or densities, since in either case
-quantities are represented with points, the endpoint of life for which this
-equivalence holds. For any other demographic measure, however, the LCD diagram
-is distinct from APC. APC fertility surfaces are in this way different from
-APC mortality surfaces, as the former represent events or characteristics over
-the ages in which they occur, allowing for the represention of
-durations and repetitions.
-Further, a fertility surface in TPD coordinates
-again finds an approximate dual in the APC mortality surface. This works
-because birth marks the starting point of the lifeline which is otherwise
-missing in TPD coordinates, whereas death marks the endpoint of a lifeline,
-which is otherwise missing from APC coordinates. This relationship is exact in
-the special case of a stationary population series. Further reflection may
-reveal other such dualities.
+% TR 12-4-2017 removed to shorten paper
+%\subsubsection{Relationships between the diagrams}
+%\label{relationshipstriads}
+%Since demographic time measures themselves depend on the demographic events of
+%fertility and mortality, it stands to reason that fertility and mortality also
+%link the different diagrams. In a loose sense, the LCD diagram has a
+%special dual in the case of an APC surface of mortality. Age at death is equal
+%to lifespan ($A=L$), period is equal to death cohort ($P=D$), and birth cohort
+%(C) is just the same in the event of death. These two surfaces are exactly
+%equivalent in the case of death counts or densities, since in either case
+%quantities are represented with points, the endpoint of life for which this
+%equivalence holds. For any other demographic measure, however, the LCD diagram
+%is distinct from APC. APC fertility surfaces are in this way different from
+%APC mortality surfaces, as the former represent events or characteristics over
+%the ages in which they occur, allowing for the represention of
+%durations and repetitions.
+%Further, a fertility surface in TPD coordinates
+%again finds an approximate dual in the APC mortality surface. This works
+%because birth marks the starting point of the lifeline which is otherwise
+%missing in TPD coordinates, whereas death marks the endpoint of a lifeline,
+%which is otherwise missing from APC coordinates. This relationship is exact in
+%the special case of a stationary population series. Further reflection may
+%reveal other such dualities.
 
 \FloatBarrier
+
+\section{A general relationship between events and durations}
+\vt{new}
+Each of the six time measures that we have mentioned can be categorized into
+two basic types: Events and durations. Events are time measures with dates in
+calendar time, which include birth and death cohorts, as well as period itself.
+Durations are time differences between pairs of
+events. Chronological age (P-C), thanatological age (D-P), and lifespan (D-C)
+are in this senese durations. 
+
+Let us continue in more general terms by formalizing
+the notions of $n$ points in time $\textbf{p}$ and the $m$ durations $\textbf{d}$
+between these points. $\textbf{d}$ can be said to be linearly dependant on
+$\textbf{p}$ in the sense that a linear transformation of $\textbf{p}$ will
+yield $\textbf{d}$ (see \vt{Appendix} ).
+A set of $n$ points implies a total of $m = \binom{n}{2} = n(n - 1)/2$
+durations.
+The relationship between points and durations can be drawn on a timeline, in an undirected graph with $n$ event nodes and $m$ edges for
+durations, or in an undirected graph with $m+n$ edges, mixing events and
+durations.
+
+
+\newcolumntype{C}{ >{\centering\arraybackslash} m{2cm} }
+\newcolumntype{D}{ >{\centering\arraybackslash} m{5.4cm} }
+\newcolumntype{E}{ >{\centering\arraybackslash} m{3.7cm} }
+
+
+%\begin{adjustbox}{center}
+\begin{table}[ht]
+
+\centering
+\caption{Event-duration timeline, graph, and temporal plane graphs for two, three, and four event sequences.}
+\label{tab}
+\makebox[\linewidth][c]{
+\begin{tabular}{C D E E}
+nr. events  & timeline & graph & temporal plane graph \\
+& & &\\
+  $n = 2 $ & \Tl{2} & \St{2} & \Ed{2} \\
+  $n = 3 $ & \Tl{3} & \St{3} & \Ed{3} \\
+  $n = 4 $ & \Tl{4} & \St{4} & \Ed{4}
+\end{tabular}
+}
+\end{table}
+
 \section{A tetrahedron relates the six time indices.}
 Each of the four triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
@@ -876,6 +957,8 @@ recreate the full tetrahedron (hexad identity).
 %yield the remaining twelve triads.}
 
 \subsection{A geometrical analogy}
+\vt{This section to be replaced with full derivation.}
+
 A geometrical analogy is pertinent at this point. Any pair of intersecting edges
 of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$
 that determine a 2-dimensional plane in a Cartesian 3-dimensional
@@ -927,6 +1010,8 @@ of the tetrahedron.%, i.e., that do not form one of the four triad identities
 %triad APT, age and period are not sufficient to determine thanatological age.
 %Given the triad APT one can however derive the remaining three time measures.
 
+
+% TR 12-4-2017 removed to shorten paper
 %\begin{table}[h]
 %\centering
 %\caption{The four triad identities on the tetrahedron (same orientation)}
@@ -938,69 +1023,71 @@ of the tetrahedron.%, i.e., that do not form one of the four triad identities
 %\end{table}
 %When graphed in this way, it is clearer that every triad identity surface lacks
 % a connection to the opposite vertex of the tetrahedron.
-\subsection{The informative triads}
-Table~\ref{tab:set3} gives the full set of 16 index-triads that are
-informative in the sense that each of them implies the full hexad identity.
-Practically, this means that if a given dataset contains variables in one of
-the combinations displayed in Table~\ref{tab:set3} that the entire
-temporal relationship is available to the researcher.
+%\subsection{The informative triads}
+%Table~\ref{tab:set3} gives the full set of 16 index-triads that are
+%informative in the sense that each of them implies the full hexad identity.
+%Practically, this means that if a given dataset contains variables in one of
+%the combinations displayed in Table~\ref{tab:set3} that the entire
+%temporal relationship is available to the researcher.
+%
+% TR 12-4-2017 removed to shorten paper
+%Note that the 12 possible pairs of intersecting edges on the tetrahedron are, in
+%fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the uninformative dyads LP, CT, and AD are the pairs of opposite edges of the tetrahedron. As discussed, all 12 informative dyads generate one of the four triad identities, but no dyad will generate the hexad
+%identity since a third ``independent'' time dimension is necessary.
+%Similarly, any quad of indices is sufficient to complete the hexad identity, as
+%at least one of them will not belong to the same face of the tetrahedron, but a
+%triad may be sufficient if its edges do not all belong to the same triad identity.
+%
+%\begin{table}[h]
+%\centering
+%\caption{All triads from which the full tetrahedron is derivable (same
+%orientation).}
+%\label{tab:set3}
+%\begin{tabular}{cccc}
+%ACD & ACL & ACT & ADL\\
+%\tg{ACD} & \tg{ACL} & \tg{ACT} & \tg{ADL}\\
+%ADP & ADT & ALP & APT\\
+%\tg{ADP} & \tg{ADT} & \tg{ALP} & \tg{APT}\\
+%CDP & CDT & CLP & CLT\\
+%\tg{CDP} & \tg{CDT} & \tg{CLP} & \tg{CLT}\\
+%CPT & DLP & DLT & LPT\\
+%\tg{CPT} & \tg{DLP} & \tg{DLT} & \tg{LPT}
+%\end{tabular}
+%\end{table}
 
-Note that the 12 possible pairs of intersecting edges on the tetrahedron are, in
-fact, the informative dyads described in Table~\ref{tab:dyads}, whereas the uninformative dyads LP, CT, and AD are the pairs of opposite edges of the tetrahedron. As discussed, all 12 informative dyads generate one of the four triad identities, but no dyad will generate the hexad
-identity since a third ``independent'' time dimension is necessary.
-Similarly, any quad of indices is sufficient to complete the hexad identity, as
-at least one of them will not belong to the same face of the tetrahedron, but a
-triad may be sufficient if its edges do not all belong to the same triad identity.
-
-\begin{table}[h]
-\centering
-\caption{All triads from which the full tetrahedron is derivable (same
-orientation).}
-\label{tab:set3}
-\begin{tabular}{cccc}
-ACD & ACL & ACT & ADL\\
-\tg{ACD} & \tg{ACL} & \tg{ACT} & \tg{ADL}\\
-ADP & ADT & ALP & APT\\
-\tg{ADP} & \tg{ADT} & \tg{ALP} & \tg{APT}\\
-CDP & CDT & CLP & CLT\\
-\tg{CDP} & \tg{CDT} & \tg{CLP} & \tg{CLT}\\
-CPT & DLP & DLT & LPT\\
-\tg{CPT} & \tg{DLP} & \tg{DLT} & \tg{LPT}
-\end{tabular}
-\end{table}
-
-%FloatBarrier
-\subsection{The extension of time axes.}
-We have said that planes defined by the four triad identities are parallel to
-the faces of the the above-described tetrahedron. In imagining this three-dimensional
-relationship, we are no longer confined to the extent of the tetrahedron used thus far for orientation. Instead each of its edges extends a
-certain distance in either direction, and each face of the tetrahedron
-tessellates to fill its plane.
-It may therefore help to first consider the extension of each axis (or index).
-Some indices have a lower bound of zero and an upper bound set by the maximum
-length of life, $\omega$, while others are boundless. A, T, and L
-are clearly in the range $[0,\omega]$.\footnote{It's best to imagine some number like 122.45 years, for $\omega$, rather than infinity. This is the longevity record at the time of this writing. Jeanne L. Calment would have had
-$T=122.45$ at birth, $A = 122.45$ at death, and $L=122.45$ for
-her entire life.} P, C, and D are bounded only by the inception and extinction of
-our species, but may be thought of as boundless, or benchmarked
-to our earliest and most recent observations for practicality.\footnote{We
-explain the choice of the word ``benchmarked''. Say we have a data series that runs from 1751 to 2011, and an upper age
-interval of $110+$. Then we could say that P is in the range $[1751,2011]$,
-but by another reading, P must range from at least as early as the earliest
-C and until at least as late as the latest D. Someone dying at 110 in 1751
-had a C of 1640, and an infant born in 2011 that is destined to live to 110
-will die in 2121. In this case a P that \textit{contains} the observed
-population will extend well before and after the observed data series, even
-more so if we take into account that $\omega > 110$.} As an abstraction,
-however, the dimension of calendar time in this model is infinite. Of the four
-triad identities, only one lacks an unbounded dimension, the TAL. Adding
-the absent dimension to TAL therefore makes its 3d extension boundless. In
-this way, we may imagine a prism-like construct, where T, A, and L, compose
-the faces of a triangular cross-section of the prism, which extends infinitely
-``through'' the triangle.
-We can think of the TAL triangle passing through time, extending the population
-forward into the future and backward into the past. In this case, the TAL
-triangle may take either the period or cohort perspective. 
+% TR 12-4-2017 removed to shorten paper (and reviewer 2 found this section
+% unclear)
+%\subsection{The extension of time axes.}
+%We have said that planes defined by the four triad identities are parallel to
+%the faces of the the above-described tetrahedron. In imagining this three-dimensional
+%relationship, we are no longer confined to the extent of the tetrahedron used thus far for orientation. Instead each of its edges extends a
+%certain distance in either direction, and each face of the tetrahedron
+%tessellates to fill its plane.
+%It may therefore help to first consider the extension of each axis (or index).
+%Some indices have a lower bound of zero and an upper bound set by the maximum
+%length of life, $\omega$, while others are boundless. A, T, and L
+%are clearly in the range $[0,\omega]$.\footnote{It's best to imagine some number like 122.45 years, for $\omega$, rather than infinity. This is the longevity record at the time of this writing. Jeanne L. Calment would have had
+%$T=122.45$ at birth, $A = 122.45$ at death, and $L=122.45$ for
+%her entire life.} P, C, and D are bounded only by the inception and extinction of
+%our species, but may be thought of as boundless, or benchmarked
+%to our earliest and most recent observations for practicality.\footnote{We
+%explain the choice of the word ``benchmarked''. Say we have a data series that runs from 1751 to 2011, and an upper age
+%interval of $110+$. Then we could say that P is in the range $[1751,2011]$,
+%but by another reading, P must range from at least as early as the earliest
+%C and until at least as late as the latest D. Someone dying at 110 in 1751
+%had a C of 1640, and an infant born in 2011 that is destined to live to 110
+%will die in 2121. In this case a P that \textit{contains} the observed
+%population will extend well before and after the observed data series, even
+%more so if we take into account that $\omega > 110$.} As an abstraction,
+%however, the dimension of calendar time in this model is infinite. Of the four
+%triad identities, only one lacks an unbounded dimension, the TAL. Adding
+%the absent dimension to TAL therefore makes its 3d extension boundless. In
+%this way, we may imagine a prism-like construct, where T, A, and L, compose
+%the faces of a triangular cross-section of the prism, which extends infinitely
+%``through'' the triangle.
+%We can think of the TAL triangle passing through time, extending the population
+%forward into the future and backward into the past. In this case, the TAL
+%triangle may take either the period or cohort perspective. 
 
  \section{Diagram of the hexad identity}
  There are different ways to proportion this three dimensional construct,
@@ -1229,21 +1316,17 @@ comparisons of HLE between populations with different mortality are also biased.
 We conclude that comparisons of health expectancies might be biased in ways not
 previously documented.
 
-Let us take the example of self-reported health (SRH). This variable is
-available from many different survey sources, and it is familiar to many researchers. There are
-many known pitfalls to this particular variable that already make it difficult
-to compare between sexes, over time, or between populations, and these do not
-concern us. We use this variable as an example because of the clear
-pattern of variation that it shows, which we use to make our more general point.
-
-Figure~\ref{fig:poorsrh} displays a series of TAL surface plots, each referring
-to a different quinquennial birth cohort (1905-1909, etc). The data come from
-the RAND version of the US Health and Retirement Study \citep{HRS}. Since this
+Let us take the example of self-reported health (SRH). %This variable is
+%available from many different survey sources, and it is familiar to many
+% researchers. There are many known pitfalls to this particular variable that already make it difficult
+%to compare between sexes, over time, or between populations, and these do not
+%concern us. We use this variable as an example because of the clear
+%pattern of variation that it shows, which we use to make our more general
+% point.
+ The data come from the RAND version of the US Health and Retirement Study \citep{HRS}. Since this
 survey has multiple observations of individuals, as well as a mortality
 follow-up, we have each of the six time measures for each observation. Further
-methodological details are given by \citet{riffe2015ttd}. The TAL surfaces for
-each successive birth cohort are shifted by five years because the observation
-window available is from 1992 to 2011 for each cohort.
+methodological details are given by \citet{riffe2015ttd}. 
 
 \begin{figure}[h!] 
 \caption{Prevalence of males self-reporting poor health by chronological and
@@ -1300,9 +1383,12 @@ thanatological age, by quinquennial birth cohorts, 1905-1925. (HRS)}
 \end{subfigure}
 \end{figure} 
 
-The $x$-axis of these surface plots is chronological age, while the $y$-axis is
-remaining years of life. Contour lines in the surfaces indicate the
-primary direction of variation, in this case over thanatological age. Downward
+Figure~\ref{fig:poorsrh} displays a series of TAL surface plots of SRH
+prevalance, each referring to a different quinquennial birth cohort (1905-1909,
+etc). The TAL surfaces for
+each successive birth cohort are shifted by five years because the observation
+window available is from 1992 to 2011 for each cohort. Contour lines in the
+surfaces indicate the primary direction of variation. Downward
 diagonals indicate lifespans, which the reader may also think of as very
 specific birth-death cohorts. These are the diagonals along which lifelines may
 be imagined, as suggested in Figures~\ref{fig:TAL} and~\ref{fig:apctTAL}. For each
@@ -1313,8 +1399,8 @@ and not chronological age. The prevalence for those with $t$ remaining years of
 life is similar in these data, irrespective of chronological age, birth cohort,
 or ultimate lifespan.
 
-When one looks at a chronological age pattern of SRH, as measured
-here (the Sullivan curve, \citep{Sullivan1970}), one sees an increasing tendency
+The marginal chronological age pattern of SRH, as measured
+here (the Sullivan curve, \citep{Sullivan1970}), shows an increasing tendency
 over age.
 However, such an increasing line is a marginal ruse, due to an interaction
 between the distribution of lifespans and the relatively fixed underlying

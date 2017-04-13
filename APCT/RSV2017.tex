@@ -752,7 +752,7 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 %\centering
 %\caption{Cartesian}
 %\label{fig:TALrt}
-\includegraphics[scale=0.55]{Figures/TALrt.pdf}
+\includegraphics[scale=0.7]{Figures/TALrt.pdf}
 %\end{subfigure}
 %~~~~~
 %\begin{subfigure}{.48\textwidth}
@@ -762,7 +762,9 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 %\includegraphics[scale=0.55]{Figures/TALeq.pdf}
 %\end{subfigure}
 %}
+
 \bigskip
+\raggedright
 (*) Since two of the six lifelines are of equal length (75), they are
 overlapped in this figure and appear to be five.
 \end{figure} 
@@ -840,25 +842,39 @@ marriage.
 \FloatBarrier
 
 \section{A general relationship between events and durations}
-\vt{new}
-Each of the six time measures that we have mentioned can be categorized into
-two basic types: Events and durations. Events are time measures with dates in
-calendar time, which include birth and death cohorts, as well as period itself.
+The dyadic relationships discussed in prior sections are intuitive, but
+the full hexad relationship and its diagram are best derived from a
+more general event-duration groundwork. These more general terms will also
+facilitate comparison with other relatively complicated temporal designs in the
+literature.
+Each of the six time measures that we have treated can be categorized into two basic types: Events
+and durations. Events are time measures with dates in calendar time, which
+include birth and death cohorts, as well as period itself.
 Durations are time differences between pairs of
 events. Chronological age (P-C), thanatological age (D-P), and lifespan (D-C)
 are in this senese durations. 
 
-Let us continue in more general terms by formalizing
-the notions of $n$ points in time $\textbf{p}$ and the $m$ durations $\textbf{d}$
-between these points. $\textbf{d}$ can be said to be linearly dependant on
-$\textbf{p}$ in the sense that a linear transformation of $\textbf{p}$ will
-yield $\textbf{d}$ (see \vt{Appendix} ).
-A set of $n$ points implies a total of $m = \binom{n}{2} = n(n - 1)/2$
-durations.
-The relationship between points and durations can be drawn on a timeline, in an undirected graph with $n$ event nodes and $m$ edges for
-durations, or in an undirected graph with $m+n$ edges, mixing events and
-durations.
+Let us formalize the notions of $n$ points in time $\textbf{p} = [p_1 \ldots
+p_n]$ and the $m$ durations $\textbf{d} = [d_1 \ldots d_m]$ between these
+points. $\textbf{d}$ is linearly dependant on $\textbf{p}$ in the sense that a
+linear transformation of $\textbf{p}$ will yield $\textbf{d}$ (see \vt{Appendix} ).
+A set of $n$ events implies a total of $m = \binom{n}{2} = n(n - 1)/2$
+durations. The relationship between events and durations can be
+systematically represented in a series of timelines and graphs. 
 
+Table~\ref{tab:timelines} displays a timeline and two
+levels of graph representation for two, three, and four event sets. The left
+column shows timelines, a familiar linear representation of time, with events
+marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
+each of the $m$ possible event dyads and are drawn below
+the main timeline as curly braces labelled with $d_1 \ldots d_m$. The middle
+column consists in the simplest graph representation of the event-duration
+timeline, with $n$ red nodes for each of the event types. A full
+connection of the graph yields $m$ edges for each of the possible durations. The right column
+redraws the graph with $n+1$ and $m+n$ total edges,
+consisting in a mix of all time measures, both events and durations. Event edges are indicated in red
+with red-circled labels. Nodes in this rendering have no direct time-measure
+meaning.
 
 \newcolumntype{C}{ >{\centering\arraybackslash} m{2cm} }
 \newcolumntype{D}{ >{\centering\arraybackslash} m{5.4cm} }
@@ -870,7 +886,7 @@ durations.
 
 \centering
 \caption{Event-duration timeline, graph, and temporal plane graphs for two, three, and four event sequences.}
-\label{tab}
+\label{tab:timelines}
 \makebox[\linewidth][c]{
 \begin{tabular}{C D E E}
 nr. events  & timeline & graph & temporal plane graph \\
@@ -881,6 +897,53 @@ nr. events  & timeline & graph & temporal plane graph \\
 \end{tabular}
 }
 \end{table}
+
+Some examples will add intuition to the interpretation of
+Table~\ref{tab:timelines}.  
+
+%### Example 1: The Lexis surface
+
+%Let $\textbf{p}$ have two elements. Then, following definition 1, $\textbf{d}$
+% is defined as
+
+%$$
+%d_1 = p_2 - p_1.
+%$$
+
+%Interpreting $d_1$ as *age*, $p_2$ as *period* and $p_1$ as *birth cohort*
+% yields the classic APC identities. The Lexis surface as the plane of all possible combinations between *age* and *period* with cohorts as diagonals results from the transformation $P^2 \rightarrow M^2$ as shown to be possible in theorem 3.
+
+%### Example 2: Lexis' marriage identity
+
+%Along with his well known 2-dimensional diagram Lexis (1875) also published a
+% 3-dimensional extension which he applies to marriage and separation processes.
+
+%Let $\textbf{p}$ have three elements. Then $\textbf{d}$ is defined as
+
+%$$
+%\begin{matrix}
+%d_1 = p_2 - p_1\\
+%d_2 = p_3 - p_1\\
+%d_3 = p_3 - p_2
+%\end{matrix}.
+%$$
+
+%Interpreting $p_1$ as *birth cohort*, $p_2$ as *marriage cohort* and $p_3$ as
+% *separation cohort* yields the durations *age at marriage* ($d_1$), *age at separation* ($d_2$), and *duration of marriage* ($d_3$). Lexis' "marriage space" is reconstructed by transforming $P^3 \rightarrow M^3$ where $M$ has three orthogonal basis vectors corresponding to $(p_1, d_1, d_3)$.
+
+%### Example 3: Adding death cohort to the Lexis surface
+
+%Equivalent to example 2 we start with a three element vector $\textbf{p}$
+% yielding the very same identities as shown above.
+
+%Interpreting $p_1$ as *birth cohort*, $p_2$ as *period* and $p_3$ as *death
+% cohort* yields the durations *age* ($d_1$), *lifespan* ($d_2$), and *time until death* ($d_3$). This vector space $P^3$ contains the Lexis surface as a sub-space.
+
+%[^1]: Equivalently $\textbf{d}$ can be expressed as
+% $\text{vech}(\textbf{p}\times \textbf{1}_n^\textsf{T} - \textbf{1}_n \times \textbf{p}^\textsf{T})$. For ease of notation we use double indices to index each element of the vector $\textbf{d}$. The indices $ij$ of the $k^\text{th}$ element of $\textbf{d}$ are given by $d_{ij} = d_k = p_{i=\left\lfloor \frac {1}{2}+\sqrt{2k}\right\rfloor+1} - p_{j=k-C\left(\left\lfloor \frac{1+\sqrt{8k}}{2}\right\rfloor\right)}$ with $C[f(k)]$ being the binomial coefficient $\left(\begin{matrix} f(k)\\2\end{matrix}\right)$.
+%[^2]: $\textbf{I}_n$ is the $n \times n$ identity matrix; $\textbf{1}_n$ is a
+% vector with $n$ elements where each element is 1; $\textbf{0}_{m \times n}$ is a $m \times n$ matrix where each element is 0. For notational convenience we allow for a matrix with 0 columns, written $\Big(\textbf{0}_{n \times 0}\Big)$.
+
 
 \section{A tetrahedron relates the six time indices.}
 Each of the four triad identities may be thought of as a

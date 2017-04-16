@@ -58,7 +58,13 @@ np_adjacency <- function(n=4, edges=c("p1","p2","d1")){
 	adj 	              	<- matrix(0, ncol = n1, nrow = n1, dimnames = list(1:n1, 1:n1))   
 	adj[edges.have] 		<- 1
 	adj[edges.have[,c(2,1)]] <- 1
-	adj                   	<- adj + diag(n1)
+	
+	# TR: 16-4-2017 OK, we only have 1s on diag 
+	# for vertices that actually are touched...?
+	vdiag <- rep(0,n1)
+	vhave <- unique(c(edges.have))
+	vdiag[vhave] <- 1
+	adj                   	<- adj + diag(vdiag)
 	
 	# an extra object for orientation
 	edges.all             	<- as.matrix(edges.all)
@@ -95,7 +101,7 @@ np_expand <- function(n=4, edges=c("p1","p2","d1")){
 # checking whether the symmetrix adjacency matrix is invertible or not. Returns TRUE or FALSE.
 
 identifiable <- function(n=4,edges=c("p1","p2","d1")){
-	adj <- np_adjacency(n, edges)$adj
+	adj <- np_adjacency(n, edges=edges)$adj
 	# is this matrix invertible?
 	determinant(adj,FALSE)$modulus != 0
 }
@@ -114,4 +120,120 @@ np_expand( n = 4, edges = c("p1","p3","d1")) # APD
 identifiable(3,  edges = c("p1","p2","d1"))  # APC
 identifiable(3, edges =  c("p1","p3","d1"))  # APD
 
+np_expand( n = 4, edges = c("p1","p3","d1")) # APD
 
+identifiable(n=5, edges =  c("p1","p3","d1"))  # APD
+
+
+# would now like to generate the full set of possible spanning trees.
+vs <- 1:4
+ids   <- np_adjacency(n=3,  edges = c("p1","p2","d1"))$edgeids
+ids[t(combn(vs,2))]
+
+# got it.
+apply(combn(ids[t(combn(vs,2))],3),2,identifiable,n=3)
+
+# generate
+generateSpanningTrees <- function(n=3){
+	edges.fake  <- paste0("p",1:n)
+	vs    		<- 1:(n+1)
+	ids   		<- np_adjacency(n=n,  edges = edges.fake)$edgeids
+	edges.all 	<- ids[t(combn(vs,2))]
+	np1trees 	<- combn(edges.all,n)
+	identified 	<- apply(np1trees,2,identifiable,n=n)
+	as.list(as.data.frame(np1trees[, identified]))
+}
+#length(generateSpanningTrees(2))
+#length(generateSpanningTrees(3))
+#length(generateSpanningTrees(4))
+#length(generateSpanningTrees(5))
+
+
+# it turns out Cayley's formula doesn't work for this...
+#cayley <- function(n=3){
+#	(n+1)^(n-1)
+#}
+#cayley(3)
+#cayley(4)
+#
+n4 <- lapply(generateSpanningTrees(4),sort)
+## they're unique sets
+#length(unique(unlist(lapply(n4,paste, collapse=""))))
+# but are these connecting trees?
+edges <- n4[[1]]
+
+# TODO: add x and y shift
+draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label = TRUE){
+	p 			<- rep(1,n)
+	n1    		<- n + 1
+	# get coords for the n+1 vertices
+	verts 		<- decide.verts(c(p,1))
+	# get d1...dm
+	durs  		<- DefaultDurationOrdering(p)
+	# need comparable name, for selecting later
+	durs$name 	<- paste0("d", durs$d)
+	# remove unneeded columns
+	durs$from 	<- NULL
+	durs$to 	<- NULL
+	durs$d 		<- NULL
+	durs$dur 	<- NULL
+	# make same for period measures, colnames must match
+	p 			<- data.frame(pfrom = 1:n, 
+			                  pto = rep(n1,n), 
+							  name = paste0("p",1:n))
+	# join event and duration edges
+	all.edges 	<- rbind(p,durs)
+	# select those specified
+	edges.draw 	<- all.edges[all.edges$name %in% edges, ]
+	
+	if (!add){
+		# create empty device
+		par(xpd=TRUE)
+		plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
+	}
+	for (i in 1:nrow(edges.draw)){
+		fr <- edges.draw$pfrom[i]
+		to <- edges.draw$pto[i]
+		d  <- to - fr
+		lpropi <- ifelse(d == 1 | d == n, .5, lprop)
+				
+		x1 <- verts$x[fr] + x
+		x2 <- verts$x[to] + x
+		y1 <- verts$y[fr] + y
+		y2 <- verts$y[to] + y
+		segments(x1,y1,x2,y2)
+		
+		if (label){
+			lx <- x1*lpropi+x2*(1-lpropi)
+			ly <- y1*lpropi+y2*(1-lpropi)
+			points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
+			text(lx,ly,edges.draw$name[i])
+		}
+	}
+
+}
+
+draw.tree(4,n4[[2]])
+
+plot.order <- matrix(1:72,ncol=9)
+xc         <- (col(plot.order) - 1) * 2.2 + 1
+yc         <- (row(plot.order)-1) * 2.2 + 1
+yc         <- abs(yc-max(yc)) + 1
+
+par(xpd=TRUE)
+plot(NULL,type='n',xlim=range(xc)+c(-1,1),ylim=range(yc)+c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
+for (i in 1:length(n4)){
+	draw.tree(4,n4[[i]],label=FALSE, add = TRUE,x=xc[i], y = yc[i])
+}
+
+dev.new()
+star.timeline.edges.only(p=rep(1,4))
+
+# test d1,d3,p1,p3
+
+adj <- np_adjacency(n=4,edges= c("d1","d3","p1","p3"))
+c("d1","d3","p1","p3")
+adj$edgeids %in% c("d1","d3","p1","p3")
+adj$adj
+#adj$adj[4,4] <- 0
+#solve(adj$adj)

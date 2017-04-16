@@ -38,8 +38,8 @@ GenerateTransformationMatrix <- function (n) {
 	GenSubmatrx <- function (i) cbind(-diag(i), 1, matrix(0, ncol = n-i, nrow = i))
 	do.call("rbind", lapply(1:n, "GenSubmatrx"))
 }
-n <- 4
-make.At(4)
+#n <- 4
+#make.At(4)
 DefaultDurationOrdering <- function(p){
 	n       <- length(p)
 	At      <- GenerateTransformationMatrix(n)
@@ -112,9 +112,11 @@ star.timeline <- function(p,lprop=.5){
 	}
 }
 
+#p <- rep(1,4)
+
 star.timeline.edges.only <- function(p,lprop=.5){
-	n  <- length(p)
-	n1 <- n + 1
+	n     <- length(p)
+	n1    <- n + 1
 	verts <- decide.verts(c(p,1))
 	durs  <- DefaultDurationOrdering(p)
 	par(xpd=TRUE)

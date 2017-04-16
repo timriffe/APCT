@@ -4,7 +4,7 @@
 # install.packages("expm")
 library(expm)
 # Theorem 3 P^n <-> M^n for mixed point durations.
-
+source("/home/tim/git/APCT/APCT/R/Timelines.R")
 
 # make ugly generalized function
 # A degree-n event-duration identity is identifiable from a set of n' events and m' durations
@@ -106,64 +106,96 @@ identifiable <- function(n=4,edges=c("p1","p2","d1")){
 	determinant(adj,FALSE)$modulus != 0
 }
 
-
+# --------------------
 # test
-np_adjacency(n=3,  edges = c("p1","p2","d1"))
+#np_adjacency(n=3,  edges = c("p1","p2","d1"))
 
-# APCTDL
-np_expand(n=3,  edges = c("p1","p2","d1"))   # APC
-np_expand( n = 3, edges = c("p1","p3","d1")) # APD
-# a higher order identity, partial expansion
-np_expand( n = 4, edges = c("p1","p3","d1")) # APD
-
-# APCTDL
-identifiable(3,  edges = c("p1","p2","d1"))  # APC
-identifiable(3, edges =  c("p1","p3","d1"))  # APD
-
-np_expand( n = 4, edges = c("p1","p3","d1")) # APD
-
-identifiable(n=5, edges =  c("p1","p3","d1"))  # APD
-
+## APCTDL
+#np_expand(n=3,  edges = c("p1","p2","d1"))   # APC
+#np_expand( n = 3, edges = c("p1","p3","d1")) # APD
+## a higher order identity, partial expansion
+#np_expand( n = 4, edges = c("p1","p3","d1")) # APD
+#
+## APCTDL
+#identifiable(3,  edges = c("p1","p2","d1"))  # APC
+#identifiable(3, edges =  c("p1","p3","d1"))  # APD
+#
+#np_expand( n = 4, edges = c("p1","p3","d1")) # APD
+#
+#identifiable(n=5, edges =  c("p1","p3","d1"))  # APD
 
 # would now like to generate the full set of possible spanning trees.
-vs <- 1:4
-ids   <- np_adjacency(n=3,  edges = c("p1","p2","d1"))$edgeids
-ids[t(combn(vs,2))]
-
 # got it.
-apply(combn(ids[t(combn(vs,2))],3),2,identifiable,n=3)
 
 # generate
 generateSpanningTrees <- function(n=3){
+	# generate all indices (all p will give it
 	edges.fake  <- paste0("p",1:n)
 	vs    		<- 1:(n+1)
 	ids   		<- np_adjacency(n=n,  edges = edges.fake)$edgeids
+	# n choose 2 combos of all edges yields all vertex pairs
 	edges.all 	<- ids[t(combn(vs,2))]
+	# then create all sets of n vertex pairs
 	np1trees 	<- combn(edges.all,n)
+	# given all sets of n vertex pairs (i.e. edges), which are identifiable?
 	identified 	<- apply(np1trees,2,identifiable,n=n)
+	# select down
 	as.list(as.data.frame(np1trees[, identified]))
 }
-#length(generateSpanningTrees(2))
-#length(generateSpanningTrees(3))
-#length(generateSpanningTrees(4))
-#length(generateSpanningTrees(5))
 
+# must be connected, use n edges, and touch all vertices.
+#length(generateSpanningTrees(2)) # 3      # choose(ne(2),2)  3
+#length(generateSpanningTrees(3)) # 16     # choose(ne(3),3)  20
+#length(generateSpanningTrees(4)) # 65     # choose(ne(4),4)  210
+#length(generateSpanningTrees(5)) # 846    # choose(ne(5),5)  3003
+#length(generateSpanningTrees(6)) # 15046  # choose(ne(6),6)  54264
+#length(generateSpanningTrees(7)) # haven't run
 
-# it turns out Cayley's formula doesn't work for this...
+ncombos <- function(n){
+	choose(ne(n),n)
+}
+n <-4
+(n+1)^(n-1)
+# 2^1
+# [1] 2
+# > cat("Synch2377770871081\n");
+#cumprod(1:6) - cumprod(0:5)
+##           2, 3, 4,  5,  6
+#n<- 2:6
+#factorial(n)
+#nspans <- c(3,16,65,846,15046)
+#ncombos(2:6) # appears to approach 1/4
+#plot(nspans / ncombos(2:6))
+#ncombos(7) * .25 # my prediction
+#ncombos(2:6) - nspans
+#ne <- function(n) n+(n*(n-1)/2)
+#
+## it turns out Cayley's formula doesn't work for this...
 #cayley <- function(n=3){
 #	(n+1)^(n-1)
 #}
+#cayley(2:6) / nspans
+#plot(c(3,16,65,846,15046),log='y')
+
+# for n = 4, each edge appears 26 times in the solution set
+# each edge pair appears 9 times
+# each edge triad appears 4 times
+# each edge quad appears once (n=4)
+# in 65 solutions
+
+# for n = 3, each dyad appears 3 times
+# each edge appears 8 times
+# in 16 solutions
+
 #cayley(3)
 #cayley(4)
 #
-n4 <- lapply(generateSpanningTrees(4),sort)
 ## they're unique sets
 #length(unique(unlist(lapply(n4,paste, collapse=""))))
 # but are these connecting trees?
-edges <- n4[[1]]
 
 # TODO: add x and y shift
-draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label = TRUE){
+draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label = TRUE, col = NULL,...){
 	p 			<- rep(1,n)
 	n1    		<- n + 1
 	# get coords for the n+1 vertices
@@ -178,11 +210,16 @@ draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label =
 	durs$d 		<- NULL
 	durs$dur 	<- NULL
 	# make same for period measures, colnames must match
-	p 			<- data.frame(pfrom = 1:n, 
+	pp 			<- data.frame(pfrom = 1:n, 
 			                  pto = rep(n1,n), 
 							  name = paste0("p",1:n))
 	# join event and duration edges
-	all.edges 	<- rbind(p,durs)
+	all.edges 	<- rbind(pp,durs)
+	
+	if (is.null(col)){
+		col <- rep("black",nrow(all.edges))
+	} 
+	all.edges$col <- col
 	# select those specified
 	edges.draw 	<- all.edges[all.edges$name %in% edges, ]
 	
@@ -201,39 +238,64 @@ draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label =
 		x2 <- verts$x[to] + x
 		y1 <- verts$y[fr] + y
 		y2 <- verts$y[to] + y
-		segments(x1,y1,x2,y2)
+		segments(x1,y1,x2,y2,col=edges.draw$col[i],...)
 		
 		if (label){
 			lx <- x1*lpropi+x2*(1-lpropi)
 			ly <- y1*lpropi+y2*(1-lpropi)
-			points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
-			text(lx,ly,edges.draw$name[i])
+			points(lx,ly,pch=22,cex=3.5,col=par("bg"),bg=par("bg"))
+			text(lx,ly,edges.draw$name[i],col=gray(.5))
 		}
 	}
 
 }
 
-draw.tree(4,n4[[2]])
 
+n4 <- lapply(generateSpanningTrees(4),sort)
 plot.order <- matrix(1:72,ncol=9)
 xc         <- (col(plot.order) - 1) * 2.2 + 1
 yc         <- (row(plot.order)-1) * 2.2 + 1
 yc         <- abs(yc-max(yc)) + 1
+pal10 <- c("#ffbaa8","#61df6a","#6a41a6","#c5d643",
+		"#c1b5ff","#b69600","#00b2c1","#c70034","#98d9c7","#d36500")
 
-par(xpd=TRUE)
+pdf("/home/tim/git/APCT/APCT/Figures/n4spanningtrees.pdf",width=10,height=10)
+par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.5,.5,.5,.5))
 plot(NULL,type='n',xlim=range(xc)+c(-1,1),ylim=range(yc)+c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
 for (i in 1:length(n4)){
-	draw.tree(4,n4[[i]],label=FALSE, add = TRUE,x=xc[i], y = yc[i])
+	draw.tree(4,n4[[i]],label=FALSE, add = TRUE,x=xc[i], y = yc[i], col = pal10, lwd = 2)
 }
+#draw.tree(4,c(paste0("d",1:6),paste0("p",1:4)),label=TRUE, add = TRUE,x=19, y = -1, col = pal10, lwd = 2)
+dev.off()
 
-dev.new()
-star.timeline.edges.only(p=rep(1,4))
+pdf("/home/tim/git/APCT/APCT/Figures/n4spanningtreeskey.pdf",width=2.5,height=2.5)
+par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.2,.2,.2,.2))
+draw.tree(4,c(paste0("d",1:6),paste0("p",1:4)),label=TRUE, col = pal10, lwd = 2)
+dev.off()
 
+
+
+# notes, each of the 10 edges appears 26 times.
+
+#dev.new()
+#star.timeline.edges.only(p=rep(1,4))
+#locator(1)
 # test d1,d3,p1,p3
-
-adj <- np_adjacency(n=4,edges= c("d1","d3","p1","p3"))
-c("d1","d3","p1","p3")
-adj$edgeids %in% c("d1","d3","p1","p3")
-adj$adj
-#adj$adj[4,4] <- 0
-#solve(adj$adj)
+#
+#adj <- np_adjacency(n=4,edges= c("d1","d3","p1","p3"))
+#c("d1","d3","p1","p3")
+#adj$edgeids %in% c("d1","d3","p1","p3")
+#adj$adj
+##adj$adj[4,4] <- 0
+##solve(adj$adj)
+#
+#np_expand( n = 4, edges = c("p1","p2","p3","p4"))
+#
+##install_github("jolars/qualpalr")
+##library(devtools)
+##install.packages("devtools")
+#
+## some colors from I want Hue
+#
+#
+#

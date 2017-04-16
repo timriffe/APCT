@@ -2,6 +2,8 @@
 # Author: tim
 ###############################################################################
 
+# function preamble. Graph creation is toggled off so
+# I can source this with no other effects.
 
 # utility functions snagged from YearsLost repo.
 degrees2radians <- function(degrees){
@@ -159,6 +161,9 @@ star.timeline.edges.only <- function(p,lprop=.5){
 	
 }
 
+
+make.graphs <- FALSE
+if (make.graphs){
 from <- 0; to <- 6
 p2   <- seq(from=from,to=to,length=2)
 p3   <- seq(from=from,to=to,length=3)
@@ -235,7 +240,7 @@ system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.p
 system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
 system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
 
-
+} # end graph creation 
 
 
 

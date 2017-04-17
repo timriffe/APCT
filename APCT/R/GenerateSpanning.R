@@ -151,11 +151,11 @@ generateSpanningTrees <- function(n=3){
 #length(generateSpanningTrees(6)) # 15046  # choose(ne(6),6)  54264
 #length(generateSpanningTrees(7)) # haven't run
 
-ncombos <- function(n){
-	choose(ne(n),n)
-}
-n <-4
-(n+1)^(n-1)
+#ncombos <- function(n){
+#	choose(ne(n),n)
+#}
+#n <-4
+#(n+1)^(n-1)
 # 2^1
 # [1] 2
 # > cat("Synch2377770871081\n");

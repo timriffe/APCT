@@ -283,6 +283,12 @@ par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.2,.2,.2,.2))
 draw.tree(4,c(paste0("d",1:6),paste0("p",1:4)),label=TRUE, col = pal10, lwd = 2)
 dev.off()
 
+# Figure tetraheron square:
+
+
+
+
+
 # TODO: add color to segments and vertices
 timeline.graph <- function(n,dcol,vcol){
 	p     <- rep(1,n)

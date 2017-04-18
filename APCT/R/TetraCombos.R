@@ -74,10 +74,52 @@ text(0,0,"3",col = "black",cex=2,font=2,pos=2)                                  
 boxed.labels(.5,sqrt(3)/6,"4",col = "black",cex=2,font=2,border=FALSE)                   # middle vert
 dev.off()
 
+
+# --------------------------------------------------
+# For figure 1a
+n <- 3
+p 			<- rep(1,n)
+n1    		<- n + 1
+# get coords for the n+1 vertices
+verts 		<- structure(list(x = c(3.06161699786838e-16, 1, -1.83697019872103e-16, 
+						-1), y = c(1, -2.44929359829471e-16, -1, 1.22464679914735e-16
+				)), .Names = c("x", "y"))
+# join event and duration edges
+edges.draw 	<- structure(list(pfrom = c(1L, 2L, 3L, 1L, 1L, 2L), pto = c(4, 
+						4, 4, 2, 3, 3), name = c("p1", "p2", "p3", "d1", "d2", "d3")), .Names = c("pfrom", 
+				"pto", "name"), row.names = c(NA, 6L), class = "data.frame")
+edges.draw$label <- c("C","P","D","A","L","T")
+edges.draw$col <- sapply(edges.draw$label,AssignColour)
+lprop <- .4
+pdf("Figures/TetraHedronUnitSquare.pdf", height=4,width=4)
+par(xpd=TRUE,xaxs="i",yaxs="i",mai=c(.2,.2,.2,.2),bg="white")
+plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
+
+for (i in 1:nrow(edges.draw)){
+	fr <- edges.draw$pfrom[i]
+	to <- edges.draw$pto[i]
+	d  <- to - fr
+	lpropi <- ifelse(d == 1 | d == n, .5, lprop)
+	
+	x1 <- verts$x[fr] 
+	x2 <- verts$x[to] 
+	y1 <- verts$y[fr] 
+	y2 <- verts$y[to] 
+	segments(x1,y1,x2,y2,col=edges.draw$col[i],lwd=4)
+	
+	lx <- x1*lpropi+x2*(1-lpropi)
+	ly <- y1*lpropi+y2*(1-lpropi)
+	points(lx,ly,pch=16,cex=5,col=par("bg"),bg=par("bg"))
+	text(lx,ly,edges.draw$label[i],col=edges.draw$col[i],cex=2,font=2)
+}
+dev.off()
+
+
+
 #######################
 # another vesion with vertices not numbered. save as pdf then convert to svg
 pdf("Figures/TetraHedronEdgesOnly.pdf",width=4,height=4)
-par(mai=c(.3,.3,.3,.3))
+par(mai=c(.2,.2,.2,.2))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
 segments(1,0,.5,sqrt(3)/2,lwd=4,col=AssignColour("A"))
 segments(0,0,1,0,lwd=4,col=AssignColour("P"))
@@ -92,10 +134,10 @@ boxed.labels(.25,sqrt(3)/4,"C",col = AssignColour("C"),cex=2,font=2,border=FALSE
 boxed.labels(.75,sqrt(3)/12,"T",col = AssignColour("T"),cex=2,font=2,border=FALSE)                # inner SE edge
 boxed.labels(.25,sqrt(3)/12,"D",col = AssignColour("D"),cex=2,font=2,border=FALSE)                # inner SW edge
 boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = AssignColour("L"),cex=2,font=2,border=FALSE)       # inner N edge
-points(.5,sqrt(3)/2,col = "black",cex=2,pch=19)                                  # top vert
-points(1,0,col = "black",cex=2,pch=19)                                           # bottom right vert
-points(0,0,col = "black",cex=2,pch=19)                                           # bottom left vert
-points(.5,sqrt(3)/6,col = "black",cex=2,pch=19)                   # middle vert
+#points(.5,sqrt(3)/2,col = "black",cex=2,pch=19)                                  # top vert
+#points(1,0,col = "black",cex=2,pch=19)                                           # bottom right vert
+#points(0,0,col = "black",cex=2,pch=19)                                           # bottom left vert
+#points(.5,sqrt(3)/6,col = "black",cex=2,pch=19)                   # middle vert
 dev.off()
 
 

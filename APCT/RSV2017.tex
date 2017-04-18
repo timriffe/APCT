@@ -5,6 +5,7 @@
 \usepackage{apacite}
 \usepackage{appendix}
 \usepackage{amsmath}
+\usepackage{amssymb} % for approx greater than
 \usepackage{caption}
 \usepackage{placeins}
 \usepackage{graphicx}
@@ -592,6 +593,7 @@ rare or novel ways of structuring or viewing temporal variation in demography,
 and these imply new families of rates and probabilities.
 
 \subsection{The triad identities}
+\label{sec:triads}
 There are $20=\binom{6}{3}$ ways to choose three time indices out of
 six, of which four form a triad identity: APC, TPD, TAL, and LCD.
 Given the three time measures from any of the
@@ -807,8 +809,8 @@ In Figure~\ref{fig:LCD}, the same six individuals from previous diagram figures 
 
 We
 recommend this mapping for plotting surfaces of values that are cumulative or
-static over the lifecourse. Imagine an LCD surface of cumulative lifecourse
-consumptive surplus or deficit, or anything else that might vary by lifespan and
+static over the lifecourse, but that may vary over time or by length of life.
+Imagine an LCD surface of cumulative lifecourse consumptive surplus or deficit, or anything else that might vary by lifespan and
 moment of birth or death, such as children ever born, years of retirement, the
 size of trees or other aspects of forestry, populations of buildings in large
 cities, and so forth. \citet{lexis1875einleitung} describes an analogous
@@ -842,44 +844,77 @@ marriage.
 \FloatBarrier
 
 \section{A general relationship between events and durations}
-The dyadic relationships discussed in prior sections are intuitive, but
-the full hexad relationship and its diagram are best derived from a
-more general event-duration groundwork. These more general terms will also
-facilitate comparison with other relatively complicated temporal designs in the
-literature.
-Each of the six time measures that we have treated can be categorized into two basic types: Events
-and durations. Events are time measures with dates in calendar time, which
-include birth and death cohorts, as well as period itself.
+The four identity-based diagrams discussed in prior sections are likely
+straightforward, either because the Lexis diagram is already
+familair to the reader, or because Cartesian representations are widely used.
+However, the special relationship between these diagrams is based on a single
+hexad identity, which is less straightforward, and its resultant diagram is best derived from a more
+general groundwork. In this section we therefore describe a more general
+approach to understanding and constructing higher order temporal identities.
+This approach is based on a categorization of time measures into events and
+durations, and the realization that durations derive from events in calendar
+time.
+
+The general relationship between events and durations serves not only to
+introduce the full demgographic time framework, but also to compare it with
+other relatively complicated temporal designs in the literature. Each of the six
+time measures that we have treated can be categorized into two basic types:
+Events and durations. Events include birth (C) and death (D), as well as period
+itself (P).
 Durations are time differences between pairs of
-events. Chronological age (P-C), thanatological age (D-P), and lifespan (D-C)
-are in this senese durations. 
+events. Chronological age ($A=P-C$), thanatological age ($T=D-P$), and lifespan
+($L=D-C$) are in this senese durations. 
 
 Let us formalize the notions of $n$ points in time $\textbf{p} = [p_1 \ldots
 p_n]$ and the $m$ durations $\textbf{d} = [d_1 \ldots d_m]$ between these
 points. $\textbf{d}$ is linearly dependant on $\textbf{p}$ in the sense that a
-linear transformation of $\textbf{p}$ will yield $\textbf{d}$ (see \vt{Appendix} ).
+linear transformation of $\textbf{p}$ yields $\textbf{d}$ (see \vt{Appendix} ).
 A set of $n$ events implies a total of $m = \binom{n}{2} = n(n - 1)/2$
-durations. The relationship between events and durations can be
-systematically represented in a series of timelines and graphs. 
+durations. The total number of time measures implied by a set of $n$ events is
+therefore $n + m$. A set of time measures derived in this way,
+$\textbf{g} = [\textbf{p}, \textbf{d}]$, forms an identity. In the same way that
+$\textbf{d}$ derives from $\textbf{p}$, there are $(n+1)^{(n-1)}$ ways to
+complete $\textbf{g}$ from a size-$n$ set of potentially mixed durations and
+events. 
 
-Table~\ref{tab:timelines} displays a timeline and two
-levels of graph representation for two, three, and four event sets. The left
+The relationship between events and durations can be systematically represented
+in a series of timelines and graphs. Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left
 column shows timelines, a familiar linear representation of time, with events
 marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
 each of the $m$ possible event dyads and are drawn below
-the main timeline as curly braces labelled with $d_1 \ldots d_m$. The middle
-column consists in the simplest graph representation of the event-duration
-timeline, with $n$ red nodes for each of the event types. A full
-connection of the graph yields $m$ edges for each of the possible durations. The right column
-redraws the graph with $n+1$ and $m+n$ total edges,
-consisting in a mix of all time measures, both events and durations. Event edges are indicated in red
-with red-circled labels. Nodes in this rendering have no direct time-measure
-meaning.
+the main timeline as curly braces labelled with $d_1 \ldots d_m$. It is evident,
+that as $n$ increases, $m$ increases relatively faster, and this
+graphical representation is not efficient for $n \gtrsim 4$. Drawing events on a
+timeline implies an ordering, but the events of $\textbf{p}$
+need not be ordered in any particular way in order for these relationships to
+hold.
+
+The joint relationship between durations and events is more explicit and more
+compact in a graph representation. The middle column of
+Table~\ref{tab:timelines}, labelled \textit{graph} consists in the simplest
+graph representation of the event-duration timeline, with $n$ red vertices for
+each of the events in $\textbf{p}$. A full connection of the graph yields $m$
+edges for each of the possible durations in $\textbf{d}$. This graph
+representation loses the linear time analogy of the timeline, but makes the
+depdenency of $\textbf{d}$ on $\textbf{p}$, and other interdependencies between time measures more explicit.
+
+ The right column of
+Table~\ref{tab:timelines}, labelled \textit{temporal plane graph}
+redraws the graph with a total of $n+1$ vertices and $m+n$ edges for the
+elements of both $\textbf{d}$ and $\textbf{p}$. All
+events of $\textbf{p}$ connect to a single vertex. Event edges are indicated
+in red with red-circled labels and nodes have no direct
+time-measure meaning. In this rendering, each triangle formed by three
+mutually connecting edges represents a triad identity. The top row $n=2$
+consists in a single identity. Three and four events imply a total of four and
+ten triad identies, respectively. We call this a temporal plane graph because
+the triangle resulting from any given triad sub-identity can be extended over
+all valid values of its time measures to form a temporal plane, as of the
+diagrams in Section~\ref{sec:triads}.
 
 \newcolumntype{C}{ >{\centering\arraybackslash} m{2cm} }
 \newcolumntype{D}{ >{\centering\arraybackslash} m{5.4cm} }
 \newcolumntype{E}{ >{\centering\arraybackslash} m{3.7cm} }
-
 
 %\begin{adjustbox}{center}
 \begin{table}[ht]
@@ -898,53 +933,99 @@ nr. events  & timeline & graph & temporal plane graph \\
 }
 \end{table}
 
+\subsection{Examples}
 Some examples will add intuition to the interpretation of
-Table~\ref{tab:timelines}.  
+Table~\ref{tab:timelines}. 
 
-%### Example 1: The Lexis surface
+\paragraph{Example 1: The Lexis surface}
 
-%Let $\textbf{p}$ have two elements. Then, following definition 1, $\textbf{d}$
-% is defined as
+Let $\textbf{p}$ have two elements, as in the first row of
+Table~\ref{tab:timelines}. Then $\textbf{d}$ consists of just one element, defined as
 
-%$$
-%d_1 = p_2 - p_1.
-%$$
+\begin{equation}
+d_1 = p_2 - p_1   \quad\quad.
+\end{equation}
 
-%Interpreting $d_1$ as *age*, $p_2$ as *period* and $p_1$ as *birth cohort*
-% yields the classic APC identities. The Lexis surface as the plane of all possible combinations between *age* and *period* with cohorts as diagonals results from the transformation $P^2 \rightarrow M^2$ as shown to be possible in theorem 3.
+Interpreting $d_1$ as \textit{age}, $p_2$ as \textit{period}, and $p_1$ as
+\textit{birth cohort} yields the APC identity. The Lexis surface is defined as the plane of
+all possible combinations between \textit{age} and \textit{period}.
+\vt{with cohorts as diagonals results from the transformation $P^2 \rightarrow
+M^2$ as shown to be possible in theorem 3.}
 
-%### Example 2: Lexis' marriage identity
 
-%Along with his well known 2-dimensional diagram Lexis (1875) also published a
-% 3-dimensional extension which he applies to marriage and separation processes.
+\paragraph{Example 2: Lexis' marriage identity}
 
-%Let $\textbf{p}$ have three elements. Then $\textbf{d}$ is defined as
+Along with his well known 2-dimensional diagram \citet{lexis1875einleitung} also
+described a 3-dimensional extension applied to the marriage and
+separation processes.
 
-%$$
-%\begin{matrix}
-%d_1 = p_2 - p_1\\
-%d_2 = p_3 - p_1\\
-%d_3 = p_3 - p_2
-%\end{matrix}.
-%$$
+Let $\textbf{p}$ have three elements, as in the second row of
+Table~\ref{tab:timelines}. Then $\textbf{d}$ is defined as
 
-%Interpreting $p_1$ as *birth cohort*, $p_2$ as *marriage cohort* and $p_3$ as
-% *separation cohort* yields the durations *age at marriage* ($d_1$), *age at separation* ($d_2$), and *duration of marriage* ($d_3$). Lexis' "marriage space" is reconstructed by transforming $P^3 \rightarrow M^3$ where $M$ has three orthogonal basis vectors corresponding to $(p_1, d_1, d_3)$.
+\begin{equation}
+\label{eq:p3}
+\begin{matrix}
+d_1 = p_2 - p_1\\
+d_2 = p_3 - p_1\\
+d_3 = p_3 - p_2
+\end{matrix} \quad\quad.
+\end{equation}
 
-%### Example 3: Adding death cohort to the Lexis surface
+Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{marriage cohort} and $p_3$ as
+ \textit{separation cohort} yields the durations $d_1$ as \textit{age at
+ marriage}, $d_2$ as \textit{age at separation}, and $d_3$ as \textit{duration
+ of marriage}. Lexis' ``marriage space'' is reconstructed by transforming $P^3
+ \rightarrow M^3$ where $M$ has three orthogonal basis vectors corresponding to
+ $(p_1, d_1, d_3)$. \vt{also need to work out that theorem for this.} \vt{also,
+ is period implied by the ages? if so, is this actually a 4-event identity?}
 
-%Equivalent to example 2 we start with a three element vector $\textbf{p}$
-% yielding the very same identities as shown above.
+\paragraph{Example 3: Adding death cohort to the Lexis surface}
 
-%Interpreting $p_1$ as *birth cohort*, $p_2$ as *period* and $p_3$ as *death
-% cohort* yields the durations *age* ($d_1$), *lifespan* ($d_2$), and *time until death* ($d_3$). This vector space $P^3$ contains the Lexis surface as a sub-space.
+As in Example 2 we start with a three element vector
+$\textbf{p}$ yielding the very same identities as in equation set
+\eqref{eq:p3} and the second row of Table~\ref{tab:timelines}, but with different interpretations.
+Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$ as \textit{death cohort} yields the durations $d_1$ as \textit{chronological age},
+$d_2$ as \textit{lifespan}, and $d_3$ as \textit{time to death}. This
+vector space $P^3$ contains the Lexis surface as a sub-space, as well as the
+other planes presented in Section~\ref{sec:triads}. We return to this identity
+in the following sections.
+
+\paragraph{Example 4: Brinks' Illness-Death model}
+
+\citet{brinks2014lexis} describes an illness-death process atop the Lexis
+surface, and with diagnosis and death as additional events, for a total of four
+events. Let $\textbf{p}$ have four elements, as in the third row of
+Table~\ref{tab:timelines}. Then $\textbf{d}$ is defined as:
+
+\begin{equation}
+\label{eq:p3}
+\begin{matrix}
+d_1 = p_2 - p_1\\
+d_2 = p_3 - p_1\\
+d_3 = p_3 - p_2\\
+d_4 = p_4 - p_1\\
+d_5 = p_4 - p_2\\
+d_6 = p_4 - p_3
+\end{matrix} \quad\quad.
+\end{equation}
+
+Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period}, $p_3$ as
+diagnosis, and $p_4$ as \textit{death cohort} yields the following composition
+of $\textbf{d}$: $d_1$ is \textit{chronological age}, $d_2$ is \textit{age at
+diagnosis}, $d_3$ is \textit{time to diagnosis},\footnote{Time to diagnosis can
+also be time \textit{since} diagnosis if the elements of $\textbf{p}$ are
+rearranged.
+Note that the elements of $\textbf{p}$ need not be ordered. Although
+birth and death are likely the first and last elements of $\textbf{p}$, this is
+not strictly required.} $d_4$ is \textit{lifespan}, $d_5$ is \textit{time to death}, $d_6$ is duration of illness (an irreversible state). This complete identity of this model therefore implies a total of ten time measures, although not all measures are explicitly included in the model of \citet{brinks2014lexis}.
+
 
 %[^1]: Equivalently $\textbf{d}$ can be expressed as
 % $\text{vech}(\textbf{p}\times \textbf{1}_n^\textsf{T} - \textbf{1}_n \times \textbf{p}^\textsf{T})$. For ease of notation we use double indices to index each element of the vector $\textbf{d}$. The indices $ij$ of the $k^\text{th}$ element of $\textbf{d}$ are given by $d_{ij} = d_k = p_{i=\left\lfloor \frac {1}{2}+\sqrt{2k}\right\rfloor+1} - p_{j=k-C\left(\left\lfloor \frac{1+\sqrt{8k}}{2}\right\rfloor\right)}$ with $C[f(k)]$ being the binomial coefficient $\left(\begin{matrix} f(k)\\2\end{matrix}\right)$.
 %[^2]: $\textbf{I}_n$ is the $n \times n$ identity matrix; $\textbf{1}_n$ is a
 % vector with $n$ elements where each element is 1; $\textbf{0}_{m \times n}$ is a $m \times n$ matrix where each element is 0. For notational convenience we allow for a matrix with 0 columns, written $\Big(\textbf{0}_{n \times 0}\Big)$.
 
-
+\FloatBarrier
 \section{A tetrahedron relates the six time indices.}
 Each of the four triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time

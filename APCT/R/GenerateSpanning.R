@@ -105,6 +105,14 @@ identifiable <- function(n=4,edges=c("p1","p2","d1")){
 	# is this matrix invertible?
 	determinant(adj,FALSE)$modulus != 0
 }
+identifiable2 <- function(n=4,edges=c("p1","p2","d1")){
+	adj <- np_adjacency(n, edges=edges)$adj
+	# is this matrix invertible?
+	all(adj %^% n > 0)
+}
+
+identifiable(n=4, edges = c("p1","p4","d1","d3"))
+identifiable2(n=4, edges = c("p1","p4","d1","d3"))
 
 # --------------------
 # test
@@ -138,7 +146,7 @@ generateSpanningTrees <- function(n=3){
 	# then create all sets of n vertex pairs
 	np1trees 	<- combn(edges.all,n)
 	# given all sets of n vertex pairs (i.e. edges), which are identifiable?
-	identified 	<- apply(np1trees,2,identifiable,n=n)
+	identified 	<- apply(np1trees,2,identifiable2,n=n)
 	# select down
 	as.list(as.data.frame(np1trees[, identified]))
 }
@@ -146,10 +154,12 @@ generateSpanningTrees <- function(n=3){
 # must be connected, use n edges, and touch all vertices.
 #length(generateSpanningTrees(2)) # 3      # choose(ne(2),2)  3
 #length(generateSpanningTrees(3)) # 16     # choose(ne(3),3)  20
-#length(generateSpanningTrees(4)) # 65     # choose(ne(4),4)  210
-#length(generateSpanningTrees(5)) # 846    # choose(ne(5),5)  3003
+#length(generateSpanningTrees(4)) # 125     # choose(ne(4),4)  210
+#length(generateSpanningTrees(5)) # 1296    # choose(ne(5),5)  3003
 #length(generateSpanningTrees(6)) # 15046  # choose(ne(6),6)  54264
 #length(generateSpanningTrees(7)) # haven't run
+
+#c(3,16,65,846,15046) / (2:6 + 1)
 
 #ncombos <- function(n){
 #	choose(ne(n),n)
@@ -252,14 +262,14 @@ draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label =
 
 
 n4 <- lapply(generateSpanningTrees(4),sort)
-plot.order <- matrix(1:72,ncol=9)
+plot.order <- matrix(1:125,ncol=5)
 xc         <- (col(plot.order) - 1) * 2.2 + 1
 yc         <- (row(plot.order)-1) * 2.2 + 1
 yc         <- abs(yc-max(yc)) + 1
 pal10 <- c("#ffbaa8","#61df6a","#6a41a6","#c5d643",
 		"#c1b5ff","#b69600","#00b2c1","#c70034","#98d9c7","#d36500")
 
-pdf("/home/tim/git/APCT/APCT/Figures/n4spanningtrees.pdf",width=10,height=10)
+pdf("/home/tim/git/APCT/APCT/Figures/n4spanningtrees.pdf",width=4,height=10)
 par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.5,.5,.5,.5))
 plot(NULL,type='n',xlim=range(xc)+c(-1,1),ylim=range(yc)+c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
 for (i in 1:length(n4)){
@@ -273,7 +283,37 @@ par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.2,.2,.2,.2))
 draw.tree(4,c(paste0("d",1:6),paste0("p",1:4)),label=TRUE, col = pal10, lwd = 2)
 dev.off()
 
-
+# TODO: add color to segments and vertices
+timeline.graph <- function(n,dcol,vcol){
+	p     <- rep(1,n)
+	verts <- decide.verts(p)
+	durs  <- DefaultDurationOrdering(p)
+	par(xpd=TRUE)
+	plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
+# plot durations
+	for (i in 1:nrow(durs)){
+		fr <- durs$pfrom[i]
+		to <- durs$pto[i]
+		d  <- to - fr
+		lpropi <- ifelse(d == 1 | d == (n - 1), .5, lprop)
+		
+		x1 <- verts$x[fr]
+		x2 <- verts$x[to]
+		y1 <- verts$y[fr]
+		y2 <- verts$y[to]
+		segments(x1,y1,x2,y2)
+		
+		lx <- x1*lpropi+x2*(1-lpropi)
+		ly <- y1*lpropi+y2*(1-lpropi)
+		points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
+		text(lx,ly,substitute(d[x], list(x = i)))
+	}
+# plot events
+	for (i in 1:length(p)){
+		points(verts$x[i],verts$y[i],pch=21,cex=3.5,col="red",bg="white")
+		text(verts$x[i],verts$y[i],substitute(p[x], list(x = i)))
+	}
+}
 
 # notes, each of the 10 edges appears 26 times.
 

@@ -857,8 +857,8 @@ The four identity-based diagrams discussed in prior sections are likely
 straightforward, either because the Lexis diagram is already
 familair to the reader, or because Cartesian representations are widely used.
 However, the special relationship between these diagrams is based on a single
-hexad identity, which is less straightforward, and its resultant diagram is best derived from a more
-general groundwork. In this section we therefore describe a more general
+hexad identity, which is less straightforward, and its resultant
+diagram is best derived from a more general groundwork. In this section we therefore describe a more general
 approach to understanding and constructing higher order temporal identities.
 This approach is based on a categorization of time measures into events and
 durations, and the realization that durations derive from events in calendar
@@ -877,22 +877,23 @@ events. Chronological age ($A=P-C$), thanatological age ($T=D-P$), and lifespan
 Let us formalize the notions of $n$ points in time $\textbf{p} = [p_1 \ldots
 p_n]$ and the $m$ durations $\textbf{d} = [d_1 \ldots d_m]$ between these
 points. $\textbf{d}$ is linearly dependant on $\textbf{p}$ in the sense that a
-linear transformation of $\textbf{p}$ yields $\textbf{d}$ (see \vt{Appendix} ).
+linear transformation of $\textbf{p}$ yields $\textbf{d}$.
 A set of $n$ events implies a total of $m = \binom{n}{2} = n(n - 1)/2$
 durations. The total number of time measures implied by a set of $n$ events is
 therefore $n + m$. A set of time measures derived in this way,
 $\textbf{g} = [\textbf{p}, \textbf{d}]$, forms an identity. In the same way that
 $\textbf{d}$ derives from $\textbf{p}$, there are $(n+1)^{(n-1)}$ ways to
 complete $\textbf{g}$ from a size-$n$ set of potentially mixed durations and
-events. 
+events. Proofs for these statements are found in Appendix~\ref{app:A}. 
 
-The relationship between events and durations can be systematically represented
-in a series of timelines and graphs. Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left
-column shows timelines, a familiar linear representation of time, with events
+The relationship between events and durations can be
+systematically represented in a series of timelines and graphs that may better
+guide intuition.
+Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left column shows timelines, a familiar linear representation of time, with events
 marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
 each of the $m$ possible event dyads and are drawn below
 the main timeline as curly braces labelled with $d_1 \ldots d_m$. It is evident,
-that as $n$ increases, $m$ increases relatively faster, and this
+that as $n$ increases, $m$ increases relatively faster, and this timeline
 graphical representation is not efficient for $n \gtrsim 4$. Drawing events on a
 timeline implies an ordering, but the events of $\textbf{p}$
 need not be ordered in any particular way in order for these relationships to
@@ -916,8 +917,9 @@ in red with red-circled labels and nodes have no direct
 time-measure meaning. In this rendering, each triangle formed by three
 mutually connecting edges represents a triad identity. The top row $n=2$
 consists in a single identity. Three and four events imply a total of four and
-ten triad identies, respectively. We call this a temporal plane graph because
-the triangle resulting from any given triad sub-identity can be extended over
+ten triad identies, respectively, and in general a given higher order identity
+will yield $\binom{n+1}{3}$ triad identities.
+We call this a temporal plane graph because the triangle resulting from any given triad sub-identity can be extended over
 all valid values of its time measures to form a temporal plane, as of the
 diagrams in Section~\ref{sec:triads}.
 
@@ -942,8 +944,10 @@ nr. events  & timeline & graph & temporal plane graph \\
 }
 \end{table}
 
+\FloatBarrier
 \subsection{Examples}
-Some examples will add intuition to the interpretation of
+\label{sec:examples}
+Some brief examples will add intuition to the interpretation of
 Table~\ref{tab:timelines}. 
 
 \paragraph{Example 1: The Lexis surface}
@@ -1040,12 +1044,16 @@ not all measures are explicitly mentioned or used in the model of
 
 \FloatBarrier
 \section{A tetrahedron relates the six time indices.}
+\label{sec:tetrahedron}
 The demographic time framework we present includes three events (period, birth
 cohort, and death cohort), and it therefore leads to a temporal plane graph
 based on the second row and third column of Table~\ref{tab:timelines}, here
-redrawn in Figure~\ref{fig:tet} labelled with the six time indices. \vt{include square
-version of the same.}
+redrawn in Figure~\ref{fig:sq} withg edges labelled by the six time measures
+and colored consistent previous figures. A slight rearrangement of the vertices
+in Figure~\ref{fig:tettet} yields a graph representation of the tetrahedron, the
+simplest platonic solid.
 
+An examination of either layout in Figure~\ref{fig:tet}
 
 Each of the four triad identities may be thought of as a
 two-dimensional plane fully defined by any two of its three constituent time
@@ -1081,12 +1089,14 @@ six time indices.}
 \label{fig:tet}
 \begin{subfigure}{.48\textwidth}
 \caption{vertices on the unit circle}
+\label{fig:sq}
 % switched to edges only, since numbers not referred to
 \includegraphics[width=3in]{Figures/TetraHedronUnitSquare.pdf}
 \end{subfigure}
 ~
 \begin{subfigure}{.48\textwidth}
-\caption{tetrahedral layout}
+\caption{vertices in tetrahedral layout}
+\label{fig:tettet}
 % switched to edges only, since numbers not referred to
 \includegraphics[width=3in]{Figures/TetraHedronEdgesOnly.pdf}
 \end{subfigure}
@@ -1130,24 +1140,25 @@ recreate the full tetrahedron (hexad identity).
 %(thereby connecting the edges). Doing so for each of the opposite pairs will
 %yield the remaining twelve triads.}
 
-\subsection{A geometrical analogy}
-\vt{This section to be replaced with general intro, but language from here can
-move up possibly}
+%\subsection{A geometrical analogy}
+%\vt{This section to be replaced with general intro, but language from here can
+%move up possibly}
 
-A geometrical analogy is pertinent at this point. Any pair of intersecting edges
-of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$
-that determine a 2-dimensional plane in a Cartesian 3-dimensional
-space ($\mathbb{R}^3$).\footnote{A 2d plane in a 3d space is determined by two linearly independent
-vectors (with different direction) and a point, but the inclusion of a point is not
-necessary for the intuitive analogy that we describe here.} Therefore, any third
-vector $\vec{w}$ of that plane can be expressed as a linear combination of
-$\vec{u}$ and $\vec{v}$ (formally, $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ for some $\alpha, \beta \in \mathbb{R}$), which is usually
-described by saying that $\vec{w}$ is linearly dependent on $\vec{u}$ and
-$\vec{v}$.
-A similar property can be derived from the information contained in the
-tetrahedron: $A=P-C$ is a linear combination of C and P and it ``depends''
-on them because they all belong to the same APC plane. Analogously, $P=C+A$
-``depends'' on C and A, and $C=P-A$ ``depends'' on P and A. Given that the faces of the tetrahedron represent the triad identities, any pair of intersecting edges has the same property: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
+%A geometrical analogy is pertinent at this point. Any pair of intersecting
+% edges of the tetrahedron may be interpreted as two vectors $\vec{u}$ and $\vec{v}$
+%that determine a 2-dimensional plane in a Cartesian 3-dimensional
+%space ($\mathbb{R}^3$).\footnote{A 2d plane in a 3d space is determined by two
+% linearly independent vectors (with different direction) and a point, but the inclusion of a point is not
+%necessary for the intuitive analogy that we describe here.} Therefore, any
+% third vector $\vec{w}$ of that plane can be expressed as a linear combination of
+%$\vec{u}$ and $\vec{v}$ (formally, $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ for
+% some $\alpha, \beta \in \mathbb{R}$), which is usually described by saying that $\vec{w}$ is linearly dependent on $\vec{u}$ and
+%$\vec{v}$.
+%A similar property can be derived from the information contained in the
+%tetrahedron: $A=P-C$ is a linear combination of C and P and it ``depends''
+%on them because they all belong to the same APC plane. Analogously, $P=C+A$
+%``depends'' on C and A, and $C=P-A$ ``depends'' on P and A. Given that the
+% faces of the tetrahedron represent the triad identities, any pair of intersecting edges has the same property: The third edge located in the same face of the tetrahedron can be determined by the first two by a simple linear relationship.
 
 % code given in R/TetraCombos.R, lines 70-95
 % PV: already created the new figure
@@ -1159,20 +1170,21 @@ on them because they all belong to the same APC plane. Analogously, $P=C+A$
 %\end{figure}
 %\noindent 
 
-Once a 2d-plane is defined in $\mathbb{R}^3$, an additional vector may be sufficient to cover a
-3d-space. Nonetheless, this third vector needs to be linearly independent
-of any pair of vectors of the 2d plane---that is, it cannot be expressed as a
-linear combination of any two vectors on that plane. Again, an analogous
-property can be observed in the tetrahedron: Say we only have information about
-the indices of the APC plane; A, C and P are not sufficient to determine a thanatological age T, death cohort D, or lifespan L (the three indices that do not belong to the APC plane). So, T, D and L are ``independent'' of the overall information that can be extracted from the APC plane. However, if two of the three constituent time indices of the APC plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of the three ``independent'' indices T, D or L would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age T in addition to C and P, then $A=P-C$, $D=P+T$ and $L=T+A=T+P-C=D-C$. 
+%Once a 2d-plane is defined in $\mathbb{R}^3$, an additional vector may be
+% sufficient to cover a 3d-space. Nonetheless, this third vector needs to be linearly independent
+%of any pair of vectors of the 2d plane---that is, it cannot be expressed as a
+%linear combination of any two vectors on that plane. Again, an analogous
+%property can be observed in the tetrahedron: Say we only have information about
+%the indices of the APC plane; A, C and P are not sufficient to determine a
+% thanatological age T, death cohort D, or lifespan L (the three indices that do not belong to the APC plane). So, T, D and L are ``independent'' of the overall information that can be extracted from the APC plane. However, if two of the three constituent time indices of the APC plane are known (the third one would be unnecessary as it could be derived from the other two), the additional information provided by any of the three ``independent'' indices T, D or L would be sufficient to cover the whole tetrahedron. For example, suppose we have information about thanatological age T in addition to C and P, then $A=P-C$, $D=P+T$ and $L=T+A=T+P-C=D-C$.
 
-Hence, as with vectors in a 3d space, any
-triad of indices that are independent of each other---that is, none of them can
-be expressed as the sum or the difference of the other two---generates a full
-hexad identity or, using an analogous terminology, covers the whole ``space'' of
-demographic indices presented here. Graphically, this is equivalent to
-choosing any combination of three indices that do not belong to the same face
-of the tetrahedron.%, i.e., that do not form one of the four triad identities
+%Hence, as with vectors in a 3d space, any
+%triad of indices that are independent of each other---that is, none of them can
+%be expressed as the sum or the difference of the other two---generates a full
+%hexad identity or, using an analogous terminology, covers the whole ``space''
+% of demographic indices presented here. Graphically, this is equivalent to
+%choosing any combination of three indices that do not belong to the same face
+%of the tetrahedron.%, i.e., that do not form one of the four triad identities
 %represented in Table~\ref{tab:triadids}.
 
 % TR: moved
@@ -1265,6 +1277,7 @@ of the tetrahedron.%, i.e., that do not form one of the four triad identities
 %triangle may take either the period or cohort perspective. 
 
  \section{Diagram of the hexad identity}
+ \label{sec:diagram}
  There are different ways to proportion this three dimensional construct,
 of which we only present the isotropric mapping. In an isotropic projection, the
 tetrahedron is regular, such that all edges are of the same length, and the
@@ -1671,52 +1684,79 @@ in the demographic time identity or its consituent triad identities.
 %\footnote{There are, however, some novel temporal
 %juxtapositions in the literature on event analysis of
 %big data \citep[see e.g.,][]{watson2015timemaps}.}
-\FloatBarrier
-\section{Related concepts}
-A simultaneous juxtaposition of
-the six demographic time measures has never appeared in the literature. However,
-\citet{lexis1875einleitung} describes an analogous hexad relationship between,
-birth cohort, age at marriage, age at separation (death or widowhood), marriage cohort, separation cohort, and
-duration of marriage. The hexad relationship between these six
-time measures can also be verified on a tetrahedron graph. Lexis also describes
-cross-sections in the same sense (\textit{Schnitte}) that we do, denoting
-two-dimensional diagrams, with values of the orthogonal dimension held constant.
-This identity is coherent, but it does not find perfect
-analogy in our proposed framework, in part because each lifeline in the Lexis
-hexad identity has up to three possible points. The period dimension is
-not explicit, but rather nested within three varieties of cohort.
-Clearly with age, \textit{period}, and total duration, remaining
-time should also be identifiable, but this is not included in Lexis' hexad
-identity. 
+%\FloatBarrier
+%\section{Related concepts}
+%A simultaneous juxtaposition of
+%the six demographic time measures has never appeared in the literature.
+% However, \citet{lexis1875einleitung} describes an analogous hexad relationship between,
+%birth cohort, age at marriage, age at separation (death or widowhood), marriage
+% cohort, separation cohort, and duration of marriage. The hexad relationship between these six
+%time measures can also be verified on a tetrahedron graph. Lexis also describes
+%cross-sections in the same sense (\textit{Schnitte}) that we do, denoting
+%two-dimensional diagrams, with values of the orthogonal dimension held
+% constant.
+%This identity is coherent, but it does not find perfect
+%analogy in our proposed framework, in part because each lifeline in the Lexis
+%hexad identity has up to three possible points. The period dimension is
+%not explicit, but rather nested within three varieties of cohort.
+%Clearly with age, \textit{period}, and total duration, remaining
+%time should also be identifiable, but this is not included in Lexis' hexad
+%identity. 
 
-Our hexad identity is designed to contain and identify any point on
-the lifecourse of individuals in populations with heterogeneous
-lifespans. As such it fully describes a population of single state durations.
-We liken Lexis' hexad identity to something similar to a two state APC, albeit
-without explict period. Lexis' marriage hexad identity is also
-illustrated with complex perspective line drawings (see Lexis' Figures 5 and 6).
-These figures (based on cubes rather than tetrahedra--octahedra) and the portion of
-the text that discusses these relationships has unfortunately been largely
-overlooked in posterior literature, which has focused much more on the APC
-plane. We do not claim that the concepts in Lexis' hexad
-identity are not transportable, but perhaps the specificity of this identity has
-made it unwieldy in practice, or difficult to conform with data. Adding an
-additional state to the identity we propose would also greatly expand its
-complexity.
+%Our hexad identity is designed to contain and identify any point on
+%the lifecourse of individuals in populations with heterogeneous
+%lifespans. As such it fully describes a population of single state durations.
+%We liken Lexis' hexad identity to something similar to a two state APC, albeit
+%without explict period. Lexis' marriage hexad identity is also
+%illustrated with complex perspective line drawings (see Lexis' Figures 5 and
+% 6).
+%These figures (based on cubes rather than tetrahedra--octahedra) and the
+% portion of the text that discusses these relationships has unfortunately been largely
+%overlooked in posterior literature, which has focused much more on the APC
+%plane. We do not claim that the concepts in Lexis' hexad
+%identity are not transportable, but perhaps the specificity of this identity
+%has made it unwieldy in practice, or difficult to conform with data. Adding an
+%additional state to the identity we propose would also greatly expand its
+%complexity.
 
-Lifelines represented in our hexad diagram are also reminiscent of the Lexis
-pencil notion from \citet{francis1996visualization}. Lexis pencils are a method of representing
-limited numbers of multistate lifelines in three dimensional space, where
-lifelines ascend diagonally from age zero. This visualization system could be
-constrained to match the one we present if the $z$ axis were set to remaining years of life
-and lifeline trajectories were realigned to descend toward zero remaining years
-of life (or some rotation thereof), and sorted by length of life.
+%Lifelines represented in our hexad diagram are also reminiscent of the Lexis
+%pencil notion from \citet{francis1996visualization}. Lexis pencils are a method
+% of representing limited numbers of multistate lifelines in three dimensional space, where
+%lifelines ascend diagonally from age zero. This visualization system could be
+%constrained to match the one we present if the $z$ axis were set to remaining
+% years of life and lifeline trajectories were realigned to descend toward zero remaining years
+%of life (or some rotation thereof), and sorted by length of life.
 
 \section{Discussion}
 
-%It is straightforward to
-%think of examples to derive time measures based on other given
-%time measures. 
+In this paper we first present a series of four Cartesian diagrams based on
+combinations of six different measures of demographic time: chronological age,
+period, birth cohort, time to death, death cohort, and individual lifespan.
+These diagrams include the familiar Lexis diagram (APC), but also three either new or uncommon diagrams. The TPD
+diagram relates time of death, period, and time until death, and is therefore a
+sort of dual to the Lexis diagram. The TAL diagram relates the three duration
+measures of time to death, chronological age, and lifespan, and it may be useful
+for analyzing patterns that vary over the lifecourse and/or by length of life.
+The CDL diagram relates time of birth with time of death and lifespan, and it
+may be useful for analyzing patterns that vary over time and by length of life,
+but not necessarily over the lifecourse. We describe these four diagrams as
+temporal plane extensions of their underlying triad identities. Each triad
+identity consists in simple linear relationship between its three constituent
+time measures.
+
+In Section~\ref{sec:gen} we digress to present a more general
+event-duration framework. These general terms allow us to present the
+demographic time hexad identity as a special case in Section~\ref{sec:examples}.
+We compare this identity with other relatively complicated temporal
+relationships in the literature, such as the \citet{lexis1875einleitung}
+marriage identity. In Section~\ref{sec:tetrahedron} we describe how the graph
+of the demographic time identity is also the graph of a tetrahedron. As a
+three-dimensional solid, the tetrahedron forms the basis of the three
+dimensional extension of the demograhic time identity. In
+Section~\ref{sec:diagram} we present a diagram rendering of the demographic
+time identity.
+
+
 In isolation, each of the four triad identities is intuitive. The TPD
 diagram is similar to APC, but it is aligned to time of death rather than time of birth. The TAL diagram presents a clear way to classify events
 over the life course of a cohort. Finally, the LCD diagram can be used to
@@ -1847,13 +1887,46 @@ investigation.
   \bibliography{refs} 
   
 \begin{appendices}
-\section{The event duration transformation proofs}
+\section{Event duration transformation proofs}
 \label{app:A}
+This appendix provides some formal support to statements and explanations given
+in Section~\ref{sec:gen}.
 
-As described in Section~\ref{sec:gen}, $\textbf{p}$ is a length-$n$ vector of
-event times. Consider the set $P$ of all possible choices of $n$ points in time.
+\begin{definition} Let $\textbf{p}$ be a vector with $n$ elements where $n \geq
+2$ and elements $p_{i=1} \ldots p_n \in \mathbb{R}$. Let $\textbf{d}$ be a vector with $m$ elements such that $\textbf{d}_{ij} = p_i - p_j$ for all $i$ and $j = 1, \ldots, n$ where $i>j$.
+\end{definition}
 
-\theoremstyle{definition}
+Equivalently $\textbf{d}$ can be expressed as $\text{vech}(\textbf{p}\times
+\textbf{1}_n^\textsf{T} - \textbf{1}_n \times \textbf{p}^\textsf{T})$. For ease
+of notation we use double indices to index each element of the vector
+$\textbf{d}$. The indices $ij$ of the $k^\text{th}$ element of $\textbf{d}$ are
+given by $d_{ij} = d_k = p_{i=\left\lfloor \frac
+{1}{2}+\sqrt{2k}\right\rfloor+1} - p_{j=k-C\left(\left\lfloor
+\frac{1+\sqrt{8k}}{2}\right\rfloor\right)}$ with $C[f(k)]$ being the binomial
+coefficient $\binom{f(k)}{2}$.
+
+\begin{theorem} 
+The number of elements in $\textbf{d}$ is $m = n(n-1)/2$.
+\end{theorem}
+
+\begin{proof} 
+Because $d_{ij}$ must satisfy $i > j$ it can be thought of as all
+the elements below the subdiagonal of a $n\times n$ matrix of which there are $m = n(n-1)/2$.
+\end{proof}
+
+\begin{corollary} 
+The sum of the number of elements in $\textbf{p}$ and
+$\textbf{d}$ is the number of edges on an $n+1$-polytope, or the number of edges
+in a complete graph with $n+1$ vertices.
+\end{corollary}
+
+\begin{proof} 
+The sum of the number of elements in $p$ and $d$ is $n+m = n + n(n-1)/2$ which
+is the number of edges on an $n+1$-polytope.
+\end{proof}
+
+Consider the set $P$ of all possible choices of $n$ points in time.
+
 \begin{definition}{$P=\mathbb{R}^n$:}
 Let $P=\mathbb{R}^n$ be the standard basis vector-space spanning all
 $\textbf{p}$.
@@ -1880,8 +1953,13 @@ d_1 \\ \vdots \\ d_{n(n-1)/2}
 $$
 
 Given \textit{any} $n$ points in time it is always possible to calculate the
-durations between any pair of these points. This calculation can be understood as a linear transformation of the \textit{point-space} $P$ to the \textit{duration-space} $D$.
+durations between any pair of these points. This calculation can be understood
+as a linear transformation of the \textit{point-space} $P$ to the
+\textit{duration-space} $D$.\footnote{ $\textbf{I}_n$ is the $n \times n$
+identity matrix; $\textbf{1}_n$ is a vector with $n$ elements where each element is 1; $\textbf{0}_{m \times n}$ is a $m \times n$ matrix where each element is 0. For notational convenience we allow for a matrix with 0 columns, written $\Big(\textbf{0}_{n \times 0}\Big)$}
 \end{theorem}
+
+\vt{example: CPD $\textbf{p}$ yields TAL $\textbf{d}$}
 
 \begin{proof} $A_T$ is a simple consequence of the definition of
 $\textbf{d}$.
@@ -1897,16 +1975,25 @@ $n$ points in time marking the endpoints of the durations, e.g. given only age o
 \begin{proof} $T_\textbf{A}^{-1}$ exists if and only if $\textbf{A}_T^{-1}$ exists. $\textbf{A}_T$ has no inverse since the columns of $\textbf{A}_T$ are always linearly dependent on each other, i.e. the last element in each row of $\textbf{A}_T$ is always the negation of the sum of all the other row elements. Therefore $T_\textbf{A}^{-1}$ does not exist.
 \end{proof}
 
-\begin{theorem} *(Work in progess)* Something that states that you can transform $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
+\begin{theorem}
+\label{mixing} *(Work in progess)* Something that states that you can transform
+ $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
 \end{theorem}
+\vt{For example APT yields APCTDL. APT is a mixture of 1 element of
+$\textbf{p}$ and 2 elements of $\textbf{d}$. This is different from pure
+$P\rightarrow D$}
+
+\vt{TR: I think this theorem can be proved using graph theory as in the
+corollary below.}
+
 
 \begin{definition}{$\textbf{g}$}
 Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
 d_{k=1,\ldots,m}\right\}$
 \end{definition}
 
-\begin{theorem} There are $b = (n+1)^{(n-1)}$ many ways to
-choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
+\begin{theorem} (in progress) There are $b = (n+1)^{(n-1)}$ many
+ways to choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
 remaining $m$ elements of $\textbf{g}$.
 \end{theorem}
 
@@ -1924,7 +2011,87 @@ linear combinations of any given MST.
 \end{proof}
 
 \begin{corollary}
+Each set of $n$ elements from $\textbf{g}$, $\textbf{b}'$ whose linear
+transformation yields the remaining $m$ elements of $\textbf{g}$ includes at
+least one element of $\textbf{p}$.
 \end{corollary}
+
+\begin{proof}
+One of the vertices of $\textbf{K}$, say the $k^{\text{th}}$ vertex, is
+connected only to edges labelled by the elements of $\textbf{p}$. Since a
+spanning tree of $\textbf{K}$ must connect to this vertex to fully connect
+$\textbf{K}$, all $b$ valid spanning trees must contain at least one edge
+labelled by an element of $\textbf{p}$.
+\end{proof}
+
+\vt{TR: is the statement in this proof something that itself also needs to be
+proved?-- that one vertex connects only to $\textbf{p}$ If that statement needs
+to be proved, is it a lemma? I think this one takes care of the ``mixing''
+theorem~\ref{mixing} that is a work in progress above.}
+
+\begin{definition}{$\textbf{G}$}
+Let's define $\textbf{G}$ as the identity implied by $\textbf{g}$ whose
+graph is $\textbf{K}$.
+\end{definition}
+
+\begin{theorem}
+An identity $\textbf{G}$ implies a total of $\binom{n+1}{3}$ triad
+sub-identities.
+\end{theorem}
+
+\begin{proof}
+Any set of three vertices from $\textbf{K}$ forms a complete subgraph, and any
+complete subgraph implies an identity between its labelled edges. $\textbf{K}$
+has $n+1$ vertices, and therefore there are $\binom{n+1}{3}$ ways to select
+three vertices from $\textbf{K}$, hence $\textbf{G}$ implies the same number of
+triad subidentities.
+\end{proof}
+
+\begin{corollary}
+Of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$, $\binom{n}{2}$
+contain exactly two events and one duration.
+\end{corollary}
+
+\begin{proof}
+The follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
+to a single vertex. Selecting any two of these $n$ event-labelled edges implies
+a tree on three vertices, whose full connection implies a triad identity
+composed of the two event edges and one duration edge defined as the time-difference of the
+former two. There are $\binom{n}{2}$ ways to select two of of the $n$ event
+edges.
+\end{proof}
+
+\begin{corollary}
+For $n \ge 3$, of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$,
+$\binom{n+1}{3} - \binom{n}{2} = \binom{n}{3}$ are composed of exactly three
+durations.
+\end{corollary}
+
+\begin{proof}
+This is equivalent to deleting the vertex $k^{\text{th}}$ from $\textbf{K}$, the
+vertex that connects only to event-labelled edges, which is constructed
+following the middle column of graphs from Table~\ref{tab:timelines} with
+vertex labels ignored. This graph has $n$ total vertices, and any set of 3
+vertices implies an identity between its three labelled edges, which in this
+case by definition can only consist of durations.
+\end{proof}
+
+\begin{theorem}
+In general, the number of subidentities of size $h$ in $\textbf{G}$ is equal to
+$\binom{n+1}{n+1-h} \quad \forall \, h \le n$.
+\end{theorem}
+
+\begin{proof}
+Vertex deletion on a complete graph results in a complete subgraph. Therefore,
+the number of possible complete subgraphs with $h$ vertices is a function of the
+number of ways that $n+1-h$ vertices can be deleted from $\textbf{K}$, which is
+$\binom{n+1}{n+1-h}$. The labelled edges of each possible complete subgraph
+defined in this way represent subidentities.
+\end{proof}
+
+For example, from the tetrahedral graph in Figure~\ref{fig:tettet}, we may
+delete the vertex that joins the edges labelled A, T, and P, which in effect
+deletes these edges, leaving us with the CDL identity. 
 
 \end{appendices}
 

@@ -51,7 +51,7 @@ as.data.frame(t(COMBS))
 
 library(plotrix)
 
-# Figure 1
+# Deprecated: old Figure 1
 pdf("Figures/TetraHedronVerticesEdges.pdf", height=4,width=5.5)
 par(mai=c(.3,.3,.3,.3))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
@@ -76,8 +76,8 @@ dev.off()
 
 
 # --------------------------------------------------
-# For figure 1a
-n <- 3
+# Figure 1a (unit circle graph)
+n           <- 3
 p 			<- rep(1,n)
 n1    		<- n + 1
 # get coords for the n+1 vertices
@@ -117,7 +117,7 @@ dev.off()
 
 
 #######################
-# another vesion with vertices not numbered. save as pdf then convert to svg
+# Figure 1b tetrahedral layout graph
 pdf("Figures/TetraHedronEdgesOnly.pdf",width=4,height=4)
 par(mai=c(.2,.2,.2,.2))
 plot(NULL, xlim = c(0,1),ylim=c(0,1), asp=1,axes=FALSE, xlab="",ylab="")
@@ -134,13 +134,10 @@ boxed.labels(.25,sqrt(3)/4,"C",col = AssignColour("C"),cex=2,font=2,border=FALSE
 boxed.labels(.75,sqrt(3)/12,"T",col = AssignColour("T"),cex=2,font=2,border=FALSE)                # inner SE edge
 boxed.labels(.25,sqrt(3)/12,"D",col = AssignColour("D"),cex=2,font=2,border=FALSE)                # inner SW edge
 boxed.labels(.5, sqrt(3)/2-sqrt(3)/6,"L",col = AssignColour("L"),cex=2,font=2,border=FALSE)       # inner N edge
-#points(.5,sqrt(3)/2,col = "black",cex=2,pch=19)                                  # top vert
-#points(1,0,col = "black",cex=2,pch=19)                                           # bottom right vert
-#points(0,0,col = "black",cex=2,pch=19)                                           # bottom left vert
-#points(.5,sqrt(3)/6,col = "black",cex=2,pch=19)                   # middle vert
 dev.off()
 
-
+# --------------------------------
+# Deprecated: other figures
 ####################################
 # PANCHO: this is the figure you want modified.
 # Figure 2

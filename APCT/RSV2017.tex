@@ -5,6 +5,8 @@
 \usepackage{apacite}
 \usepackage{appendix}
 \usepackage{amsmath}
+\usepackage{amsthm}
+ 
 \usepackage{amssymb} % for approx greater than
 \usepackage{caption}
 \usepackage{placeins}
@@ -55,6 +57,12 @@
 
 \usepackage{soul}% for \st{}
 
+% for appendix definition environment
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{proof}{Proof}[theorem]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
 % http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
@@ -844,6 +852,7 @@ marriage.
 \FloatBarrier
 
 \section{A general relationship between events and durations}
+\label{sec:gen}
 The four identity-based diagrams discussed in prior sections are likely
 straightforward, either because the Lexis diagram is already
 familair to the reader, or because Cartesian representations are widely used.
@@ -1031,10 +1040,10 @@ not all measures are explicitly mentioned or used in the model of
 
 \FloatBarrier
 \section{A tetrahedron relates the six time indices.}
-The demographic time framework we propose includes three events (period, birth
-cohort, and death cohort), and it therefore leads to a temporal plane graph as
-of row 2, column 3 of Table~\ref{tab:timelines}, here redrawn in
-Figure~\ref{fig:tet} labelled with the six time indices. \vt{include square
+The demographic time framework we present includes three events (period, birth
+cohort, and death cohort), and it therefore leads to a temporal plane graph
+based on the second row and third column of Table~\ref{tab:timelines}, here
+redrawn in Figure~\ref{fig:tet} labelled with the six time indices. \vt{include square
 version of the same.}
 
 
@@ -1071,7 +1080,7 @@ ways, depending on which identity forms the base.
 six time indices.}
 \label{fig:tet}
 \begin{subfigure}{.48\textwidth}
-\caption{vertices on the unit square}
+\caption{vertices on the unit circle}
 % switched to edges only, since numbers not referred to
 \includegraphics[width=3in]{Figures/TetraHedronUnitSquare.pdf}
 \end{subfigure}
@@ -1836,5 +1845,87 @@ investigation.
 \bibliographystyle{apacite} % required for demography
 %\bibliographystyle{plainnat}
   \bibliography{refs} 
+  
+\begin{appendices}
+\section{The event duration transformation proofs}
+\label{app:A}
+
+As described in Section~\ref{sec:gen}, $\textbf{p}$ is a length-$n$ vector of
+event times. Consider the set $P$ of all possible choices of $n$ points in time.
+
+\theoremstyle{definition}
+\begin{definition}{$P=\mathbb{R}^n$:}
+Let $P=\mathbb{R}^n$ be the standard basis vector-space spanning all
+$\textbf{p}$.
+\end{definition}
+
+\begin{theorem}
+The linear transformation $T_\textbf{A}: P\rightarrow D$ where $D = \mathbb{R}^{n(n-1)/2}$ and $\textbf{A}_T \textbf{p} = \textbf{d}$ is given by
+
+$$
+\underbrace{\left[\begin{matrix}
+-\textbf{I}_1 & \Big| & \textbf{1}_1 & \Big| & \textbf{0}_{1 \times n-2} \\
+-\textbf{I}_2 & \Big| & \textbf{1}_2 & \Big| & \textbf{0}_{2 \times n-3} \\
+\vdots & & \vdots & & \vdots \\
+-\textbf{I}_{n-1} & \Big| & \textbf{1}_{n-1} & \Big| & \Big(\textbf{0}_{n-1 \times 0}\Big) \\
+\end{matrix}\right]}_{\textbf{A}_T}
+\times
+\underbrace{\left[\begin{matrix}
+p_1 \\ \vdots \\ p_n
+\end{matrix}\right]}_{\textbf{p}}
+=
+\underbrace{\left[\begin{matrix}
+d_1 \\ \vdots \\ d_{n(n-1)/2}
+\end{matrix}\right]}_{\textbf{d}}.
+$$
+
+Given \textit{any} $n$ points in time it is always possible to calculate the
+durations between any pair of these points. This calculation can be understood as a linear transformation of the \textit{point-space} $P$ to the \textit{duration-space} $D$.
+\end{theorem}
+
+\begin{proof} $A_T$ is a simple consequence of the definition of
+$\textbf{d}$.
+\end{proof}
+
+\begin{corollary} There exists no linear map $T_\textbf{A}^{-1}: D \rightarrow
+P$.
+\end{corollary}
+
+Given only a set of $m$ durations it is impossible to identify a single set of
+$n$ points in time marking the endpoints of the durations, e.g. given only age one can not derive birth cohort or period.
+
+\begin{proof} $T_\textbf{A}^{-1}$ exists if and only if $\textbf{A}_T^{-1}$ exists. $\textbf{A}_T$ has no inverse since the columns of $\textbf{A}_T$ are always linearly dependent on each other, i.e. the last element in each row of $\textbf{A}_T$ is always the negation of the sum of all the other row elements. Therefore $T_\textbf{A}^{-1}$ does not exist.
+\end{proof}
+
+\begin{theorem} *(Work in progess)* Something that states that you can transform $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
+\end{theorem}
+
+\begin{definition}{$\textbf{g}$}
+Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
+d_{k=1,\ldots,m}\right\}$
+\end{definition}
+
+\begin{theorem} There are $b = (n+1)^{(n-1)}$ many ways to
+choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
+remaining $m$ elements of $\textbf{g}$.
+\end{theorem}
+
+\begin{proof}
+This is a case of Cayley's formula \citep{cayley1889}, a result from
+graph theory which gives the number of possible trees on $k = n+1$ vertices,
+$k^{(k-2)}$. In our case, the fully conected graph $\textbf{K}$ with edges
+defined by the elements of $\textbf{g}$ according to the third column of
+Table~\ref{tab:timelines}, is complete. By Cayley's fomula, the number of
+minimal spanning trees on $\textbf{K}$ is equal to $k^{(k-2)}$. Four different proofs of
+this result are given in \citet{aigner2010proofs}. The key is to realize that a
+minimal spanning tree (MST) on a complete graph will have $k-1$ edges, connected
+to each other and all $k$ vertices. As such, the remaining possible edges are
+linear combinations of any given MST.
+\end{proof}
+
+\begin{corollary}
+\end{corollary}
+
+\end{appendices}
 
 \end{document}

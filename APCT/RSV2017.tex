@@ -2073,7 +2073,7 @@ contain exactly two events and one duration.
 \end{corollary}
 
 \begin{proof}
-The follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
+This follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
 to a single vertex. Selecting any two of these $n$ event-labelled edges implies
 a tree on three vertices, whose full connection implies a triad identity
 composed of the two event edges and one duration edge defined as the time-difference of the
@@ -2098,7 +2098,37 @@ case by definition can only consist of durations.
 
 For example, in the demographic time identity there are $n=3$ event measures.
 Thus of the $\binom{4}{3} = 4$ triad identities implied $\binom{3}{3} = 1$ of
-these identities consist in durations only (TAL).
+these identities consist in durations only (TAL). Notice that the measures T and
+A change over the lifecourse of an individual, whereas their sum L is fixed.
+
+\begin{definition}{$\textbf{d}_t$} For $\textbf{p}$ that include period
+itself, let $\textbf{d}_t$ be the set of duration time measures that change over
+the life course and $\textbf{d}_f$ consist in those durations that are fixed attributed of an individual. By
+definition, $\textbf{d}_t \cup \textbf{d}_f = \textbf{d}$.
+\end{definition}
+
+\vt{awkward: how to say that $\textbf{p}$ includes P? For example, we have P,
+but Lexis marriage does not, so this corolarry is only relevant for us and
+Brinks here.}
+
+\begin{corollary}
+For $n \ge 4$ and For $\textbf{p}$ that include period
+itself, of the $d'=\binom{n}{3}$ triad identies whose edges are
+labelled only by the elements of $\textbf{d}$, $d^t=\binom{d'}{2}$ of these identities
+consist in exactly two elements of $\textbf{d}_t$ and one element of
+$\textbf{d}_f$, while $d'-d^t$ of the duration-only triad identities consist in
+relationships between three elements of $\textbf{d}_f$.
+\end{corollary}
+
+\begin{proof}
+$n-2$ of the edges in $K$ are labelled with the elements of $\textbf{d}_t$, and
+these all connect to the same vertex. There are therefore $\binom{n-2}{2}$ ways
+to form triad identities with them. The third element of each of these
+identities cannot connect to the same vertex, and so must be a member of
+$\textbf{d}_f$. \vt{(this is almost done, needs a bit more logic)}
+\end{proof}
+
+
 
 \begin{theorem}
 In general, the number of subidentities of size $h$ in $\textbf{G}$ is equal to

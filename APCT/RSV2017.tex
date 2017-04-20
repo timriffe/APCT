@@ -1756,9 +1756,10 @@ allow us to present the demographic time hexad identity as a special case of the
 event-duration framework in Section~\ref{sec:examples}.
 We compare this identity with other relatively complicated temporal
 relationships in the literature, including the \citet{lexis1875einleitung}
-marriage identity and the illness-death model of \citet{brinks}. In
-Section~\ref{sec:tetrahedron} we describe how the graph of the demographic time identity is also the graph of a tetrahedron. As a
-three-dimensional solid, the tetrahedron forms the basis of the three
+marriage identity and the illness-death model of \citet{brinks}. Some general
+properties of temporal identities are described and proven in
+Appendix~\ref{app:A}.
+In Section~\ref{sec:tetrahedron} we describe how the graph of the demographic time identity is also the graph of a tetrahedron. As a three-dimensional solid, the tetrahedron forms the basis of the three
 dimensional extension of the demograhic time identity. Each of the four
 faces of the tetrahedron is parallel to one of the four temporal planes.
 
@@ -1774,18 +1775,10 @@ TAL surfaces (See Sec.~\ref{sec:tal}) representing the end-of-life experience of
 a sequence of five birth cohorts (1905-1925). Together, these surfaces represent
 a partial filling of the three-dimensional diagram drawn in
 Figure~\ref{fig:apctTAL}. As such, this prevalence data is structured by all six
-demographic time measures.
-
-
-%In isolation, each of the four triad identities is intuitive. The TPD
-%diagram is similar to APC, but it is aligned to time of death rather than time
-% of birth. The TAL diagram presents a clear way to classify events over the life course of a cohort. Finally, the LCD diagram can be used to
-%structure quantities that vary over time and by length of life.
-%Joined together, the relationship between all six time measures is more
-%complex than any of the triad identities, but it condenses into a simple
-%geometric representation that can be easily derived by ascribing the various
-% time measures to the six edges of a tetrahedron. An understanding of how the six time measures relate is key to understanding the temporal structure of demographic processes, which
-%itself underlies the comparability of demographic measures.
+demographic time measures. To demonstrate the potential utility of this kind of
+data structure, we demonstrate (non-rigorously) that the choice of
+age-pattern when calculating prevalence-based measures of healthy
+life expectancy can have a non-trivial impact on the result.
 
 The contemporary practice of (macro) demography is based on the premise that
 vital rates, and other kinds of rates over the lifecourse, are the truest measure of
@@ -1799,6 +1792,27 @@ controlling for temporal variation in stocks. To the extent that regular tempora
 relates to the end of life, or the length of life, common
 age-standardization does not fully account for such structure.
 
+An effective way to detect patterns in temporal variation
+is via data visualization. The coordinate system proposed in this paper is
+conceived as one adequate to capture such variation, and we suggest its use
+for visualizing data, probably via small multiples of successive time slices
+parallel to any of the four triad identities, similar to that shown in
+Figure~\ref{fig:poorsrh}.
+Such visualization strategies at this time are exploratory, and this is a
+technique that may benefit from further refinement. Further, a cross-section
+through the demographic time-space need not be parallel to one of the four
+identity-planes.
+
+%In isolation, each of the four triad identities is intuitive. The TPD
+%diagram is similar to APC, but it is aligned to time of death rather than time
+% of birth. The TAL diagram presents a clear way to classify events over the life course of a cohort. Finally, the LCD diagram can be used to
+%structure quantities that vary over time and by length of life.
+%Joined together, the relationship between all six time measures is more
+%complex than any of the triad identities, but it condenses into a simple
+%geometric representation that can be easily derived by ascribing the various
+% time measures to the six edges of a tetrahedron. An understanding of how the six time measures relate is key to understanding the temporal structure of demographic processes, which
+%itself underlies the comparability of demographic measures.
+
 The techniques used to age-standardize mortality and fertility estimation are at
 times applied to other kinds of transitions over the life course. For example,
 one may estimate an age pattern to some degenerative disease, or the
@@ -1811,34 +1825,24 @@ of temporal standardization must be developed in order to measure and understand
 the natural patterns of such conditions over the lifecourse. 
 The measurement of
 such conditions may benefit from consideration of the framework presented in
-this paper. To this end, Table~\ref{tab:set3} provides all combinations of
-information that are sufficient to derive the full set of six time measures.
+this paper. %To this end, Table~\ref{tab:set3} provides all combinations of
+%information that are sufficient to derive the full set of six time measures.
 Panel surveys with mortality follow-ups already provide the requisite
 information, as do linkable registers that include items such as
 health measures or proxies and relevant dates of birth, observation, and death.
 Other kinds of populations, such as animals or items, may have quite different
 data-gathering mechanisms.
 
-An effective way to detect patterns in temporal variation
-is via data visualization. The coordinate system proposed in this paper is
-conceived as one adequate to capture such variation, and we suggest its use
-for visualizing data, probably via small multiples of successive time slices
-parallel to any of the four triad identities, similar to that shown in
-Figure~\ref{fig:poorsrh}.
-Such visualization strategies at this time are exploratory, and this is a
-technique that may benefit from further refinement. Further, a cross-section
-through the demographic time-space need not be parallel to one of the four
-identity-planes.
-
-Mortality determines three of the dimensions of
-demographic time, and it therefore makes little sense to model mortality using
-all six time measures. Rather, mortality determines the placement of
-lifelines in the three-dimensional space. Death itself is only representable
-with the endpoints of lifelines, ergo the APC plane through thanatological age
-zero. This full coordinate system instead defines and contains the space through
-which life is lived; any of the six measures may be pertinent in the case of
-conditions and states that vary over and within the lifecourse. An obvious
-application for the present model, given data commonly (and publicly) available at this time, are late-life health conditions, although there may be other substantive areas of application. 
+%Mortality determines three of the dimensions of
+%demographic time, and it therefore makes little sense to model mortality using
+%all six time measures. Rather, mortality determines the placement of
+%lifelines in the three-dimensional space. Death itself is only representable
+%with the endpoints of lifelines, ergo the APC plane through thanatological age
+%zero. This full coordinate system instead defines and contains the space
+% through which life is lived; any of the six measures may be pertinent in the case of
+%conditions and states that vary over and within the lifecourse. An obvious
+%application for the present model, given data commonly (and publicly) available
+% at this time, are late-life health conditions, although there may be other substantive areas of application.
 
 Furthermore, we believe in the pedagogical value of the framework
 introduced in this paper. We hope that the
@@ -1910,7 +1914,13 @@ investigation.
 \section{Event duration transformation proofs}
 \label{app:A}
 This appendix provides some formal support to statements and explanations given
-in Section~\ref{sec:gen}.
+in Section~\ref{sec:gen}. We explain how durations depend on events (and not
+vice versa). We list and prove some of the properties of higher-order
+identities, such as the number of ways they can be derived and the conditions
+for doing so, the number of event and duration measures they contain, and the
+number, size, and composition of sub-identities. The theorems and corollaries
+below define several variables along the way, such that it is best to work
+sequentially through them.
 
 \begin{definition} Let $\textbf{p}$ be a vector with $n$ elements where $n \geq
 2$ and elements $p_{i=1} \ldots p_n \in \mathbb{R}$. Let $\textbf{d}$ be a vector with $m$ elements such that $\textbf{d}_{ij} = p_i - p_j$ for all $i$ and $j = 1, \ldots, n$ where $i>j$.
@@ -2012,7 +2022,7 @@ Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
 d_{k=1,\ldots,m}\right\}$
 \end{definition}
 
-\begin{theorem} (in progress) There are $b = (n+1)^{(n-1)}$ many
+\begin{theorem} There are $b = (n+1)^{(n-1)}$ many
 ways to choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
 remaining $m$ elements of $\textbf{g}$.
 \end{theorem}

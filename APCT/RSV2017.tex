@@ -1,3 +1,4 @@
+
 %%This is a very basic article template.
 %%There is just one section and two subsections.
 %\documentclass[12pt,oneside,a4paper,doublespacing]{article} % for submission
@@ -6,7 +7,7 @@
 \usepackage{appendix}
 \usepackage{amsmath}
 \usepackage{amsthm}
- 
+
 \usepackage{amssymb} % for approx greater than
 \usepackage{caption}
 \usepackage{placeins}
@@ -55,11 +56,16 @@
 
 \usepackage{soul}% for \st{}
 
+\usepackage{arydshln}		% Dashed lines in matrices
+
 % for appendix definition environment
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[proposition]
+\newtheorem{remark}{Remark}[section]
+
 %\newtheorem{proof}{Proof}[theorem]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % setting color to letters affects spacing. Here's a hack I found here:
@@ -89,6 +95,9 @@
 \newcommand{\Tl}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/linep#1}.pdf}}
 \newcommand{\St}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/starp#1}.pdf}}
 
+% Affiliations in small font size
+\renewcommand\Affilfont{\small}
+
 
 \defcitealias{HMD}{HMD 2016}
 
@@ -107,11 +116,11 @@
 %\author{author(s) redacted}
 \author[1]{Tim Riffe\thanks{riffe@demogr.mpg.de}}
 \author[2,3]{Jonas Sch{\"o}ley}
-\author[2,3]{Francisco Villavicencio}
-\affil[1]{Max Planck Institute for Demographic Research}
-\affil[2]{University of Southern Denmark}
-\affil[3]{Max-Planck Odense Center on the Biodemography of Aging}
-
+\author[2,4]{Francisco Villavicencio}
+\affil[1]{Max Planck Institute for Demographic Research, Rostock, Germany}
+\affil[2]{Max-Planck Odense Center on the Biodemography of Aging, Odense, Denmark}
+\affil[3]{Department of Public Health, University of Southern Denmark, Odense, Denmark}
+\affil[4]{Department of Mathematics and Computer Science, University of Southern Denmark, Odense, Denmark}
 %\author{[Authors]}
 
 \maketitle
@@ -147,13 +156,10 @@ visualization, age period cohort.%\ackn{The work reported in this manuscript
 \section{Introduction}
 In the course of training, all demographers are introduced
 to the Lexis diagram, a convenient graphical identity between the three main
-time measures used to structure demographic stocks and flows: Age, period, and
+time measures used to structure demographic stocks and flows: age, period, and
 birth cohort. This representation does not account for time of death, time until
-death, or length of life, which may be of interest to researchers \st{and
-policy makers} as structuring rather than random variables in order to capture
-variation in demographic data.
-\st{This popular representation does not account for remaining years of life and other related time indices that may be of interest to researchers and
-policy makers.} 
+death, or length of life, which may be of interest to researchers \st{and policy makers} as structuring rather than random variables in order to capture
+variation in demographic data. \st{This popular representation does not account for remaining years of life and other related time indices that may be of interest to researchers and policy makers.} 
 
 We wish to draw attention to three time indices that are complementary to age
 (A), period (P) and birth cohort (C). The first such index is time-to-death,
@@ -168,12 +174,10 @@ both.
 The Lexis diagram can be understood as an APC plane
 that relates age, period, and birth cohort. Other such planes are
 also identifiable.
-The ``thanatological'' ``dual'' of APC is an identity between thanatological
+The ``thanatological dual'' of APC is an identity between thanatological
 age, period, and death cohort, TPD. A third identity relates thanatological age,
 chronological age, and lifespan, TAL. A fourth identity relates lifespan, birth
-cohort, and death cohort, LCD. We call three-way identities of this sort ``triad identities''.
-
-Each of these four triad identities (APC, TPD, TAL, and LCD) is sufficiently
+cohort, and death cohort, LCD. \st{We call three-way identities of this sort ``triad identities''.} Each of these four ``triad identities'' (APC, TPD, TAL, and LCD) is sufficiently
 described by any two of its constituent indices. For instance, if the exact age of an individual at a particular
 time is known, the birth cohort to which he or she belongs can be immediately derived. Each of these four identities also lacks a major dimension of time. The TAL identity lacks calendar time, the LCD identity is ageless, APC lacks an endpoint in time, and TPD lacks a starting point in time.
 To our knowledge, the only triad identity that has received serious
@@ -195,8 +199,8 @@ or the marriage identity described by \citet{lexis1875einleitung}.
 The framework we describe is general and adaptable for such event history scenarios.
 We begin by defining some terms used throughout the manuscript.
 We then explore all combinations of two time measures, the dyadic relationships, followed by the four triad identities, and
-finally the hexad identity. We give a systematic topological overview of the
-different elements of demographic time. 
+finally the hexad identity. \st{We give a systematic topological overview of the
+different elements of demographic time.}
 
 Just as the Lexis diagram is a fundamental instrument to
 teach demography, we hope that the demographic time measures and
@@ -208,12 +212,12 @@ methods or statistical designs.
 
 \section{Definitions}
 \subsection{Technical terminology}
-In describing this relationship we attempt to adhere to a rigorous
-terminology.
+\st{In describing this relationship we attempt to adhere to a rigorous
+terminology.}
 The following list describes some of the more important terms we use.
 \begin{description}
 \item[Demographic time measures] are any of the six time indices discussed to
-describe demographic time: chronological age (A), period (P), birth cohort (C), thanatological age (T), lifespan (L), and death cohort (D).
+describe demographic time: chronological age (A), period (P), birth cohort (C), thanatological age or time-to-death (T), lifespan or age-at-death (L), and death cohort (D).
 \item[Dyads, triads, and hexads] are any set of two, three, or six unique time
 measures, respectively.
 \item[A triad identity] is a triad with the property that each of its members
@@ -246,36 +250,54 @@ defined in Table~\ref{tab:sixdefs}, both in the demographic sense we describe, a
 \caption{Definitions of the six time measures.}
 \label{tab:sixdefs}
 \begin{adjustwidth}{0em}{0em}
-\begin{tabular}{lcll}
+\begin{tabular}{lll}
 \hline 
-\textbf{Time measure} & \textbf{Short} & \textbf{Demographic def.} &
-\textbf{Event history def.}\\
-\hline 
-chronological age & A & Time since birth & Time since start of exposure \\
-period & P & calendar time & calendar time \\
-birth cohort & C & calendar time of birth & calendar time of exposure start \\
-thanatological age & T & time until death & time until event \\
-death cohort & D & calendar time of death & calendar time of event \\
-lifespan & L & duration of life & duration of exposure \\
+\textbf{Time measure}	& \textbf{Demographic definition}	& \textbf{Event history definition}	\\ \hline 
+A - chronological age 	& time since birth 			& time since start of exposure 		\\
+P - period 		& calendar time 			& calendar time				\\
+C - birth cohort 	& calendar time of birth 		& calendar time of exposure start	\\
+T - thanatological age 	& time until death 			& time until event			\\
+D - death cohort	& calendar time of death		& calendar time of event		\\
+L - lifespan		& duration of life			& duration of exposure			\\ \hline
 \end{tabular}
 \end{adjustwidth}
 \end{table}
+
+% \begin{table}[ht!]
+% \centering
+% \caption{Definitions of the six time measures.}
+% \label{tab:sixdefs}
+% \begin{adjustwidth}{0em}{0em}
+% \begin{tabular}{lcll}
+% \hline 
+% \textbf{Time measure} & \textbf{Short} & \textbf{Demographic def.} &
+% \textbf{Event history def.}\\
+% \hline 
+% chronological age & A & Time since birth & Time since start of exposure \\
+% period & P & calendar time & calendar time \\
+% birth cohort & C & calendar time of birth & calendar time of exposure start \\
+% thanatological age & T & time until death & time until event \\
+% death cohort & D & calendar time of death & calendar time of event \\
+% lifespan & L & duration of life & duration of exposure \\
+% \end{tabular}
+% \end{adjustwidth}
+% \end{table}
 
 The concepts of thanatological age and death cohorts are likely less familiar to
 readers than the other measures we consider. Thanatological age is
 remaining time until death, the information approximated with life
 expectancy. This term is sometimes referred to in the literature as life left,
-time to death, remaining lifespan, follow-up duration, residual life, or
+time-to-death, remaining lifespan, follow-up duration, residual life, or
 reverse time. Chronological and thanatological age are in this way
-complementary, duals. Birth and death cohorts are a similar kind of dual.
-Cohorts in general associate individuals that share a characteristic. In
+complementary, duals, and birth and death cohorts are a similar kind of dual.
+Cohorts in general associate individuals that share a characteristic, often a combination of place and time. \st{In
 demography the grouping characteristic is often a combination of place and time,
 such as a cohort of young demographers passing through a particular graduate
 program. These concepts are analogous to the ideas of birth and death cohorts we
-use here. The deaths of a given year are not usually referred to as a death
+use here.} The deaths of a given year are not usually referred to as a death
 cohort, although this concept was already introduced by \cite{brouard1986} as
 ``g\'en\'eration de d\'ec\`es'' in a retrospective study of the French
-population during the twentieth century. In the time preceding death, the members of a given death cohort likely have much in common, despite heterogeneity with respect to time of birth. If the reader accepts this premise, then the abstract construct of a death cohort is also meaningful in the way that other cohort measures are. In event history or non-human contexts, anologs to death cohorts in this framework may be even more meaningful.
+population from the twentieth century. In the time preceding death, the members of a given death cohort likely have much in common, despite heterogeneity with respect to time of birth. \st{If the reader accepts this premise, then the abstract construct of a death cohort is also meaningful in the way that other cohort measures are.} In event history or non-human contexts, anologs to death cohorts in this framework may be even more meaningful.
 
 Much of the work of demography is directed at the study of lifespan. Lifespan is
 synonymous both with longevity, chronological age at death, and thanatological
@@ -299,7 +321,7 @@ exhaustive classification of the ways in which these six measures of time can be
 We distinguish between two kinds of dyads: informative dyads and uninformative dyads. Informative dyads are any pair of measures from which a third time measure
 can be derived, forming a triad identity. There are
 $15=\binom{6}{2}$ possible dyads in our set of time measures, 12 of which are
-informative, and three of which have no derived time measure, and are therefore
+informative, and 3 of which have no derived time measure, and are therefore
 called uninformative. For instance, if we take the dyad TA, L is the derived
 measure, and TAL the corresponding triad identity. In
 contrast, nothing can be derived from the LP dyad: One can have an eventual
@@ -307,9 +329,9 @@ lifespan of 100 in the year 2016 and still be alive with the same eventual lifes
 
 In this section we systematically map each dyad to its temporal plane, and we
 synthesize these into the four primary identities and their essential diagrams.
-We first discuss the choice between mapping dyads to Cartesian coordinates or to
-isotropic coordinates, which constrain the scales of all measures to be equal.
-We then systematically render the 15 dyad-based diagrams that can be derived from the six time measures. Of these 15, 12 diagrams can be distilled into just four, the triad identity diagrams. Each
+\st{We first discuss the choice between mapping dyads to Cartesian coordinates or to
+isotropic coordinates, which constrain the scales of all measures to be equal.}
+We \st{then systematically} render the 15 dyad-based diagrams that can be derived from the six time measures. Of these 15, 12 diagrams can be distilled into just four, the triad identity diagrams. Each
 triad identity diagram is then briefly discussed with suggested or speculated
 applications.
 
@@ -322,14 +344,7 @@ AP(C).
 The temporal plane that corresponds to this informative dyad is the contemporary representation of the
 Lexis diagram \citep{lexis1875einleitung, pressat1961analyse}. The informative
 dyads AC(P) and CP(A) also belong to the Lexis identity, but imply different
-less-common rotations and projections of the Lexis diagram.\footnote{While
-uncommon as diagram orientations, these latter two dyads are used to tabulate
-data for different kinds of rates and probabilities. Measures
-based on the AC dyad are variously referred to as Type III rates
-\citep{caselli2005demography} or vertical parallelograms \citep{HMDMP}. The CP
-dyad delineates Type II rates \citep{caselli2005demography}, also known as
-horizontal parallelograms, for instance used to calculate cohort lifetables in the Human
-Mortality Database \citep{HMDMP}. }
+less-common rotations and projections of the Lexis diagram.%\footnote{While uncommon as diagram orientations, these latter two dyads are used to tabulate data for different kinds of rates and probabilities. Measures based on the AC dyad are variously referred to as Type III rates \citep{caselli2005demography} or vertical parallelograms \citep{HMDMP}. The CP dyad delineates Type II rates \citep{caselli2005demography}, also known as horizontal parallelograms, for instance used to calculate cohort lifetables in the Human Mortality Database \citep{HMDMP}.}
 
 For each dyad there is a fundamental question of how to map the constituent
 coordinates to a Cartesian temporal plane. Typically one forces parity between time units within
@@ -343,22 +358,21 @@ depending on the dyad and axis orientation.
 It has long been noted \citep{lexis1875einleitung, perozzo1880della} that the
 derived time measure (usually birth cohort) is longer than either the age or period axes when plotted at 45$^\circ$.
 If a right angle and unity aspect ratio is forced between the dyad, the derived measure is always stretched by
-$\sqrt{2}$, or 41\%. In the case of informative dyads, another
-logical mapping is to translate to $(x,y)$ coordinates that force 60$^\circ$
+$\sqrt{2}$, or 41\%. \st{In the case of informative dyads, a}Another
+logical mapping \st{is} would be to translate to $(x,y)$ coordinates that force 60$^\circ$
 angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. The isotropic mapping
-is comparable to using ternary or barycentric coordinate systems. 
-The primary justification for isotropic demographic surfaces comes from
+is comparable to using ternary or barycentric coordinate systems: The three variants of each
+ triad identity are simple rotations of one another, and they require no
+ rescaling. The primary justification for isotropic demographic surfaces comes from
 a data visualization perspective, where it may be hypothesized that the
  viewer's ability to compare slopes is hindered if time coordinates are not on
- the same scale. Under the isotropic representation, the three variants of each
- triad identity are simple rotations of one another, and they require no
- rescaling. In this paper, all two-dimensional diagrams are rendered in
+ the same scale. For the sake of clarity, all two-dimensional diagrams are rendered in
  Cartesian rather than isotropic coordinates.
 
 \subsection{Dyads to diagrams}
 Each of the 15 dyads, an explanation or simple example,
 and the corresponding diagram representations are summarized in
-Table~\ref{tab:dyads}. Each informative dyad is a subset consisting of two
+Table~\ref{tab:dyads}. The 12 informative dyads consist of two
 elements from one of the four triad identities (APC, TPD, TAL, LCD), which we
 analyze in detail in further sections. The uninformative dyads are simply pairs
 of time measures that do not have a derived measure, and therefore are not
@@ -371,18 +385,18 @@ contained in any of these four triad identities.
  
   \toprule
   \multicolumn{3}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal
-  planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
+  planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established APC and ACP terms.} \\
   \midrule
   \multicolumn{1}{c}{Relationship} & \multicolumn{1}{c}{Description} &
-  \multicolumn{1}{c}{Cartesian} \\%& \multicolumn{1}{c}{Isotropic} \\
+  \multicolumn{1}{c}{Cartesian representation} \\%& \multicolumn{1}{c}{Isotropic} \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{3}{c}{\textsc{Variants of APC}} \\
   \midrule
   %%%% APc
   $$\begin{aligned}
-    &AP(C) \\
-    &C = P - A
+    &\text{AP(C)} \\
+    &\text{C = P -- A}
   \end{aligned}$$ &
   The AP(C) temporal plane constitutes the classical Lexis diagram. &
   \includegraphics[scale=.5]{Figures/DiagramTable/AP_rt.pdf}
@@ -391,8 +405,8 @@ contained in any of these four triad identities.
   \\
   %%%% ACp
   $$\begin{aligned}
-    &AC(P) \\
-    &P = C + A
+    &\text{AC(P)} \\
+    &\text{P = C + A}
   \end{aligned}$$ &
   The AC(P) temporal plane is equivalent to the Lexis diagram except birth
   cohort is given and period is derived rather than the other way around. &
@@ -401,8 +415,8 @@ contained in any of these four triad identities.
    \\
   %%%% CPa
   $$\begin{aligned}
-    &CP(A) \\
-    &A = P - C
+    &\text{CP(A)} \\
+    &\text{A = P -- C}
   \end{aligned}$$ &
   The CP(A) temporal plane is equivalent to the Lexis diagram except birth
   cohorts are given and age is derived rather than the other way around. &
@@ -415,8 +429,8 @@ contained in any of these four triad identities.
   \midrule
   %%%% TPd
   $$\begin{aligned}
-    &TP(D) \\
-    &D = P + T
+    &\text{TP(D)} \\
+    &\text{D = P + T}
   \end{aligned}$$ &
   Helen had 30 years of life left (T) in 1971 (P) and therefore belonged to the 2001 death cohort (D) &
   \includegraphics[scale=.5]{Figures/DiagramTable/TP_rt.pdf} %&
@@ -424,8 +438,8 @@ contained in any of these four triad identities.
    \\
   %%%% PDt
   $$\begin{aligned}
-    &PD(T) \\
-    &T = D - P
+    &\text{PD(T)} \\
+    &\text{T = D -- P}
   \end{aligned}$$ &
   Mindel died in 1973 (D). In 1953 (P) she had 20 years left to live (T). &
   \includegraphics[scale=.5]{Figures/DiagramTable/PD_rt.pdf} %&
@@ -433,8 +447,8 @@ contained in any of these four triad identities.
    \\
   %%%% TDp
   $$\begin{aligned}
-    &TD(P) \\
-    &P = D - T
+    &\text{TD(P)} \\
+    &\text{P = D -- T}
   \end{aligned}$$ &
   Irene died in 1974 (D). When she had 30 remaining years of life (T) the year must have been 1944 (P). &
   \includegraphics[scale=.5]{Figures/DiagramTable/TD_rt.pdf} %&
@@ -446,8 +460,8 @@ contained in any of these four triad identities.
   \midrule
   %%%% TAl
   $$\begin{aligned}
-    &TA(L) \\
-    &L = T + A
+    &\text{TA(L)} \\
+    &\text{L = T + A}
   \end{aligned}$$ &
   The time already lived and the time still left sum up to the total lifespan. &
   \includegraphics[scale=.5]{Figures/DiagramTable/TA_rt.pdf} %&
@@ -455,8 +469,8 @@ contained in any of these four triad identities.
   \\
   %%%% TLa
   $$\begin{aligned}
-    &TL(A) \\
-    &A = L - T
+    &\text{TL(A)} \\
+    &\text{A = L -- T}
   \end{aligned}$$ &
   Helen lived to the age of 86 (L). When she had 20 years left (T) she must have been 66 (A). &
   \includegraphics[scale=.5]{Figures/DiagramTable/TL_rt.pdf} %&
@@ -464,8 +478,8 @@ contained in any of these four triad identities.
  \\
   %%%% ALt
   $$\begin{aligned}
-    &AL(T) \\
-    &T = A - L
+    &\text{AL(T)} \\
+    &\text{T = A -- L}
   \end{aligned}$$ &
   Tim is 34 years old (A) and will live to the age of 96 (L), leaving him 62 years (T) to settle affairs. &
   \includegraphics[scale=.5]{Figures/DiagramTable/AL_rt.pdf} %&
@@ -477,8 +491,8 @@ contained in any of these four triad identities.
   \midrule
   %%%% LCd
   $$\begin{aligned}
-    &LC(D) \\
-    &D = C + L
+    &\text{LC(D)} \\
+    &\text{D = C + L}
   \end{aligned}$$ &
   \`{A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
   untimely death in 2004 (D) &
@@ -487,8 +501,8 @@ contained in any of these four triad identities.
   \\
   %%%% CDl
   $$\begin{aligned}
-    &CD(L) \\
-    &L = D - C
+    &\text{CD(L)} \\
+    &\text{L = D -- C}
   \end{aligned}$$ &
   Pascal was born in 1893 (C) and died in 1964 (D), implying a lifespan of 71 (L), or so. &
   \includegraphics[scale=.5]{Figures/DiagramTable/CD_rt.pdf} %&
@@ -496,8 +510,8 @@ contained in any of these four triad identities.
   \\
   %%%% LDc
   $$\begin{aligned}
-    &LD(C) \\
-    &C = D - L
+    &\text{LD(C)} \\
+    &\text{C = D -- L}
   \end{aligned}$$ &
   Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting her birth year in 1900 (C). &
   \includegraphics[scale=.5]{Figures/DiagramTable/LD_rt.pdf} %&
@@ -533,16 +547,16 @@ CP(A) and AC(P) are statistically redundant when exact times are used, they
 are not fully redundant if based on discrete double-classification of data, as
 often provided in aggregated official statistics. Double classified data are
 found on the APC diagram in the shape of squares (AP), horizontal parallelograms
-(AC) and vertical paralellograms (PC), and
+(AC) and vertical paralellograms (CP), and
 these are commonly used to compute different kinds of demographic
-rates and probabilities \citep[][p. 63]{caselli2005demography}. The other dyadic
+rates and probabilities \citep[p.~63]{caselli2005demography}. The other dyadic
 juxtapositions (involving the measures T, D, or L) can be considered as either
 rare or novel ways of structuring or viewing temporal variation in demography,
 and these imply new families of rates and probabilities.
 
 \subsection{The triad identities}
 \label{sec:triads}
-There are $20=\binom{6}{3}$ ways to choose three time indices out of
+There are $20=\binom{6}{3}$ ways to choose three different time indices out of
 six, of which four form a triad identity: APC, TPD, TAL, and LCD.
 Given the three time measures from any of the
 triad identities, one can derive no further time measures. If one selects three
@@ -560,9 +574,9 @@ diagrams that belong to the triad identities. The question of which diagram
 mapping is relevant to a given demographic phenomena is a function of
 patterns in the data. The best diagram is the one that captures all meaningful
 variation in the data. If APC highlights meaningful variation in a phenomenon,
-then its representation as such is useful. The same holds for the other
-identities. With each diagram in following we comment or speculate on its
-potential uses.
+then its representation as such is useful, and the same holds for the other
+identities. \st{With each diagram in following we comment or speculate on its
+potential uses.}
 
 \subsubsection{APC: Chronological age, period, and birth cohort}%\tgh{APC}}
 \label{sec:apc}
@@ -572,8 +586,7 @@ tool for structuring data, observations, and rate estimation, as inspiration for
 on statistical identification, and as the coordinate basis of contemporary
 Lexis-surfaces. Since the Lexis diagram could have been named for others
 \citep{keiding2011age, vandeschrick2001lexis}, and since we compare with other
-temporal configurations, let us refer to it as the APC diagram, as seen in
-Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}. 
+temporal configurations, let us refer to it as the APC diagram. 
 
 \begin{figure}[h!] 
 \caption{An APC diagram with six lifelines.}
@@ -594,7 +607,7 @@ Figures~\ref{fig:APCrt} and~\ref{fig:APCeq}.
 %\end{subfigure}
 \end{figure}
 
-The APC diagram in Figure~\ref{fig:APC} represents years lived on the $y$
+The APC diagram in Fig.~\ref{fig:APC} represents years lived on the $y$
 axis, calendar years on the $x$ axis, and birth cohorts as the right-ascending
 diagonals. This is the most common of several possible configurations
 of the APC dimensions. Individual lifelines (black) are aligned in the birth
@@ -603,13 +616,13 @@ cohort direction, starting with birth (filled circle) at chronological age zero,
 three dimensions of temporal structure. 
 
 \FloatBarrier
-\subsubsection{TPD: thanatological age, period, and death cohort}%\tgh{TPD}}
+\subsubsection{TPD: Thanatological age, period, and death cohort}
 \label{sec:tpd}
 The TPD diagram is best imagined as the inverse of the APC diagram. One may take
-the same individuals represented in Figure~\ref{fig:APC} and group them by death cohorts (D) instead
+the same individuals represented in Fig.~\ref{fig:APC} and group them by death cohorts (D) instead
 of birth cohorts (C). Lifelines then descend such that all
 endpoints align to thanatological age 0, creating the diagram in
-Figure~\ref{fig:TPD} in which individuals dying at different ages but in the same time period are grouped together.
+Fig.~\ref{fig:TPD} in which individuals dying at different ages but in the same time period are grouped together.
 To our knowledge, the TPD diagram has only appeared once in the literature, as
 a didactic aid in a proof of symmetry between chronological and thanatological
 age structure in discrete stationary populations \citep{villavicencioRiffeSymmetires2016}. TPD
@@ -639,7 +652,7 @@ variation into focus.
 There are several examples of analysis of this kind of data, usually stemming
 from a lack of information on chronological age. This is the case, for instance,
 in biodemographic studies in which wild animals with unknown ages are captured
-and then followed-up until death \cite{muller2004demographic,
+and then followed-up until death \citep{muller2004demographic,
 muller2007survival}. Other examples are human historical databases, which
 usually lack information about births, but individuals can be traced from a
 particular event until death. This is the case in the Barcelona Historical
@@ -667,18 +680,18 @@ APC perspective, which can blend out meaningful variation. Since the lifecourse 
 
 To our knowledge, the TAL diagram has only appeared once in the literature, in an exploration and classification of late-life health
 conditions \citep{riffe2016ttd}. There are however instances of statistical
-designs adapted to this coordinate plane \citep[see e.g.,][]{Jewell2016,
-dempsey2016}. The TAL diagram in Figure~\ref{fig:TAL} contains no indication of
+designs adapted to this coordinate plane \citep[see e.g.,][]{dempsey2016, Jewell2016}. The TAL diagram in Fig.~\ref{fig:TAL} contains no indication of
 period or cohorts, as calendar time is blended out in this diagram.
-The lifelines depicted are identical to those shown in APC Figure~\ref{fig:APC}
-and TPD Figure~\ref{fig:TPD}. The TAL diagram is useful for characterizing patterns of prevalence of health conditions. We speculate
+The lifelines depicted are identical to those shown in APC Fig.~\ref{fig:APC}
+and TPD Fig.~\ref{fig:TPD}. The TAL diagram is useful for characterizing patterns of prevalence of health conditions. We speculate
 that data structured and aligned in this way may yield hitherto undescribed
 patterns in other contexts, such as pregnancy (from the perspective of either
 mother or fetus) by time since conception, time until parturition, and length of
 gestation, or even smaller event-history time scales, or patterns of growth or reproduction in non-human species.
 
 \begin{figure}[h!] 
-\caption{A TAL diagram with six lifelines (*).}
+\caption{A TAL diagram with six lifelines. Since two of the six lifelines are of equal length (75), they are
+overlapped in this figure and appear to be five}
 \label{fig:TAL}
 \centering
 %\makebox[\textwidth][c]{
@@ -699,8 +712,8 @@ gestation, or even smaller event-history time scales, or patterns of growth or r
 
 \bigskip
 \raggedright
-(*) Since two of the six lifelines are of equal length (75), they are
-overlapped in this figure and appear to be five.
+\st{(*) Since two of the six lifelines are of equal length (75), they are
+overlapped in this figure and appear to be five.}
 \end{figure} 
 
 
@@ -711,7 +724,7 @@ overlapped in this figure and appear to be five.
 
 The LCD diagram completes our set of identities. It is based on the relationship
 between lifespan, birth cohort, and death cohort. In
-Figure~\ref{fig:LCD}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
+Fig.~\ref{fig:LCD}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
 are found in descending diagonals. To structure data on these three
 time measures implies excluding time-varying information over the lifecourse.
 An individual
@@ -719,7 +732,7 @@ only ever has one lifespan, one birth cohort, and one death cohort, such that
 the LCD coordinates of an individual are constant throughout life.
 The LCD plane is therefore orthogonal to lifelines, and individuals are located
 with points, rather than life segments.
-In Figure~\ref{fig:LCD}, the same six individuals from previous diagram figures are represented with crossed circles.
+In Fig.~\ref{fig:LCD}, the same six individuals from previous diagram figures are represented with crossed circles.
 
 \begin{figure}[h!] 
 \caption{An LCD diagram in two projections.}
@@ -752,11 +765,11 @@ marriage.
 
 \FloatBarrier
 
-\section{A general relationship between events and durations}
+\section{The relationship between events and durations}
 \label{sec:gen}
 The four identity-based diagrams discussed in prior sections are likely
 straightforward, either because the Lexis diagram is already
-familair to the reader, or because Cartesian representations are widely used.
+familiar to the reader, or because Cartesian representations are widely used.
 However, the special relationship between these diagrams is based on a single
 hexad identity, which is less straightforward, and its resultant
 diagram is best derived from a more general groundwork. In this section we therefore describe a more general
@@ -765,27 +778,75 @@ This approach is based on a categorization of time measures into events and
 durations, and the realization that durations derive from events in calendar
 time.
 
+\subsection{A general framework}
+\label{sec:framework}
+
 The general relationship between events and durations serves not only to
 introduce the full demgographic time framework, but also to compare it with
 other relatively complicated temporal designs in the literature. Each of the six
 time measures that we have treated can be categorized into two basic types:
-Events and durations. Events include birth (C) and death (D), as well as period
-itself (P).
-Durations are time differences between pairs of
-events. Chronological age ($A=P-C$), thanatological age ($T=D-P$), and lifespan
-($L=D-C$) are in this senese durations. 
+events and durations. Events include birth (C) and death (D) cohort, as well as period
+itself (P). Durations are time differences between pairs of events: chronological age A = P -- C, 
+thanatological age T = D -- P, and lifespan L = D -- C. The basic formal definitions and results are
+introduced in the following, whereas additional details and proofs are provided in
+Appendix~\ref{app:A}.
 
-Let us formalize the notions of $n$ points in time $\textbf{p} = [p_1 \ldots
-p_n]$ and the $m$ durations $\textbf{d} = [d_1 \ldots d_m]$ between these
-points. $\textbf{d}$ is linearly dependant on $\textbf{p}$ in the sense that a
-linear transformation of $\textbf{p}$ yields $\textbf{d}$.
-A set of $n$ events implies a total of $m = \binom{n}{2} = n(n - 1)/2$
-durations. The total number of time measures implied by a set of $n$ events is
-therefore $n + m$. A set of time measures derived in this way,
-$\textbf{g} = [\textbf{p}, \textbf{d}]$, forms an identity. In the same way that
-$\textbf{d}$ derives from $\textbf{p}$, there are $(n+1)^{(n-1)}$ ways to
-complete $\textbf{g}$ from a size-$n$ set of potentially mixed durations and
-events. Proofs for these statements are found in Appendix~\ref{app:A}. 
+\begin{definition} 
+  Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$ events or points in time chronologically ordered, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{ij}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
+  \label{def:1}
+\end{definition}
+
+\begin{proposition}
+  Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the dimension of the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is $m=n(n-1)/2$.
+\end{proposition}
+
+\begin{proof}
+  By definition, each element of $\boldsymbol{d}$ is formed by two different elements of $\boldsymbol{p}$. Therefore, the length of $\boldsymbol{d}$ is the number of combinations of 2 different elements from a set of size $n$, such that the order of selection does not matter. From combinatorial theory, it is well known that this value is given by the binomial coefficient $\binom{n}{2}=\frac{n!}{2!(n-2)!}=n(n-1)/2$.
+\end{proof}
+
+\begin{proposition}
+ For any vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, there is always a linear transforation $f:\mathbf{R}^n\to\mathbf{R}^m$ that provides a corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$.
+\end{proposition}
+
+\begin{proof}
+ The existence of $f$ is a direct consequence of Definition~\ref{def:1}, given that all the elements of $\boldsymbol{d}$ are a linear combination of elements of $\boldsymbol{p}$. 
+\end{proof}
+
+\begin{corollary}
+ Given $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, suppose that $\boldsymbol{d}=(p_2-p_1,\dots,p_n-p_1,p_3-p_2,\dots,p_n-p_2,\dots,p_n-p_{n-1})$. Then, the linear transformation $f:\mathbf{R}^n\to\mathbf{R}^m$ that yields $\boldsymbol{d}$ from $\boldsymbol{p}$ is defined by the $m\times n$ matrix
+ %
+ \begin{align}
+  \boldsymbol{X}_{(m\times n)}&= \left(\begin{array}{cccccc}
+			  \multicolumn{1}{c:}{-1}			& \multicolumn{5}{c}{}					\\
+			  \multicolumn{1}{c:}{\vdots}	 		& \multicolumn{5}{c}{I_{n-1}}	 			\\  
+			  \multicolumn{1}{c:}{-1}			& \multicolumn{5}{c}{}					\\ \hdashline
+			  0		& \multicolumn{1}{c:}{-1}	& \multicolumn{4}{c}{}					\\	 
+			  \vdots	& \multicolumn{1}{c:}{\vdots}	& \multicolumn{4}{c}{I_{n-2}}  				\\
+			  0		& \multicolumn{1}{c:}{-1}	& \multicolumn{4}{c}{}					\\ \hdashline
+			  \multicolumn{6}{c}{\cdots}										\\ \hdashline
+			  0		& \cdots	& 0		& \multicolumn{1}{c:}{-1}	& 	& 		\\ 
+			  0		& \cdots	& 0		& \multicolumn{1}{c:}{-1}	& \multicolumn{2}{c}{\smash{\raisebox{.5\normalbaselineskip}{$I_2$}}}	\\ \hdashline
+			  0		& \multicolumn{2}{c}{\cdots}	& 0				& -1	& 1		\\
+			\end{array}\right)
+  \label{eq:matrix}\ ,
+ \end{align}
+ %
+ such that $\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, and where $I_k$ denotes the $k\times k$ identity matrix.
+\end{corollary}
+
+These results imply that given an arbitrary set of size $n\geq2$ of points in time, it is always possible to calculate the durations between any pair of these points. This calculation can be understood
+as a linear transformation from a \emph{point-space} $P\subseteq\mathbf{R}^n$ to a \emph{duration-space} $D\subseteq\mathbf{R}^m$, with $m=n(n-1)/2$. However, note that matrix $\boldsymbol{X}$ in \eqref{eq:matrix} yields a vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ whose elements are sorted in an arbitrary way. The following statement may be relevant on this regard.
+% By arbitrarily swapping the rows of $\boldsymbol{X}$ it would be possible to obtain several other linear transformations and the corresponding vectors of durations different than $\boldsymbol{d}$
+
+\begin{proposition}
+ Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is unique, irrespective of the sorting process.
+\end{proposition}
+
+\begin{proof}
+ Let's suppose that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are two different vectors of durations corresponding to the same vector of events $\boldsymbol{p}\in\mathbf{R}^n$. Provided that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are finite and, by definition, both have dimension $m$ and are formed by the same combinations of elements of $\boldsymbol{p}$, it would always be possible to re-arrange the elements of $\boldsymbol{d^2}$ in the same order as $\boldsymbol{d^1}$ such that $\boldsymbol{d^1}=\boldsymbol{d^2}$.
+\end{proof}
+
+This last proposition allows considering $\boldsymbol{X}$ as the matrix defining the linear transformation between points and durations. Given a vector $\boldsymbol{p}$ and the corresponding $\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, any differently sorted vector of durations would be obtained by swapping the rows of $\boldsymbol{X}$. Further, note that $\boldsymbol{X}$ does not have an inverse matrix, and therefore there is no linear transformation from durations to events. This is intuitively straightforward if one thinks that two vectors of events can yield the same vector of durations, or in other words, that a particular vector of durations can come from infinite different vectors of points in time. For instance, using $\boldsymbol{X}$, the vectors of events $\boldsymbol{p^1}=(1,2,3)$ and $\boldsymbol{p^2}=(2,3,4)$ both yield $\boldsymbol{d}=(1,2,1)$. In relation with the six time measures discussed here, note that the events CPD yield TAL, but TAL does not yield CPD.
 
 The relationship between events and durations can be
 systematically represented in a series of timelines and graphs that may better
@@ -793,27 +854,21 @@ guide intuition.
 Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left column shows timelines, a familiar linear representation of time, with events
 marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
 each of the $m$ possible event dyads and are drawn below
-the main timeline as curly braces labelled with $d_1 \ldots d_m$. It is evident,
+the main timeline as curly braces labelled with $d_{12} \ldots d_{n-1,n}$. \st{It is evident,
 that as $n$ increases, $m$ increases relatively faster, and this timeline
-graphical representation is not efficient for $n \gtrsim 4$. Drawing events on a
-timeline implies an ordering, but the events of $\textbf{p}$
+graphical representation is not efficient for $n \geq 4$. Drawing events on a
+timeline implies an ordering, but the events of $\boldsymbol{p}$
 need not be ordered in any particular way in order for these relationships to
-hold.
+hold.}
 
 The joint relationship between durations and events is more explicit and more
-compact in a graph representation. The middle column of
-Table~\ref{tab:timelines}, labelled \textit{graph} consists in the simplest
-graph representation of the event-duration timeline, with $n$ red vertices for
-each of the events in $\textbf{p}$. A full connection of the graph yields $m$
-edges for each of the possible durations in $\textbf{d}$. This graph
-representation loses the linear time analogy of the timeline, but makes the
-depdenency of $\textbf{d}$ on $\textbf{p}$, and other interdependencies between time measures more explicit.
-
- The right column of
-Table~\ref{tab:timelines}, labelled \textit{temporal plane graph}
-redraws the graph with a total of $n+1$ vertices and $m+n$ edges for the
-elements of both $\textbf{d}$ and $\textbf{p}$. All
-events of $\textbf{p}$ connect to a single vertex. Event edges are indicated
+compact in a graph representation. The total number of time measures implied by a set of $n$ events and the corresponding durations is
+therefore $n+m=n+n(n-1)/2=n(n+1)/2$, which yields a $n+1$-polytope. % A set of time measures derived in this way, $\boldsymbol{g} = (\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$, forms an identity. In the same way that $\boldsymbol{d}$ derives from $\boldsymbol{p}$, there are $(n+1)^{(n-1)}$ ways to complete $\boldsymbol{g}$ from a size-$n$ set of potentially mixed durations and events. Proofs for these statements are found in Appendix~\ref{app:A}. 
+%The middle column of Table~\ref{tab:timelines}, labelled \textit{graph} consists in the simplest graph representation of the event-duration timeline, with $n$ red vertices for each of the events in $\boldsymbol{p}$. A full connection of the graph yields $m$ edges for each of the possible durations in $\boldsymbol{d}$. This graph representation loses the linear time analogy of the timeline, but makes the depdenency of $\boldsymbol{d}$ on $\boldsymbol{p}$, and other interdependencies between time measures more explicit.
+The right column of Table~\ref{tab:timelines}\st{, labelled \textit{temporal plane graph}
+re}draws the corresponding graph with a total of $n+1$ vertices and $n+m$ edges for the
+elements of both $\boldsymbol{d}$ and $\boldsymbol{p}$. All
+events of $\boldsymbol{p}$ connect to a single vertex. Event edges are indicated
 in red with red-circled labels and nodes have no direct
 time-measure meaning. In this rendering, each triangle formed by three
 mutually connecting edges represents a triad identity. The top row $n=2$
@@ -822,8 +877,8 @@ ten triad identies, respectively, and in general a given higher order identity
 will yield $\binom{n+1}{3}$ triad identities.
 We call this a temporal plane graph because the triangle resulting from any given triad sub-identity can be extended over
 all valid values of its time measures to form a temporal plane, as of the
-diagrams in Section~\ref{sec:triads}. The dimensionality of the extended diagram of a given identity follows from the
-number of events from which the identity is derived. $n=2$ produces a
+diagrams in Sect.~\ref{sec:triads}. The dimensionality of the extended diagram of a given identity follows from the
+number of events from which the identity is derived: $n=2$ produces a
 two-dimensional diagram, $n=3$ produces a 3-dimensional diagram, and so forth.
 
 \newcolumntype{C}{ >{\centering\arraybackslash} m{2cm} }
@@ -854,16 +909,16 @@ Table~\ref{tab:timelines}.
 
 \paragraph{Example 1: The Lexis surface}
 
-Let $\textbf{p}$ have two elements, as in the first row of
-Table~\ref{tab:timelines}. Then $\textbf{d}$ consists of just one element, defined as
+Let $\boldsymbol{p}$ have two elements, as in the first row of
+Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ consists of just one element, defined as
 
 \begin{equation}
-d_1 = p_2 - p_1   \quad\quad.
+d_{12} = p_2 - p_1   \quad\quad.
 \end{equation}
 
-Interpreting $d_1$ as \textit{age}, $p_2$ as \textit{period}, and $p_1$ as
-\textit{birth cohort} yields the APC identity. The Lexis surface is defined as the plane of
-all possible combinations between \textit{age} and \textit{period}.
+Interpreting $d_{12}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
+\emph{birth cohort} yields the APC identity. The Lexis surface is defined as the plane of
+all possible combinations between \emph{age} and \emph{period}.
 \vt{with cohorts as diagonals results from the transformation $P^2 \rightarrow
 M^2$ as shown to be possible in theorem 3.}
 
@@ -874,84 +929,82 @@ Along with his well known 2-dimensional diagram \citet{lexis1875einleitung} also
 described a 3-dimensional extension applied to the marriage and
 separation processes, reproduced in \citet{keiding2006event}.
 
-Let $\textbf{p}$ have three elements, as in the second row of
-Table~\ref{tab:timelines}. Then $\textbf{d}$ is defined as
+Let $\boldsymbol{p}$ have three elements, as in the second row of
+Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as
 
 \begin{equation}
 \label{eq:p3}
 \begin{matrix}
-d_1 = p_2 - p_1\\
-d_2 = p_3 - p_1\\
-d_3 = p_3 - p_2
+d_{12} = p_2 - p_1\\
+d_{13} = p_3 - p_1\\
+d_{23} = p_3 - p_2
 \end{matrix} \quad\quad.
 \end{equation}
 
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{marriage cohort} and $p_3$ as
- \textit{separation cohort} yields the durations $d_1$ as \textit{age at
- marriage}, $d_2$ as \textit{age at separation}, and $d_3$ as \textit{duration
- of marriage}. Lexis' ``marriage space'' is reconstructed by transforming $P^3
- \rightarrow M^3$ where $M$ has three orthogonal basis vectors corresponding to
- $(p_1, d_1, d_3)$. 
+ \textit{separation cohort} yields the durations $d_{12}$ as \textit{age at
+ marriage}, $d_{13}$ as \textit{age at separation}, and $d_{23}$ as \textit{duration
+ of marriage}. Lexis' ``marriage space'' $M$ is reconstructed by transforming $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$, with orthongonal basis formed by $(p_1, d_{12}, d_{23})$.
 
 \paragraph{Example 3: Adding death cohort to the Lexis surface}
 
 As in Example 2 we start with a three element vector
-$\textbf{p}$ yielding the very same identities as in equation set
+$\boldsymbol{p}$ yielding the very same identities as in equation set
 \eqref{eq:p3} and the second row of Table~\ref{tab:timelines}, but with different interpretations.
-Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$ as \textit{death cohort} yields the durations $d_1$ as \textit{chronological age},
-$d_2$ as \textit{lifespan}, and $d_3$ as \textit{time to death}. This
-vector space $P^3$ contains the Lexis surface as a sub-space, as well as the
-other planes presented in Section~\ref{sec:triads}. We return to this identity
+Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$ as \textit{death cohort} yields the durations $d_{12}$ as \textit{chronological age},
+$d_{13}$ as \textit{lifespan}, and $d_{23}$ as \textit{time-to-death}. This
+vector space contains the Lexis surface as a sub-space, as well as the
+other planes presented in Sect.~\ref{sec:triads}. We return to this identity
 in the following sections.
 
 \paragraph{Example 4: Brinks' Illness-Death model}
 
 \citet{brinks2014lexis} describes an illness-death process atop the Lexis
 surface, and with diagnosis and death as additional events, for a total of four
-events. Let $\textbf{p}$ have four elements, as in the third row of
-Table~\ref{tab:timelines}. Then $\textbf{d}$ is defined as:
+events. Let $\boldsymbol{p}$ have four elements, as in the third row of
+Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as:
 
 \begin{equation}
 \label{eq:p3}
 \begin{matrix}
-d_1 = p_2 - p_1\\
-d_2 = p_3 - p_1\\
-d_3 = p_3 - p_2\\
-d_4 = p_4 - p_1\\
-d_5 = p_4 - p_2\\
-d_6 = p_4 - p_3
+d_{12} = p_2 - p_1\\
+d_{13} = p_3 - p_1\\
+d_{23} = p_3 - p_2\\
+d_{14} = p_4 - p_1\\
+d_{24} = p_4 - p_2\\
+d_{34} = p_4 - p_3
 \end{matrix} \quad\quad.
 \end{equation}
 
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period}, $p_3$ as
 diagnosis, and $p_4$ as \textit{death cohort} yields the following composition
-of $\textbf{d}$: $d_1$ is \textit{chronological age}, $d_2$ is \textit{age at
-diagnosis}, $d_3$ is \textit{time to diagnosis},\footnote{Time to diagnosis can
-also be time \textit{since} diagnosis if the elements of $\textbf{p}$ are
+of $\boldsymbol{d}$: $d_{12}$ is \textit{chronological age}, $d_{13}$ is \textit{age at
+diagnosis}, $d_{23}$ is \textit{time to diagnosis},\footnote{Time to diagnosis can
+also be time \textit{since} diagnosis if the elements of $\boldsymbol{p}$ are
 rearranged.
-Note that the elements of $\textbf{p}$ need not be ordered. Although
-birth and death are likely the first and last elements of $\textbf{p}$, this is
-not strictly required.} $d_4$ is \textit{lifespan}, $d_5$ is \textit{time to
-death}, and $d_6$ is duration of illness (an irreversible state). The complete
+Note that the elements of $\boldsymbol{p}$ need not be ordered. Although
+birth and death are likely the first and last elements of $\boldsymbol{p}$, this is
+not strictly required.} $d_{14}$ is \textit{lifespan}, $d_{24}$ is \textit{time-to-death},
+and $d_{34}$ is duration of illness (an irreversible state). The complete
 identity of this model therefore implies a total of ten time measures, although
 not all measures are explicitly mentioned or used in the model of
 \citet{brinks2014lexis}.
 
 \FloatBarrier
-\section{A tetrahedron relates the six demographic time measures.}
+\section{A tetrahedron relates the six demographic time measures}
 \label{sec:tetrahedron}
 The demographic time framework we present includes three events (period, birth
 cohort, and death cohort), and it therefore leads to a graph
 based on the second row and third column of Table~\ref{tab:timelines}, here
-redrawn in Figure~\ref{fig:sq} withg edges labelled by the six time measures
+redrawn in Fig.~\ref{fig:sq} with edges labelled by the six time measures
 and colored consistent with previous figures. A slight rearrangement of the
 vertices yields a graph of a tetrahedron in
-Figure~\ref{fig:tettet}.
+Fig.~\ref{fig:tettet}.
 
-There are a total of four triangles in Figure~\ref{fig:tet}, one for each
+There are a total of four triangles in Fig.~\ref{fig:tet}, one for each
 of the triad sub-identities, such that each time measure is an element of two
-triad identities. In Figure~\ref{fig:tettet} each triangle also is the
-edge-graph of the face of the tetrahedron , ergo each face of the tetrahedron
+triad identities. In Fig.~\ref{fig:tettet} each triangle also is the
+edge-graph of a face of the tetrahedron, ergo each face of the tetrahedron
 represents one of the triad identities. It is reasonably straightforward to
 imagine the tetrahedral graph as the wire-frame of a 3d
 tetrahedron --- as the 3d edge structure of the tetrahedron platonic solid.
@@ -970,11 +1023,11 @@ six time indices.}
 \begin{subfigure}{.48\textwidth}
 \caption{vertices in tetrahedral layout}
 \label{fig:tettet}
-\includegraphics[width=3in]{Figures/TetraHedronEdgesOnly.pdf}
+\includegraphics[width=3in]{Figures/TetraHedronUnitSquare.pdf}% {Figures/TetraHedronEdgesOnly.pdf}
 \end{subfigure}
 \end{figure}
 
-For exposition, imagine that the middle vertex of Figure~\ref{fig:tettet} is the
+For exposition, imagine that the middle vertex of Fig.~\ref{fig:tettet} is the
 top (closer to the eye), while the outer edges A, P, and C form the
 base of the tetrahedron, forming the much-studied APC identity.
 The South face corresponds to the TPD identity,
@@ -1009,7 +1062,7 @@ diagram. We opt to delineate the space using the intersection of two planes.
 
 Figure~\ref{fig:apctTAL} gives a view of a demographic
 time diagram that corresponds to the hexad identity, where birth-cohort TAL
-cross-sectional planes are placed in sequence in a perspective drawing.\footnote{The coordinates used to render Figure~\ref{fig:apctTAL} are isotropic.
+cross-sectional planes are placed in sequence in a perspective drawing.\footnote{The coordinates used to render Fig.~\ref{fig:apctTAL} are isotropic.
 However, there are no 60$^\circ$ angles in this figure due to the use of
 parallax and an indirect viewing angle in this rendering for the sake of
 increased legibility.} The most recent TAL plane, for the year 2000, is placed
@@ -1061,13 +1114,13 @@ Figure~\ref{fig:apctTAL} could have been drawn with TPD or LCD planes highlighte
 as well, but these can still be imagined upon the current rendering. TPD planes
 transect this space through any given chronological age, for instance. Imagine a
 wall on the left side of the prism, cutting through chronological age 0 (recall
-Figure~\ref{fig:TPD}).
+Fig.~\ref{fig:TPD}).
 In this case, the thanatological age axis is indicated in the very back of the diagram,
 calendar time becomes another axis, and death cohort diagonals are not drawn.
 TPD planes sequence inward from this first plane, always forming cross-sections
 through chronological age. The LCD plane is to be found by rotating the current
 prism such that the angle of view is directly orthogonal to lifelines, which
-would then appear as points (recall Figure~\ref{fig:LCD}).
+would then appear as points (recall Fig.~\ref{fig:LCD}).
 
 %Further, the two classes of planes drawn
 %(APC and TAL) could have been drawn and labelled differently.
@@ -1089,20 +1142,20 @@ The essential property of this perspective diagram is that lifelines
 start and end in parallel, desceding downward and forward in time. A real
 population of renewing lives, spread over time and over the typical range of
 human lifespans, will tend to fill the entirety of the prism depicted in
-Figure~\ref{fig:apctTAL}, and any given point in the prism can be given six
+Fig.~\ref{fig:apctTAL}, and any given point in the prism can be given six
 demographic time coordinates, of which three are redundant.
 
 \FloatBarrier
 
 \section{Application}
 \label{sec:app}
-The relationship between the six measures of demographic time is true in the
+\st{The relationship between the six measures of demographic time is true in the
 same sense that mathematics is true: Under linear time it is an internally valid
-set of relationships, and this is self-evident. The
+set of relationships, and this is self-evident.} The
 coordinate system described here may be useful for the visualization of data, to
 enable discovery, and to better inform demographic methods. We have not yet
 mentioned how such developments might arise in practice. We therefore give a
-brief case study based this coordinate system. We aim to demonstrate the
+brief case study \st{based this coordinate system. We aim} to demonstrate the
 potential of the present framework, but this is far from an exhaustive
 application of its usefulness for other substantive questions, nor is the case study described in complete rigor. Specifically, we reason that
 projections or comparisons of prevalence-based healthy life expectancy (HLE) are
@@ -1124,7 +1177,7 @@ We conclude that comparisons of health expectancies might be biased in ways not
 previously documented.
 
 Let us take the example of self-reported health (SRH). 
- The data come from the RAND version of the US Health and Retirement Study
+ The data come from the RAND Corporation version of the US Health and Retirement Study
  \citep{HRSumich,HRS}. Since this survey includes multiple dated observations of
  individuals, as well as information on time of birth and a followup for time of death, we have or
 can derive each of the six demographic time measures for each observation.
@@ -1132,7 +1185,7 @@ Further methodological details are given by \citet{riffe2016ttd}.
 
 \begin{figure}[h!] 
 \caption{Prevalence of males self-reporting poor health by chronological and
-thanatological age, by quinquennial birth cohorts, 1905-1925. (HRS)}
+thanatological age, by quinquennial birth cohorts, 1905--1925 (Sources: \citealt{HRSumich, HRS})}
 \label{fig:poorsrh}
 \centering
 \vspace{-1em}
@@ -1186,8 +1239,7 @@ thanatological age, by quinquennial birth cohorts, 1905-1925. (HRS)}
 \end{figure} 
 
 Figure~\ref{fig:poorsrh} displays a series of TAL surface plots of male SRH
-prevalance, each referring to a different quinquennial birth cohort (1905-1909,
-etc). These follow the coordinates of the TAL diagram in Figure~\ref{fig:TAL}.
+prevalance, each referring to a different quinquennial birth cohort (1905--09, 1910--14, $\dots$). These follow the coordinates of the TAL diagram in Fig.~\ref{fig:TAL}.
 The $x$-axis is chronological age, the $y$-axis is thanatological age, and
 downward-sloping diagonals delineate lifespan. Lifelines (not drawn) descend
 parallel to the downward diagonals seen on the background grid. The density of
@@ -1215,12 +1267,11 @@ these surfaces with a single line, a thanatological age pattern would give a
 much more compact description than a chronological age pattern. Patterns are
 also relatively stable between cohorts.
 
-When weighted by lifelines, the marginal chronological age pattern of SRH, as
-measured here (the Sullivan curve, \citep{Sullivan1970}), would show an increasing
+When weighted by lifelines, the marginal chronological age pattern of SRH, measured with the ``Sullivan curve'' \citep{Sullivan1970}, would show an increasing
 tendency over age, in agreement with common expectations.
 However, such an increasing pattern over age is a marginal artifact, due to an
 interaction between the distribution of lifespans and the relatively fixed underlying
-pattern of morbidity seen in Figure~\ref{fig:poorsrh}. These surfaces can indeed
+pattern of morbidity seen in Fig.~\ref{fig:poorsrh}. These surfaces can indeed
 be tidily summarized with a single line, but it is a line over the
 thanatological age margin rather than over chronological age. 
 
@@ -1233,7 +1284,7 @@ change is a pure function of thanatological age, an increase in life expectancy
 should increase healthy life expectancy by the same amount. This is not the
 prediction when we base analyses on the chronological age pattern of
 self-reported health. Indeed, an underlying morbidity pattern as stable as
-that seen in Figure~\ref{fig:poorsrh} would predict improvements in the marginal
+that seen in Fig.~\ref{fig:poorsrh} would predict improvements in the marginal
 chronological age pattern of self-reported health if the lifespan distribution
 were to shift to higher ages. This is because a higher age at death implies
 more years lived in ages farther from death, where prevalence is low.
@@ -1247,10 +1298,10 @@ prediction of healthcare expenditure
 
 Using the data from our example surfaces, we calculate some basic results that support our case. Let us take the population of US males aged 60 and older, and
 assume that mean time-to-death trajectory derived from the
-Figure~\ref{fig:poorsrh} surfaces is valid for them.
+Fig.~\ref{fig:poorsrh} surfaces is valid for them.
 We apply this trajectory to the synthetic stationary population of each
 year from 1980 and 2010 \citepalias{HMD} following the formulas in
-\citep{vanRaalte2015HLE}. We then calculate the resulting healthy and unhealthy
+\cite{vanRaalte2015HLE}. We then calculate the resulting healthy and unhealthy
 life expectancies, and compare these with expectancies calculated using the
 Sullivan method and assuming the 1980 chronological age
 pattern of poor SRH.\footnote{The 1980 chronological age pattern of poor SRH is
@@ -1283,91 +1334,73 @@ phases of the lifecourse, and non-human subjects.
 % or
 %some other temporal design inspired by the event-duration framework.
 
-\section{Discussion}
+\section{Conclusions}
 
 In this paper we describe a relationship between six different measures of
-demographic time: chronological age, period, birth cohort, time to death, death
-cohort, and individual lifespan. In Section~\ref{sec:dyads2diagrams} we show how
-combinations of these time measures imply four triad identities. Each
-triad identity consists in simple linear relationship between its three
+demographic time: chronological age (A), period (P), birth cohort (C), time-to-death (T), death
+cohort (D), and individual lifespan (L). In Sect.~\ref{sec:dyads2diagrams} we show how
+combinations of these time measures imply four triad identities, each of which consists in simple linear relationship between its three
 constituent time measures. We describe how each triad identity can be
 extended into a temporal plane, with a characteristic diagram. The four triad
-identities underly a family of four diagrams. These diagrams include the
-familiar Lexis diagram (Sec~\ref{sec:apc}), but also three either new or
-uncommon diagrams.
-The TPD diagram (Sec.~\ref{sec:tpd}) relates time of death, period, and time
-until death, and is therefore a sort of dual to the Lexis diagram. The TAL
-diagram (Sec.~\ref{sec:tal}) relates the three duration measures of time to
-death, chronological age, and lifespan, and it may be useful for analyzing patterns that vary over the lifecourse and/or by length of life.
-The LCD diagram (Sec.~\ref{sec:lcd}) relates time of birth with time of death
-and lifespan, and it may be useful for analyzing patterns that vary over time and by length of life,
-but not necessarily over the lifecourse. These four identities and diagrams
-relate to one another in a single relationship.
+identities underly a family of four diagrams that include the
+familiar Lexis diagram, but also three either new or
+uncommon diagrams: The TPD---which is a sort of dual to the Lexis diagram---the TAL, and the LCD diagrams.
+%The TPD diagram in Sect.~\ref{sec:tpd} relates time of death, period, and time until death, and is therefore a sort of dual to the Lexis diagram. The TAL diagram in Sect.~\ref{sec:tal} relates the three duration measures of time-to-death, chronological age, and lifespan, and it may be useful for analyzing patterns that vary over the lifecourse and/or by length of life. The LCD diagram in Sect.~\ref{sec:lcd} relates time of birth with time of death and lifespan, and it may be useful for analyzing patterns that vary over time and by length of life, but not necessarily over the lifecourse. 
+These four identities and diagrams relate to one another in a single relationship.
 
-In Section~\ref{sec:gen}
-we digress to present a more general event-duration identity framework. These
-general terms allow us to present the demographic time hexad identity more
-rigorously as a special case of the event-duration framework in
-Section~\ref{sec:examples}.
-We compare this identity with other relatively complicated temporal
+In Sect.~\ref{sec:gen} we digress to present a more general event-duration identity framework, which allows us to present the demographic time hexad identity more
+rigorously as a special case of the event-duration framework. We compare this identity with other relatively complicated temporal
 relationships in the literature, including the \citet{lexis1875einleitung}
-marriage identity and the illness-death model of \citet{brinks2014lexis}. Some general
+marriage identity and the illness-death model by \citet{brinks2014lexis}. Some general
 properties of temporal identities are mentioned in
-Section~\ref{sec:gen} described and elaborated and proven in
+Sect.~\ref{sec:gen} described and elaborated and proven in
 Appendix~\ref{app:A}.
-In Section~\ref{sec:tetrahedron} we describe how the graph of the demographic time identity is also the graph of a tetrahedron. As a three-dimensional solid, the tetrahedron forms the basis of the three
+In Sect.~\ref{sec:tetrahedron} we describe how the graph of the demographic time identity is also the graph of a tetrahedron. As a three-dimensional solid, the tetrahedron forms the basis of the three
 dimensional extension of the demograhic time identity. Each of the four
 faces of the tetrahedron is parallel to one of the four temporal planes.
 
-In Section~\ref{sec:diagram} we render a diagram of the demographic time
+In Sect.~\ref{sec:diagram} we render a diagram of the demographic time
 identity. We argue that the full three dimensional diagram is not necesarily a
 practical way to represent demographic data, but that it forms a useful
 reference to understand demographic processes. In general, data structured by
 all six demographic time measures can be represented on any of the four diagrams
-if controlled properly. In Section~\ref{sec:app} we present a brief
+if controlled properly. In Sect.~\ref{sec:app} we present a brief
 application of this technique to the prevalence of poor self-reported health in
-older ages in the United States. Prevalance data are displayed in a series of
-TAL surfaces (See Sec.~\ref{sec:tal}) representing the end-of-life experience of
-a sequence of five birth cohorts (1905-1925). Together, these surfaces represent
-a partial filling of the three-dimensional diagram drawn in
-Figure~\ref{fig:apctTAL}. As such, this prevalence data is structured by all six
-demographic time measures. To demonstrate the potential utility of this kind of
-data structure, we demonstrate that the choice of age pattern when calculating
+older ages in the United States. %Prevalance data are displayed in a series of TAL surfaces (See Sect.~\ref{sec:tal}) representing the end-of-life experience of a sequence of five birth cohorts (1905-1925). Together, these surfaces represent a partial filling of the three-dimensional diagram drawn in Fig.~\ref{fig:apctTAL}. As such, this prevalence data is structured by all six demographic time measures.
+To demonstrate the potential utility of this kind of
+data structure, we show that the choice of age pattern when calculating
 prevalence-based measures of healthy life expectancy can have a non-trivial impact on the result.
-
-\vt{from here down needs to have some clear structure still}
 
 An effective way to detect patterns in temporal variation
 is via data visualization. The coordinate system we propose is
 conceived as one adequate to capture temporal variation, and we suggest its use
 for visualizing data, probably via small multiples of successive time slices
-in one of the diagrams from Section~\ref{sec:dyads2diagrams}, similar to that
-shown in Figure~\ref{fig:poorsrh} on the basis of the TAL diagram.
+in one of the diagrams from Sect.~\ref{sec:dyads2diagrams}, similar to that
+shown in Fig.~\ref{fig:poorsrh} on the basis of the TAL diagram.
 Such visualization strategies at this time are exploratory, and this is a
 technique that may benefit from further refinement. Further, a cross-section
 through the demographic time-space need not be parallel to one of the four
-identity-planes. Other more complicated temporal designs based on the
-event-duration framework in Section~\ref{sec:gen} and Appendix~\ref{app:A} are
-also possible.
+identity-planes. Other more complicated temporal designs are also possible.
+%based on the event-duration framework in Sect.~\ref{sec:gen} and Appendix~\ref{app:A} 
 
-Primary vital rates appear to be
-empirically regular and fall within a limited range for humans. Many of the methods of demography are
-developed to estimate demographic quantities independent of population
-composition, or to partition crude magnitudes into the effects of population age structure and pure vital rates. Controlling for age like this is in a more general sense
-controlling for variation in population structure. To the
-extent that regular temporal variation relates to the end of life, length of
-life, or time of death, common age-standardization does not fully account for
-such structure.
+%Primary vital rates appear to be
+%empirically regular and fall within a limited range for humans. Many of the methods of demography are
+%developed to estimate demographic quantities independent of population
+%composition, or to partition crude magnitudes into the effects of population age structure and pure vital rates. Controlling for age like this is in a more general sense
+%controlling for variation in population structure. To the
+%extent that regular temporal variation relates to the end of life, length of
+%life, or time of death, common age-standardization does not fully account for
+%such structure.
 
-Panel surveys with mortality follow-ups already provide the requisite
-information, as do linkable registers that include items such as
-health measures or proxies and relevant dates of birth, observation, and death.
-Other kinds of populations, such as animals or items, may have quite different
-data-gathering mechanisms.
+%Panel surveys with mortality follow-ups already provide the requisite
+%information, as do linkable registers that include items such as
+%health measures or proxies and relevant dates of birth, observation, and death.
+%Other kinds of populations, such as animals or items, may have quite different
+%data-gathering mechanisms.
 
-Furthermore, we believe in the pedagogical value of the framework
+We believe in the pedagogical value of the framework
 introduced in this paper. We hope that the
-present inquiry will be useful as a teaching instrument in the same way as APC
+present inquiry will be useful as a teaching instrument in the same way as Lexis
 diagrams have formed a part of basic demographic education.
 The relationship between the six dimensions of demographic time helps situate the APC
 paradigm in a broader framework. Just as scientific discovery in general
@@ -1429,270 +1462,185 @@ investigation.
 \DeclareRobustCommand{\VAN}[3]{#3}
 \bibliographystyle{apacite} % required for demography
 %\bibliographystyle{plainnat}
-  \bibliography{refs} 
-  
-\begin{appendices}
-\section{Event-duration transformation proofs}
-\label{app:A}
-This appendix provides some formal support to statements and explanations given
-in Section~\ref{sec:gen}. We explain how durations depend on events (and not
-vice versa). We list and prove some of the properties of higher-order
-identities, such as the number of ways they can be derived, the conditions
-for doing so, the number of event and duration measures they contain, and the
-number, size, and composition of sub-identities.
+\bibliography{refs} 
+% \bibliography{references} 
 
-\begin{definition} Let $\textbf{p}$ be a vector with $n$ elements where $n \geq
-2$ and elements $p_{i=1} \ldots p_n \in \mathbb{R}$. Let $\textbf{d}$ be a vector with $m$ elements such that $\textbf{d}_{ij} = p_i - p_j$ for all $i$ and $j = 1, \ldots, n$ where $i>j$.
-\end{definition}
+%\begin{appendices}
+%\section{Event-duration transformation proofs}
+%\label{app:A}
+%This appendix provides some formal support to statements and explanations given
+%in Sect.~\ref{sec:gen}. We explain how durations depend on events (and not
+%vice versa). We list and prove some of the properties of higher-order
+%identities, such as the number of ways they can be derived, the conditions
+%for doing so, the number of event and duration measures they contain, and the
+%number, size, and composition of sub-identities.
 
-Equivalently $\textbf{d}$ can be expressed as $\text{vech}(\textbf{p}\times
-\textbf{1}_n^\textsf{T} - \textbf{1}_n \times \textbf{p}^\textsf{T})$. For ease
-of notation we use double indices to index each element of the vector
-$\textbf{d}$. The indices $ij$ of the $k^\text{th}$ element of $\textbf{d}$ are
-given by $d_{ij} = d_k = p_{i=\left\lfloor \frac
-{1}{2}+\sqrt{2k}\right\rfloor+1} - p_{j=k-C\left(\left\lfloor
-\frac{1+\sqrt{8k}}{2}\right\rfloor\right)}$ with $C[f(k)]$ being the binomial
-coefficient $\binom{f(k)}{2}$.
+%\begin{theorem}
+%\label{mixing} *(Work in progess)* Something that states that you can transform
+% $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
+%\end{theorem}
+%\vt{For example APT yields APCTDL. APT is a mixture of 1 element of
+%$\textbf{p}$ and 2 elements of $\textbf{d}$. This is different from pure
+%$P\rightarrow D$}
 
-\begin{theorem} 
-The number of elements in $\textbf{d}$ is $m = n(n-1)/2$.
-\end{theorem}
-
-\begin{proof} 
-Because $d_{ij}$ must satisfy $i > j$ it can be thought of as all
-the elements below the subdiagonal of a $n\times n$ matrix of which there are $m = n(n-1)/2$.
-\end{proof}
-
-\begin{corollary} 
-The sum of the number of elements in $\textbf{p}$ and
-$\textbf{d}$ is the number of edges on an $n+1$-polytope, or the number of edges
-in a complete graph with $n+1$ vertices.
-\end{corollary}
-
-\begin{proof} 
-The sum of the number of elements in $p$ and $d$ is $n+m = n + n(n-1)/2$ which
-is the number of edges on an $n+1$-polytope.
-\end{proof}
-
-Consider the set $P$ of all possible choices of $n$ points in time.
-
-\begin{definition}{$P=\mathbb{R}^n$:}
-Let $P=\mathbb{R}^n$ be the standard basis vector-space spanning all
-$\textbf{p}$.
-\end{definition}
-
-\begin{theorem}
-The linear transformation $T_\textbf{A}: P\rightarrow D$ where $D = \mathbb{R}^{n(n-1)/2}$ and $\textbf{A}_T \textbf{p} = \textbf{d}$ is given by
-
-$$
-\underbrace{\left[\begin{matrix}
--\textbf{I}_1 & \Big| & \textbf{1}_1 & \Big| & \textbf{0}_{1 \times n-2} \\
--\textbf{I}_2 & \Big| & \textbf{1}_2 & \Big| & \textbf{0}_{2 \times n-3} \\
-\vdots & & \vdots & & \vdots \\
--\textbf{I}_{n-1} & \Big| & \textbf{1}_{n-1} & \Big| & \Big(\textbf{0}_{n-1 \times 0}\Big) \\
-\end{matrix}\right]}_{\textbf{A}_T}
-\times
-\underbrace{\left[\begin{matrix}
-p_1 \\ \vdots \\ p_n
-\end{matrix}\right]}_{\textbf{p}}
-=
-\underbrace{\left[\begin{matrix}
-d_1 \\ \vdots \\ d_{n(n-1)/2}
-\end{matrix}\right]}_{\textbf{d}}.
-$$
-
-Given \textit{any} $n$ points in time it is always possible to calculate the
-durations between any pair of these points. This calculation can be understood
-as a linear transformation of the \textit{point-space} $P$ to the
-\textit{duration-space} $D$.\footnote{ $\textbf{I}_n$ is the $n \times n$
-identity matrix; $\textbf{1}_n$ is a vector with $n$ elements where each element is 1; $\textbf{0}_{m \times n}$ is a $m \times n$ matrix where each element is 0. For notational convenience we allow for a matrix with 0 columns, written $\Big(\textbf{0}_{n \times 0}\Big)$}
-\end{theorem}
-
-\begin{proof} $A_T$ is a simple consequence of the definition of
-$\textbf{d}$.
-\end{proof}
-
-For example, CPD $\textbf{p}$ yields TAL $\textbf{d}$.
-
-\begin{corollary} There exists no linear map $T_\textbf{A}^{-1}: D \rightarrow
-P$.
-\end{corollary}
-
-Given only a set of $m$ durations it is impossible to identify a single set of
-$n$ points in time marking the endpoints of the durations, e.g. given only age one can not derive birth cohort or period.
-
-\begin{proof} $T_\textbf{A}^{-1}$ exists if and only if $\textbf{A}_T^{-1}$ exists. $\textbf{A}_T$ has no inverse since the columns of $\textbf{A}_T$ are always linearly dependent on each other, i.e. the last element in each row of $\textbf{A}_T$ is always the negation of the sum of all the other row elements. Therefore $T_\textbf{A}^{-1}$ does not exist.
-\end{proof}
-
-For example, although CPD $\textbf{p}$ yields TAL $\textbf{d}$, TAL does not
-yield CPD.
-
-\begin{theorem}
-\label{mixing} *(Work in progess)* Something that states that you can transform
- $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
-\end{theorem}
-\vt{For example APT yields APCTDL. APT is a mixture of 1 element of
-$\textbf{p}$ and 2 elements of $\textbf{d}$. This is different from pure
-$P\rightarrow D$}
-
-\vt{TR: I think this theorem can be proved using graph theory as in the
-corollary below.}
+%\vt{TR: I think this theorem can be proved using graph theory as in the
+%corollary below.}
 
 
-\begin{definition}{$\textbf{g}$}
-Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
-d_{k=1,\ldots,m}\right\}$
-\end{definition}
+%\begin{definition}{$\textbf{g}$}
+%Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
+%d_{k=1,\ldots,m}\right\}$
+%\end{definition}
 
-\begin{theorem} There are $b = (n+1)^{(n-1)}$ many
-ways to choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
-remaining $m$ elements of $\textbf{g}$.
-\end{theorem}
+%\begin{theorem} There are $b = (n+1)^{(n-1)}$ many
+%ways to choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
+%remaining $m$ elements of $\textbf{g}$.
+%\end{theorem}
 
-\begin{proof}
-This is a case of Cayley's formula \citep{cayley1889}, a result from
-graph theory which gives the number of possible trees on $k = n+1$ vertices,
-$k^{(k-2)}$. In our case, the fully conected graph $\textbf{K}$ with edges
-defined by the elements of $\textbf{g}$ according to the third column of
-Table~\ref{tab:timelines}, is complete. By Cayley's fomula, the number of
-minimal spanning trees on $\textbf{K}$ is equal to $k^{(k-2)}$. Four different proofs of
-this result are given in \citet{aigner2010proofs}. The key is to realize that a
-minimal spanning tree (MST) on a complete graph will have $k-1$ edges, connected
-to each other and all $k$ vertices. As such, the remaining possible edges are
-linear combinations of any given MST.
-\end{proof}
+%\begin{proof}
+%This is a case of Cayley's formula \citep{cayley1889}, a result from
+%graph theory which gives the number of possible trees on $k = n+1$ vertices,
+%$k^{(k-2)}$. In our case, the fully conected graph $\textbf{K}$ with edges
+%defined by the elements of $\textbf{g}$ according to the third column of
+%Table~\ref{tab:timelines}, is complete. By Cayley's fomula, the number of
+%minimal spanning trees on $\textbf{K}$ is equal to $k^{(k-2)}$. Four different proofs of
+%this result are given in \citet{aigner2010proofs}. The key is to realize that a
+%minimal spanning tree (MST) on a complete graph will have $k-1$ edges, connected
+%to each other and all $k$ vertices. As such, the remaining possible edges are
+%linear combinations of any given MST.
+%\end{proof}
 
-\begin{corollary}
-Each set of $n$ elements from $\textbf{g}$, $\textbf{b}'$ whose linear
-transformation yields the remaining $m$ elements of $\textbf{g}$ includes at
-least one element of $\textbf{p}$.
-\end{corollary}
+%\begin{corollary}
+%Each set of $n$ elements from $\textbf{g}$, $\textbf{b}'$ whose linear
+%transformation yields the remaining $m$ elements of $\textbf{g}$ includes at
+%least one element of $\textbf{p}$.
+%\end{corollary}
 
-\begin{proof}
-One of the vertices of $\textbf{K}$, say the $k^{\text{th}}$ vertex, is
-connected only to edges labelled by the elements of $\textbf{p}$. Since a
-spanning tree of $\textbf{K}$ must connect to this vertex to fully connect
-$\textbf{K}$, all $b$ valid spanning trees must contain at least one edge
-labelled by an element of $\textbf{p}$.
-\end{proof}
+%\begin{proof}
+%One of the vertices of $\textbf{K}$, say the $k^{\text{th}}$ vertex, is
+%connected only to edges labelled by the elements of $\textbf{p}$. Since a
+%spanning tree of $\textbf{K}$ must connect to this vertex to fully connect
+%$\textbf{K}$, all $b$ valid spanning trees must contain at least one edge
+%labelled by an element of $\textbf{p}$.
+%\end{proof}
 
-\vt{TR: is the statement in this proof something that itself also needs to be
-proved?-- that one vertex connects only to $\textbf{p}$ If that statement needs
-to be proved, is it a lemma? I think this one takes care of the ``mixing''
-theorem~\ref{mixing} that is a work in progress above.}
+%\vt{TR: is the statement in this proof something that itself also needs to be
+%proved?-- that one vertex connects only to $\textbf{p}$ If that statement needs
+%to be proved, is it a lemma? I think this one takes care of the ``mixing''
+%theorem~\ref{mixing} that is a work in progress above.}
 
-\begin{definition}{$\textbf{G}$}
-Let's define $\textbf{G}$ as the identity implied by $\textbf{g}$ whose
-graph is $\textbf{K}$.
-\end{definition}
+%\begin{definition}{$\textbf{G}$}
+%Let's define $\textbf{G}$ as the identity implied by $\textbf{g}$ whose
+%graph is $\textbf{K}$.
+%\end{definition}
 
-\begin{theorem}
-An identity $\textbf{G}$ implies a total of $\binom{n+1}{3}$ triad
-sub-identities.
-\end{theorem}
+%\begin{theorem}
+%An identity $\textbf{G}$ implies a total of $\binom{n+1}{3}$ triad
+%sub-identities.
+%\end{theorem}
 
-\begin{proof}
-Any set of three vertices from $\textbf{K}$ forms a complete subgraph, and any
-complete subgraph implies an identity between its labelled edges. $\textbf{K}$
-has $n+1$ vertices, and therefore there are $\binom{n+1}{3}$ ways to select
-three vertices from $\textbf{K}$, hence $\textbf{G}$ implies the same number of
-triad subidentities.
-\end{proof}
+%\begin{proof}
+%Any set of three vertices from $\textbf{K}$ forms a complete subgraph, and any
+%complete subgraph implies an identity between its labelled edges. $\textbf{K}$
+%has $n+1$ vertices, and therefore there are $\binom{n+1}{3}$ ways to select
+%three vertices from $\textbf{K}$, hence $\textbf{G}$ implies the same number of
+%triad subidentities.
+%\end{proof}
 
-\begin{corollary}
-Of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$, $\binom{n}{2}$
-contain exactly two events and one duration.
-\end{corollary}
+%\begin{corollary}
+%Of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$, $\binom{n}{2}$
+%contain exactly two events and one duration.
+%\end{corollary}
 
-\begin{proof}
-This follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
-to a single vertex. Selecting any two of these $n$ event-labelled edges implies
-a tree on three vertices, whose full connection implies a triad identity
-composed of the two event edges and one duration edge defined as the time-difference of the
-former two. There are $\binom{n}{2}$ ways to select two of of the $n$ event
-edges.
-\end{proof}
+%\begin{proof}
+%This follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
+%to a single vertex. Selecting any two of these $n$ event-labelled edges implies
+%a tree on three vertices, whose full connection implies a triad identity
+%composed of the two event edges and one duration edge defined as the time-difference of the
+%former two. There are $\binom{n}{2}$ ways to select two of of the $n$ event
+%edges.
+%\end{proof}
 
-\begin{corollary}
-For $n \ge 3$, of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$,
-$\binom{n+1}{3} - \binom{n}{2} = \binom{n}{3}$ are composed of exactly three
-durations.
-\end{corollary}
+%\begin{corollary}
+%For $n \ge 3$, of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$,
+%$\binom{n+1}{3} - \binom{n}{2} = \binom{n}{3}$ are composed of exactly three
+%durations.
+%\end{corollary}
 
-\begin{proof}
-This is equivalent to deleting the vertex $k^{\text{th}}$ from $\textbf{K}$, the
-vertex that connects only to event-labelled edges, which is constructed
-following the middle column of graphs from Table~\ref{tab:timelines} with
-vertex labels ignored. This graph has $n$ total vertices, and any set of 3
-vertices implies an identity between its three labelled edges, which in this
-case by definition can only consist of durations.
-\end{proof}
+%\begin{proof}
+%This is equivalent to deleting the vertex $k^{\text{th}}$ from $\textbf{K}$, the
+%vertex that connects only to event-labelled edges, which is constructed
+%following the middle column of graphs from Table~\ref{tab:timelines} with
+%vertex labels ignored. This graph has $n$ total vertices, and any set of 3
+%vertices implies an identity between its three labelled edges, which in this
+%case by definition can only consist of durations.
+%\end{proof}
 
-For example, in the demographic time identity there are $n=3$ event measures.
-Thus of the $\binom{4}{3} = 4$ triad identities implied $\binom{3}{3} = 1$ of
-these identities consist in durations only (TAL). Notice that the measures T and
-A change over the lifecourse of an individual, whereas their sum L is fixed.
+%For example, in the demographic time identity there are $n=3$ event measures.
+%Thus of the $\binom{4}{3} = 4$ triad identities implied $\binom{3}{3} = 1$ of
+%these identities consist in durations only (TAL). Notice that the measures T and
+%A change over the lifecourse of an individual, whereas their sum L is fixed.
 
-\begin{definition}{$\textbf{d}_t$} For $\textbf{p}$ that include period
-itself, let $\textbf{d}_t$ be the set of duration time measures that change over
-the life course and $\textbf{d}_f$ consist in those durations that are fixed attributed of an individual. By
-definition, $\textbf{d}_t \cup \textbf{d}_f = \textbf{d}$.
-\end{definition}
+%\begin{definition}{$\textbf{d}_t$} For $\textbf{p}$ that include period
+%itself, let $\textbf{d}_t$ be the set of duration time measures that change over
+%the life course and $\textbf{d}_f$ consist in those durations that are fixed attributed of an individual. By
+%definition, $\textbf{d}_t \cup \textbf{d}_f = \textbf{d}$.
+%\end{definition}
 
-\vt{awkward: how to say that $\textbf{p}$ includes P? For example, we have P,
-but Lexis marriage does not, so this corolarry is only relevant for us and
-Brinks here.}
+%\vt{awkward: how to say that $\textbf{p}$ includes P? For example, we have P,
+%but Lexis marriage does not, so this corolarry is only relevant for us and
+%Brinks here.}
 
-\begin{corollary}
-For $n \ge 4$ and For $\textbf{p}$ that include period
-itself, of the $d'=\binom{n}{3}$ triad identies whose edges are
-labelled only by the elements of $\textbf{d}$, $d^t=\binom{d'}{2}$ of these identities
-consist in exactly two elements of $\textbf{d}_t$ and one element of
-$\textbf{d}_f$, while $d'-d^t$ of the duration-only triad identities consist in
-relationships between three elements of $\textbf{d}_f$.
-\end{corollary}
+%\begin{corollary}
+%For $n \ge 4$ and For $\textbf{p}$ that include period
+%itself, of the $d'=\binom{n}{3}$ triad identies whose edges are
+%labelled only by the elements of $\textbf{d}$, $d^t=\binom{d'}{2}$ of these identities
+%consist in exactly two elements of $\textbf{d}_t$ and one element of
+%$\textbf{d}_f$, while $d'-d^t$ of the duration-only triad identities consist in
+%relationships between three elements of $\textbf{d}_f$.
+%\end{corollary}
 
-\begin{proof}
-$n-2$ of the edges in $K$ are labelled with the elements of $\textbf{d}_t$, and
-these all connect to the same vertex. There are therefore $\binom{n-2}{2}$ ways
-to form triad identities with them. The third element of each of these
-identities cannot connect to the same vertex, and so must be a member of
-$\textbf{d}_f$. \vt{(this is almost done, needs a bit more logic)}
-\end{proof}
+%\begin{proof}
+%$n-2$ of the edges in $K$ are labelled with the elements of $\textbf{d}_t$, and
+%these all connect to the same vertex. There are therefore $\binom{n-2}{2}$ ways
+%to form triad identities with them. The third element of each of these
+%identities cannot connect to the same vertex, and so must be a member of
+%$\textbf{d}_f$. \vt{(this is almost done, needs a bit more logic)}
+%\end{proof}
 
+%\begin{theorem}
+%In general, the number of subidentities of size $h$ in $\textbf{G}$ is equal to
+%$\binom{n+1}{n+1-h} \quad \forall \, h \le n$.
+%\end{theorem}
 
+%\begin{proof}
+%Vertex deletion on a complete graph results in a complete subgraph. Therefore,
+%the number of possible complete subgraphs with $h$ vertices is a function of the
+%number of ways that $n+1-h$ vertices can be deleted from $\textbf{K}$, which is
+%$\binom{n+1}{n+1-h}$. The labelled edges of each possible complete subgraph
+%defined in this way represent subidentities.
+%\end{proof}
+%\vt{need to be clear about what ``identity size'' means. Here it's based on
+%vertex count, but elsewhere based on edge count}
 
-\begin{theorem}
-In general, the number of subidentities of size $h$ in $\textbf{G}$ is equal to
-$\binom{n+1}{n+1-h} \quad \forall \, h \le n$.
-\end{theorem}
+%For example, from the tetrahedral graph in Fig.~\ref{fig:tettet}, we may
+%delete the vertex that joins the edges labelled A, T, and P, which in effect
+%deletes these edges, leaving us with the CDL identity. 
 
-\begin{proof}
-Vertex deletion on a complete graph results in a complete subgraph. Therefore,
-the number of possible complete subgraphs with $h$ vertices is a function of the
-number of ways that $n+1-h$ vertices can be deleted from $\textbf{K}$, which is
-$\binom{n+1}{n+1-h}$. The labelled edges of each possible complete subgraph
-defined in this way represent subidentities.
-\end{proof}
-\vt{need to be clear about what ``identity size'' means. Here it's based on
-vertex count, but elsewhere based on edge count}
+%\begin{corollary}
+%Each time measure in $\textbf{G}$ is a member of $n-1$ triad subidentities.
+%\end{corollary}
 
-For example, from the tetrahedral graph in Figure~\ref{fig:tettet}, we may
-delete the vertex that joins the edges labelled A, T, and P, which in effect
-deletes these edges, leaving us with the CDL identity. 
+%\begin{proof}
+%In the graph $\textbf{K}$, an edge labelled by a given time measure connects to
+%two of the $n+1$ vertices. A full connection to any other vertex yields a
+%complete subgraph with three edges, representing a triad identity. There are
+%$n-1$ remainign vertices that can be connected to, ergo the given edge is a
+%member of $n-1$ triad subidentities.
+%\end{proof}
 
-\begin{corollary}
-Each time measure in $\textbf{G}$ is a member of $n-1$ triad subidentities.
-\end{corollary}
-
-\begin{proof}
-In the graph $\textbf{K}$, an edge labelled by a given time measure connects to
-two of the $n+1$ vertices. A full connection to any other vertex yields a
-complete subgraph with three edges, representing a triad identity. There are
-$n-1$ remainign vertices that can be connected to, ergo the given edge is a
-member of $n-1$ triad subidentities.
-\end{proof}
-
-\end{appendices}
+%\end{appendices}
 
 \end{document}
+
+\grid

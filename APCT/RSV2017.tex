@@ -134,7 +134,7 @@ demographic research is both underrepresented and incompletely situated. We
 describe an identity between these six demographic time measures, and generalize
 this relationship to time measures derived from an arbitrary number of events in
 calendar time. We describe the sub-identities that pertain to the six-way
-demographic time identity, and provide a topological overview of the diagrams that pertain to
+demographic time identity, and provide an overview of the diagrams that pertain to
 these identities in both two and three dimensions. We provide an application of
 this framework to the measurement of late-life morbidity prevalence. 
 
@@ -349,7 +349,7 @@ depending on the dyad and axis orientation.
 It has long been noted \citep{lexis1875einleitung, perozzo1880della} that the
 derived time measure (usually birth cohort) is longer than either the age or period axes when plotted at 45$^\circ$.
 If a right angle and unity aspect ratio is forced between the dyad, the derived measure is always stretched by
-$\sqrt{2}$, or 41\%. Another
+$\sqrt{2}$. Another
 logical mapping would be to translate to $(x,y)$ coordinates that force 60$^\circ$
 angles between the three measures. Such a mapping ensures that the spatial units are equal for the three measures, and we therefore refer to it as the isotropic mapping. The isotropic mapping
 is comparable to using ternary or barycentric coordinate systems: The three variants of each
@@ -899,9 +899,8 @@ d_{12} = p_2 - p_1   \quad\quad.
 
 Interpreting $d_{12}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
 \emph{birth cohort} yields the APC identity. The Lexis surface is defined as the plane of
-all possible combinations between \emph{age} and \emph{period}.
-\vt{with cohorts as diagonals results from the transformation $P^2 \rightarrow
-M^2$ as shown to be possible in theorem 3.}
+all possible combinations between \emph{period} and \emph{cohort}, with age as
+the result of transforming $P\subseteq\mathbf{R}^2\to D\subseteq\mathbf{R}$.
 
 
 \paragraph{Example 2: Lexis' marriage identity}
@@ -973,6 +972,7 @@ not all measures are explicitly mentioned or used in the model of
 
 \FloatBarrier
 \section{A tetrahedron relates the six demographic time measures}
+% TODO only tetrahedral graph: remove refs to other one
 \label{sec:tetrahedron}
 The demographic time framework we present includes three events (period, birth
 cohort, and death cohort), and it therefore leads to a graph
@@ -1013,9 +1013,9 @@ top (closer to the eye), while the outer edges A, P, and C form the
 base of the tetrahedron, forming the much-studied APC identity.
 The South face corresponds to the TPD identity,
 the Northeast face to the TAL identity, and the
-Northwest face to LCD identity. A more rigorous explanation of how a three-event
-system transforms to three dimensions is given in Appendix~\ref{app:A}
-\vt{(let's make sure this is true)}.
+Northwest face to LCD identity. The transformation of this three-event
+system to a three dimensional space follows \vt{def 4.1
+and prop 4.2}.
 It may also suffice to simply imagine that each face of the tetrahedron forms
 the basis of a plane, such that the tetrahedron itself defines four planes. These four planes are the four temporal planes that underly
 the four diagrams presented in sections~\ref{sec:apc} to~\ref{sec:lcd}. A full

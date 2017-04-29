@@ -36,9 +36,14 @@ curlyBrace1 <- function(xl, y, length = 5, radius1 = .5, radius2 = .25, top = TR
 
 # from JS, 27-3-2017
 GenerateTransformationMatrix <- function (n) {
-	stopifnot(n>=2); n=n-1
-	GenSubmatrx <- function (i) cbind(-diag(i), 1, matrix(0, ncol = n-i, nrow = i))
-	do.call("rbind", lapply(1:n, "GenSubmatrx"))
+	stopifnot(n>=2)
+	# BEGIN change Pancho 28.04.2017
+	# n=n-1
+	# GenSubmatrx <- function (i) cbind(-diag(i), 1, matrix(0, ncol = n-i, nrow = i))
+	# do.call("rbind", lapply(1:n, "GenSubmatrx"))
+	GenSubmatrx <- function (i) cbind(matrix(0, ncol = i-1, nrow = n-i), rep(-1, n-i), diag(n-i))
+	do.call("rbind", lapply(1:(n-1), "GenSubmatrx"))
+	# END change Pancho 28.04.2017
 }
 #n <- 4
 #make.At(4)
@@ -47,8 +52,8 @@ DefaultDurationOrdering <- function(p){
 	At      <- GenerateTransformationMatrix(n)
 	# ugly but works
 	tofromi <- t(apply(At, 1, function(x){
-		c(which(x == -1),  which(x == 1))
-	}))
+						c(which(x == -1),  which(x == 1))
+					}))
 	from    <- p[tofromi[,1]]
 	to      <- p[tofromi[,2]]
 	
@@ -73,7 +78,10 @@ draw.timeline <- function(p,ylim=c(-3,0)){
 		l <- durs$dur[i]
 		y <- -i*.5
 		curlyBrace1(xl = x, y = y, length = l, top = FALSE, radius1 = .1, radius2 = .08)
-		text(x+l/2,y-.05,substitute(d[x], list(x = i)),pos=1)
+		# BEGIN Pancho 28.04.2017
+		text(x+l/2,y-.05,substitute(d[x], list(x = paste0(durs$pfrom[i], ",", durs$pto[i]))), pos=1)
+		# text(x+l/2,y-.05,substitute(d[x], list(x = i)),pos=1)
+		# END Pancho 28.04.2017
 	}
 	
 }
@@ -90,7 +98,7 @@ star.timeline <- function(p,lprop=.5){
 	durs  <- DefaultDurationOrdering(p)
 	par(xpd=TRUE)
 	plot(NULL,type='n',xlim=c(-1,1),ylim=c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
- 
+	
 	for (i in 1:nrow(durs)){
 		fr <- durs$pfrom[i]
 		to <- durs$pto[i]
@@ -105,8 +113,12 @@ star.timeline <- function(p,lprop=.5){
 		
 		lx <- x1*lpropi+x2*(1-lpropi)
 		ly <- y1*lpropi+y2*(1-lpropi)
-		points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
-		text(lx,ly,substitute(d[x], list(x = i)))
+		# BEGIN Pancho 28.04.2017
+		points(lx,ly,pch=22,cex=5,col="white",bg="white")
+		text(lx,ly,substitute(d[x], list(x = paste0(fr, ",", to))))
+		# points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
+		# text(lx,ly,substitute(d[x], list(x = i)))
+		# END Pancho 28.04.2017
 	}
 	for (i in 1:length(p)){
 		points(verts$x[i],verts$y[i],pch=21,cex=3.5,col="red",bg="white")
@@ -155,8 +167,12 @@ star.timeline.edges.only <- function(p,lprop=.5){
 		
 		lx <- x1*lpropi+x2*(1-lpropi)
 		ly <- y1*lpropi+y2*(1-lpropi)
-		points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
-		text(lx,ly,substitute(d[x], list(x = i)))
+		# BEGIN Pancho 28.04.2017
+		points(lx, ly, pch=22, cex=5,col="white",bg="white")
+		text(lx,ly,substitute(d[x], list(x = paste0(fr, ",", to))))
+		# points(lx,ly,pch=22,cex=3.5,col="white",bg="white")
+		# text(lx,ly,substitute(d[x], list(x = i)))
+		# END Pancho 28.04.2017
 	}
 	
 }
@@ -164,82 +180,82 @@ star.timeline.edges.only <- function(p,lprop=.5){
 
 make.graphs <- FALSE
 if (make.graphs){
-from <- 0; to <- 6
-p2   <- seq(from=from,to=to,length=2)
-p3   <- seq(from=from,to=to,length=3)
-p4   <- seq(from=from,to=to,length=4)
-p5   <- seq(from=from,to=to,length=5)
-
+	from <- 0; to <- 6
+	p2   <- seq(from=from,to=to,length=2)
+	p3   <- seq(from=from,to=to,length=3)
+	p4   <- seq(from=from,to=to,length=4)
+	p5   <- seq(from=from,to=to,length=5)
+	
 # timelines
-draw.timeline(p2) 
-draw.timeline(p3) 
-draw.timeline(p4) 
+	draw.timeline(p2) 
+	draw.timeline(p3) 
+	draw.timeline(p4) 
 #draw.timeline(p5,c(-4,0)) 
-
+	
 # timeline graph
-star.timeline(p2,.5)
-star.timeline(p3,.5)
-star.timeline(p4,.4)
+	star.timeline(p2,.5)
+	star.timeline(p3,.5)
+	star.timeline(p4,.4)
 #star.timeline(p5,.5)
 #star.timeline(runif(6),.4)
-
+	
 # temporal planes graph
-star.timeline.edges.only(p2)
-star.timeline.edges.only(p3,.4)
-star.timeline.edges.only(p4)
+	star.timeline.edges.only(p2)
+	star.timeline.edges.only(p3,.4)
+	star.timeline.edges.only(p4)
 #star.timeline.edges.only(p5,.4)
-
+	
 # system command to crop pdf white space.
 #pdfcrop filename.pdf filename.pdf
-
-outdir <-"/home/tim/git/APCT/APCT/Figures/TimeLinesAndGraphs"
-pdf(file.path(outdir,"linep2.pdf"),width=5,height=5)
-draw.timeline(p2) 
-dev.off()
-
-pdf(file.path(outdir,"linep3.pdf"),width=5,height=5)
-draw.timeline(p3) 
-dev.off()
-
-pdf(file.path(outdir,"linep4.pdf"),width=5,height=5)
-draw.timeline(p4) 
-dev.off()
-
-pdf(file.path(outdir,"starp2.pdf"),width=5,height=5)
-star.timeline(p2) 
-dev.off()
-
-pdf(file.path(outdir,"starp3.pdf"),width=5,height=5)
-star.timeline(p3) 
-dev.off()
-
-pdf(file.path(outdir,"starp4.pdf"),width=5,height=5)
-star.timeline(p4,.4) 
-dev.off()
-
-pdf(file.path(outdir,"edgep2.pdf"),width=5,height=5)
-star.timeline.edges.only(p2) 
-dev.off()
-
-pdf(file.path(outdir,"edgep3.pdf"),width=5,height=5)
-star.timeline.edges.only(p3,.4) 
-dev.off()
-
-pdf(file.path(outdir,"edgep4.pdf"),width=5,height=5)
-star.timeline.edges.only(p4) 
-dev.off()
-
+	
+	outdir <-"/home/tim/git/APCT/APCT/Figures/TimeLinesAndGraphs"
+	pdf(file.path(outdir,"linep2.pdf"),width=5,height=5)
+	draw.timeline(p2) 
+	dev.off()
+	
+	pdf(file.path(outdir,"linep3.pdf"),width=5,height=5)
+	draw.timeline(p3) 
+	dev.off()
+	
+	pdf(file.path(outdir,"linep4.pdf"),width=5,height=5)
+	draw.timeline(p4) 
+	dev.off()
+	
+	pdf(file.path(outdir,"starp2.pdf"),width=5,height=5)
+	star.timeline(p2) 
+	dev.off()
+	
+	pdf(file.path(outdir,"starp3.pdf"),width=5,height=5)
+	star.timeline(p3) 
+	dev.off()
+	
+	pdf(file.path(outdir,"starp4.pdf"),width=5,height=5)
+	star.timeline(p4,.4) 
+	dev.off()
+	
+	pdf(file.path(outdir,"edgep2.pdf"),width=5,height=5)
+	star.timeline.edges.only(p2) 
+	dev.off()
+	
+	pdf(file.path(outdir,"edgep3.pdf"),width=5,height=5)
+	star.timeline.edges.only(p3,.4) 
+	dev.off()
+	
+	pdf(file.path(outdir,"edgep4.pdf"),width=5,height=5)
+	star.timeline.edges.only(p4) 
+	dev.off()
+	
 #pdfcrop filename.pdf filename.pdf
-system(paste("pdfcrop",file.path(outdir,"linep2.pdf"),file.path(outdir,"linep2.pdf")))
-system(paste("pdfcrop",file.path(outdir,"linep3.pdf"),file.path(outdir,"linep3.pdf")))
-system(paste("pdfcrop",file.path(outdir,"linep4.pdf"),file.path(outdir,"linep4.pdf")))
-system(paste("pdfcrop",file.path(outdir,"starp2.pdf"),file.path(outdir,"starp2.pdf")))
-system(paste("pdfcrop",file.path(outdir,"starp3.pdf"),file.path(outdir,"starp3.pdf")))
-system(paste("pdfcrop",file.path(outdir,"starp4.pdf"),file.path(outdir,"starp4.pdf")))
-system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.pdf")))
-system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
-system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
-
+	system(paste("pdfcrop",file.path(outdir,"linep2.pdf"),file.path(outdir,"linep2.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"linep3.pdf"),file.path(outdir,"linep3.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"linep4.pdf"),file.path(outdir,"linep4.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"starp2.pdf"),file.path(outdir,"starp2.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"starp3.pdf"),file.path(outdir,"starp3.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"starp4.pdf"),file.path(outdir,"starp4.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
+	
 } # end graph creation 
 
 

@@ -777,6 +777,7 @@ thanatological age T = D -- P, and lifespan L = D -- C. In the following we desc
 
 \begin{proposition}
  For any vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, there is always a linear transformation $f:\mathbf{R}^n\to\mathbf{R}^m$ that provides a corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$.
+ \label{prop:2}
 \end{proposition}
 
 \begin{proof}
@@ -979,55 +980,43 @@ Instead, the additional events and durations (death cohort, timing of diagnosis
 and duration of disease) are introduced as \emph{markings} within the three
 dimensional vector space, just like one would mark \emph{specific} life-lines on
 a Lexis-diagram without regarding \emph{all possible} life-lines in doing so.
-The four-dimensional vector-space can be thought of as the larger context within
-which this model operates.
+Instead, the four-dimensional vector-space can be thought of as the larger
+setting within which this model operates.
 
 \FloatBarrier
 \section{A tetrahedron relates the six demographic time measures}
-% TODO only tetrahedral graph: remove refs to other one
 \label{sec:tetrahedron}
 The demographic time framework we present includes three events (period, birth
 cohort, and death cohort), and it therefore leads to a graph
 based on the second row and third column of Table~\ref{tab:timelines}, here
-redrawn in Fig.~\ref{fig:sq} with edges labelled by the six time measures
-and colored consistent with previous figures. A slight rearrangement of the
-vertices yields a graph of a tetrahedron in
-Fig.~\ref{fig:tettet}.
+redrawn in Fig.~\ref{fig:tet} with a slight rearrangement of the
+vertices, and edges labelled with the six demographic time measures.
 
 There are a total of four triangles in Fig.~\ref{fig:tet}, one for each
 of the triad sub-identities, such that each time measure is an element of two
-triad identities. In Fig.~\ref{fig:tettet} each triangle also is the
+triad identities. Each of these triangles is the
 edge-graph of a face of the tetrahedron, ergo each face of the tetrahedron
 represents one of the triad identities. It is reasonably straightforward to
-imagine the tetrahedral graph as the wire-frame of a 3d
+imagine this graph as the wire-frame of a 3d
 tetrahedron --- as the 3d edge structure of the tetrahedron platonic solid.
 
 \begin{figure}[h!]
 \centering
-\caption{Graphs of demographic time hexad identity, with edges labelled by the
-six time indices.}
+\caption{Tetrahedral graph of demographic time hexad identity, with edges
+labelled by the six time indices.}
 \label{fig:tet}
-\begin{subfigure}{.48\textwidth}
-\caption{vertices on the unit circle}
-\label{fig:sq}
-\includegraphics[width=3in]{Figures/TetraHedronUnitSquare.pdf}
-\end{subfigure}
-~
-\begin{subfigure}{.48\textwidth}
-\caption{vertices in tetrahedral layout}
-\label{fig:tettet}
-\includegraphics[width=3in]{Figures/TetraHedronEdgesOnly.pdf}% {Figures/TetraHedronEdgesOnly.pdf}
-\end{subfigure}
+\includegraphics[width=4in]{Figures/TetraHedronEdgesOnly.pdf}%
+% {Figures/TetraHedronEdgesOnly.pdf}
 \end{figure}
 
-For exposition, imagine that the middle vertex of Fig.~\ref{fig:tettet} is the
+For exposition, imagine that the middle vertex of Fig.~\ref{fig:tet} is the
 top (closer to the eye), while the outer edges A, P, and C form the
 base of the tetrahedron, forming the much-studied APC identity.
 The South face corresponds to the TPD identity,
 the Northeast face to the TAL identity, and the
 Northwest face to LCD identity. The transformation of this three-event
-system to a three dimensional space follows \vt{def 4.1
-and prop 4.2}.
+system to a three dimensional space follows Def.~\ref{def:1} and Prop.
+\ref{prop:2}.
 It may also suffice to simply imagine that each face of the tetrahedron forms
 the basis of a plane, such that the tetrahedron itself defines four planes. These four planes are the four temporal planes that underly
 the four diagrams presented in sections~\ref{sec:apc} to~\ref{sec:lcd}. A full
@@ -1168,7 +1157,7 @@ We conclude that comparisons of health expectancies might be biased in ways not
 previously documented.
 
 Let us take the example of self-reported health (SRH). 
- The data come from the RAND Corporation version of the US Health and Retirement Study
+ The data come from the RAND version of the US Health and Retirement Study
  \citep{HRSumich,HRS}. Since this survey includes multiple dated observations of
  individuals, as well as information on time of birth and a followup for time of death, we have or
 can derive each of the six demographic time measures for each observation.
@@ -1258,8 +1247,9 @@ these surfaces with a single line, a thanatological age pattern would give a
 much more compact description than a chronological age pattern. Patterns are
 also relatively stable between cohorts.
 
-When weighted by lifelines, the marginal chronological age pattern of SRH, measured with the ``Sullivan curve'' \citep{Sullivan1970}, would show an increasing
-tendency over age, in agreement with common expectations.
+When weighted by lifelines, the marginal chronological age pattern of SRH,
+i.e. as measured with the ``Sullivan curve'' \citep{Sullivan1970}, would show an
+increasing tendency over age, in agreement with common expectations.
 However, such an increasing pattern over age is a marginal artifact, due to an
 interaction between the distribution of lifespans and the relatively fixed underlying
 pattern of morbidity seen in Fig.~\ref{fig:poorsrh}. These surfaces can indeed
@@ -1280,7 +1270,9 @@ chronological age pattern of self-reported health if the lifespan distribution
 were to shift to higher ages. This is because a higher age at death implies
 more years lived in ages farther from death, where prevalence is low.
 This potential bias in the current status quo of morbidity measurement and
-prediction leads to pessimistic morbidity scenarios when mortality improvements are foreseen, and it undermines health expectancy comparisons between groups with different mortality \citep{vanRaalte2015HLE}.
+prediction leads to pessimistic morbidity scenarios when mortality improvements
+are projected, and it undermines health expectancy comparisons between groups
+with different mortality \citep{vanRaalte2015HLE}.
 Cohort health expectancies are in either case unbiased, but these are also not
 commonly estimated due to data constraints. This approach and essential finding
 is in agreement with the results of similar analytic approaches to the
@@ -1294,16 +1286,16 @@ We apply this trajectory to the synthetic stationary population of each
 year from 1980 and 2010 \citepalias{HMD} following the formulas in
 \cite{vanRaalte2015HLE}. We then calculate the resulting healthy and unhealthy
 life expectancies, and compare these with expectancies calculated using the
-Sullivan method and assuming the 1980 chronological age
+standard Sullivan method and assuming the 1980 chronological age
 pattern of poor SRH.\footnote{The 1980 chronological age pattern of poor SRH is
-based on the 1980 stationary population and the same fixed time-to-death
+calculated from the 1980 stationary population and the same fixed time-to-death
 prevalence trajectory.} Total remaining life expectancy at
 age 60 increased 4.3 years from 17.4 in 1980 to 21.7 years in 2010.
 Assuming the time-to-death prevalence trajectory, we calculate
 healthy life expectancies of 15.7 and 19.9, respectively, an increase of 4.2 years. Unhealthy life expectancy in this scenario increased just 0.1 years. Had we used the Sullivan curve from 1980 to
 calculate the 2010 values, we would have predicted an increase of 0.7 years in
 unhealthy life expectancy, or 39\% versus the 4\% ``observed'' in this simple
-exercise.
+scenario.
 
 This is a large difference in projected morbidity, and it is based on a
 relatively minor tweak to standard methodology, itself inspired by viewing data under the conditions
@@ -1614,7 +1606,7 @@ investigation.
 %\vt{need to be clear about what ``identity size'' means. Here it's based on
 %vertex count, but elsewhere based on edge count}
 
-%For example, from the tetrahedral graph in Fig.~\ref{fig:tettet}, we may
+%For example, from the tetrahedral graph in Fig.~\ref{fig:tet}, we may
 %delete the vertex that joins the edges labelled A, T, and P, which in effect
 %deletes these edges, leaving us with the CDL identity. 
 

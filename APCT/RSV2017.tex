@@ -10,43 +10,28 @@
 
 \usepackage{amssymb} % for approx greater than
 \usepackage{caption}
-\usepackage{placeins}
+\usepackage{placeins} % for \FloatBarrier
 \usepackage{graphicx}
-% graphicx loaded by adjustbox?
-%\usepackage[export]{adjustbox} % for bottom alignment in m{} columns, package
-% not \usepackage{graphbox} % for bottom alignment in m{} columns, package not
-% found\ldots
 \usepackage{subcaption}
-%\usepackage{subfig}
 \usepackage{longtable}
 \usepackage{setspace}
-%\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{xcolor,colortbl}
 \usepackage{chngpage}
-%\usepackage[active,tightpage]{preview}
 \usepackage{natbib}
 \bibpunct{(}{)}{,}{a}{}{;} 
 \usepackage{url}
 \usepackage{nth}
 \usepackage{authblk}
-%\usepackage[export]{adjustbox}
 \usepackage[most]{tcolorbox}
-%\usepackage{hyperref}
-%\usepackage{color}
-%\usepackage{fontspec}
-%\usepackage{pdfsync}
 \usepackage[normalem]{ulem}
 \usepackage{amsfonts}
-%\renewcommand{\listtablename}{List of Appendix Tables}
+% columns for longtable
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-% working on this need to concatenate file name based on sex and variable name
-%\newcommand\Cell[1]{{\raisebox{-0.05in}{\includegraphics[height=.2in,width=.2in]{Figures/ColorCodes/\expandafter#1}}}}  
+\usepackage{arydshln} % Dashed lines in matrices
 
-% otherwise it ignores this big table!
-%\DeclareDelayedFloatFlavour*{longtable}{table}
 \usepackage[margin=1in]{geometry}
 %\doublespacing % for review
 
@@ -54,27 +39,16 @@
 %\usepackage{lineno}
 %\linenumbers
 
-\usepackage{soul}% for \st{}
+%\usepackage{soul}% for \st{}
 
-\usepackage{arydshln}		% Dashed lines in matrices
-
-% for appendix definition environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for section 4 math environments
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{corollary}{Corollary}[proposition]
 \newtheorem{remark}{Remark}[section]
-
-%\newtheorem{proof}{Proof}[theorem]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% setting color to letters affects spacing. Here's a hack I found here:
-% http://tex.stackexchange.com/questions/212736/change-letter-colour-without-losing-letter-spacing
-%\DeclareRobustCommand{\spacedallcaps}[1]{\MakeUppercase{\textsc{#1}}} % all
-% caps with better spacing
-
-\colorlet{rd}{red}
-\colorlet{bl}{blue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -84,13 +58,9 @@
   \addtocounter{footnote}{-1}%
   \endgroup
 }
-\newcommand\vt[1]{\textcolor{rd}{#1}}
-\newcommand\eg[1]{\textcolor{bl}{#1}}
 
-\newcommand\tg[1]{\includegraphics[scale=.5]{Figures/triadtable/triad#1.pdf}}
-\newcommand\tgh[1]{\raisebox{-.25\height}{\includegraphics[scale=.3]{Figures/triadtable/triad#1.pdf}}}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% functions to read in table elements for timelines and graphs table in sec 4
 \newcommand{\Ed}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/edgep#1}.pdf}}
 \newcommand{\Tl}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/linep#1}.pdf}}
 \newcommand{\St}[1]{\includegraphics[scale=.45]{{Figures/TimeLinesAndGraphs/starp#1}.pdf}}
@@ -186,7 +156,7 @@ aspects of the APC identity have been discussed since at least 1868
 \citep{knapp1868ermittlung}, and discussion remains lively today. Here we relate the six major indices of time in a geometric identity, in much the same spirit as the work on APC relationships done between the late
 1860s and mid 1880s.\footnote{See e.g., \citet{keiding2011age} for an overview of that literature.} 
 
-% Just some rephrasing. --j
+
 Our goal is to describe the geometric identity between all
 six measures of demographic time, the identity \emph{unifying} the four aforementioned triad identities: a hexad identity among A, P, C, T, D, and L. This novel identity may be useful or an intuitive
 referent for demographers in the same way as the Lexis diagram is. We give a bottom-up
@@ -251,15 +221,16 @@ defined in Table~\ref{tab:sixdefs}, both in the demographic sense we describe, a
 \hline 
 \textbf{Time measure}	& \textbf{Demographic definition}	& \textbf{Event history definition}	\\ \hline 
 A - chronological age 	& time since birth 			& time since start of exposure 		\\
-P - period 		& calendar time 			& calendar time				\\
-C - birth cohort 	& calendar time of birth 		& calendar time of exposure start	\\
+P - period 		        & calendar time 			& calendar time				\\
+C - birth cohort 	    & calendar time of birth 	& calendar time of exposure
+start
+\\
 T - thanatological age 	& time until death 			& time until event			\\
-D - death cohort	& calendar time of death		& calendar time of event		\\
-L - lifespan		& duration of life			& duration of exposure			\\ \hline
+D - death cohort	    & calendar time of death	& calendar time of event		\\
+L - lifespan		    & duration of life			& duration of exposure			\\ \hline
 \end{tabular}
 \end{adjustwidth}
 \end{table}
-
 
 The concepts of thanatological age and death cohorts are likely less familiar to
 readers than the other measures we consider. Thanatological age is
@@ -351,19 +322,14 @@ of time measures that do not have a derived measure, and therefore are not
 contained in any of these four triad identities.
 \pagebreak
 
-% I commented out the table header as the content is self-explanatory. I also changed the last column to a centered one. I did not check how it looks or if it compiles. --j
-
-\begin{longtable}{m{0.15\textwidth}L{0.4\textwidth}C{0.2\textwidth}}%m{0.2\textwidth}}
+\begin{longtable}{m{0.15\textwidth}L{0.4\textwidth}C{0.2\textwidth}}
   \caption{All dyadic juxtapositions of the six measures of demographic time.}
   \label{tab:dyads}\\
  
   \toprule
   \multicolumn{3}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal
   planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established APC and ACP terms.} \\
-  % \midrule
-  % \multicolumn{1}{c}{Relationship} & \multicolumn{1}{c}{Description} &
-  % \multicolumn{1}{c}{Cartesian representation} \\%& \multicolumn{1}{c}{Isotropic} \\
-  \midrule
+   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{3}{c}{\textsc{Variants of APC}} \\
   \midrule
@@ -374,8 +340,6 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The AP(C) temporal plane constitutes the classical Lexis diagram. &
   \includegraphics[scale=.5]{Figures/DiagramTable/AP_rt.pdf}
-  %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/AP_iso.pdf}
   \\
   %%%% ACp
   $$\begin{aligned}
@@ -384,8 +348,7 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The AC(P) temporal plane is equivalent to the Lexis diagram except birth
   cohort is given and period is derived rather than the other way around. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AC_rt.pdf} %& 
-  %\includegraphics[scale=.5]{Figures/DiagramTable/AC_iso.pdf} 
+  \includegraphics[scale=.5]{Figures/DiagramTable/AC_rt.pdf} 
    \\
   %%%% CPa
   $$\begin{aligned}
@@ -394,8 +357,7 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   The CP(A) temporal plane is equivalent to the Lexis diagram except birth
   cohorts are given and age is derived rather than the other way around. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CP_rt.pdf} %& 
-  %\includegraphics[scale=.5]{Figures/DiagramTable/CP_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/CP_rt.pdf}  
   \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -407,8 +369,7 @@ contained in any of these four triad identities.
     &\text{D = P + T}
   \end{aligned}$$ &
   Helen had 30 years of life left (T) in 1971 (P) and therefore belonged to the 2001 death cohort (D) &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TP_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/TP_iso.pdf} 
+  \includegraphics[scale=.5]{Figures/DiagramTable/TP_rt.pdf}  
    \\
   %%%% PDt
   $$\begin{aligned}
@@ -416,8 +377,7 @@ contained in any of these four triad identities.
     &\text{T = D -- P}
   \end{aligned}$$ &
   Mindel died in 1973 (D). In 1953 (P) she had 20 years left to live (T). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/PD_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/PD_iso.pdf} 
+  \includegraphics[scale=.5]{Figures/DiagramTable/PD_rt.pdf} 
    \\
   %%%% TDp
   $$\begin{aligned}
@@ -425,8 +385,7 @@ contained in any of these four triad identities.
     &\text{P = D -- T}
   \end{aligned}$$ &
   Irene died in 1974 (D). When she had 30 remaining years of life (T) the year must have been 1944 (P). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TD_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/TD_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/TD_rt.pdf}   
   \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -438,8 +397,7 @@ contained in any of these four triad identities.
     &\text{L = T + A}
   \end{aligned}$$ &
   The time already lived and the time still left sum up to the total lifespan. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TA_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/TA_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/TA_rt.pdf}   
   \\
   %%%% TLa
   $$\begin{aligned}
@@ -447,8 +405,7 @@ contained in any of these four triad identities.
     &\text{A = L -- T}
   \end{aligned}$$ &
   Helen lived to the age of 86 (L). When she had 20 years left (T) she must have been 66 (A). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/TL_rt.pdf} %&
- % \includegraphics[scale=.5]{Figures/DiagramTable/TL_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/TL_rt.pdf}   
  \\
   %%%% ALt
   $$\begin{aligned}
@@ -456,8 +413,7 @@ contained in any of these four triad identities.
     &\text{T = A -- L}
   \end{aligned}$$ &
   Tim is 34 years old (A) and will live to the age of 96 (L), leaving him 62 years (T) to settle affairs. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/AL_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/AL_iso.pdf} \\
+  \includegraphics[scale=.5]{Figures/DiagramTable/AL_rt.pdf} 
   \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,8 +426,7 @@ contained in any of these four triad identities.
   \end{aligned}$$ &
   \`{A}ngels was born in 1940 (C) and she lived to be 64 (L), implying an
   untimely death in 2004 (D) &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LC_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/LC_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/LC_rt.pdf}   
   \\
   %%%% CDl
   $$\begin{aligned}
@@ -479,8 +434,7 @@ contained in any of these four triad identities.
     &\text{L = D -- C}
   \end{aligned}$$ &
   Pascal was born in 1893 (C) and died in 1964 (D), implying a lifespan of 71 (L), or so. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/CD_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/CD_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/CD_rt.pdf} 
   \\
   %%%% LDc
   $$\begin{aligned}
@@ -488,8 +442,7 @@ contained in any of these four triad identities.
     &\text{C = D -- L}
   \end{aligned}$$ &
   Margaret died in Dec., 1995 (D) with a completed lifespan of 96 (L), putting her birth year in 1900 (C). &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LD_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/LD_iso.pdf}  
+  \includegraphics[scale=.5]{Figures/DiagramTable/LD_rt.pdf}  
   \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -498,8 +451,7 @@ contained in any of these four triad identities.
   %%%% LP
   LP(-) &
   The LP plane is \emph{non-informative}. No additional measures can be derived knowing just lifespan and period. &
-  \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} %&
-  %\includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} 
+  \includegraphics[scale=.5]{Figures/DiagramTable/LP_rt.pdf} 
   \\
   %%%% CT
   CT(-) &
@@ -551,8 +503,7 @@ variation in the data. If APC highlights meaningful variation in a phenomenon,
 then its representation as such is useful, and the same holds for the other
 identities.
 
-% This paragraph sounded a bit aggressive to me. Like we had a personal quarrel with Lexis. I softened it a bit without changing the meaning. --j
-\subsubsection{APC: Chronological age, period, and birth cohort}%\tgh{APC}}
+\subsubsection{APC: Chronological age, period, and birth cohort}
 \label{sec:apc}
 \FloatBarrier
 The Lexis diagram has long been used in demography as a conceptual
@@ -566,19 +517,8 @@ temporal configurations, we refer to it as the APC diagram.
 \caption{An APC diagram with six lifelines.}
 \label{fig:APC}
 \centering
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Cartesian}
 \vspace{-5em}
-%\label{fig:APCrt}
 \includegraphics[scale=0.8]{Figures/APCrt.pdf}
-%\end{subfigure}
-%\\\vspace{-2em}
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Isotropic}
-%\vspace{-6em}
-%\label{fig:APCeq}
-%\includegraphics[scale=0.8]{Figures/APCeq.pdf}
-%\end{subfigure}
 \end{figure}
 
 The APC diagram in Fig.~\ref{fig:APC} represents years lived on the $y$
@@ -609,19 +549,7 @@ variation into focus.
 \caption{A TPD diagram with six lifelines.}
 \label{fig:TPD}
 \centering
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Cartesian}
-%\vspace{-5em}
-%\label{fig:TPDrt}
 \includegraphics[scale=0.8]{Figures/TPDrt.pdf}
-%\end{subfigure}
-%\\\vspace{-2em}
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Isotropic}
-%\vspace{-6em}
-%\label{fig:TPDeq}
-%\includegraphics[scale=0.8]{Figures/TPDeq.pdf}
-%\end{subfigure}
 \end{figure} 
 There are several examples of analysis of this kind of data, usually stemming
 from a lack of information on chronological age. This is the case, for instance,
@@ -642,7 +570,7 @@ attention in the statistical literature \citep[see e.g.][]{chan2010backward}.
 
 \FloatBarrier
 \subsubsection{TAL: Thanatological age, chronological age, and
-lifespan}%\tgh{ATL}}
+lifespan}
 \label{sec:tal}
 \FloatBarrier  
 TAL is an appropriate diagram to examine processes that vary over the
@@ -668,24 +596,8 @@ total length of the pregnancy; growth and reproduction patterns over age may be 
 overlapped in this figure and appear to be five}
 \label{fig:TAL}
 \centering
-%\makebox[\textwidth][c]{
-%\begin{subfigure}{.48\textwidth}
-%\centering
-%\caption{Cartesian}
-%\label{fig:TALrt}
 \includegraphics[scale=0.7]{Figures/TALrt.pdf}
-%\end{subfigure}
-%~~~~~
-%\begin{subfigure}{.48\textwidth}
-%\centering
-%\caption{Isotropic}
-%\label{fig:TALeq}
-%\includegraphics[scale=0.55]{Figures/TALeq.pdf}
-%\end{subfigure}
-%}
-
 \end{figure} 
-
 
 \FloatBarrier
 \subsubsection{LCD: Lifespan, birth cohort, and death cohort}
@@ -708,19 +620,8 @@ In Fig.~\ref{fig:LCD}, the same six individuals from previous diagram figures ar
 \caption{An LCD diagram in two projections.}
 \label{fig:LCD}
 \centering
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Cartesian}
 \vspace{-5em}
-%\label{fig:LCDrt}
 \includegraphics[scale=0.8]{Figures/LCDrt.pdf}
-%\end{subfigure}
-%\\\vspace{-2em}
-%\begin{subfigure}{1.1\textwidth}
-%\caption{Isotropic}
-%\vspace{-6em}
-%\label{fig:LCDeq}
-%\includegraphics[scale=0.8]{Figures/LCDeq.pdf}
-%\end{subfigure}
 \end{figure} 
 
 We
@@ -759,15 +660,20 @@ events and durations. Events include birth (C) and death (D) cohort, as well as 
 itself (P). Durations are time differences between pairs of events: chronological age A = P -- C, 
 thanatological age T = D -- P, and lifespan L = D -- C. In the following we describe APC, APCTDL and other time framework in terms of vector spaces which, via linear transformation, relate the timing of events with durations between events.
 
-% Pancho introduced the notion that the elements in p have to be chronologically ordered. I think this is too limiting. While its true that death always follows birth it is not true for other events or the notion of period. Entry into parenthood for some will be prior to marriage and for others after marriage. A certain period may be after diagnosis of disease or prior to it. The important part is just to have a way to name elements of p and d so that in a given Lexis space p2 is *always* period and d12 is *always* age, but the values the elements of p and d take must not be ordered at all. We draw the elements of p on the timeline ordered by index out of convenience, not out of nessecity. --j
-
 \begin{definition} 
   Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$
   events or points in time chronologically ordered, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
   \label{def:1}
 \end{definition}
 
-We assume that the vector of events $\boldsymbol{p}$ is chronological ordered for convention, to avoid negative durations. For instance, if $p_1>p_2$ one would get $d_{1,2}<0$. However, this doesn't imply that events need to be always ordered in a specific way, as this may depend on the case or the individual.
+%We assume that the vector of events $\boldsymbol{p}$ is chronologically ordered
+%for convention, to avoid negative durations. For instance, if $p_1>p_2$ one
+% would get $d_{1,2}<0$. However, this doesn't imply that events need to be always ordered in a specific way, as this may depend on the case or the individual.
+
+The vector of events $\boldsymbol{p}$ can be ordered in any way as long as the
+elements of $\boldsymbol{p}$ are in the same order for all individuals. A consequence of this is that durations may be either
+negative or positive depending on the ordering of events over the life course.
+
 
 \begin{proposition}
   Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the dimension of the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is $m=n(n-1)/2$.
@@ -810,7 +716,6 @@ We assume that the vector of events $\boldsymbol{p}$ is chronological ordered fo
 
 These results imply that given an arbitrary set of $n\geq2$ points in time, it is always possible to calculate the durations between any pair of these points. This calculation can be understood
 as a linear transformation from a \emph{point-space} $P\subseteq\mathbf{R}^n$ to a \emph{duration-space} $D\subseteq\mathbf{R}^m$, with $m=n(n-1)/2$. However, note that matrix $\boldsymbol{X}$ in \eqref{eq:matrix} yields a vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ whose elements are sorted in an arbitrary way. The following statement may be relevant on this regard.
-% By arbitrarily swapping the rows of $\boldsymbol{X}$ it would be possible to obtain several other linear transformations and the corresponding vectors of durations different than $\boldsymbol{d}$
 
 \begin{proposition}
  Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is unique, irrespective of the sorting of its elements.
@@ -837,12 +742,10 @@ the six time measures discussed here, note that the events CPD yield TAL, but TA
 The relationship between events and durations can be
 systematically represented in a series of timelines and graphs that may better
 guide intuition.
-% TR: removed 'vertices have no direct time measure meaning', because
-% I now think they can be interpreted also in the n+1 graph, but no focus on
-% that.
+
 The joint relationship between events and durations is more explicit and more
-compact in a graph representation. As introduced in the following definition, the total number of time measures implied by a set of $n$ events and the corresponding durations is %therefore 
-$n+m=n+n(n-1)/2=n(n+1)/2$. %, which yields a $n+1$-polytope. 
+compact in a graph representation. As introduced in the following definition, the total number of time measures implied by a set of $n$ events and the corresponding durations is 
+$n+m=n+n(n-1)/2=n(n+1)/2$. 
 
 \begin{definition}
  Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, $n\geq2$, and the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$, we define the graph of time measures $\boldsymbol{G}$ as the graph with edges $(\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$.

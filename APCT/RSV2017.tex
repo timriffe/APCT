@@ -652,7 +652,6 @@ since birth, time until death, length of life, and their combinations. These
 key aspects of demographic time are compressed to chronological age only in the
 APC perspective, which can blend out meaningful variation. Since the lifecourse belongs to the cohort perspective, it is best to think of the TAL plane as belonging to some particular birth cohort. Alternatively, a TAL triangle may be taken as a cross-section through the period dimension, a sort of synthetic TAL plane. 
 
-% I tried to make the examples a tiny bit more specific. --j
 To our knowledge, the TAL diagram has only appeared once in the literature, in an exploration and classification of late-life health
 conditions \citep{riffe2016ttd}. There are however instances of statistical
 designs adapted to this coordinate plane \citep[see e.g.,][]{dempsey2016, Jewell2016}. The TAL diagram in Fig.~\ref{fig:TAL} contains no indication of
@@ -660,7 +659,9 @@ period or cohorts, as calendar time is blended out in this diagram.
 The lifelines depicted are identical to those shown in APC Fig.~\ref{fig:APC}
 and TPD Fig.~\ref{fig:TPD}. The TAL diagram is useful for characterizing patterns of prevalence of health conditions. We speculate
 that data structured and aligned in this way may yield hitherto undescribed
-patterns in other contexts, e.g. measurements on mother and fetus over the course of a pregnancy may vary by age of gestation, time until parturition and total length of the pregnancy; growth and reproduction patterns over age may be conditioned on the life-span of an organism.
+patterns in other contexts, e.g. measurements on mother and fetus over the
+course of a pregnancy may vary by age of gestation, time until parturition, or
+total length of the pregnancy; growth and reproduction patterns over age may be conditioned on the life-span of an organism.
 
 \begin{figure}[h!] 
 \caption{A TAL diagram with six lifelines. Since two of the six lifelines are of equal length (75), they are
@@ -761,7 +762,8 @@ thanatological age T = D -- P, and lifespan L = D -- C. In the following we desc
 % Pancho introduced the notion that the elements in p have to be chronologically ordered. I think this is too limiting. While its true that death always follows birth it is not true for other events or the notion of period. Entry into parenthood for some will be prior to marriage and for others after marriage. A certain period may be after diagnosis of disease or prior to it. The important part is just to have a way to name elements of p and d so that in a given Lexis space p2 is *always* period and d12 is *always* age, but the values the elements of p and d take must not be ordered at all. We draw the elements of p on the timeline ordered by index out of convenience, not out of nessecity. --j
 
 \begin{definition} 
-  Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$ events or points in time, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{ij}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
+  Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$
+  events or points in time, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
   \label{def:1}
 \end{definition}
 
@@ -815,7 +817,19 @@ as a linear transformation from a \emph{point-space} $P\subseteq\mathbf{R}^n$ to
  Let's suppose that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are two different vectors of durations corresponding to the same vector of events $\boldsymbol{p}\in\mathbf{R}^n$. Provided that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are finite and, by definition, both have dimension $m$ and are formed by the same combinations of elements of $\boldsymbol{p}$, it would always be possible to re-arrange the elements of $\boldsymbol{d^2}$ in the same order as $\boldsymbol{d^1}$ such that $\boldsymbol{d^1}=\boldsymbol{d^2}$.
 \end{proof}
 
-This last proposition allows considering $\boldsymbol{X}$ as the matrix defining the linear transformation between points and durations. Given a vector $\boldsymbol{p}$ and the corresponding $\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, any differently sorted vector of durations would be obtained by swapping the rows of $\boldsymbol{X}$. Further, note that $\boldsymbol{X}$ does not have an inverse matrix, and therefore there is no linear transformation from durations to events. This is intuitively straightforward if one thinks that two vectors of events can yield the same vector of durations, or in other words, that a particular vector of durations can come from infinite different vectors of points in time. For instance, using $\boldsymbol{X}$, the vectors of events $\boldsymbol{p^1}=(1,2,3)$ and $\boldsymbol{p^2}=(2,3,4)$ both yield $\boldsymbol{d}=(1,2,1)$. In relation with the six time measures discussed here, note that the events CPD yield TAL, but TAL does not yield CPD.
+This last proposition allows considering $\boldsymbol{X}$ as the matrix defining
+the linear transformation between points and durations. Given a vector
+$\boldsymbol{p}$ and the corresponding
+$\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, any differently sorted
+vector of durations would be obtained by swapping the rows of $\boldsymbol{X}$.
+Further, note that $\boldsymbol{X}$ does not have an inverse matrix, and
+therefore there is no linear transformation from durations to events. This is
+intuitively straightforward if one thinks that two vectors of events can yield
+the same vector of durations. In other words, a particular vector of durations
+can come from infinite different vectors of points in time. For instance, using
+$\boldsymbol{X}$, the vectors of events $\boldsymbol{p^1}=(1,2,3)$ and
+$\boldsymbol{p^2}=(2,3,4)$ both yield $\boldsymbol{d}=(1,2,1)$. With respect to
+the six time measures discussed here, note that the events CPD yield TAL, but TAL does not yield CPD.
 
 The relationship between events and durations can be
 systematically represented in a series of timelines and graphs that may better
@@ -823,18 +837,18 @@ guide intuition.
 Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left column shows timelines, a familiar linear representation of time, with events
 marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
 each of the $m$ possible event dyads and are drawn below
-the main timeline as curly braces labelled with $d_{12} \ldots d_{n-1,n}$.
+the main timeline as curly braces labelled with $d_{1,2} \ldots d_{n-1,n}$.
 
+% TR: removed 'vertices have no direct time measure meaning', because
+% I now think they can be interpreted also in the n+1 graph, but no focus on
+% that.
 The joint relationship between durations and events is more explicit and more
 compact in a graph representation. The total number of time measures implied by a set of $n$ events and the corresponding durations is
-therefore $n+m=n+n(n-1)/2=n(n+1)/2$, which yields a $n+1$-polytope. % A set of time measures derived in this way, $\boldsymbol{g} = (\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$, forms an identity. In the same way that $\boldsymbol{d}$ derives from $\boldsymbol{p}$, there are $(n+1)^{(n-1)}$ ways to complete $\boldsymbol{g}$ from a size-$n$ set of potentially mixed durations and events. Proofs for these statements are found in Appendix~\ref{app:A}. 
-%The middle column of Table~\ref{tab:timelines}, labelled \textit{graph} consists in the simplest graph representation of the event-duration timeline, with $n$ red vertices for each of the events in $\boldsymbol{p}$. A full connection of the graph yields $m$ edges for each of the possible durations in $\boldsymbol{d}$. This graph representation loses the linear time analogy of the timeline, but makes the depdenency of $\boldsymbol{d}$ on $\boldsymbol{p}$, and other interdependencies between time measures more explicit.
-The right column of Table~\ref{tab:timelines}
- draws the corresponding graph with a total of $n+1$ vertices and $n+m$ edges
+therefore $n+m=n+n(n-1)/2=n(n+1)/2$, which yields a $n+1$-polytope. The right
+column of Table~\ref{tab:timelines} draws the corresponding graph with a total of $n+1$ vertices and $n+m$ edges
 for the elements of both $\boldsymbol{d}$ and $\boldsymbol{p}$. All
-events of $\boldsymbol{p}$ connect to a single vertex. Event edges are indicated
-in red with red-circled labels and nodes have no direct
-time-measure meaning. In this rendering, each triangle formed by three
+events of $\boldsymbol{p}$ connect to a single vertex, and event edges are
+indicated in red with red-circled labels. In this rendering, each triangle formed by three
 mutually connecting edges represents a triad identity. The top row $n=2$
 consists in a single identity. Three and four events imply a total of four and
 ten triad identities, respectively, and in general a given higher order identity
@@ -852,15 +866,15 @@ two-dimensional diagram, $n=3$ produces a 3-dimensional diagram, and so forth.
 \begin{table}[ht]
 
 \centering
-\caption{Event-duration timeline, graph, and temporal plane graphs for two, three, and four event sequences.}
+\caption{Event-duration timeline and graph for two, three, and four event sequences.}
 \label{tab:timelines}
 \makebox[\linewidth][c]{
-\begin{tabular}{C D E E}
-nr. events  & timeline & graph & temporal plane graph \\
-& & &\\
-  $n = 2 $ & \Tl{2} & \St{2} & \Ed{2} \\
-  $n = 3 $ & \Tl{3} & \St{3} & \Ed{3} \\
-  $n = 4 $ & \Tl{4} & \St{4} & \Ed{4}
+\begin{tabular}{C D E}
+nr. events  & timeline & graph \\
+& &\\
+  $n = 2 $ & \Tl{2} & \Ed{2} \\
+  $n = 3 $ & \Tl{3} & \Ed{3} \\
+  $n = 4 $ & \Tl{4} & \Ed{4}
 \end{tabular}
 }
 \end{table}
@@ -878,11 +892,12 @@ Let $\boldsymbol{p}$ have two elements, as in the first row of
 Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ consists of just one element, defined as
 
 \begin{equation}
-d_{12} = p_2 - p_1   \quad\quad.
+d_{1,2} = p_2 - p_1   \quad\quad.
 \end{equation}
 
-Interpreting $d_{12}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
-\emph{birth cohort} yields the APC identity. The Lexis surface is constructed via change of basis of the point-space $P$, featuring basis vectors $(p_1, p_2)$, to the point-duration space $M$, featuring basis vectors ($p_2, d_{12}$).
+Interpreting $d_{1,2}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
+\emph{birth cohort} yields the APC identity. The Lexis surface is constructed
+via change of basis of the point-space $P$, featuring basis vectors $(p_1, p_2)$, to the point-duration space $M$, featuring basis vectors ($p_2, d_{1,2}$).
 
 \paragraph{Example 2: Lexis' marriage identity}
 
@@ -896,26 +911,28 @@ Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as
 \begin{equation}
 \label{eq:p3}
 \begin{matrix}
-d_{12} = p_2 - p_1\\
-d_{13} = p_3 - p_1\\
-d_{23} = p_3 - p_2
+d_{1,2} = p_2 - p_1\\
+d_{1,3} = p_3 - p_1\\
+d_{2,3} = p_3 - p_2
 \end{matrix} \quad\quad.
 \end{equation}
 
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{marriage cohort} and $p_3$ as
- \textit{separation cohort} yields the durations $d_{12}$ as \textit{age at
- marriage}, $d_{13}$ as \textit{age at separation}, and $d_{23}$ as \textit{duration
- of marriage}. Lexis' ``marriage space'' $M$ is reconstructed by a change of basis of $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$, with the new orthogonal basis formed by $(p_1, d_{12}, d_{23})$.
+ \textit{separation cohort} yields the durations $d_{1,2}$ as \textit{age at
+ marriage}, $d_{1,3}$ as \textit{age at separation}, and $d_{2,3}$ as
+ \textit{duration of marriage}. Lexis' ``marriage space'' $M$ is reconstructed
+ by a change of basis of $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$,
+ with the new orthogonal basis formed by $(p_1, d_{1,2}, d_{2,3})$.
 
 \paragraph{Example 3: Adding death cohort to the Lexis surface}
 
 As in Example 2 we start with a three element vector
 $\boldsymbol{p}$ yielding the very same identities as in equation set
 \eqref{eq:p3} and the second row of Table~\ref{tab:timelines}, but with different interpretations.
-Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$ as \textit{death cohort} yields the durations $d_{12}$ as \textit{chronological age},
-$d_{13}$ as \textit{lifespan}, and $d_{23}$ as \textit{time to death}. This
-vector space contains the Lexis surface as a sub-space, as well as the
-other planes presented in Sect.~\ref{sec:triads}. We return to this identity
+Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$
+as \textit{death cohort} yields the durations $d_{1,2}$ as \textit{chronological
+age}, $d_{1,3}$ as \textit{lifespan}, and $d_{2,3}$ as \textit{time to death}.
+This vector space contains the Lexis surface as a sub-space, as well as the other planes presented in Sect.~\ref{sec:triads}. We return to this identity
 in the following sections.
 
 % I don't think that Brinks' Illness-Death model constitutes a 4-dimensional Lexis space like outlined below. Markings within a Lexis space such as life-lines and points for birth- and death-cohort don't constitute new dimensions of the underlying Lexis space. Drawing a life-line on a Lexis diagram doesn't make the diagram APCLD(T). Its just an annotated APC. In order to add a new dimension to a Lexis space one has to allow for *all possible* values this new dimensions may take (i.e. add a new basis to the vector space) instead of just marking specific instances of the new dimension. I changed the section to reflect how I believe the Brinks model relates to the event-duration space. --j
@@ -930,25 +947,40 @@ Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as:
 \begin{equation}
 \label{eq:p3}
 \begin{matrix}
-d_{12} = p_2 - p_1\\
-d_{13} = p_3 - p_1\\
-d_{23} = p_3 - p_2\\
-d_{14} = p_4 - p_1\\
-d_{24} = p_4 - p_2\\
-d_{34} = p_4 - p_3
+d_{1,2} = p_2 - p_1\\
+d_{1,3} = p_3 - p_1\\
+d_{2,3} = p_3 - p_2\\
+d_{1,4} = p_4 - p_1\\
+d_{2,4} = p_4 - p_2\\
+d_{3,4} = p_4 - p_3
 \end{matrix} \quad\quad.
 \end{equation}
 
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period}, $p_3$ as
 \textit{time at diagnosis}, and $p_4$ as \textit{death cohort} yields the following composition
-of $\boldsymbol{d}$: $d_{12}$ is \textit{chronological age}, $d_{13}$ is \textit{age at
-diagnosis}, $d_{23}$ is \textit{time to/since diagnosis},
+of $\boldsymbol{d}$: $d_{1,2}$ is \textit{chronological age}, $d_{1,3}$ is
+\textit{age at diagnosis}, $d_{1,4}$ is \textit{lifespan}, $d_{2,3}$ is
+\textit{time to/since diagnosis},
 % I think this is more clear. --j
-\footnote{For points in time past the time at diagnosis $d_{23}$ becomes negative and can be interpreted at time since diagnosis.}
-$d_{14}$ is \textit{lifespan}, $d_{24}$ is \textit{time to death},
-and $d_{34}$ is duration of illness (an irreversible state).
+\footnote{For points in time past the time at diagnosis $d_{2,3}$ becomes
+negative and can be interpreted at time since diagnosis.} , $d_{2,4}$ is \textit{time to death},
+and $d_{3,4}$ is duration of illness (an irreversible state).
 
-Note that unlike in the other examples the actual vector-space of demographic time as shown in \citet{brinks2014lexis} figure 2 only identifies a \emph{subset} of the times-scales discussed by the authors, namely age ($z$-axis), period ($x$-axis), birth cohort (implied by a linear combination of age and period) and duration of disease ($y$ axis). No further time scales can be derived from this. Instead, the additional events and durations (death cohort, timing at diagnosis and duration of disease) are introduced as \emph{markings} within the three dimensional vector space, just like one would mark \emph{specific} life-lines on a Lexis-diagram without regarding \emph{all possible} life-lines in doing so.
+Unlike the other examples, the actual vector-space of demographic
+time shown in \citet{brinks2014lexis} figure 2 only identifies a
+\emph{subset} of the times-measures implied by the model of the
+authors, namely age ($y$-axis), period ($x$-axis), birth cohort (implied by a
+linear combination of age and period) and duration of disease ($z$ axis).
+Although lifelines in this depction only begin to ascend into the disease
+duration axis at the time of disease diagnosis, this event time measure is not
+ascribed to an axis per se, and no further time scales can be derived from
+the three axes drawn.
+Instead, the additional events and durations (death cohort, timing of diagnosis
+and duration of disease) are introduced as \emph{markings} within the three
+dimensional vector space, just like one would mark \emph{specific} life-lines on
+a Lexis-diagram without regarding \emph{all possible} life-lines in doing so.
+The four-dimensional vector-space can be thought of as the larger context within
+which this model operates.
 
 \FloatBarrier
 \section{A tetrahedron relates the six demographic time measures}

@@ -763,9 +763,11 @@ thanatological age T = D -- P, and lifespan L = D -- C. In the following we desc
 
 \begin{definition} 
   Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$
-  events or points in time, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
+  events or points in time chronologically ordered, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
   \label{def:1}
 \end{definition}
+
+We assume that the vector of events $\boldsymbol{p}$ is chronological ordered for convention, to avoid negative durations. For instance, if $p_1>p_2$ one would get $d_{1,2}<0$. However, this doesn't imply that events need to be always ordered in a specific way, as this may depend on the case or the individual.
 
 \begin{proposition}
   Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the dimension of the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is $m=n(n-1)/2$.
@@ -806,12 +808,12 @@ thanatological age T = D -- P, and lifespan L = D -- C. In the following we desc
  such that $\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, and where $I_k$ denotes the $k\times k$ identity matrix.
 \end{corollary}
 
-These results imply that given an arbitrary set of size $n\geq2$ of points in time, it is always possible to calculate the durations between any pair of these points. This calculation can be understood
+These results imply that given an arbitrary set of $n\geq2$ points in time, it is always possible to calculate the durations between any pair of these points. This calculation can be understood
 as a linear transformation from a \emph{point-space} $P\subseteq\mathbf{R}^n$ to a \emph{duration-space} $D\subseteq\mathbf{R}^m$, with $m=n(n-1)/2$. However, note that matrix $\boldsymbol{X}$ in \eqref{eq:matrix} yields a vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ whose elements are sorted in an arbitrary way. The following statement may be relevant on this regard.
 % By arbitrarily swapping the rows of $\boldsymbol{X}$ it would be possible to obtain several other linear transformations and the corresponding vectors of durations different than $\boldsymbol{d}$
 
 \begin{proposition}
- Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is unique, irrespective of the sorting process.
+ Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is unique, irrespective of the sorting of its elements.
 \end{proposition}
 
 \begin{proof}
@@ -835,19 +837,24 @@ the six time measures discussed here, note that the events CPD yield TAL, but TA
 The relationship between events and durations can be
 systematically represented in a series of timelines and graphs that may better
 guide intuition.
-Table~\ref{tab:timelines} displays a timeline and two levels of graph representation for two, three, and four event sets. The left column shows timelines, a familiar linear representation of time, with events
-marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
-each of the $m$ possible event dyads and are drawn below
-the main timeline as curly braces labelled with $d_{1,2} \ldots d_{n-1,n}$.
-
 % TR: removed 'vertices have no direct time measure meaning', because
 % I now think they can be interpreted also in the n+1 graph, but no focus on
 % that.
-The joint relationship between durations and events is more explicit and more
-compact in a graph representation. The total number of time measures implied by a set of $n$ events and the corresponding durations is
-therefore $n+m=n+n(n-1)/2=n(n+1)/2$, which yields a $n+1$-polytope. The right
-column of Table~\ref{tab:timelines} draws the corresponding graph with a total of $n+1$ vertices and $n+m$ edges
-for the elements of both $\boldsymbol{d}$ and $\boldsymbol{p}$. All
+The joint relationship between events and durations is more explicit and more
+compact in a graph representation. As introduced in the following definition, the total number of time measures implied by a set of $n$ events and the corresponding durations is %therefore 
+$n+m=n+n(n-1)/2=n(n+1)/2$. %, which yields a $n+1$-polytope. 
+
+\begin{definition}
+ Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, $n\geq2$, and the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$, we define the graph of time measures $\boldsymbol{G}$ as the graph with edges $(\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$.
+ \label{def:2}
+\end{definition}
+
+Table~\ref{tab:timelines} displays a timeline and a graph for two, three, and four event sets. The central column shows timelines, a familiar linear representation of time, with events
+marked with red ticks labelled with $p_1 \ldots p_n$. Durations span
+each of the $m$ possible event dyads and are drawn below
+the main timeline as curly braces labelled with $d_{1,2} \ldots d_{n-1,n}$. The right
+column of Table~\ref{tab:timelines} draws the corresponding graph with a total of $n+1$ vertices and $n+m=n(n+1)/2$ edges
+for the elements of both $\boldsymbol{p}$ and $\boldsymbol{d}$. All
 events of $\boldsymbol{p}$ connect to a single vertex, and event edges are
 indicated in red with red-circled labels. In this rendering, each triangle formed by three
 mutually connecting edges represents a triad identity. The top row $n=2$
@@ -884,7 +891,6 @@ nr. events  & timeline & graph \\
 \subsection{Examples}
 \label{sec:examples}
 The following examples show how different demographic time frameworks can all be expressed as instances of the event-duration vector space defined above.
-Table~\ref{tab:timelines}. 
 
 % I use the term "change of basis" when going from P to M. This is a common concept in linear algebra and describes what we are doing. We always start with P and then may go to M by deriving D from P and constructing M from elements of P and D. --j
 \paragraph{Example 1: The Lexis surface}
@@ -895,18 +901,15 @@ Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ consists of just one element, d
 \begin{equation}
 d_{1,2} = p_2 - p_1   \quad\quad.
 \end{equation}
-
+%
 Interpreting $d_{1,2}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
-\emph{birth cohort} yields the APC identity. The Lexis surface is constructed
-via change of basis of the point-space $P$, featuring basis vectors $(p_1, p_2)$, to the point-duration space $M$, featuring basis vectors ($p_2, d_{1,2}$).
+\emph{birth cohort} yields the APC identity. %The Lexis surface is constructed via change of basis of the point-space $P$, featuring basis vectors $(p_1, p_2)$, to the point-duration space $M$, featuring basis vectors ($p_2, d_{1,2}$).
 
 \paragraph{Example 2: Lexis' marriage identity}
 
 Along with his well known 2-dimensional diagram \citet{lexis1875einleitung} also
 described a 3-dimensional extension applied to the marriage and
-separation processes, reproduced in \citet{keiding2006event}.
-
-Let $\boldsymbol{p}$ have three elements, as in the second row of
+separation processes, reproduced in \citet{keiding2006event}. Let $\boldsymbol{p}$ have three elements, as in the second row of
 Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as
 
 \begin{equation}
@@ -917,19 +920,21 @@ d_{1,3} = p_3 - p_1\\
 d_{2,3} = p_3 - p_2
 \end{matrix} \quad\quad.
 \end{equation}
-
+%
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{marriage cohort} and $p_3$ as
- \textit{separation cohort} yields the durations $d_{1,2}$ as \textit{age at
- marriage}, $d_{1,3}$ as \textit{age at separation}, and $d_{2,3}$ as
- \textit{duration of marriage}. Lexis' ``marriage space'' $M$ is reconstructed
- by a change of basis of $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$,
- with the new orthogonal basis formed by $(p_1, d_{1,2}, d_{2,3})$.
+\textit{separation cohort} yields the durations $d_{1,2}$ as \textit{age at
+marriage}, $d_{1,3}$ as \textit{age at separation}, and $d_{2,3}$ as
+\textit{duration of marriage}. Lexis' ``marriage space'' $M$ is reconstructed by the mapping 
+%
+\begin{align*}
+    f: P\subseteq\mathbf{R}^3 & \to M\subseteq\mathbf{R}^3 \\ (p_1,p_2,p_3)& \mapsto (p_1, d_{1,2}, d_{2,3})
+\end{align*}
+% Lexis' ``marriage space'' $M$ is reconstructed  by a change of basis of $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$,  with the new orthogonal basis formed by $(p_1, d_{1,2}, d_{2,3})$.
 
 \paragraph{Example 3: Adding death cohort to the Lexis surface}
 
 As in Example 2 we start with a three element vector
-$\boldsymbol{p}$ yielding the very same identities as in equation set
-\eqref{eq:p3} and the second row of Table~\ref{tab:timelines}, but with different interpretations.
+$\boldsymbol{p}$ yielding the very same identities as in Eq.~\eqref{eq:p3} and the second row of Table~\ref{tab:timelines}, but with different interpretations.
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period} and $p_3$
 as \textit{death cohort} yields the durations $d_{1,2}$ as \textit{chronological
 age}, $d_{1,3}$ as \textit{lifespan}, and $d_{2,3}$ as \textit{time to death}.
@@ -940,7 +945,7 @@ in the following sections.
 
 \paragraph{Example 4: Brinks' Illness-Death model}
 
-\citet{brinks2014lexis} describes an illness-death process atop the Lexis
+\citet{brinks2014lexis} describe an illness-death process atop the Lexis
 surface, and with diagnosis and death as additional events, for a total of four
 events. Let $\boldsymbol{p}$ have four elements, as in the third row of
 Table~\ref{tab:timelines}. Then $\boldsymbol{d}$ is defined as:
@@ -961,14 +966,12 @@ Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period}, $p_3$ as
 \textit{time at diagnosis}, and $p_4$ as \textit{death cohort} yields the following composition
 of $\boldsymbol{d}$: $d_{1,2}$ is \textit{chronological age}, $d_{1,3}$ is
 \textit{age at diagnosis}, $d_{1,4}$ is \textit{lifespan}, $d_{2,3}$ is
-\textit{time to/since diagnosis},
-% I think this is more clear. --j
-\footnote{For points in time past the time at diagnosis $d_{2,3}$ becomes
-negative and can be interpreted at time since diagnosis.} , $d_{2,4}$ is \textit{time to death},
+\textit{time to/since diagnosis},\footnote{For points in time past the time at diagnosis $d_{2,3}$ becomes
+negative and can be interpreted at time since diagnosis.} $d_{2,4}$ is \textit{time to death},
 and $d_{3,4}$ is duration of illness (an irreversible state).
 
 Unlike the other examples, the actual vector-space of demographic
-time shown in \citet{brinks2014lexis} figure 2 only identifies a
+time shown in \citet{brinks2014lexis} Fig.~2 only identifies a
 \emph{subset} of the times-measures implied by the model of the
 authors, namely age ($y$-axis), period ($x$-axis), birth cohort (implied by a
 linear combination of age and period) and duration of disease ($z$ axis).
@@ -1015,11 +1018,10 @@ base of the tetrahedron, forming the much-studied APC identity.
 The South face corresponds to the TPD identity,
 the Northeast face to the TAL identity, and the
 Northwest face to LCD identity. The transformation of this three-event
-system to a three dimensional space follows Def.~\ref{def:1} and Prop.
-\ref{prop:2}.
+system to a three dimensional space follows Definition~\ref{def:2}. % Def.~\ref{def:1} and Prop.\ref{prop:2}.
 It may also suffice to simply imagine that each face of the tetrahedron forms
 the basis of a plane, such that the tetrahedron itself defines four planes. These four planes are the four temporal planes that underly
-the four diagrams presented in sections~\ref{sec:apc} to~\ref{sec:lcd}. A full
+the four diagrams presented in Sects.~\ref{sec:apc} to~\ref{sec:lcd}. A full
 diagram of the demographic time identity (or any identity based on three events)
 conforms in this way with the geometry of a tetrahedron.
 
@@ -1395,237 +1397,13 @@ that the framework we describe will prove an instrument to enable new
 discoveries in formal, and empirical demography, as well as other diverse fields of
 investigation.
 
-
-% remove appendix, it pushes figures + tables past 10\ldots
-%FloatBarrier
-
-%\begin{appendices}
-%\section{Variants of tetrahedron graph}
-%The graph depicted in Figure~\ref{fig:tet} could be drawn with any of the
-%four vertices in the middle of the triangle (as well as other inversions
-%and rotations).
-%These would all serve equally well to present the same aspects of the model,
-% and we have no insight as to whether one of these renditions is more or less
-%intuitive. Figure~\ref{fig:app:tet} provides four perspectives on the
-%tetrahedron, for the case that this aids in understanding. The reader may make
-% a paper tetrahedron, with labeled edges and vertices to be convinced that
-%these are identical graphs.
-%\begin{figure*}
-%        \centering
-%        \caption{Some variants of the graph of the APCTDL tetrahedron.} 
-%         \label{fig:app:tet}
-%        \begin{subfigure}[b]{0.475\textwidth}
-%            \centering
-%            \includegraphics[width=\textwidth]{Figures/Tetra1.pdf}
-%           \caption{\small Vertex \vt{1} in middle. APC Northwest.}
-%            \label{fig:tet1}
-%        \end{subfigure}
-%    \hfill
-%        \begin{subfigure}[b]{0.475\textwidth}  
-%            \centering 
-%            \includegraphics[width=\textwidth]{Figures/Tetra2.pdf}
-%           \caption{\small Vertex \vt{2} in middle. APC Northeast.}
-%            \label{fig:tet2}
-%        \end{subfigure}
-%        \vskip\baselineskip
-%        \begin{subfigure}[b]{0.475\textwidth}   
-%            \centering 
-%            \includegraphics[width=\textwidth]{Figures/Tetra3.pdf}
-%           \caption{\small Vertex \vt{3} in middle. APC Northwest.}
-%            \label{fig:tet3}
-%        \end{subfigure}
-%        \quad
-%        \begin{subfigure}[b]{0.475\textwidth}   
-%            \centering 
-%            \includegraphics[width=\textwidth]{Figures/Tetra4.pdf}
-%            \caption{\small Vertex \vt{4} in middle, as in
-%            Figure~\ref{fig:tet}. APC base.}
-%            \label{fig:tet4}
-%        \end{subfigure}
-%    \end{figure*}
-%\end{appendices}
-%%FloatBarrier
+  
 \DeclareRobustCommand{\VAN}[3]{#3}
 \bibliographystyle{apacite} % required for demography
 %\bibliographystyle{plainnat}
 \bibliography{refs} 
 % \bibliography{references} 
 
-%\begin{appendices}
-%\section{Event-duration transformation proofs}
-%\label{app:A}
-%This appendix provides some formal support to statements and explanations given
-%in Sect.~\ref{sec:gen}. We explain how durations depend on events (and not
-%vice versa). We list and prove some of the properties of higher-order
-%identities, such as the number of ways they can be derived, the conditions
-%for doing so, the number of event and duration measures they contain, and the
-%number, size, and composition of sub-identities.
-
-%\begin{theorem}
-%\label{mixing} *(Work in progess)* Something that states that you can transform
-% $P^n \leftrightarrow M^n$ where the basis vectors of $M$ are a mixture of point dimensions and duration dimensions.
-%\end{theorem}
-%\vt{For example APT yields APCTDL. APT is a mixture of 1 element of
-%$\textbf{p}$ and 2 elements of $\textbf{d}$. This is different from pure
-%$P\rightarrow D$}
-
-%\vt{TR: I think this theorem can be proved using graph theory as in the
-%corollary below.}
-
-
-%\begin{definition}{$\textbf{g}$}
-%Let $\textbf{g} = \left\{p_{i=1,\ldots,n},
-%d_{k=1,\ldots,m}\right\}$
-%\end{definition}
-
-%\begin{theorem} There are $b = (n+1)^{(n-1)}$ many
-%ways to choose $n$ elements out of $\textbf{g}$ whoose linear combination yields the
-%remaining $m$ elements of $\textbf{g}$.
-%\end{theorem}
-
-%\begin{proof}
-%This is a case of Cayley's formula \citep{cayley1889}, a result from
-%graph theory which gives the number of possible trees on $k = n+1$ vertices,
-%$k^{(k-2)}$. In our case, the fully conected graph $\textbf{K}$ with edges
-%defined by the elements of $\textbf{g}$ according to the third column of
-%Table~\ref{tab:timelines}, is complete. By Cayley's fomula, the number of
-%minimal spanning trees on $\textbf{K}$ is equal to $k^{(k-2)}$. Four different proofs of
-%this result are given in \citet{aigner2010proofs}. The key is to realize that a
-%minimal spanning tree (MST) on a complete graph will have $k-1$ edges, connected
-%to each other and all $k$ vertices. As such, the remaining possible edges are
-%linear combinations of any given MST.
-%\end{proof}
-
-%\begin{corollary}
-%Each set of $n$ elements from $\textbf{g}$, $\textbf{b}'$ whose linear
-%transformation yields the remaining $m$ elements of $\textbf{g}$ includes at
-%least one element of $\textbf{p}$.
-%\end{corollary}
-
-%\begin{proof}
-%One of the vertices of $\textbf{K}$, say the $k^{\text{th}}$ vertex, is
-%connected only to edges labelled by the elements of $\textbf{p}$. Since a
-%spanning tree of $\textbf{K}$ must connect to this vertex to fully connect
-%$\textbf{K}$, all $b$ valid spanning trees must contain at least one edge
-%labelled by an element of $\textbf{p}$.
-%\end{proof}
-
-%\vt{TR: is the statement in this proof something that itself also needs to be
-%proved?-- that one vertex connects only to $\textbf{p}$ If that statement needs
-%to be proved, is it a lemma? I think this one takes care of the ``mixing''
-%theorem~\ref{mixing} that is a work in progress above.}
-
-%\begin{definition}{$\textbf{G}$}
-%Let's define $\textbf{G}$ as the identity implied by $\textbf{g}$ whose
-%graph is $\textbf{K}$.
-%\end{definition}
-
-%\begin{theorem}
-%An identity $\textbf{G}$ implies a total of $\binom{n+1}{3}$ triad
-%sub-identities.
-%\end{theorem}
-
-%\begin{proof}
-%Any set of three vertices from $\textbf{K}$ forms a complete subgraph, and any
-%complete subgraph implies an identity between its labelled edges. $\textbf{K}$
-%has $n+1$ vertices, and therefore there are $\binom{n+1}{3}$ ways to select
-%three vertices from $\textbf{K}$, hence $\textbf{G}$ implies the same number of
-%triad subidentities.
-%\end{proof}
-
-%\begin{corollary}
-%Of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$, $\binom{n}{2}$
-%contain exactly two events and one duration.
-%\end{corollary}
-
-%\begin{proof}
-%This follows by noting that the $n$ event-labelled edges in $\textbf{K}$ connect
-%to a single vertex. Selecting any two of these $n$ event-labelled edges implies
-%a tree on three vertices, whose full connection implies a triad identity
-%composed of the two event edges and one duration edge defined as the time-difference of the
-%former two. There are $\binom{n}{2}$ ways to select two of of the $n$ event
-%edges.
-%\end{proof}
-
-%\begin{corollary}
-%For $n \ge 3$, of the $\binom{n+1}{3}$ triad identies implied by $\textbf{G}$,
-%$\binom{n+1}{3} - \binom{n}{2} = \binom{n}{3}$ are composed of exactly three
-%durations.
-%\end{corollary}
-
-%\begin{proof}
-%This is equivalent to deleting the vertex $k^{\text{th}}$ from $\textbf{K}$, the
-%vertex that connects only to event-labelled edges, which is constructed
-%following the middle column of graphs from Table~\ref{tab:timelines} with
-%vertex labels ignored. This graph has $n$ total vertices, and any set of 3
-%vertices implies an identity between its three labelled edges, which in this
-%case by definition can only consist of durations.
-%\end{proof}
-
-%For example, in the demographic time identity there are $n=3$ event measures.
-%Thus of the $\binom{4}{3} = 4$ triad identities implied $\binom{3}{3} = 1$ of
-%these identities consist in durations only (TAL). Notice that the measures T and
-%A change over the lifecourse of an individual, whereas their sum L is fixed.
-
-%\begin{definition}{$\textbf{d}_t$} For $\textbf{p}$ that include period
-%itself, let $\textbf{d}_t$ be the set of duration time measures that change over
-%the life course and $\textbf{d}_f$ consist in those durations that are fixed attributed of an individual. By
-%definition, $\textbf{d}_t \cup \textbf{d}_f = \textbf{d}$.
-%\end{definition}
-
-%\vt{awkward: how to say that $\textbf{p}$ includes P? For example, we have P,
-%but Lexis marriage does not, so this corolarry is only relevant for us and
-%Brinks here.}
-
-%\begin{corollary}
-%For $n \ge 4$ and For $\textbf{p}$ that include period
-%itself, of the $d'=\binom{n}{3}$ triad identies whose edges are
-%labelled only by the elements of $\textbf{d}$, $d^t=\binom{d'}{2}$ of these identities
-%consist in exactly two elements of $\textbf{d}_t$ and one element of
-%$\textbf{d}_f$, while $d'-d^t$ of the duration-only triad identities consist in
-%relationships between three elements of $\textbf{d}_f$.
-%\end{corollary}
-
-%\begin{proof}
-%$n-2$ of the edges in $K$ are labelled with the elements of $\textbf{d}_t$, and
-%these all connect to the same vertex. There are therefore $\binom{n-2}{2}$ ways
-%to form triad identities with them. The third element of each of these
-%identities cannot connect to the same vertex, and so must be a member of
-%$\textbf{d}_f$. \vt{(this is almost done, needs a bit more logic)}
-%\end{proof}
-
-%\begin{theorem}
-%In general, the number of subidentities of size $h$ in $\textbf{G}$ is equal to
-%$\binom{n+1}{n+1-h} \quad \forall \, h \le n$.
-%\end{theorem}
-
-%\begin{proof}
-%Vertex deletion on a complete graph results in a complete subgraph. Therefore,
-%the number of possible complete subgraphs with $h$ vertices is a function of the
-%number of ways that $n+1-h$ vertices can be deleted from $\textbf{K}$, which is
-%$\binom{n+1}{n+1-h}$. The labelled edges of each possible complete subgraph
-%defined in this way represent subidentities.
-%\end{proof}
-%\vt{need to be clear about what ``identity size'' means. Here it's based on
-%vertex count, but elsewhere based on edge count}
-
-%For example, from the tetrahedral graph in Fig.~\ref{fig:tet}, we may
-%delete the vertex that joins the edges labelled A, T, and P, which in effect
-%deletes these edges, leaving us with the CDL identity. 
-
-%\begin{corollary}
-%Each time measure in $\textbf{G}$ is a member of $n-1$ triad subidentities.
-%\end{corollary}
-
-%\begin{proof}
-%In the graph $\textbf{K}$, an edge labelled by a given time measure connects to
-%two of the $n+1$ vertices. A full connection to any other vertex yields a
-%complete subgraph with three edges, representing a triad identity. There are
-%$n-1$ remainign vertices that can be connected to, ergo the given edge is a
-%member of $n-1$ triad subidentities.
-%\end{proof}
-
-%\end{appendices}
 
 \end{document}
 

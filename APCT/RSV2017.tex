@@ -190,7 +190,6 @@ measures, respectively.
 \item[A triad identity] is a triad with the property that each of its members
 can be derived from the other two with no additional information. There are four triad
 identities: APC, TPD, TAL, and LCD.
-%\item[A hexad identity] is a unique combination of the six time measures.
 \item[A temporal plane] is any $(x,y)$-mapping of a dyad of time measures.
 \end{description}
 Using this terminology, we say that the ``Lexis'' measures
@@ -287,7 +286,7 @@ AP(C).
 The temporal plane that corresponds to this informative dyad is the contemporary representation of the
 Lexis diagram \citep{lexis1875einleitung, pressat1961analyse}. The informative
 dyads AC(P) and CP(A) also belong to the Lexis identity, but imply different
-less-common rotations and projections of the Lexis diagram.%\footnote{While uncommon as diagram orientations, these latter two dyads are used to tabulate data for different kinds of rates and probabilities. Measures based on the AC dyad are variously referred to as Type III rates \citep{caselli2005demography} or vertical parallelograms \citep{HMDMP}. The CP dyad delineates Type II rates \citep{caselli2005demography}, also known as horizontal parallelograms, for instance used to calculate cohort lifetables in the Human Mortality Database \citep{HMDMP}.}
+less-common rotations and projections of the Lexis diagram.
 
 For each dyad there is a fundamental question of how to map the constituent
 coordinates to a Cartesian temporal plane. Typically one forces parity between time units within
@@ -574,11 +573,12 @@ lifespan}
 \label{sec:tal}
 \FloatBarrier  
 TAL is an appropriate diagram to examine processes that vary over the
-lifecourse.
+life course.
 More precisely, the TAL plane can highlight variation that is related to time
 since birth, time until death, length of life, and their combinations. These
 key aspects of demographic time are compressed to chronological age only in the
-APC perspective, which can blend out meaningful variation. Since the lifecourse belongs to the cohort perspective, it is best to think of the TAL plane as belonging to some particular birth cohort. Alternatively, a TAL triangle may be taken as a cross-section through the period dimension, a sort of synthetic TAL plane. 
+APC perspective, which can blend out meaningful variation. Since the life course
+belongs to the cohort perspective, it is best to think of the TAL plane as belonging to some particular birth cohort. Alternatively, a TAL triangle may be taken as a cross-section through the period dimension, a sort of synthetic TAL plane.
 
 To our knowledge, the TAL diagram has only appeared once in the literature, in an exploration and classification of late-life health
 conditions \citep{riffe2016ttd}. There are however instances of statistical
@@ -608,7 +608,7 @@ The LCD diagram completes our set of identities. It is based on the relationship
 between lifespan, birth cohort, and death cohort. In
 Fig.~\ref{fig:LCD}, lifespans are indexed by the $y$-axis, while birth cohorts are indexed by the $x$-axis, and death cohorts
 are found in descending diagonals. To structure data on these three
-time measures implies excluding time-varying information over the lifecourse.
+time measures implies excluding time-varying information over the life course.
 An individual
 only ever has one lifespan, one birth cohort, and one death cohort, such that
 the LCD coordinates of an individual are constant throughout life.
@@ -626,9 +626,9 @@ In Fig.~\ref{fig:LCD}, the same six individuals from previous diagram figures ar
 
 We
 recommend this mapping for plotting surfaces of values that are cumulative or
-static over the lifecourse, but that may vary over time or by length of life.
-Imagine an LCD surface of cumulative lifecourse consumptive surplus or deficit, or anything else that might vary by lifespan and
-moment of birth or death, such as children ever born, years of retirement, the
+static over the life course, but that may vary over time or by length of life.
+Imagine an LCD surface of cumulative life course consumptive surplus or deficit,
+or anything else that might vary by lifespan and moment of birth or death, such as children ever born, years of retirement, the
 size of trees or other aspects of forestry, populations of buildings in large
 cities, and so forth. \citet{lexis1875einleitung} describes an analogous
 relationship between marriage cohort, separation cohort, and duration of
@@ -658,22 +658,17 @@ other relatively complicated temporal designs in the literature. Each of the six
 time measures that we have treated can be categorized into two basic types:
 events and durations. Events include birth (C) and death (D) cohort, as well as period
 itself (P). Durations are time differences between pairs of events: chronological age A = P -- C, 
-thanatological age T = D -- P, and lifespan L = D -- C. In the following we describe APC, APCTDL and other time framework in terms of vector spaces which, via linear transformation, relate the timing of events with durations between events.
+thanatological age T = D -- P, and lifespan L = D -- C. In the following we
+describe APC, APCTDL and other time frameworks in terms of vector spaces which, via linear transformation, relate the timing of events with durations between events.
 
 \begin{definition} 
   Let $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$ be a vector of $n$
-  events or points in time chronologically ordered, with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
+  events or points in time with $n\geq2$. A corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is composed by elements of the form $d_{i,j}=p_j-p_i$ for $i=1,\dots,n-1$, $j=2,\dots,n$ and $j>i$.
   \label{def:1}
 \end{definition}
 
-%We assume that the vector of events $\boldsymbol{p}$ is chronologically ordered
-%for convention, to avoid negative durations. For instance, if $p_1>p_2$ one
-% would get $d_{1,2}<0$. However, this doesn't imply that events need to be always ordered in a specific way, as this may depend on the case or the individual.
-
-The vector of events $\boldsymbol{p}$ can be ordered in any way as long as the
-elements of $\boldsymbol{p}$ are in the same order for all individuals. A consequence of this is that durations may be either
+The vector of events $\boldsymbol{p}$ can be ordered in an arbitrary way as long as the same elements in $\boldsymbol{p}$ correspond to the same type of event for all observations. A consequence of this is that durations may be either
 negative or positive depending on the ordering of events over the life course.
-
 
 \begin{proposition}
   Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the dimension of the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is $m=n(n-1)/2$.
@@ -714,15 +709,18 @@ negative or positive depending on the ordering of events over the life course.
  such that $\boldsymbol{d}=\boldsymbol{X}\times\boldsymbol{p}$, and where $I_k$ denotes the $k\times k$ identity matrix.
 \end{corollary}
 
-These results imply that given an arbitrary set of $n\geq2$ points in time, it is always possible to calculate the durations between any pair of these points. This calculation can be understood
-as a linear transformation from a \emph{point-space} $P\subseteq\mathbf{R}^n$ to a \emph{duration-space} $D\subseteq\mathbf{R}^m$, with $m=n(n-1)/2$. However, note that matrix $\boldsymbol{X}$ in \eqref{eq:matrix} yields a vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ whose elements are sorted in an arbitrary way. The following statement may be relevant on this regard.
+These results imply that given an arbitrary set of $n\geq2$ points in time, it
+is always possible to calculate the durations between any pair of these points. However, note that matrix $\boldsymbol{X}$ in \eqref{eq:matrix} yields a vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ whose elements are sorted in an arbitrary way. The following statement may be relevant in this regard.
 
 \begin{proposition}
  Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$ is unique, irrespective of the sorting of its elements.
 \end{proposition}
 
 \begin{proof}
- Let's suppose that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are two different vectors of durations corresponding to the same vector of events $\boldsymbol{p}\in\mathbf{R}^n$. Provided that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are finite and, by definition, both have dimension $m$ and are formed by the same combinations of elements of $\boldsymbol{p}$, it would always be possible to re-arrange the elements of $\boldsymbol{d^2}$ in the same order as $\boldsymbol{d^1}$ such that $\boldsymbol{d^1}=\boldsymbol{d^2}$.
+ Let's suppose that $\boldsymbol{d^1}$ and $\boldsymbol{d^2}$ are two different
+ vectors of durations corresponding to the same vector of events
+ $\boldsymbol{p}\in\mathbf{R}^n$. Provided that $\boldsymbol{d^1}$ and
+ $\boldsymbol{d^2}$ are finite and, by definition, both have dimension $m$ and are formed by the same combinations of elements of $\boldsymbol{p}$, it will always be possible to re-arrange the elements of $\boldsymbol{d^2}$ in the same order as $\boldsymbol{d^1}$ such that $\boldsymbol{d^1}=\boldsymbol{d^2}$.
 \end{proof}
 
 This last proposition allows considering $\boldsymbol{X}$ as the matrix defining
@@ -742,13 +740,17 @@ the six time measures discussed here, note that the events CPD yield TAL, but TA
 The relationship between events and durations can be
 systematically represented in a series of timelines and graphs that may better
 guide intuition.
-
 The joint relationship between events and durations is more explicit and more
 compact in a graph representation. As introduced in the following definition, the total number of time measures implied by a set of $n$ events and the corresponding durations is 
 $n+m=n+n(n-1)/2=n(n+1)/2$. 
 
 \begin{definition}
- Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$, $n\geq2$, and the corresponding vector of durations $\boldsymbol{d}\in\mathbf{R}^m$, we define the graph of time measures $\boldsymbol{G}$ as the graph with edges $(\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$.
+ Given a vector of events $\boldsymbol{p}=(p_1,\ldots,p_n)^\top\in\mathbf{R}^n$,
+ $n\geq2$, and the corresponding vector of durations
+ $\boldsymbol{d}\in\mathbf{R}^m$, we define the graph of time measures
+ $\boldsymbol{G}$ as the graph with $n+m$ edges
+ labelled by $(\boldsymbol{p},\boldsymbol{d})\in\mathbf{R}^{n(n+1)/2}$ such that
+ the relationships in Def.~\ref{def:1} are preserved.
  \label{def:2}
 \end{definition}
 
@@ -790,12 +792,25 @@ nr. events  & timeline & graph \\
 }
 \end{table}
 
+\begin{definition} 
+  We define $P\subseteq\mathbf{R}^n$ as the vector-space (event-space) spanning all possible values vector $\boldsymbol{p}$ may take, and $D\subseteq\mathbf{R}^m$ as the vector space spanning all possible instances of the duration vector $\boldsymbol{d}$. 
+  % (FV removed) Let the indices of the bases of $P$ and $D$ correspond to the
+  % indices of elements of $\boldsymbol{p}$ and $\boldsymbol{d}$.
+  \label{def:1b}
+\end{definition}
+
+Just like the APC diagram allows for \emph{all possible} combinations of period,
+cohort and age we may consider the vector space $P$ spanning all possible
+instances of $\boldsymbol{p}$. The calculation of durations between events as
+described in Proposition~\ref{prop:2} can then be understood as a linear
+transformation from a vector space $P$ whose bases represent events to a
+duration vector space $D$ whose bases represent durations.
+
 \FloatBarrier
 \subsection{Examples}
 \label{sec:examples}
 The following examples show how different demographic time frameworks can all be expressed as instances of the event-duration vector space defined above.
 
-% I use the term "change of basis" when going from P to M. This is a common concept in linear algebra and describes what we are doing. We always start with P and then may go to M by deriving D from P and constructing M from elements of P and D. --j
 \paragraph{Example 1: The Lexis surface}
 
 Let $\boldsymbol{p}$ have two elements, as in the first row of
@@ -806,7 +821,9 @@ d_{1,2} = p_2 - p_1   \quad\quad.
 \end{equation}
 %
 Interpreting $d_{1,2}$ as \emph{age}, $p_2$ as \emph{period}, and $p_1$ as
-\emph{birth cohort} yields the APC identity. %The Lexis surface is constructed via change of basis of the point-space $P$, featuring basis vectors $(p_1, p_2)$, to the point-duration space $M$, featuring basis vectors ($p_2, d_{1,2}$).
+\emph{birth cohort} yields the APC identity. The standard Lexis surface is
+constructed via a change of basis from the event-space $P$, featuring basis vectors $(p_1,
+p_2)$, to the event-duration space $M$, featuring basis vectors ($p_2, d_{1,2}$).
 
 \paragraph{Example 2: Lexis' marriage identity}
 
@@ -827,12 +844,9 @@ d_{2,3} = p_3 - p_2
 Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{marriage cohort} and $p_3$ as
 \textit{separation cohort} yields the durations $d_{1,2}$ as \textit{age at
 marriage}, $d_{1,3}$ as \textit{age at separation}, and $d_{2,3}$ as
-\textit{duration of marriage}. Lexis' ``marriage space'' $M$ is reconstructed by the mapping 
-%
-\begin{align*}
-    f: P\subseteq\mathbf{R}^3 & \to M\subseteq\mathbf{R}^3 \\ (p_1,p_2,p_3)& \mapsto (p_1, d_{1,2}, d_{2,3})
-\end{align*}
-% Lexis' ``marriage space'' $M$ is reconstructed  by a change of basis of $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$,  with the new orthogonal basis formed by $(p_1, d_{1,2}, d_{2,3})$.
+\textit{duration of marriage}. Lexis' ``marriage space'' $M$ is reconstructed by
+a change of basis from $P\subseteq\mathbf{R}^3\to M\subseteq\mathbf{R}^3$, with
+the new orthogonal basis formed by $(p_1, d_{1,2}, d_{2,3})$.
 
 \paragraph{Example 3: Adding death cohort to the Lexis surface}
 
@@ -843,8 +857,6 @@ as \textit{death cohort} yields the durations $d_{1,2}$ as \textit{chronological
 age}, $d_{1,3}$ as \textit{lifespan}, and $d_{2,3}$ as \textit{time to death}.
 This vector space contains the Lexis surface as a sub-space, as well as the other planes presented in Sect.~\ref{sec:triads}. We return to this identity
 in the following sections.
-
-% I don't think that Brinks' Illness-Death model constitutes a 4-dimensional Lexis space like outlined below. Markings within a Lexis space such as life-lines and points for birth- and death-cohort don't constitute new dimensions of the underlying Lexis space. Drawing a life-line on a Lexis diagram doesn't make the diagram APCLD(T). Its just an annotated APC. In order to add a new dimension to a Lexis space one has to allow for *all possible* values this new dimensions may take (i.e. add a new basis to the vector space) instead of just marking specific instances of the new dimension. I changed the section to reflect how I believe the Brinks model relates to the event-duration space. --j
 
 \paragraph{Example 4: Brinks' Illness-Death model}
 
@@ -869,9 +881,10 @@ Interpreting $p_1$ as \textit{birth cohort}, $p_2$ as \textit{period}, $p_3$ as
 \textit{time at diagnosis}, and $p_4$ as \textit{death cohort} yields the following composition
 of $\boldsymbol{d}$: $d_{1,2}$ is \textit{chronological age}, $d_{1,3}$ is
 \textit{age at diagnosis}, $d_{1,4}$ is \textit{lifespan}, $d_{2,3}$ is
-\textit{time to/since diagnosis},\footnote{For points in time past the time at diagnosis $d_{2,3}$ becomes
-negative and can be interpreted at time since diagnosis.} $d_{2,4}$ is \textit{time to death},
-and $d_{3,4}$ is duration of illness (an irreversible state).
+\textit{time to/since diagnosis},\footnote{For points
+in time past the time at diagnosis $d_{2,3}$ becomes negative and can be
+interpreted at time since diagnosis.} $d_{2,4}$ is \textit{time to
+death}, and $d_{3,4}$ is duration of illness (an irreversible state).
 
 Unlike the other examples, the actual vector-space of demographic
 time shown in \citet{brinks2014lexis} Fig.~2 only identifies a
@@ -885,9 +898,10 @@ scales can be derived from the three axes drawn.
 Instead, a few additional events and durations (death cohort, timing of
 diagnosis and duration of disease) are introduced as \emph{markings} within the three
 dimensional vector space, just as one would mark \emph{specific} life-lines on
-a Lexis-diagram without regarding \emph{all possible} life-lines in doing so.
+a Lexis-diagram without accounting for \emph{all possible} life-lines.
 Instead, the four-dimensional vector-space can be considered as the larger
 setting within which this model operates.
+
 
 \FloatBarrier
 \section{A tetrahedron relates the six demographic time measures}
@@ -912,7 +926,6 @@ tetrahedron --- as the 3d edge structure of the tetrahedron platonic solid.
 labelled by the six time indices.}
 \label{fig:tet}
 \includegraphics[width=4in]{Figures/TetraHedronEdgesOnly.pdf}%
-% {Figures/TetraHedronEdgesOnly.pdf}
 \end{figure}
 
 For exposition, imagine that the middle vertex of Fig.~\ref{fig:tet} is the
@@ -921,7 +934,7 @@ base of the tetrahedron, forming the much-studied APC identity.
 The South face corresponds to the TPD identity,
 the Northeast face to the TAL identity, and the
 Northwest face to LCD identity. The transformation of this three-event
-system to a three dimensional space follows Definition~\ref{def:2}. % Def.~\ref{def:1} and Prop.\ref{prop:2}.
+system to a three dimensional space follows Definition~\ref{def:2}.
 It may also suffice to simply imagine that each face of the tetrahedron forms
 the basis of a plane, such that the tetrahedron itself defines four planes. These four planes are the four temporal planes that underly
 the four diagrams presented in Sects.~\ref{sec:apc} to~\ref{sec:lcd}. A full
@@ -1009,22 +1022,6 @@ through chronological age. The LCD plane is to be found by rotating the current
 prism such that the angle of view is directly orthogonal to lifelines, which
 would then appear as points (recall Fig.~\ref{fig:LCD}).
 
-%Further, the two classes of planes drawn
-%(APC and TAL) could have been drawn and labelled differently.
-%In practice, the diagram of any triad identity may be drawn held constant for
-% any one of its three missing indices with no loss of generality. For example, we have
-%mentioned period (P) and birth cohort (C) TAL planes, but there must also be a
-%third TAL plane that is held constant for death cohort (D). Another example
-%of such multiplicity is found in the birth cohort TAL diagram. In this diagram,
-%lifespan lines can also be interpreted as death cohorts (D), chronological age
-%lines are also period lines (P), and thanatological age (T) is maintained. This
-%means that the birth cohort TAL diagram is also a birth cohort TPD diagram.
-%Multiplicity of this kind can be systematically confirmed, since the C time
-% measure is not part of TPD. To not overly extend this exposition, and to avoid undue confusion, we neither delineate every possible cross-section nor the possible interpretations of each cross-section.
-%However, in general there are four total ways to cut the
-%space that are parallel to the faces of the hexad identity, and each cut
-%has three possible diagram interpretations.
-
 The essential property of this perspective diagram is that lifelines
 start and end in parallel, desceding downward and forward in time. A real
 population of renewing lives, spread over time and over the typical range of
@@ -1068,7 +1065,7 @@ Let us take the example of self-reported health (SRH).
 can derive each of the six demographic time measures for each observation.
 Further methodological details are given by \citet{riffe2016ttd}. We opt to view
 data on TAL surfaces because these allow us to judge the shape of prevalence
-over the lifecourse, specifically to show how SRH prevalence variation is
+over the life course, specifically to show how SRH prevalence variation is
 summarized more efficiently as a time-to-death pattern than as an age pattern.
 
 \begin{figure}[h!] 
@@ -1216,14 +1213,7 @@ the standard ways of comparing and projecting HLE. Our objective in this applica
 to demonstrate how viewing data structured by the
 time-framework we propose can lead to new understandings and approaches to
 processes over the life course. Other applications are imaginable in other
-phases of the lifecourse, and non-human subjects.
-
-%Applications for other aspects of the
-%lifecourse, particular stages of the lifecourse, non-human species on other
-% time scales, or inanimate items, may gain new insight by applying the relationships
-%%contained in the demographic time identity, its consituent triad identities,
-% or
-%some other temporal design inspired by the event-duration framework.
+phases of the life course, and non-human subjects.
 
 \section{Conclusions}
 
@@ -1236,7 +1226,6 @@ extended into a temporal plane, with a characteristic diagram. The four triad
 identities underly a family of four diagrams that include the
 familiar Lexis diagram, but also three either new or
 uncommon diagrams: The TPD---which is a sort of dual to the Lexis diagram---the TAL, and the LCD diagrams.
-%The TPD diagram in Sect.~\ref{sec:tpd} relates time of death, period, and time until death, and is therefore a sort of dual to the Lexis diagram. The TAL diagram in Sect.~\ref{sec:tal} relates the three duration measures of time-to-death, chronological age, and lifespan, and it may be useful for analyzing patterns that vary over the lifecourse and/or by length of life. The LCD diagram in Sect.~\ref{sec:lcd} relates time of birth with time of death and lifespan, and it may be useful for analyzing patterns that vary over time and by length of life, but not necessarily over the lifecourse. 
 These four identities and diagrams relate to one another in a single relationship.
 
 In Sect.~\ref{sec:gen} we digress to present a more general event-duration identity framework, which allows us to present the demographic time hexad identity more
@@ -1257,7 +1246,7 @@ reference to understand demographic processes. In general, data structured by
 all six demographic time measures can be represented on any of the four diagrams
 if controlled properly. In Sect.~\ref{sec:app} we present a brief
 application of this technique to the prevalence of poor self-reported health in
-older ages in the United States. %Prevalance data are displayed in a series of TAL surfaces (See Sect.~\ref{sec:tal}) representing the end-of-life experience of a sequence of five birth cohorts (1905-1925). Together, these surfaces represent a partial filling of the three-dimensional diagram drawn in Fig.~\ref{fig:apctTAL}. As such, this prevalence data is structured by all six demographic time measures.
+older ages in the United States. 
 To demonstrate the potential utility of this kind of
 data structure, we show that the choice of age pattern when calculating
 prevalence-based measures of healthy life expectancy can have a non-trivial impact on the result.
@@ -1272,22 +1261,6 @@ Such visualization strategies at this time are exploratory, and this is a
 technique that may benefit from further refinement. Further, a cross-section
 through the demographic time-space need not be parallel to one of the four
 identity-planes. Other more complicated temporal designs are also possible.
-%based on the event-duration framework in Sect.~\ref{sec:gen} and Appendix~\ref{app:A} 
-
-%Primary vital rates appear to be
-%empirically regular and fall within a limited range for humans. Many of the methods of demography are
-%developed to estimate demographic quantities independent of population
-%composition, or to partition crude magnitudes into the effects of population age structure and pure vital rates. Controlling for age like this is in a more general sense
-%controlling for variation in population structure. To the
-%extent that regular temporal variation relates to the end of life, length of
-%life, or time of death, common age-standardization does not fully account for
-%such structure.
-
-%Panel surveys with mortality follow-ups already provide the requisite
-%information, as do linkable registers that include items such as
-%health measures or proxies and relevant dates of birth, observation, and death.
-%Other kinds of populations, such as animals or items, may have quite different
-%data-gathering mechanisms.
 
 We believe in the pedagogical value of the framework
 introduced in this paper. We hope that the
@@ -1302,7 +1275,7 @@ investigation.
 
   
 \DeclareRobustCommand{\VAN}[3]{#3}
-\bibliographystyle{apacite} % required for demography
+\bibliographystyle{apacite} 
 %\bibliographystyle{plainnat}
 \bibliography{refs} 
 % \bibliography{references} 

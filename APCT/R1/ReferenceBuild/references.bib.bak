@@ -7,7 +7,10 @@
   Author                   = {Aigner, Martin and Ziegler, G{\"u}nter M and Quarteroni, Alfio},
   Publisher                = {Springer},
   Year                     = {2010},
-  Volume                   = {274}
+  Volume                   = {274},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{brinks2014lexis,
@@ -17,7 +20,10 @@
   Year                     = {2014},
   Number                   = {9},
   Pages                    = {e106043},
-  Volume                   = {9}
+  Volume                   = {9},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{brouard1986,
@@ -27,7 +33,21 @@
   Year                     = {1986},
   Number                   = {2},
   Pages                    = {157--168},
-  Volume                   = {4}
+  Volume                   = {4},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
+}
+
+@Book{caselli2005demography,
+  Title                    = {Demography: Analysis and synthesis},
+  Author                   = {Caselli, Graziella and Vallin, Jacques and Wunsch, Guillaume},
+  Publisher                = {Academic Press},
+  Year                     = {2006},
+  Volume                   = {1},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{cayley1889,
@@ -49,7 +69,10 @@
   Year                     = {2010},
   Number                   = {3},
   Pages                    = {1602--1620},
-  Volume                   = {4}
+  Volume                   = {4},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Misc{dempsey2016,
@@ -57,17 +80,10 @@
 
   Author                   = {Dempsey, Walter and McCullagh, Peter},
   Note                     = {Unpublished. Available at https://arxiv.org/pdf/1301.2699v3.pdf (retrieved on 4 April 2017)},
-  Year                     = {2016}
-}
+  Year                     = {2016},
 
-@Article{francis1996visualization,
-  Title                    = {Visualization of event histories},
-  Author                   = {Francis, Brian and Fuller, Mark},
-  Journal                  = {Journal of the Royal Statistical Society: Series A (Statistics in Society)},
-  Year                     = {1996},
-  Number                   = {2},
-  Pages                    = {301--308},
-  Volume                   = {159}
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{fries2005frailty,
@@ -77,7 +93,10 @@
   Year                     = {2005},
   Number                   = {5},
   Pages                    = {164--168},
-  Volume                   = {29}
+  Volume                   = {29},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{Geue2014,
@@ -87,7 +106,10 @@
   Year                     = {2014},
   Number                   = {8},
   Pages                    = {885--896},
-  Volume                   = {15}
+  Volume                   = {15},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Misc{HRSumich,
@@ -105,7 +127,10 @@
 @Misc{HMD,
   Author                   = {{Human Mortality Database}},
   Note                     = {University of California, Berkeley, and Max Planck Institute for Demographic Research, Rostock. Available at http://www.mortality.org (data downloaded on 10 July 2014)},
-  Year                     = {{n.d.}}
+  Year                     = {2014},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{Jewell2016,
@@ -115,7 +140,10 @@
   Year                     = {2016},
   Number                   = {4},
   Pages                    = {353--361},
-  Volume                   = {100}
+  Volume                   = {100},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{keiding2011age,
@@ -125,7 +153,10 @@
   Year                     = {2011},
   Number                   = {3},
   Pages                    = {405--420},
-  Volume                   = {39}
+  Volume                   = {39},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{keiding2006event,
@@ -135,7 +166,10 @@
   Year                     = {2006},
   Number                   = {14},
   Pages                    = {2343--2364},
-  Volume                   = {25}
+  Volume                   = {25},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Book{knapp1868ermittlung,
@@ -144,7 +178,10 @@
   Publisher                = {J. C. Hinrich},
   Year                     = {1868},
 
-  Address                  = {Leipzig}
+  Address                  = {Leipzig},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{kurland2009longitudinal,
@@ -154,7 +191,10 @@
   Year                     = {2009},
   Number                   = {2},
   Pages                    = {211},
-  Volume                   = {24}
+  Volume                   = {24},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Book{lexis1875einleitung,
@@ -164,7 +204,10 @@
   Year                     = {1875},
 
   Address                  = {Strasbourg},
-  Note                     = {Available at https://archive.org/details/einleitungindie00lexigoog (retrieved on 27 March 2016)}
+  Note                     = {Available at https://archive.org/details/einleitungindie00lexigoog (retrieved on 27 March 2016)},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{muller2004demographic,
@@ -174,7 +217,10 @@
   Year                     = {2004},
   Number                   = {3},
   Pages                    = {125--131},
-  Volume                   = {3}
+  Volume                   = {3},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{muller2007survival,
@@ -184,7 +230,10 @@
   Year                     = {2007},
   Number                   = {4},
   Pages                    = {513--522},
-  Volume                   = {72}
+  Volume                   = {72},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{miller2001increasing,
@@ -208,7 +257,10 @@
   Year                     = {1880},
   Note                     = {Available at https://archive.org/details/annalidistatist21commgoog (retrieved on 22 July 2016)},
   Pages                    = {1--16},
-  Volume                   = {12}
+  Volume                   = {12},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{pressat1961analyse,
@@ -218,7 +270,10 @@
   Year                     = {1961},
   Number                   = {3},
   Pages                    = {505--508},
-  Volume                   = {16}
+  Volume                   = {16},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Electronic{HRS,
@@ -227,7 +282,10 @@
   Address                  = {Santa Monica, CA},
   Author                   = {{RAND}},
   Note                     = {Produced by the RAND Center for the Study of Aging, with funding from the National Institute on Aging and the Social Security Administration.},
-  Year                     = {2013}
+  Year                     = {2013},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{riffe2016ttd,
@@ -242,36 +300,6 @@
   Timestamp                = {2015.08.05}
 }
 
-@Article{Sanderson2007,
-  Title                    = {A new perspective on population aging},
-  Author                   = {Sanderson, Warren and Scherbov, Sergei},
-  Journal                  = {Demographic Research},
-  Year                     = {2007},
-  Number                   = {2},
-  Pages                    = {27--58},
-  Volume                   = {16}
-}
-
-@Article{sanderson2010remeasuring,
-  Title                    = {Remeasuring aging},
-  Author                   = {Sanderson, Warren C and Scherbov, Sergei},
-  Journal                  = {Science},
-  Year                     = {2010},
-  Number                   = {5997},
-  Pages                    = {1287--1288},
-  Volume                   = {329}
-}
-
-@Article{sanderson2007new,
-  Title                    = {A new perspective on population aging},
-  Author                   = {Sanderson, Warren C and Scherbov, Sergei},
-  Journal                  = {Demographic Research},
-  Year                     = {2007},
-  Number                   = {2},
-  Pages                    = {27--58},
-  Volume                   = {16}
-}
-
 @Article{Sullivan1970,
   Title                    = {A single index of mortality and morbidity},
   Author                   = {Sullivan, DF},
@@ -279,7 +307,10 @@
   Year                     = {1971},
   Number                   = {4},
   Pages                    = {347-354},
-  Volume                   = {86}
+  Volume                   = {86},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Misc{vanRaalte2015HLE,
@@ -287,7 +318,10 @@
 
   Author                   = {Van Raalte, Alyson and Riffe, Tim},
   Note                     = {Paper presented at Population Association of America 2016 Annual Meeting, Washington, D. C., USA, Mar 31--Apr 2, 2016},
-  Year                     = {2016}
+  Year                     = {2016},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{vandeschrick2001lexis,
@@ -297,17 +331,10 @@
   Year                     = {2001},
   Number                   = {3},
   Pages                    = {97--124},
-  Volume                   = {4}
-}
+  Volume                   = {4},
 
-@Article{vaupel2009life,
-  Title                    = {Life lived and left: Carey's equality},
-  Author                   = {Vaupel, James W},
-  Journal                  = {Demographic Research},
-  Year                     = {2009},
-  Number                   = {3},
-  Pages                    = {7--10},
-  Volume                   = {20}
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @InCollection{villavicencio2015reconstructing,
@@ -320,7 +347,10 @@
   Address                  = {Cham},
   Chapter                  = {10},
   Editor                   = {Bloothooft, Gerrit and Christen, Peter and Mandemakers, Kees and Schraagen, Marijn},
-  Pages                    = {199--216}
+  Pages                    = {199--216},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{villavicencioRiffeSymmetires2016,
@@ -330,7 +360,10 @@
   Year                     = {2016},
   Number                   = {14},
   Pages                    = {381--398},
-  Volume                   = {35}
+  Volume                   = {35},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @TechReport{HMDMP,
@@ -338,7 +371,10 @@
   Author                   = {Wilmoth, John R and Andreev, K and Jdanov, D and Glei, Dana A and Boe, C and Bubenheim, M and Philipov, D and Shkolnikov, V and Vachon, P},
   Institution              = {University of California, Berkeley, and Max Planck Institute for Demographic Research, Rostock},
   Year                     = {2007},
-  Note                     = {Available at http://www.mortality.org/Public/Docs/MethodsProtocol.pdf (retrieved on 11 June 2015)}
+  Note                     = {Available at http://www.mortality.org/Public/Docs/MethodsProtocol.pdf (retrieved on 11 June 2015)},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Article{wolf2015disability,
@@ -348,7 +384,10 @@
   Year                     = {2015},
   Number                   = {5},
   Pages                    = {745--752},
-  Volume                   = {70}
+  Volume                   = {70},
+
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 
 @Book{zeuner1869abhandlungen,
@@ -358,14 +397,9 @@
   Year                     = {1869},
 
   Address                  = {Leipzig},
-  Note                     = {Available at https://archive.org/details/abhandlungenaus00zeungoog (retrieved on 27 March 2016)}
-}
+  Note                     = {Available at https://archive.org/details/abhandlungenaus00zeungoog (retrieved on 27 March 2016)},
 
-@Book{caselli2005demography,
-  Title                    = {Demography: Analysis and synthesis},
-  Editor                   = {Caselli, Graziella and Vallin, Jacques and Wunsch, Guillaume},
-  Publisher                = {Academic Press},
-  Year                     = {2006},
-  Volume                   = {1}
+  Owner                    = {tim},
+  Timestamp                = {2017.05.02}
 }
 

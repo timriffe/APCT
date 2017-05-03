@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: ReferenceBuild.aux
+The style file: chicago.bst
+Database file #1: references.bib
+Warning--entry type for "HRS" isn't style-file defined
+--line 533 of file references.bib
+Warning--missing author in caselli2005demography
+Warning--page numbers missing in riffe2016ttd
+You've used 27 entries,
+            2861 wiz_defined-function locations,
+            788 strings with 10148 characters,
+and the built_in function-call counts, 18074 in all, are:
+= -- 1487
+> -- 1305
+< -- 3
++ -- 378
+- -- 450
+* -- 1611
+:= -- 3358
+add.period$ -- 85
+call.type$ -- 27
+change.case$ -- 190
+chr.to.int$ -- 27
+cite$ -- 29
+duplicate$ -- 483
+empty$ -- 1114
+format.name$ -- 498
+if$ -- 3300
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 24
+newline$ -- 141
+num.names$ -- 273
+pop$ -- 127
+preamble$ -- 1
+purify$ -- 356
+quote$ -- 0
+skip$ -- 497
+stack$ -- 0
+substring$ -- 993
+swap$ -- 162
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 510
+warning$ -- 2
+while$ -- 274
+width$ -- 0
+write$ -- 365
+(There were 3 warnings)

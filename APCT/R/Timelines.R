@@ -250,8 +250,8 @@ if (make.graphs){
 	star.timeline.edges.only(p4) 
 	dev.off()
 	
-	pdf(file.path(outdir,"edgep5.pdf"),width=5,height=5)
-	star.timeline.edges.only(p5) 
+	pdf(file.path(outdir,"edgep5.pdf"),width=7,height=7)
+	star.timeline.edges.only(p5,.4) 
 	dev.off()
 #pdfcrop filename.pdf filename.pdf
 	system(paste("pdfcrop",file.path(outdir,"linep2.pdf"),file.path(outdir,"linep2.pdf")))

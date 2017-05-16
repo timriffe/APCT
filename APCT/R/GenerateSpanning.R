@@ -111,8 +111,8 @@ identifiable2 <- function(n=4,edges=c("p1","p2","d1")){
 	all(adj %^% n > 0)
 }
 
-identifiable(n=4, edges = c("p1","p4","d1","d3"))
-identifiable2(n=4, edges = c("p1","p4","d1","d3"))
+#identifiable(n=4, edges = c("p1","p4","d1","d3"))
+#identifiable2(n=4, edges = c("p1","p4","d1","d3"))
 
 # --------------------
 # test
@@ -204,7 +204,6 @@ generateSpanningTrees <- function(n=3){
 #length(unique(unlist(lapply(n4,paste, collapse=""))))
 # but are these connecting trees?
 
-# TODO: add x and y shift
 draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label = TRUE, col = NULL,...){
 	p 			<- rep(1,n)
 	n1    		<- n + 1
@@ -285,7 +284,7 @@ dev.off()
 
 # Figure tetraheron square:
 
-
+draw.tree(4,n4[[i]],label=FALSE, add = TRUE,x=xc[i], y = yc[i], col = pal10, lwd = 2)
 
 
 
@@ -345,3 +344,24 @@ timeline.graph <- function(n,dcol,vcol){
 #
 #
 #
+
+AssignColour <- function (x) {
+	if (x == "A") result <- "#D23737"
+	if (x == "P") result <- "#3191C9"
+	if (x == "C") result <- "#D2BC2D"
+	if (x == "T") result <- "#4EC93B"
+	if (x == "D") result <- "#881F93"
+	if (x == "L") result <- "#C5752B"
+	return(result)
+}
+edges <- c("p1","p2","p3","d1","d2","d3")
+names(edges) <- c("#D2BC2D","#3191C9","#881F93","#D23737","#C5752B","#4EC93B")
+args(draw.tree)
+
+
+star.timeline.edges.only(c(0.,.5,1),.4)
+outdir <-"/home/tim/git/StAndrewsTalk/StAndrewsTalk/Figures"
+pdf(file.path(outdir,"APCTDLsq.pdf"),width=5,height=5)
+draw.tree(3,c("p1","p2","p3","d1","d2","d3"),label=TRUE, col = names(edges), lwd = 2,lprop=.4)
+dev.off()
+system(paste("pdfcrop",file.path(outdir,"APCTDLsq.pdf"),file.path(outdir,"APCTDLsq.pdf")))

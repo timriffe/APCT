@@ -190,6 +190,7 @@ if (make.graphs){
 	draw.timeline(p2) 
 	draw.timeline(p3) 
 	draw.timeline(p4) 
+	draw.timeline(p5) 
 #draw.timeline(p5,c(-4,0)) 
 	
 # timeline graph
@@ -221,6 +222,10 @@ if (make.graphs){
 	draw.timeline(p4) 
 	dev.off()
 	
+	pdf(file.path(outdir,"linep5.pdf"),width=5,height=6)
+	draw.timeline(p5,ylim=c(-4,0)) 
+	dev.off()
+	
 	pdf(file.path(outdir,"starp2.pdf"),width=5,height=5)
 	star.timeline(p2) 
 	dev.off()
@@ -245,16 +250,21 @@ if (make.graphs){
 	star.timeline.edges.only(p4) 
 	dev.off()
 	
+	pdf(file.path(outdir,"edgep5.pdf"),width=5,height=5)
+	star.timeline.edges.only(p5) 
+	dev.off()
 #pdfcrop filename.pdf filename.pdf
 	system(paste("pdfcrop",file.path(outdir,"linep2.pdf"),file.path(outdir,"linep2.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"linep3.pdf"),file.path(outdir,"linep3.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"linep4.pdf"),file.path(outdir,"linep4.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"linep5.pdf"),file.path(outdir,"linep5.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"starp2.pdf"),file.path(outdir,"starp2.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"starp3.pdf"),file.path(outdir,"starp3.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"starp4.pdf"),file.path(outdir,"starp4.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"edgep2.pdf"),file.path(outdir,"edgep2.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"edgep3.pdf"),file.path(outdir,"edgep3.pdf")))
 	system(paste("pdfcrop",file.path(outdir,"edgep4.pdf"),file.path(outdir,"edgep4.pdf")))
+	system(paste("pdfcrop",file.path(outdir,"edgep5.pdf"),file.path(outdir,"edgep5.pdf")))
 	
 } # end graph creation 
 

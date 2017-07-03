@@ -1,0 +1,39 @@
+
+\documentclass[12pt,oneside,a4paper,doublespacing]{article} % for submission
+%\documentclass[12pt,oneside,a4paper]{article} % for sharing
+
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage[margin=1in]{geometry}
+%\doublespacing % for review
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% functions to build table 3
+\newcommand{\ttt}[2]{\includegraphics[scale=.45]{{Tab3#1#2}.pdf}}
+\newcolumntype{S}{ >{\centering\arraybackslash} m{2cm} }
+\newcolumntype{D}{ >{\centering\arraybackslash} m{5.4cm} }
+\newcolumntype{E}{ >{\centering\arraybackslash} m{3.7cm} }
+
+
+\begin{document}
+
+\setcounter{table}{2}
+\begin{table}[h!]
+\centering
+\caption{Event-duration timeline and graph for two, three, and four event sequences.}
+\label{tab:timelines}
+ \makebox[\linewidth][c]{
+ \begin{tabular}{S D E}
+ nr. events  & timeline & graph \\
+ & &\\
+   $n = 2 $ & \ttt{1}{1} & \ttt{1}{2} \\
+   $n = 3 $ & \ttt{2}{1} & \ttt{2}{2} \\
+   $n = 4 $ & \ttt{3}{1} & \ttt{3}{2}
+ \end{tabular}
+ }
+\end{table}
+
+\end{document}

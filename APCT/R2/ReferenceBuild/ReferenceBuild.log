@@ -1,0 +1,853 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.18)  4 JUL 2017 18:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ReferenceBuild.tex
+(./ReferenceBuild.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(./bmcart.cls
+Document Class: bmcart 2014/01/24BioMed Central class (VS)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\mathindent=\dimen103
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
+\c@thanks=\count88
+\bmcfloat@box=\box26
+\c@author=\count89
+\c@address=\count90
+\sv@mathsurround=\dimen104
+\fm@box=\box27
+\c@addressref=\count91
+\thanks@box=\box28
+\abstract@box=\box29
+\authors@list=\toks15
+\keywords@list=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen105
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks18
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks19
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks20
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@tempdima=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip \abovecaptionsk
+ip \parbox [t]{\hsize }{\floatcaption@size {\floatcaptionname@size #1}\hskip .5
+em #2\par }\vskip \belowcaptionskip .
+\c@ContinuedFloat=\count105
+)
+\c@subfigure=\count106
+\c@subtable=\count107
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip51
+\LTright=\skip52
+\LTpre=\skip53
+\LTpost=\skip54
+\LTchunksize=\count108
+\LTcapwidth=\dimen123
+\LT@head=\box32
+\LT@firsthead=\box33
+\LT@foot=\box34
+\LT@lastfoot=\box35
+\LT@cols=\count109
+\LT@rows=\count110
+\c@LT@tables=\count111
+\c@LT@chunks=\count112
+\LT@p@ftn=\toks28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count113
+\@cmidlb=\count114
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count115
+\@lastruleclass=\count116
+\@thisrulewidth=\dimen136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen137
+\extrarowheight=\dimen138
+\NC@list=\toks29
+\extratabsurround=\skip55
+\backup@length=\skip56
+)
+\TX@col@width=\dimen139
+\TX@old@table=\dimen140
+\TX@old@col=\dimen141
+\TX@target=\dimen142
+\TX@delta=\dimen143
+\TX@cols=\count117
+\TX@ftn=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/changepage/chngpage.sty
+Package: chngpage 2009/10/20 v1.2b change page layout
+\c@cp@cnt=\count118
+\c@cp@tempcnt=\count119
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/genmisc/nth.sty
+Package: nth 2002/02/27
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box36
+\UL@hyphenbox=\box37
+\UL@skip=\skip57
+\UL@hook=\toks31
+\UL@height=\dimen144
+\UL@pe=\count120
+\UL@pixel=\dimen145
+\ULC@box=\box38
+Package: ulem 2012/05/18
+\ULdepth=\dimen146
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2004/08/31 v1.71 
+\dashlinedash=\dimen147
+\dashlinegap=\dimen148
+\adl@box=\box39
+\adl@height=\dimen149
+\adl@heightsave=\dimen150
+\adl@depth=\dimen151
+\adl@depthsave=\dimen152
+\adl@finaldepth=\dimen153
+\adl@columns=\count121
+\adl@ncol=\count122
+\adl@currentcolumn=\count123
+\adl@currentcolumnsave=\count124
+\adl@totalheight=\count125
+\adl@totalheightsave=\count126
+\adl@dash=\count127
+\adl@gap=\count128
+\adl@cla=\count129
+\adl@clb=\count130
+\adl@everyvbox=\toks32
+\adl@LTpagetotal=\dimen154
+)
+\c@definition=\count131
+\c@theorem=\count132
+\c@proposition=\count133
+\c@corollary=\count134
+\c@remark=\count135
+
+(./ReferenceBuild.aux
+
+LaTeX Warning: Label `fig:APC' multiply defined.
+
+
+LaTeX Warning: Label `fig:TPD' multiply defined.
+
+
+LaTeX Warning: Label `fig:tet' multiply defined.
+
+
+LaTeX Warning: Label `fig:apctTAL' multiply defined.
+
+
+LaTeX Warning: Label `fig:poorsrh' multiply defined.
+
+)
+\openout1 = `ReferenceBuild.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count136
+\scratchdimen=\dimen155
+\scratchbox=\box40
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen156
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks34
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 158.
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 164.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <24> not available
+(Font)              size <24.88> substituted on input line 172.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 237.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 237.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 353.
+
+
+
+Overfull \hbox (1.0pt too wide) has occurred while \output is active
+ [] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (3.95914pt too wide) in paragraph at lines 426--438
+[][] 
+ []
+
+[3] [4] <Tab201.pdf, id=28, 141.52875pt x 141.52875pt>
+File: Tab201.pdf Graphic file (type pdf)
+ <use Tab201.pdf>
+Package pdftex.def Info: Tab201.pdf used on input line 548.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab202.pdf, id=29, 141.52875pt x 141.52875pt>
+File: Tab202.pdf Graphic file (type pdf)
+ <use Tab202.pdf>
+Package pdftex.def Info: Tab202.pdf used on input line 557.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab203.pdf, id=30, 141.52875pt x 141.52875pt>
+File: Tab203.pdf Graphic file (type pdf)
+ <use Tab203.pdf>
+Package pdftex.def Info: Tab203.pdf used on input line 566.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab204.pdf, id=31, 141.52875pt x 141.52875pt>
+File: Tab204.pdf Graphic file (type pdf)
+ <use Tab204.pdf>
+Package pdftex.def Info: Tab204.pdf used on input line 578.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab205.pdf, id=32, 141.52875pt x 141.52875pt>
+File: Tab205.pdf Graphic file (type pdf)
+ <use Tab205.pdf>
+Package pdftex.def Info: Tab205.pdf used on input line 586.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab206.pdf, id=33, 141.52875pt x 141.52875pt>
+File: Tab206.pdf Graphic file (type pdf)
+ <use Tab206.pdf>
+Package pdftex.def Info: Tab206.pdf used on input line 594.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab207.pdf, id=34, 141.52875pt x 141.52875pt>
+File: Tab207.pdf Graphic file (type pdf)
+ <use Tab207.pdf>
+Package pdftex.def Info: Tab207.pdf used on input line 606.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab208.pdf, id=35, 141.52875pt x 141.52875pt>
+File: Tab208.pdf Graphic file (type pdf)
+ <use Tab208.pdf>
+Package pdftex.def Info: Tab208.pdf used on input line 614.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab209.pdf, id=36, 141.52875pt x 141.52875pt>
+File: Tab209.pdf Graphic file (type pdf)
+ <use Tab209.pdf>
+Package pdftex.def Info: Tab209.pdf used on input line 622.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab210.pdf, id=37, 141.52875pt x 141.52875pt>
+File: Tab210.pdf Graphic file (type pdf)
+ <use Tab210.pdf>
+Package pdftex.def Info: Tab210.pdf used on input line 635.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab211.pdf, id=38, 141.52875pt x 141.52875pt>
+File: Tab211.pdf Graphic file (type pdf)
+ <use Tab211.pdf>
+Package pdftex.def Info: Tab211.pdf used on input line 643.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab212.pdf, id=39, 141.52875pt x 141.52875pt>
+File: Tab212.pdf Graphic file (type pdf)
+ <use Tab212.pdf>
+Package pdftex.def Info: Tab212.pdf used on input line 651.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab213.pdf, id=40, 141.52875pt x 141.52875pt>
+File: Tab213.pdf Graphic file (type pdf)
+ <use Tab213.pdf>
+Package pdftex.def Info: Tab213.pdf used on input line 660.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab214.pdf, id=41, 141.52875pt x 141.52875pt>
+File: Tab214.pdf Graphic file (type pdf)
+ <use Tab214.pdf>
+Package pdftex.def Info: Tab214.pdf used on input line 666.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+
+<Tab215.pdf, id=42, 141.52875pt x 141.52875pt>
+File: Tab215.pdf Graphic file (type pdf)
+ <use Tab215.pdf>
+Package pdftex.def Info: Tab215.pdf used on input line 671.
+(pdftex.def)             Requested size: 70.76419pt x 70.76419pt.
+ [5 <./Tab201.pdf> <./Tab202.pdf> <./Tab203.pdf>] [6 <./Tab204.pdf> <./Tab205.p
+df> <./Tab206.pdf> <./Tab207.pdf> <./Tab208.pdf> <./Tab209.pdf> <./Tab210.pdf> 
+<./Tab211.pdf>]
+[7 <./Tab212.pdf> <./Tab213.pdf> <./Tab214.pdf> <./Tab215.pdf>]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 724--724
+[] [] 
+ []
+
+<Fig1.pdf, id=131, 578.16pt x 361.35pt>
+File: Fig1.pdf Graphic file (type pdf)
+ <use Fig1.pdf>
+Package pdftex.def Info: Fig1.pdf used on input line 728.
+(pdftex.def)             Requested size: 462.52863pt x 289.0804pt.
+
+Overfull \hbox (114.02863pt too wide) in paragraph at lines 728--729
+ [][] 
+ []
+
+[8 <./Fig1.pdf>]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 756--756
+[] [] 
+ []
+
+<Fig2.pdf, id=141, 578.16pt x 361.35pt>
+File: Fig2.pdf Graphic file (type pdf)
+ <use Fig2.pdf>
+Package pdftex.def Info: Fig2.pdf used on input line 760.
+(pdftex.def)             Requested size: 462.52863pt x 289.0804pt.
+
+Overfull \hbox (114.02863pt too wide) in paragraph at lines 760--761
+ [][] 
+ []
+
+[9 <./Fig2.pdf>]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 806--806
+[] [] 
+ []
+
+<Fig3.pdf, id=151, 433.62pt x 433.62pt>
+File: Fig3.pdf Graphic file (type pdf)
+ <use Fig3.pdf>
+Package pdftex.def Info: Fig3.pdf used on input line 809.
+(pdftex.def)             Requested size: 303.53192pt x 303.53192pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 831--831
+[] [] 
+ []
+
+<Fig4.pdf, id=155, 578.16pt x 361.35pt>
+File: Fig4.pdf Graphic file (type pdf)
+ <use Fig4.pdf>
+Package pdftex.def Info: Fig4.pdf used on input line 835.
+(pdftex.def)             Requested size: 462.52863pt x 289.0804pt.
+
+Overfull \hbox (114.02863pt too wide) in paragraph at lines 835--836
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11 <./Fig3.pdf>] [12 <./Fig4.pdf>] [13]
+<Tab311.pdf, id=181, 332.24126pt x 68.255pt>
+File: Tab311.pdf Graphic file (type pdf)
+ <use Tab311.pdf>
+Package pdftex.def Info: Tab311.pdf used on input line 999.
+(pdftex.def)             Requested size: 149.50717pt x 30.71445pt.
+
+<Tab312.pdf, id=182, 185.69376pt x 169.63374pt>
+File: Tab312.pdf Graphic file (type pdf)
+ <use Tab312.pdf>
+Package pdftex.def Info: Tab312.pdf used on input line 999.
+(pdftex.def)             Requested size: 83.56142pt x 76.33447pt.
+
+<Tab321.pdf, id=183, 332.24126pt x 121.45375pt>
+File: Tab321.pdf Graphic file (type pdf)
+ <use Tab321.pdf>
+Package pdftex.def Info: Tab321.pdf used on input line 999.
+(pdftex.def)             Requested size: 149.50717pt x 54.65367pt.
+
+<Tab322.pdf, id=184, 213.79875pt x 212.795pt>
+File: Tab322.pdf Graphic file (type pdf)
+ <use Tab322.pdf>
+Package pdftex.def Info: Tab322.pdf used on input line 999.
+(pdftex.def)             Requested size: 96.20854pt x 95.75685pt.
+
+<Tab331.pdf, id=185, 332.24126pt x 201.75375pt>
+File: Tab331.pdf Graphic file (type pdf)
+ <use Tab331.pdf>
+Package pdftex.def Info: Tab331.pdf used on input line 999.
+(pdftex.def)             Requested size: 149.50717pt x 90.78835pt.
+
+<Tab332.pdf, id=186, 203.76125pt x 198.7425pt>
+File: Tab332.pdf Graphic file (type pdf)
+ <use Tab332.pdf>
+Package pdftex.def Info: Tab332.pdf used on input line 999.
+(pdftex.def)             Requested size: 91.69171pt x 89.43329pt.
+ [14] [15 <./Tab311.pdf> <./Tab312.pdf> <./Tab321.pdf> <./Tab322.pdf> <./Tab331
+.pdf> <./Tab332.pdf>] [16]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1133--1133
+[] [] 
+ []
+
+<Fig5.pdf, id=244, 289.08pt x 289.08pt>
+File: Fig5.pdf Graphic file (type pdf)
+ <use Fig5.pdf>
+Package pdftex.def Info: Fig5.pdf used on input line 1135.
+(pdftex.def)             Requested size: 289.07999pt x 289.09251pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1187--1187
+[] [] 
+ []
+
+<Fig6.pdf, id=248, 923.45pt x 642.78854pt>
+File: Fig6.pdf Graphic file (type pdf)
+ <use Fig6.pdf>
+Package pdftex.def Info: Fig6.pdf used on input line 1189.
+(pdftex.def)             Requested size: 461.72386pt x 321.39348pt.
+
+Overfull \hbox (113.22386pt too wide) in paragraph at lines 1189--1190
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18 <./Fig5.pdf>] [19 <./Fig6.pdf>] [20]
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1282--1282
+[] [] 
+ []
+
+<Fig7a.pdf, id=402, 650.43pt x 361.35pt>
+File: Fig7a.pdf Graphic file (type pdf)
+ <use Fig7a.pdf>
+Package pdftex.def Info: Fig7a.pdf used on input line 1291.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1291--1292
+ [][] 
+ []
+
+<Fig7b.pdf, id=403, 650.43pt x 361.35pt>
+File: Fig7b.pdf Graphic file (type pdf)
+ <use Fig7b.pdf>
+Package pdftex.def Info: Fig7b.pdf used on input line 1299.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1299--1300
+ [][] 
+ []
+
+<Fig7c.pdf, id=404, 650.43pt x 361.35pt>
+File: Fig7c.pdf Graphic file (type pdf)
+ <use Fig7c.pdf>
+Package pdftex.def Info: Fig7c.pdf used on input line 1307.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1307--1308
+ [][] 
+ []
+
+<Fig7d.pdf, id=405, 650.43pt x 361.35pt>
+File: Fig7d.pdf Graphic file (type pdf)
+ <use Fig7d.pdf>
+Package pdftex.def Info: Fig7d.pdf used on input line 1315.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1315--1316
+ [][] 
+ []
+
+<Fig7e.pdf, id=406, 650.43pt x 361.35pt>
+File: Fig7e.pdf Graphic file (type pdf)
+ <use Fig7e.pdf>
+Package pdftex.def Info: Fig7e.pdf used on input line 1323.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1323--1324
+ [][] 
+ []
+
+<Fig7Legend.pdf, id=407, 650.43pt x 361.35pt>
+File: Fig7Legend.pdf Graphic file (type pdf)
+ <use Fig7Legend.pdf>
+Package pdftex.def Info: Fig7Legend.pdf used on input line 1331.
+(pdftex.def)             Requested size: 208.14185pt x 115.63435pt.
+
+Overfull \hbox (42.07942pt too wide) in paragraph at lines 1331--1332
+ [][] 
+ []
+
+[21 <./Fig7a.pdf> <./Fig7b.pdf> <./Fig7c.pdf> <./Fig7d.pdf> <./Fig7e.pdf> <./Fi
+g7Legend.pdf>] [22] [23] [24] (./ReferenceBuild.bbl
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 8.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <5> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 120.
+
+
+[25])
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1594--1594
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1600--1600
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1607--1607
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1614--1614
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1621--1621
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1628--1628
+[] [] 
+ []
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 1636--1636
+[] [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+AED: lastpage setting LastPage
+[26] [27] (./ReferenceBuild.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5823 strings out of 493304
+ 82021 string characters out of 6139870
+ 183115 words of memory out of 5000000
+ 9131 multiletter control sequences out of 15000+600000
+ 17279 words of font info for 63 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 42i,20n,44p,457b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.p
+fb>
+Output written on ReferenceBuild.pdf (27 pages, 579878 bytes).
+PDF statistics:
+ 538 PDF objects out of 1000 (max. 8388607)
+ 367 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -428,8 +428,113 @@ draw.tree <- function(n=4, edges, lprop = .5, x = 0, y = 0, add = FALSE, label =
 			text(lx,ly,edges.draw$name[i],col=gray(.5))
 		}
 	}
-	
+	out <- list(edges.draw, verts)
+	invisible(out)
 }
+
+get_verts <- function(n=4, edges){
+	p 			<- rep(1,n)
+	n1    		<- n + 1
+	# get coords for the n+1 vertices
+	verts 		<- decide.verts(c(p,1))
+	# get d1...dm
+	durs  		<- DefaultDurationOrdering(p)
+	# need comparable name, for selecting later
+	durs$name 	<- paste0("d", durs$d)
+	# remove unneeded columns
+	durs$from 	<- NULL
+	durs$to 	<- NULL
+	durs$d 		<- NULL
+	durs$dur 	<- NULL
+	# make same for period measures, colnames must match
+	pp 			<- data.frame(pfrom = 1:n, 
+			                  pto = rep(n1,n), 
+			                  name = paste0("p",1:n))
+	# join event and duration edges
+	all.edges 	<- rbind(pp,durs)
+	
+	# select those specified
+	edges.draw 	<- all.edges[all.edges$name %in% edges, ]
+#	
+#	x1 <- verts$x[edges.draw$pfrom]
+#	x2 <- verts$x[edges.draw$pto]
+#	y1 <- verts$y[edges.draw$pfrom] 
+#	y2 <- verts$y[edges.draw$pto]
+#	
+#	coords1 <- cbind(x1,y1)
+#	coords2 <- cbind(x2,y2)
+	
+	# actually to determine equality after rotation we only need
+	# this ordering, we don't need to actually see the paths of segments
+	edges.draw
+}
+
+is.rotated <- function(edges2,n=4, edges.ref ){
+	
+	nr.rotations(edges2,n=4, edges.ref) >= 0
+}
+nr.rotations <- function(edges2,n=4, edges.ref){
+	
+	if (all(sort(edges.ref) == sort(edges2))){
+		return(0)
+	}
+	verts.ref <- as.matrix(get_verts(n, edges.ref)[,1:2])
+	verts.ref <- verts.ref[order(verts.ref[,1],verts.ref[,2]), ]
+	
+	v.2       <- as.matrix(get_verts(n, edges2)[,1:2])
+	v.2       <- v.2[order(v.2[,1],v.2[,2]), ]
+	v.2.i     <- v.2
+	same <- -1
+	for (i in 1:n){
+		v.2.i                  <- v.2.i + 1
+		v.2.i[v.2.i > (n + 1)] <- 1
+		v.2.i                  <- t(apply(v.2.i, 1, sort))
+		v.2.i                  <- v.2.i[order( v.2.i[,1], v.2.i[,2]), ]
+		if (all(v.2.i == verts.ref)){
+			same <- i
+			break
+		}
+	}
+	return(same)
+}
+#rotate <- function(coords, deg = 60){
+#	rad  <- deg / 180 * pi
+#	rmat <- matrix(c(cos(rad),sin(rad),-sin(rad),cos(rad)),2)
+#	
+#	t(rmat %*% t(coords))
+#}
+#
+## check to see if one graph is just a rotation of another
+#is.rotated <- function(n=4, edges.ref, edges2){
+#	
+#	if (all(sort(edges.ref) == sort(edges2))){
+#		return(TRUE)
+#	}
+#	verts.ref <- get_verts(n, edges.ref)
+#	verts.2   <- get_verts(n, edges2)
+#	
+#	
+#	# now we rotatate verts.2 by:
+#	degs <- seq(72,72*4,72)
+#	same <- FALSE
+#	for (i in 1:length(degs)){
+#		coords.2.r1        <- rotate(verts.2[[1]], degs[i])
+#		coords.2.r2        <- rotate(verts.2[[2]], degs[i])
+#		
+#		res1 <- sum(abs(verts.ref[[1]] - coords.2.r1 )) +
+#				sum(abs(verts.ref[[2]] - coords.2.r2 ))
+#		res2 <- sum(abs(verts.ref[[1]] - coords.2.r2 )) +
+#				sum(abs(verts.ref[[2]] - coords.2.r1 ))
+#		if (res1 < .1 | res2 < .1){
+#			same <- TRUE
+#			break
+#        }
+#	}
+#	return(same)
+#}
+
+#is.rotated(4, edges.ref=c("p1","p2","p3","p4"), edges2=c("p1","d4","d2","d1") )
+#is.rotated(4, edges.ref=c("p1","p2","p3","p4"), edges2=c("p1","d4","d2","d3") )
 
 make.graphs <- FALSE
 if (make.graphs){

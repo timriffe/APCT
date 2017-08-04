@@ -190,6 +190,16 @@ highestmatch <- function(x1,x2){
 	          sum(rowmatches(x1,shift.row(x2,4)))))
     
 }
+# really this isn't a good strategy, better to 
+# attempt columns with a feature, not just neighbording rows.
+shifttohighestmatch <- function(x1,x2){
+	shift <- which.max(c(sum(rowmatches(x1,shift.row(x2,0))),
+			sum(rowmatches(x1,shift.row(x2,1))),
+			sum(rowmatches(x1,shift.row(x2,2))),
+			sum(rowmatches(x1,shift.row(x2,3))),
+			sum(rowmatches(x1,shift.row(x2,4))))) - 1
+    shift.row(x2,shift)
+}
 
 lapply(rotation.groups.sorted[-1], function(g2,g1,n4){
 			x1 <- n4[g1]
@@ -197,14 +207,12 @@ lapply(rotation.groups.sorted[-1], function(g2,g1,n4){
 			highestmatch(x1,x2)
 		},g1=rotation.groups.sorted[[1]], n4=n4)
 
+# 12 is the max I guess anyway.
 highestmatch(x1,x2)
 
 
 
 
-bestrowshift <- function(x1,x2){
-	
-}
 
 
 par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.1,.1,.1,.1))

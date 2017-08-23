@@ -1,7 +1,20 @@
 # APCT
-R and LaTex code for a paper together with Jonas Schöley and Francisco Villavicencio: "A unified framework of demographic time"
+R and LaTex code for Tim Riffe, Jonas Schöley, and Francisco Villavicencio (2017) [A unified framework of demographic time](http://genus.springeropen.com/articles/10.1186/s41118-017-0024-4)
 
-The paper was first presented at the EAPS Health and Morbidity working group conference in Prague in September, 2015. It was also presented as PAA 2016, ADEH 2016, the 2016 Berkeley Formal Demography Workshop, and EPC 2016. It is presently accepted to Genus (DOI 10.1186/s41118-017-0024-4) and going through proofs. I'll post the bibtex citation here when it's published online.
+The paper was first entertained at a Colmex workshop in June 2015, later formally presented at the EAPS Health and Morbidity working group conference in Prague in September, 2015. It was also presented as PAA 2016, ADEH 2016, the 2016 Berkeley Formal Demography Workshop, and EPC 2016. It is now published in Genus (DOI 10.1186/s41118-017-0024-4). Here's the bibtex citation:
+
+```
+@Article{riffe2017,
+  Title                    = {A unified framework of demographic time},
+  Author                   = {Tim Riffe and Jonas Sch\"oley and Francisco Villavicencio},
+  Journal                  = {Genus},
+  Year                     = {2017},
+  Number                   = {7},
+  Volume                   = {73},
+
+  Doi                      = {https://doi.org/10.1186/s41118-017-0024-4},
+}
+```
 
 You are free to see what we're up to and use material found here with attribution:
 

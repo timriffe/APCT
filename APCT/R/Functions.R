@@ -24,7 +24,9 @@ library(scales)
 #' @export
 #' 
 
-LexRefN <- function(ages, years, N = 5, chrono = TRUE, equilateral = FALSE,col1=gray(.5),col2=gray(.5),col3=gray(.5),...){
+LexRefN <- function(ages, years, N = 5, 
+		chrono = TRUE, equilateral = FALSE, 
+		col1 = gray(.5), col2 = gray(.5), col3 = gray(.5), ...){
 	# vertical
 	#par(mai=c(.5, .5, .5, .5), xaxs = "i", yaxs = "i")
 	#plot(NULL, xlim = c(1820,2060), ylim = c(0,100), axes = FALSE, ylab = "", xlab = "", asp = 1)

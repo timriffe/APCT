@@ -8,14 +8,31 @@ source("/home/tim/git/APCT/APCT/R/Timelines.R")
 # -----------------------------------
 #
 
+
+pal10 <- c("#ffbaa8","#61df6a","#6a41a6","#c5d643",
+		"#c1b5ff","#b69600","#00b2c1","#c70034","#98d9c7","#d36500")
+
+
+n4 <- lapply(generateSpanningTrees(4), sort)
+plot.order <- matrix(1:130,ncol = 13)
+xc         <- (col(plot.order) - 1) * 2.2 + 1
+yc         <- (row(plot.order)-1) * 2.2 + 1
+yc         <- abs(yc-max(yc)) + 1
+par(xpd=TRUE,bg="white", xaxs="i",yaxs="i",mai=c(.5,.5,.5,.5))
+plot(NULL,type='n',xlim=range(xc)+c(-1,1),ylim=range(yc)+c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
+for (i in 1:length(n4)){
+	draw.tree(4,n4[[i]],label=FALSE, add = TRUE,x=xc[i], y = yc[i], col = pal10, lwd = 2)
+}
+# would need to equalize colors for white bg...
+
+
+
+
 n4 <- lapply(generateSpanningTrees(4), sort)
 plot.order <- matrix(1:125,ncol=5)
 xc         <- (col(plot.order) - 1) * 2.2 + 1
 yc         <- (row(plot.order)-1) * 2.2 + 1
 yc         <- abs(yc-max(yc)) + 1
-pal10 <- c("#ffbaa8","#61df6a","#6a41a6","#c5d643",
-		"#c1b5ff","#b69600","#00b2c1","#c70034","#98d9c7","#d36500")
-
 pdf("/home/tim/git/APCT/APCT/Figures/n4spanningtrees.pdf",width=4,height=10)
 par(xpd=TRUE,bg="#000000", xaxs="i",yaxs="i",mai=c(.5,.5,.5,.5))
 plot(NULL,type='n',xlim=range(xc)+c(-1,1),ylim=range(yc)+c(-1,1),asp=1,axes=FALSE, xlab="",ylab ="")
